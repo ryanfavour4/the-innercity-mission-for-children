@@ -22,9 +22,14 @@ export default function MetaTags(Props: MetaProps) {
             : 'The InnerCity Mission for Children is a full-fledged faith-based Non-Governmental Organisation [NGO] in Consultative Status with the United Nations [UN]; It is under the auspices of Pastor Chris Oyakhilome Foundation.'
         }
       />
-      <link rel="icon" href={icon?.length ? icon : '/next.svg'} sizes="any" type="image/svg+xml" />
-      <link rel="shortcut icon" href={icon?.length ? icon : '/next.svg'} type="image/x-icon" />
-      <link rel="apple-touch-icon" href={icon?.length ? icon : '/next.svg'} />
+      <link
+        rel="icon"
+        href={icon?.length ? icon : '/favicon.png'}
+        sizes="any"
+        type="image/svg+xml"
+      />
+      <link rel="shortcut icon" href={icon?.length ? icon : '/favicon.png'} type="image/x-icon" />
+      <link rel="apple-touch-icon" href={icon?.length ? icon : '/favicon.png'} />
       <link rel="manifest" href="/manifest.json" />
       <meta
         name="keywords"
@@ -49,8 +54,8 @@ export default function MetaTags(Props: MetaProps) {
       <meta property="article:modified_time" content="2024-07-24T04:39:39+00:00" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@innercityhq" />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+      <meta httpEquiv="Content-Type" content="text/html; charset=UTF-8" />
       <meta name="theme-color" content="#0080DE" />
       <meta name="googlebot" content="NOODP" />
       <link rel="dns-prefetch" href="https://fonts.gstatic.com/" />

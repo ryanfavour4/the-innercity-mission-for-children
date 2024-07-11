@@ -3,5 +3,6 @@
   "greytext",
   "innercity",
   "Organisation"
- ]
+ ],
+ "explorer.compactFolders": false
 }

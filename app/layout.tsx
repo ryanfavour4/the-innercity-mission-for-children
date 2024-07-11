@@ -1,5 +1,8 @@
 import type { Metadata, Viewport } from 'next'
-import './globals.css'
+import '@/styles/globals.css'
+import '@/styles/bg.css'
+import '@/styles/tailwind.css'
+import '@/styles/animation.css'
 import MetaTags from '@/Meta'
 
 export const metadata: Metadata = {
@@ -85,7 +88,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <head>
-        <MetaTags />
+        <MetaTags title="Home Page - InnerCity Mission HQ" />
       </head>
       <body className="">{children}</body>
     </html>
