@@ -1,31 +1,19 @@
-.bg-splash-screen {
-    background-image: linear-gradient(
-            rgba(var(--primary-rgb) / 0.7),
-            rgba(var(--primary-rgb) / 0.7)
-        ),
-        url("/assets/image/splash-screen.jpg");
+.bg-hero-section {
+  background-image: linear-gradient(rgba(var(--dark-rgb) / 0.6), rgba(var(--dark-rgb) / 0.6)),
+    url('/assets/images/hero-section.jpg');
 }
 
 .bg-create-account {
-    background-image: linear-gradient(
-            rgba(var(--light-rgb) / 0.7),
-            rgba(var(--light-rgb) / 0.7)
-        ),
-        url("/assets/image/create-account.jpg");
+  background-image: linear-gradient(rgba(var(--light-rgb) / 0.7), rgba(var(--light-rgb) / 0.7)),
+    url('/assets/images/create-account.jpg');
 }
 
 .bg-create-account-form {
-    background-image: linear-gradient(
-            rgba(var(--light-rgb) / 0.8),
-            rgba(var(--light-rgb) / 0.8)
-        ),
-        url("/assets/icon/logo-blue.png");
+  background-image: linear-gradient(rgba(var(--light-rgb) / 0.8), rgba(var(--light-rgb) / 0.8)),
+    url('/assets/images/logo-blue.png');
 }
 
 .bg-dashboard-white-bg {
-    background-image: linear-gradient(
-            rgba(var(--light-rgb) / 0.2),
-            rgba(var(--light-rgb) / 0.2)
-        ),
-        url("/assets/image/dashboard-white-bg.jpg");
+  background-image: linear-gradient(rgba(var(--light-rgb) / 0.2), rgba(var(--light-rgb) / 0.2)),
+    url('/assets/images/dashboard-white-bg.jpg');
 }
