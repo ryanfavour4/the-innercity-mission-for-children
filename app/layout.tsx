@@ -4,6 +4,8 @@ import '@/styles/bg.css'
 import '@/styles/tailwind.css'
 import '@/styles/animation.css'
 import MetaTags from '@/Meta'
+import LandingPageNavbar from '@/layouts/landing-page-navbar'
+import LandingPageFooter from '@/layouts/landing-page-footer'
 
 export const metadata: Metadata = {
   title: 'Home Page - InnerCity Mission HQ',
@@ -90,7 +92,13 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <head>
         <MetaTags title="Home Page - InnerCity Mission HQ" />
       </head>
-      <body className="">{children}</body>
+      <body className="">
+        <div>
+          <LandingPageNavbar/>
+          {children}
+          <LandingPageFooter/>
+        </div>
+      </body>
     </html>
   )
 }

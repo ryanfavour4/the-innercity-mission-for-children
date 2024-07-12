@@ -3,7 +3,7 @@ import Marquee from '@/components/custom/marquee'
 import { PlayIcon } from '@/components/svgs'
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
-
+import Link from 'next/link'
 export default function HeroSection() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const images = [
@@ -46,7 +46,9 @@ export default function HeroSection() {
                 Inclusive care for children with special needs
               </h1>
               <div className="flex flex-col gap-6 md:flex-row">
-                <button className="btn-white max-w-fit px-8">What we do</button>
+              <Link href="/program">
+              <button className="btn-white max-w-fit px-8">What we do</button>
+              </Link>  
                 <span className="flex cursor-pointer items-center gap-1">
                   <div className="bg-light flex h-8 w-8 items-center justify-center rounded-full">
                     <PlayIcon className="text-dark h-5 w-5" />

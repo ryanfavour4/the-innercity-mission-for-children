@@ -14,6 +14,13 @@ const config: Config = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      backgroundColor: {
+        "blue": "hsla(205, 100%, 44%, 1)",
+        "white": "hsla(0, 0%, 100%, 1)",
+        "gray": "hsla(221, 15%, 29%, 1)",
+        "lightGreen": "hsla(167, 39%, 93%, 1)",
+        "lightGray": "hsla(219, 54%, 95%, 0.3)"
+      },
       colors: {
         black: '#000000',
         dark: '#000000',
