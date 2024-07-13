@@ -3,7 +3,7 @@ import Link from 'next/link'
 export default function () {
   return (
     <footer className="bg-gray pb-12 md:pl-16 pl-10 pr-16 pt-12 text-xs text-white">
-      <div className="flex flex-col items-start justify-between align-top md:flex-row">
+      <div className="flex flex-col items-start justify-between md:gap-4 align-top md:flex-row">
         <div className="flex flex-col gap-2">
           <Image
             width={100}

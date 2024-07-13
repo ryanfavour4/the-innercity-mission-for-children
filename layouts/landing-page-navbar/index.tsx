@@ -5,7 +5,6 @@ import Image from 'next/image'
 import React, { useState, useEffect } from 'react'
 import { MdKeyboardArrowDown } from 'react-icons/md'
 import Link from 'next/link'
-import { RxHamburgerMenu } from 'react-icons/rx'
 import { ChevronDownIcon } from '@/components/svgs'
 export default function LandingPageNavbar() {
   const [isNavOpen, setIsNavOpen] = useState(false)
@@ -22,11 +21,10 @@ export default function LandingPageNavbar() {
             <MenuFriesIcon onClick={toggleNav} width="60px" />
           ) : (
             <CloseXIcon
-              className="fill-black"
+              className="fill-primary stroke-primary text-primary "
               onClick={toggleNav}
               width="60px"
               height="20px"
-              color="#0080DE"
             />
           )}
         </div>
@@ -53,21 +51,21 @@ export default function LandingPageNavbar() {
 
               <div className="flex items-center gap-1">
                 <Link href="/program">What we do</Link>
-                <ChevronDownIcon color="white" className="w-7 text-white" />
+                <ChevronDownIcon className=" stroke-white w-7" color="white" />
               </div>
               <div className="flex items-center gap-1">
                 <Link href="/insights">Special Insights</Link>
-                <ChevronDownIcon color="white" className="w-7 text-white" />
+                <ChevronDownIcon className=" stroke-white w-7" color="white" />
               </div>
               <div className="flex items-center gap-1">
                 <Link href="/about">Support Project</Link>
-                <ChevronDownIcon color="white" className="w-7 text-white" />
+                <ChevronDownIcon className=" stroke-white w-7" color="white"  />
               </div>
               <li>Blog</li>
             </ul>
             <div className=" flex items-center justify-normal gap-4 pt-10 align-baseline md:ml-32 md:justify-center md:pt-0">
               <div className="order-2 md:order-1">
-                <SearchIcon width="30px" height="30px" color="white" />
+                <SearchIcon  className=" stroke-white" width="30px" height="30px" color="white" />
               </div>
               <div>
                 <button className="rounded-md bg-white pb-2 pl-5 pr-5 pt-2  text-sm font-bold">

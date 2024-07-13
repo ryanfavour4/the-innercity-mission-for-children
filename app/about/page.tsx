@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
-import { BiLogoFacebookCircle } from "react-icons/bi";
-import { VscTwitter } from "react-icons/vsc";
-import { TiSocialLinkedin } from "react-icons/ti";
+import { FacebookIcon } from "@/components/svgs";
+import { LinkedlnIcon } from "@/components/svgs";
+import { TwitterIcon } from "@/components/svgs";
 export default function AboutUs(){
     return(
     <div className="pt-10 pb-10">
@@ -45,14 +45,14 @@ export default function AboutUs(){
           country in 2005, to over 100 countries in 2022.
         </p>
       </div>
-      <div className="bg-lightGreen md:flex-row flex-col pl-6 pr-6 pt-10 pb-10 flex justify-around md:p-32 items-center">
+      <div className="bg-lightGreen md:flex-row flex-col md:gap-12 pl-6 pr-6 pt-10 pb-10 flex md:p-32 items-center align-top">
         <div>
           <h2 className="uppercase font-bold tracking-wide text-sm pb-3">OUR MISSION</h2>
-          <h1 className="font-bold text-xl">
+          <h1 className="font-bold text-xl md:w-[350px]">
             Ensure every child thrives, escapes poverty, & contributes to
             progress.
           </h1>
-          <p className="md:w-[65%] text-sm pt-4"> 
+          <p className="md:w-[400px] text-sm pt-4"> 
             To create an environment where every child survives, lives above
             poverty, and becomes an active participant in socio-economic
             development irrespective of race, color, or gender. Through our
@@ -62,7 +62,7 @@ export default function AboutUs(){
             care and sustained solutions to issues caused by poverty.
           </p>
         </div>
-        <div className="pt-4 md:p-0">
+        <div className="pt-4 md:pt-0">
           <h2 className="uppercase font-bold tracking-wide text-sm pb-3">OUR VISION</h2>
           <h1 className="font-bold text-xl">A poverty-free world where every child can thrive.</h1>
           <p className=" text-sm pt-4">
@@ -210,53 +210,85 @@ export default function AboutUs(){
             <Image width={100} height={100} className="w-[200px]" src="/assets/images/avatar1.png" alt="" />
             <p className="font-bold text-sm">Leonard John Davis</p>
             <p className="text-xs">Cofounder, CEO</p>
-            <Image width={100} height={100} className="w-32 bg-primary p-1 rounded-sm" src="/assets/images/Socials.png" alt="" />
+            <div className="flex items-center gap-3">
+              <FacebookIcon className="width-[20px]"/>
+              <TwitterIcon className="width-[20px]"/>
+              <LinkedlnIcon className="width-[20px]"/>
+            </div>
           </div>
           <div className="flex flex-col items-center justify-center gap-1 pb-3">
             <Image width={100} height={100} className="w-[200px]" src="/assets/images/avatar2.png" alt="" />
             <p className="font-bold text-sm">Francis Weber</p>
             <p className="text-xs">Vice chairman</p>
-            <Image width={100} height={100} className="w-32 bg-primary p-1 rounded-sm" src="/assets/images/Socials.png" alt="" />
+            <div className="flex items-center gap-3">
+              <FacebookIcon className="width-[20px]"/>
+              <TwitterIcon className="width-[20px]"/>
+              <LinkedlnIcon className="width-[20px]"/>
+            </div>
           </div>
           <div className="flex flex-col items-center justify-center gap-1 pb-3">
             <Image width={100} height={100} className="w-[200px]" src="/assets/images/avatar.png" alt="" />
             <p className="font-bold text-sm">Kyla Orien</p>
             <p className="text-xs">Head of Authority</p>
-            <Image width={100} height={100} className="w-32 bg-primary p-1 rounded-sm" src="/assets/images/Socials.png" alt="" />
+            <div className="flex items-center gap-3">
+              <FacebookIcon className="width-[20px]"/>
+              <TwitterIcon className="width-[20px]"/>
+              <LinkedlnIcon className="width-[20px]"/>
+            </div>
           </div>
           <div className="flex flex-col items-center justify-center gap-1 pb-3">
             <Image width={100} height={100} className="w-[200px]" src="/assets/images/avatar3.png" alt="" />
             <p className="font-bold text-sm">Adrian Dixon</p>
             <p className="text-xs">Support Authority</p>
-            <Image width={100} height={100} className="w-32 bg-primary p-1 rounded-sm" src="/assets/images/Socials.png" alt="" />
+            <div className="flex items-center gap-3">
+              <FacebookIcon className="width-[20px]"/>
+              <TwitterIcon className="width-[20px]"/>
+              <LinkedlnIcon className="width-[20px]"/>
+            </div>
           </div>
           <div className="flex flex-col items-center justify-center gap-1 pb-3">
             <Image width={100} height={100} className="w-[200px]" src="/assets/images/avatar4.png" alt="" />
             <p className="font-bold text-sm">Freddy Busby</p>
             <p className="text-xs">Project Manager</p>
-            <Image width={100} height={100} className="w-32 bg-primary p-1 rounded-sm" src="/assets/images/Socials.png" alt="" />
+            <div className="flex items-center gap-3">
+              <FacebookIcon className="width-[20px]"/>
+              <TwitterIcon className="width-[20px]"/>
+              <LinkedlnIcon className="width-[20px]"/>
+            </div>
           </div>
           <div className="flex flex-col items-center justify-center gap-1 pb-3">
             <Image width={100} height={100} className="w-[200px]" src="/assets/images/avatar5.png" alt="" />
             <p className="font-bold text-sm">Kalu Alu</p>
             <p className="text-xs">Head of Authority</p>
-            <Image width={100} height={100} className="w-32 bg-primary p-1 rounded-sm" src="/assets/images/Socials.png" alt="" />
+            <div className="flex items-center gap-3">
+              <FacebookIcon className="width-[20px]"/>
+              <TwitterIcon className="width-[20px]"/>
+              <LinkedlnIcon className="width-[20px]"/>
+            </div>
           </div>
           <div className="flex flex-col items-center justify-center gap-1 pb-3">
             <Image width={100} height={100} className="w-[200px]" src="/assets/images/avatar6.png" alt="" />
             <p className="font-bold text-sm">Kalu Alu</p>
             <p className="text-xs">Head of Authority</p>
-            <Image width={100} height={100} className="w-32 bg-primary p-1 rounded-sm" src="/assets/images/Socials.png" alt="" />
+            <div className="flex items-center gap-3">
+              <FacebookIcon className="width-[20px]"/>
+              <TwitterIcon className="width-[20px]"/>
+              <LinkedlnIcon className="width-[20px]"/>
+            </div>
           </div>   
       </div>
     </div>
     <div>
-        <h1 className="md:pl-16 pl-0 text-center md:text-justify font-bold md:text-4xl text-3xl">Executive director</h1>
-        <div className="flex flex-col  align-middle md:p-16 p-6 text-center items-center md:items-start">
+        <h1 className="md:pl-16 pl-0 text-center font-bold md:text-4xl text-3xl">Executive director</h1>
+        <div className="flex flex-col  align-middle md:p-16 p-6 text-center items-center">
             <Image width={100} height={100} className="w-[200px]" src="/assets/images/avatar.png" alt="" />
             <p className="font-bold text-lg">Kalu Alu</p>
             <p className="text-xs">Head of Authority</p>
-            <Image width={100} height={100} className="w-32 bg-primary p-1 rounded-sm" src="/assets/images/Socials.png" alt="" />
+            <div className="flex items-center gap-3">
+              <FacebookIcon className="width-[20px]"/>
+              <TwitterIcon className="width-[20px]"/>
+              <LinkedlnIcon className="width-[20px]"/>
+            </div>
           </div>   
     </div>
     </div>
