@@ -3,28 +3,16 @@ import { CloseXIcon, MenuFriesIcon, SearchIcon } from '@/components/svgs'
 /* eslint-disable @next/next/no-img-element */
 import Image from 'next/image'
 import React, { useState, useEffect } from 'react'
-import { CiSearch } from 'react-icons/ci'
 import { MdKeyboardArrowDown } from 'react-icons/md'
 import Link from 'next/link'
 import { RxHamburgerMenu } from 'react-icons/rx'
 import { ChevronDownIcon } from '@/components/svgs'
 export default function LandingPageNavbar() {
   const [isNavOpen, setIsNavOpen] = useState(false)
-  const [isMobile, setIsMobile] = useState(true)
 
   const toggleNav = () => {
     setIsNavOpen(!isNavOpen)
   }
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768)
-    }
-
-    window.addEventListener('resize', handleResize)
-    handleResize()
-
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
 
   return (
     <div className="items-center justify-between gap-10 border-b-2 bg-white md:flex md:justify-normal md:gap-32 md:border-0  md:bg-primary md:pb-3 md:pl-16 md:pr-16 md:pt-3 ">
@@ -52,8 +40,7 @@ export default function LandingPageNavbar() {
           />
         </div>
       </div>
-      {!isNavOpen ||
-        (isMobile && (
+      {isNavOpen && (
           <div className="relative h-[100vh] bg-primary p-4 transition-all md:flex md:h-auto md:items-center md:justify-center md:bg-transparent md:p-0">
             <ul className=" flex flex-col md:items-center gap-[35px] text-white text-sm font-bold  md:flex-row md:gap-[15px]">
               <div>
@@ -89,7 +76,7 @@ export default function LandingPageNavbar() {
               </div>
             </div>
           </div>
-        ))}
+        )}
     </div>
   )
 }
