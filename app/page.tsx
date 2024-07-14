@@ -94,7 +94,7 @@ function AdvertBanner() {
     <div className="bg-fade-blue py-4">
       <div className="wrapper grid grid-cols-1 gap-4 p-6 md:grid-cols-2">
         <div className="flex flex-col justify-center gap-3">
-          <h3 className="text-3xl font-bold">Join us to build schools.</h3>
+          <h3 className="text-2xl font-bold md:text-3xl">Join us to build schools.</h3>
 
           <p className="leading-relaxed">
             The Inner City Mission for Children is committed to providing education to children in
