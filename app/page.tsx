@@ -2,6 +2,7 @@
 import TitleCase from '@/components/custom/title-case'
 import { ArrowRightMiniIcon } from '@/components/svgs'
 import { blogs } from '@/constant/blogs'
+import { events } from '@/constant/events'
 import HeroSection from '@/layouts/hero-section'
 import { getReadableDate } from '@/utils/format-date'
 import Image from 'next/image'
@@ -277,7 +278,7 @@ function OurBlogs() {
   )
 }
 
-function CtaSection() {
+export function CtaSection() {
   return (
     <div className="py-8">
       <div className="wrapper bg-cta-section flex h-96 flex-col items-center justify-center gap-10 bg-center text-white md:rounded-xl">
@@ -301,7 +302,9 @@ function CtaSection() {
   )
 }
 
-function Events() {
+export function Events() {
+  const navigate = useRouter()
+
   return (
     <div>
       <div className="wrapper py-6 pb-8">
@@ -312,79 +315,33 @@ function Events() {
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {/* event card */}
-          <div className="flex gap-6 rounded-lg bg-primary p-6 text-white">
-            <div className="px-4 md:px-8">
-              <h3 className="text-3xl font-bold">05</h3>
-              <p>Apr</p>
-            </div>
-            <div className="flex w-full flex-col gap-5">
-              <div className="flex items-center gap-4">
-                <p className="whitespace-nowrap">Next Events</p>{' '}
-                <hr className="w-full max-w-40 border-2" />
+          {events.map((event) => (
+            <div
+              onClick={() => navigate.push(`/${event.link}`)}
+              key={event.id}
+              className="relative flex cursor-pointer flex-col gap-6 rounded-lg bg-primary p-6 text-white hover:shadow-lg md:flex-row"
+            >
+              <div className="px-4 md:px-8">
+                <h3 className="text-3xl font-bold">{event.date}</h3>
+                <p>{event.month}</p>
               </div>
-              <div className="flex w-full justify-between gap-5 text-xl">
-                <p className="text-2xl font-semibold">
-                  A day with our wonderful children A day with our wonderful children
-                </p>
-                <Link
-                  href={'/'}
-                  className="flex h-8 w-full max-w-8 items-center justify-center rounded-full bg-light"
-                >
-                  <ArrowRightMiniIcon className="w-5 text-dark" />
-                </Link>
-              </div>
-            </div>
-          </div>
-
-          {/* event card */}
-          <div className="flex gap-6 rounded-lg bg-primary p-6 text-white">
-            <div className="px-4 md:px-8">
-              <h3 className="text-3xl font-bold">05</h3>
-              <p>Apr</p>
-            </div>
-            <div className="flex w-full flex-col gap-5">
-              <div className="flex items-center gap-4">
-                <p className="whitespace-nowrap">Next Events</p>{' '}
-                <hr className="w-full max-w-40 border-2" />
-              </div>
-              <div className="flex w-full justify-between gap-5 text-xl">
-                <p className="text-2xl font-semibold">
-                  A day with our wonderful children A day with our wonderful children
-                </p>
-                <Link
-                  href={'/'}
-                  className="flex h-8 w-full max-w-8 items-center justify-center rounded-full bg-light"
-                >
-                  <ArrowRightMiniIcon className="w-5 text-dark" />
-                </Link>
+              <div className="flex w-full flex-col gap-5">
+                <div className="flex items-center gap-4">
+                  <p className="whitespace-nowrap">Next Events</p>{' '}
+                  <hr className="w-full max-w-40 border-2" />
+                </div>
+                <div className="flex w-full justify-between gap-5 text-xl">
+                  <p className="text-2xl font-semibold">{event.event}</p>
+                  <Link
+                    href={event.link}
+                    className="absolute right-8 top-8 flex h-8 w-full max-w-8 items-center justify-center rounded-full bg-light md:static"
+                  >
+                    <ArrowRightMiniIcon className="w-5 text-dark" />
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
-
-          {/* event card */}
-          <div className="flex gap-6 rounded-lg bg-primary p-6 text-white">
-            <div className="px-4 md:px-8">
-              <h3 className="text-3xl font-bold">05</h3>
-              <p>Apr</p>
-            </div>
-            <div className="flex w-full flex-col gap-5">
-              <div className="flex items-center gap-4">
-                <p className="whitespace-nowrap">Next Events</p>{' '}
-                <hr className="w-full max-w-40 border-2" />
-              </div>
-              <div className="flex w-full justify-between gap-5 text-xl">
-                <p className="text-2xl font-semibold">
-                  A day with our wonderful children A day with our wonderful children
-                </p>
-                <Link
-                  href={'/'}
-                  className="flex h-8 w-full max-w-8 items-center justify-center rounded-full bg-light"
-                >
-                  <ArrowRightMiniIcon className="w-5 text-dark" />
-                </Link>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>

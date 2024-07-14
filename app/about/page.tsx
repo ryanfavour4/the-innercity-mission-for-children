@@ -4,6 +4,7 @@ import { FacebookIcon } from '@/components/svgs'
 import { LinkedlnIcon } from '@/components/svgs'
 import { TwitterIcon } from '@/components/svgs'
 import { executive, teams } from '@/constant/teams'
+import { CtaSection, Events } from '../page'
 
 export default function AboutUs() {
   return (
@@ -390,6 +391,9 @@ export default function AboutUs() {
           </div>
         </div>
       </div>
+
+      <CtaSection />
+      <Events />
     </div>
   )
 }
