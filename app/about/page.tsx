@@ -29,6 +29,8 @@ export default function AboutUs() {
 
       <div className="h-80 w-full bg-secondary">
         <div className="wrapper relative">
+          {/* overlay */}
+          <div className="absolute -top-1/3 z-10 h-96 w-full rounded-lg bg-black/50" />
           <Image
             width={800}
             height={280}
@@ -363,10 +365,8 @@ export default function AboutUs() {
       {/* EXECUTIVE DIRECTOR */}
       <br />
       <br />
-
       <div className="wrapper p-6 pb-10">
         <h1 className="mb-8 text-2xl font-bold md:text-4xl">Executive director</h1>
-
         <div className="flex w-fit flex-col items-center gap-3 text-center">
           <Image
             width={100}
