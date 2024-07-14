@@ -23,7 +23,7 @@ export default function HeroSection() {
     <>
       <header className="">
         {/* HERO BG AREA */}
-        <div className="text-light relative z-10 h-dvh min-h-[630px] bg-cover bg-center">
+        <div className="relative z-10 h-dvh min-h-[630px] bg-cover bg-center text-light">
           {/* OVERLAY HERO IMAGE */}
           {images.map((image, index) => (
             <Image
@@ -37,21 +37,21 @@ export default function HeroSection() {
               height={800}
             />
           ))}
-          <div className="bg-dark absolute inset-0 -z-10 opacity-60" />
+          <div className="absolute inset-0 -z-10 bg-dark opacity-60" />
 
-          <div className="wrapper flex flex-col justify-between pt-24">
+          <div className="wrapper flex flex-col justify-between p-3 pt-24">
             {/* TOP SECTION */}
             <div className="">
-              <h1 className="mb-8 max-w-[600px] px-2 text-5xl font-bold shadow md:text-6xl md:leading-snug">
+              <h1 className="mb-8 max-w-[600px] text-5xl font-bold shadow md:text-6xl md:leading-snug">
                 Inclusive care for children with special needs
               </h1>
               <div className="flex flex-col gap-6 md:flex-row">
-              <Link href="/program">
-              <button className="btn-white max-w-fit px-8">What we do</button>
-              </Link>  
+                <Link href="/program">
+                  <button className="btn-white max-w-fit px-8">What we do</button>
+                </Link>
                 <span className="flex cursor-pointer items-center gap-1">
-                  <div className="bg-light flex h-8 w-8 items-center justify-center rounded-full">
-                    <PlayIcon className="text-dark h-5 w-5" />
+                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-light">
+                    <PlayIcon className="h-5 w-5 text-dark" />
                   </div>
                   <p>Play Video</p>
                 </span>
@@ -61,14 +61,14 @@ export default function HeroSection() {
             {/* BOTTOM SECTION */}
             <div className="flex flex-col items-center justify-center gap-3 pb-10 md:flex-row md:gap-8">
               <small className="text-nowrap">over 230 children under our care</small>
-              <div className="bg-light h-[2px] w-full" />
+              <div className="h-[2px] w-full bg-light" />
               <small className="text-nowrap">58 donations collected</small>
             </div>
           </div>
         </div>
       </header>
       {/* YEAR THEME */}
-      <div className="text-light w-full bg-primary py-3 font-bold">
+      <div className="w-full bg-primary py-3 font-bold text-light">
         <Marquee>
           <p>2024: WELCOME TO THE YEAR OF REDEMPTION! 🎇</p>
         </Marquee>

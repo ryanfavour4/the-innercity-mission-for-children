@@ -6,12 +6,18 @@
   --primary-rgb: 0 128 222;
   --secondary: #005593;
   --secondary-rgb: 0 85 147;
+  --fade-blue: #e6f4f1;
+  --fade-blue-rgb: 230 244 241;
   --grey: #363939;
   --grey-rgb: 54 57 57;
+  --blue-grey: #404756;
+  --blue-grey-rgb: 64 71 86;
   --dark: #1d1d1d;
   --dark-rgb: 29 29 29;
   --light: #fefefe;
   --light-rgb: 254 254 254;
+  --grey-white: #f4f3f1;
+  --grey-white-rgb: 244 243 241;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -26,6 +32,8 @@
     --dark-rgb: 29 29 29;
     --light: #fefefe;
     --light-rgb: 254 254 254;
+    --grey-white: #f4f3f1;
+    --grey-white-rgb: 244 243 241;
   }
 }
 
@@ -58,6 +66,7 @@ html {
   overflow-y: auto;
   min-height: 100vh;
   scroll-behavior: smooth;
+  background: var(--light);
 }
 
 #root {

@@ -4,9 +4,18 @@
 
 @layer components {
   .btn-white {
-    @apply bg-light hover:shadow-dark text-dark w-full rounded px-6 py-4 text-center font-medium transition-all hover:opacity-90 hover:shadow active:scale-x-95 md:py-4;
+    @apply w-full rounded bg-light px-6 py-4 text-center font-medium text-dark transition-all hover:opacity-90 hover:shadow hover:shadow-dark active:scale-x-95 md:py-4;
   }
   .btn-primary {
-    @apply hover:shadow-dark text-light w-full rounded bg-primary px-6 py-4 text-center font-medium transition-all hover:opacity-90 hover:shadow active:scale-x-95 md:py-4;
+    @apply w-full rounded bg-primary px-6 py-4 text-center font-medium text-light transition-all hover:opacity-90 hover:shadow hover:shadow-dark active:scale-x-95 md:py-4;
+  }
+  .ellipsis {
+    @apply line-clamp-1 max-h-20 overflow-hidden text-ellipsis leading-relaxed [-webkit-box-orient:vertical] [display:-webkit-box];
+  }
+  .ellipsis-2 {
+    @apply line-clamp-2 max-h-20 overflow-hidden text-ellipsis leading-relaxed [-webkit-box-orient:vertical] [display:-webkit-box];
+  }
+  .ellipsis-3 {
+    @apply line-clamp-3 max-h-20 overflow-hidden text-ellipsis leading-relaxed [-webkit-box-orient:vertical] [display:-webkit-box];
   }
 }

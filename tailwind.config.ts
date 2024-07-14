@@ -7,6 +7,7 @@ const config: Config = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './layouts/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
@@ -15,11 +16,11 @@ const config: Config = {
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       backgroundColor: {
-        "blue": "hsla(205, 100%, 44%, 1)",
-        "white": "hsla(0, 0%, 100%, 1)",
-        "gray": "hsla(221, 15%, 29%, 1)",
-        "lightGreen": "hsla(167, 39%, 93%, 1)",
-        "lightGray": "hsla(219, 54%, 95%, 0.3)"
+        blue: 'hsla(205, 100%, 44%, 1)',
+        white: 'hsla(0, 0%, 100%, 1)',
+        gray: 'hsla(221, 15%, 29%, 1)',
+        lightGreen: 'hsla(167, 39%, 93%, 1)',
+        lightGray: 'hsla(219, 54%, 95%, 0.3)',
       },
       colors: {
         black: '#000000',
@@ -27,6 +28,8 @@ const config: Config = {
         white: '#FFFFFF',
         light: '#FFFFFF',
         'grey-white': '#f4f3f1',
+        'fade-blue': '#e6f4f1',
+        'blue-grey': '#404756',
         primary: '#0080DE',
         secondary: '#E6F4F1',
         complementary: '#404756',
