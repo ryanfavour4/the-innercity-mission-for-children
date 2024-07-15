@@ -16,7 +16,7 @@ export default function () {
             <span>Email:</span> info@theinnercitymission.ngo
           </p>
           <p>
-            <span>Phone:</span> 02-01-330-0166
+            <span>Phone:</span> 02-01-330-0166 (Monday - Friday; 9am-5pm)
           </p>
           <p>15-17 Ize Iyamu St, Off Billings Way, Oregun, Lagos, Nigeria</p>
         </div>
@@ -55,7 +55,7 @@ export default function () {
             </li>
           </ul>
         </div>
-        <div className="pt-10">
+        <div className="pt-16">
           <h1 style={{ lineHeight: '1.9rem' }} className="text-[23px] font-bold md:text-[28px]">
             Subscribe to our Newsletter
           </h1>
@@ -81,15 +81,12 @@ export default function () {
             Policy.
           </p>
         </div>
-        <div className='flex gap-6 items-center'>
+        <div className='flex gap-4 items-center'>
           <Image width={200} height={200} src="/assets/icons/MessageIcon.png"  className ="w-[40px]"alt="" />
-          <Image
-            width={200}
-            height={200}
-            className="w-[200px]"
-            src="/assets/images/Socials.png"
-            alt=""
-          />
+          <Image width={200} height={200} src="/assets/icons/akar-icons_facebook-fill.png"  className ="w-[30px]"alt="" />
+          <Image width={200} height={200} src="/assets/icons/ri_instagram-fill.png"  className ="w-[30px]"alt="" />
+          <Image width={200} height={200} src="/assets/icons/prime_twitter.png"  className ="w-[30px]"alt="" />
+          <Image width={200} height={200} src="/assets/icons/linkeln.png"  className ="w-[30px]"alt="" />
         </div>
       </div>
     </footer>
