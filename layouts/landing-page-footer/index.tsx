@@ -2,9 +2,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 export default function () {
   return (
-    <footer className="bg-gray pb-12 md:pl-16 pl-10 pr-16 pt-12 text-xs text-white">
-      <div className="flex flex-col items-start justify-between md:gap-4 align-top md:flex-row">
-        <div className="flex flex-col gap-2">
+    <footer className="bg-gray pb-12 pl-10 pr-16 pt-12 text-base text-white md:pl-16">
+      <div className="flex flex-col items-start justify-between align-top md:flex-row md:gap-4">
+        <div className="flex flex-col gap-3">
           <Image
             width={100}
             height={100}
@@ -20,9 +20,9 @@ export default function () {
           </p>
           <p>15-17 Ize Iyamu St, Off Billings Way, Oregun, Lagos, Nigeria</p>
         </div>
-        <div className="pt-6">
-          <p className="pb-3 text-[16px] font-bold uppercase">Ways to help</p>
-          <ul className="flex flex-col gap-2">
+        <div className="pt-8">
+          <p className="pb-3 text-[20px] font-bold uppercase">Ways to help</p>
+          <ul className="flex flex-col gap-4">
             <li>
               <a href="">Instant donation</a>
             </li>
@@ -40,9 +40,9 @@ export default function () {
             </li>
           </ul>
         </div>
-        <div className="pt-6">
-          <p className="pb-3 text-[16px] font-bold">Quick Links</p>
-          <ul className="flex flex-col gap-2">
+        <div className="pt-8">
+          <p className="pb-3 text-[20px] font-bold uppercase">Quick Links</p>
+          <ul className="flex flex-col gap-4">
             <li>
               <a href="">Gifting Campaigns</a>
             </li>
@@ -56,15 +56,17 @@ export default function () {
           </ul>
         </div>
         <div className="pt-10">
-          <h1 style={{lineHeight:"1.9rem"}} className="text-[28px] font-bold">Subscribe to our Newsletter</h1>
+          <h1 style={{ lineHeight: '1.9rem' }} className="text-[23px] font-bold md:text-[28px]">
+            Subscribe to our Newsletter
+          </h1>
           <form id="form" className="mt-8 flex gap-0">
             <input
-              className="w-full rounded-sm rounded-r-none border-[1px] border-grey-white bg-transparent text-black outline-none p-4"
+              className="w-full rounded-sm rounded-r-none border-[1px] border-grey-white bg-transparent p-4 text-black outline-none"
               type="email"
               placeholder="Your Email"
             />
             <button
-              className="rounded-sm rounded-l-none bg-white pb-2 pl-2 pr-2 pt-2 text-xs font-bold text-black md:pl-4 md:pr-4"
+              className="rounded-sm rounded-l-none bg-white pb-2 pl-3 pr-3 pt-2 text-xs font-bold text-black md:pl-4 md:pr-4"
               type="submit"
             >
               Subscribe
@@ -72,14 +74,15 @@ export default function () {
           </form>
         </div>
       </div>
-      <div className="block md:flex items-center justify-between pt-10">
+      <div className="block items-center justify-between pt-10 md:flex">
         <div>
-          <p className="text-xs pb-4 md:pb-0">
+          <p className="pb-4 text-xs md:pb-0">
             © 2024. The InnerCity Mission for Children NGO. All Rights Reserved. See our Privacy
             Policy.
           </p>
         </div>
-        <div>
+        <div className='flex gap-6 items-center'>
+          <Image width={200} height={200} src="/assets/icons/MessageIcon.png"  className ="w-[40px]"alt="" />
           <Image
             width={200}
             height={200}

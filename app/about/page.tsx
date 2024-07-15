@@ -346,15 +346,15 @@ export default function AboutUs() {
                 />
                 <p className="text-lg font-bold">{team.name}</p>
                 <p className="text-sm">{team.role}</p>
-                <div className="flex items-center gap-6 text-greytext">
+                <div className="flex items-center md:gap-6 gap-3 text-greytext">
                   <a href="http://" target="_blank" rel="noopener noreferrer">
-                    <FacebookIcon className="h-9 w-9 text-3xl" />
+                    <FacebookIcon className="md:h-9 md:w-9 h-6 w-6 text-3xl" />
                   </a>
                   <a href="http://" target="_blank" rel="noopener noreferrer">
-                    <TwitterIcon className="h-9 w-9 text-3xl" />
+                    <TwitterIcon className="md:h-9 md:w-9 h-6 w-6 text-3xl" />
                   </a>
                   <a href="http://" target="_blank" rel="noopener noreferrer">
-                    <LinkedlnIcon className="h-9 w-9 text-3xl" />
+                    <LinkedlnIcon className="md:h-9 md:w-9 h-6 w-6 text-3xl" />
                   </a>
                 </div>
               </div>
@@ -380,13 +380,13 @@ export default function AboutUs() {
           <p className="text-sm">{executive.title}</p>
           <div className="flex items-center gap-6 text-greytext">
             <a href="http://" target="_blank" rel="noopener noreferrer">
-              <FacebookIcon className="h-9 w-9 text-3xl" />
+              <FacebookIcon className="md:h-9 md:w-9 h-6 w-6 text-3xl" />
             </a>
             <a href="http://" target="_blank" rel="noopener noreferrer">
-              <TwitterIcon className="h-9 w-9 text-3xl" />
+              <TwitterIcon className="md:h-9 md:w-9 h-6 w-6 text-3xl" />
             </a>
             <a href="http://" target="_blank" rel="noopener noreferrer">
-              <LinkedlnIcon className="h-9 w-9 text-3xl" />
+              <LinkedlnIcon className="md:h-9 md:w-9 h-6 w-6 text-3xl" />
             </a>
           </div>
         </div>
