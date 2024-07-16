@@ -4,7 +4,7 @@ export default function () {
     <>
       {/* {Contact Information} */}
       <div className=" bg-secondary p-6 px-10 py-5 md:px-28 md:pb-16 md:pt-12">
-        <div className="wrapper flex">
+        <div className="wrapper flex md:flex-row flex-col gap-3 md:gap-0">
           <div>
             <div className="ml-[-50px] flex items-center justify-normal  gap-2 align-middle">
               <div className="w-10 border-2 border-b-0 border-l-0 border-r-0 border-black"></div>
@@ -51,10 +51,10 @@ export default function () {
       {/* {contact form} */}
       <div className="p-12">
         <form
-          className="wrapper flex flex-col place-items-center items-center justify-center  px-24"
+          className="wrapper flex flex-col place-items-center items-center justify-center  md:px-24 px-2"
           action=""
         >
-          <div className="grid w-full  grid-cols-2 gap-4">
+          <div className="grid w-full  md:grid-cols-2 grid-cols-1 gap-4">
             <div className="flex w-full flex-col gap-2">
               <label className="pt-6 text-greytext" htmlFor="firstName">
                 First Name
@@ -108,7 +108,7 @@ export default function () {
               
             ></textarea>
           </div>
-          <button className="rounded-md bg-primary p-4 text-white my-8" type="submit">
+          <button className="rounded-md bg-primary p-4 text-white md:my-8 my-4" type="submit">
             Send Message
           </button>
         </form>
