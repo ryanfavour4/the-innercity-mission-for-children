@@ -6,23 +6,18 @@ import { CtaSection, Events } from '../page'
 export default function () {
   return (
     <div className="">
-      <div className=" flex flex-col justify-center gap-7 p-3 pb-12 pt-12 md:flex-row md:pl-10 md:pr-12">
-        <div>
-          <div className="flex items-center justify-normal gap-2 pl-10 align-middle">
-            <div className="mb-5 w-10 border-2 border-b-0 border-l-0 border-r-0 border-black"></div>
-            <h3 className="pb-8 font-bold uppercase">What we do</h3>
-          </div>
-          <div className=" pl-8 pr-8 md:pl-20 md:pr-16">
+      <div className=" wrapper flex flex-col justify-center md:flex-row p-12">
+          <div className="">
+          <h3 className="sub-header font-bold uppercase">What we do</h3>
             <h1 className="pb-8 text-xl font-bold md:text-4xl">Education Program</h1>
             <p className="w-[85%] text-sm" style={{ lineHeight: '1.6rem' }}>
               Every child has the fundamental right to education. However, various factors such as
               poverty and violence are preventing millions of children and young people in different
               continents and regions around the globe from accessing education.
             </p>
-          </div>
         </div>
         <Image
-          className="h-[50%] md:h-auto"
+          className="h-[50%] md:h-auto mt-4 md:m-0"
           width={850}
           height={450}
           src="/assets/images/schoolchild.png"

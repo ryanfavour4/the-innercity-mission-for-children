@@ -6,13 +6,12 @@ export default function () {
       <div className=" bg-secondary py-5 md:py-12">
         <div className="wrapper flex md:flex-row justify-around flex-col gap-3 md:gap-0 px-8 md:px-0">
           <div>
-            <div className="ml-[-50px] flex items-center justify-normal  gap-2 align-middle">
-              <div className="w-10 border-2 border-b-0 border-l-0 border-r-0 border-black"></div>
-              <h3 className="text-lg font-bold uppercase">contact us</h3>
+            <div className="flex items-center justify-normal  gap-2 align-middle">
+              <h3 className="sub-header text-lg font-bold uppercase">contact us</h3>
             </div>
             <h2 className="pb-3 pt-3 text-2xl font-bold md:text-4xl">We'd love to hear from you</h2>
             <p className="w-[85%] text-sm" style={{ lineHeight: '1.6rem' }}>
-              Have any question in mind  or want to enquire? Please feel free to <br/> contact us through
+              Have any question in mind  or want to enquire? Please feel free to contact us through
               the form or the following details.
             </p>
           </div>

@@ -2,8 +2,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 export default function () {
   return (
-    <footer className="bg-gray pb-12 pl-10 pr-16 pt-12 text-base text-white md:pl-16">
-      <div className="flex flex-col items-start justify-between align-top md:flex-row md:gap-4">
+    <footer className="bg-gray p-10 text-base text-white ">
+      <div className="wrapper flex flex-col items-start justify-between align-top md:flex-row md:gap-4">
         <div className="flex flex-col gap-3">
           <Image
             width={100}
@@ -13,10 +13,10 @@ export default function () {
             alt=""
           />
           <p>
-            <span>Email:</span> info@theinnercitymission.ngo
+            <strong>Email:</strong> info@theinnercitymission.ngo
           </p>
           <p>
-            <span>Phone:</span> 02-01-330-0166 (Monday - Friday; 9am-5pm)
+            <strong>Phone:</strong> 02-01-330-0166 (Monday - Friday; 9am-5pm)
           </p>
           <p>15-17 Ize Iyamu St, Off Billings Way, Oregun, Lagos, Nigeria</p>
         </div>

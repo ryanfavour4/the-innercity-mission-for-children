@@ -8,11 +8,11 @@ export default function AboutUs() {
   return (
     <div className="">
       {/* TOP SECTION */}
-      <div className="wrapper p-6 py-10 pb-40 md:pb-56 md:pt-16">
+      <div className="wrapper p-6 md:px-12 py-10 pb-40 md:pb-56 md:pt-16">
         <p className="sub-header font-semibold uppercase md:text-lg">KNOW ABOUT US</p>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           <p className="text-2xl font-bold md:text-4xl">
-            We are the Inner city Mission for Children
+            We are the Inner city  Mission for Children
           </p>
           <div className="">
             <p className="pb-2 pt-2 text-sm font-semibold md:text-base">
