@@ -3,8 +3,8 @@ export default function () {
   return (
     <>
       {/* {Contact Information} */}
-      <div className=" bg-secondary p-6 px-10 py-5 md:px-28 md:pb-16 md:pt-12">
-        <div className="wrapper flex md:flex-row flex-col gap-3 md:gap-0">
+      <div className=" bg-secondary py-5 md:py-12">
+        <div className="wrapper flex md:flex-row justify-around flex-col gap-3 md:gap-0 px-8 md:px-0">
           <div>
             <div className="ml-[-50px] flex items-center justify-normal  gap-2 align-middle">
               <div className="w-10 border-2 border-b-0 border-l-0 border-r-0 border-black"></div>
@@ -12,7 +12,7 @@ export default function () {
             </div>
             <h2 className="pb-3 pt-3 text-2xl font-bold md:text-4xl">We'd love to hear from you</h2>
             <p className="w-[85%] text-sm" style={{ lineHeight: '1.6rem' }}>
-              Have any question in mind or want to enquire? Please feel free to contact us through
+              Have any question in mind  or want to enquire? Please feel free to <br/> contact us through
               the form or the following details.
             </p>
           </div>
@@ -49,14 +49,14 @@ export default function () {
         </div>
       </div>
       {/* {contact form} */}
-      <div className="p-12">
+      <div className="">
         <form
-          className="wrapper flex flex-col place-items-center items-center justify-center  md:px-24 px-2"
+          className="wrapper flex flex-col items-center justify-center w-[70%]"
           action=""
         >
           <div className="grid w-full  md:grid-cols-2 grid-cols-1 gap-4">
             <div className="flex w-full flex-col gap-2">
-              <label className="pt-6 text-greytext" htmlFor="firstName">
+              <label className="pt-6 text-greytext font-bold" htmlFor="firstName">
                 First Name
               </label>
               <input
@@ -66,7 +66,7 @@ export default function () {
               />
             </div>
             <div className="flex w-full flex-col gap-2">
-              <label className="pt-6 text-greytext" htmlFor="lasttName">
+              <label className="pt-6 text-greytext font-bold" htmlFor="lasttName">
                 Last Name
               </label>
               <input
@@ -76,7 +76,7 @@ export default function () {
               />
             </div>
             <div className="flex w-full flex-col gap-2">
-              <label className="pt-6 text-greytext" htmlFor="email">
+              <label className="pt-6 text-greytext font-bold" htmlFor="email">
                 Email Id
               </label>
               <input
@@ -86,7 +86,7 @@ export default function () {
               />
             </div>
             <div className="flex w-full flex-col gap-2">
-              <label className="pt-6 text-greytext" htmlFor="subject">
+              <label className="pt-6 text-greytext font-bold" htmlFor="subject">
                 Subject
               </label>
               <input
@@ -97,11 +97,11 @@ export default function () {
           </div>
 
           <div className="flex w-full flex-col  gap-2">
-            <label className="pt-6 text-greytext" htmlFor="message">
+            <label className="pt-6 text-greytext font-bold" htmlFor="message">
               Message
             </label>
             <textarea
-              className="h-[200px] rounded-sm border-2 border-black p-2  outline-0 placeholder:text-black"
+              className="h-[200px] rounded-sm border-2 border-black p-2  outline-0 placeholder:text-black resize-none"
               name="message"
               id="message"
               placeholder="Type your Message"
