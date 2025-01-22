@@ -1,0 +1,215 @@
+.bg-gradient-animate {
+  background: linear-gradient(128deg, #87bae0, #005593, #2a5dfd, #0080de, #5eb5f3, #2a5dfd);
+  background-size: 360% 360%;
+  animation: bg-hero-animate 10s ease infinite;
+}
+
+@-webkit-keyframes bg-hero-animate {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-moz-keyframes bg-hero-animate {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-o-keyframes bg-hero-animate {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes bg-hero-animate {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.particle-container .particle {
+  position: absolute;
+  z-index: 10;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background: radial-gradient(
+    rgb(135, 186, 224) 40%,
+    rgb(0, 128, 222),
+    rgb(18, 110, 178),
+    rgb(18, 146, 238)
+  );
+  box-shadow: 3px 5px 10px rgba(255, 255, 255, 0.514);
+}
+
+.particle-container .particle:nth-child(1) {
+  top: 12%;
+  left: 42%;
+  animation: particle-motion 1s linear infinite;
+}
+
+.particle-container .particle:nth-child(2) {
+  top: 70%;
+  left: 50%;
+  animation: particle-motion 7s linear infinite;
+}
+.particle-container .particle:nth-child(3) {
+  top: 17%;
+  left: 6%;
+  animation: particle-motion 9s linear infinite;
+}
+.particle-container .particle:nth-child(4) {
+  top: 20%;
+  left: 60%;
+  animation: particle-motion 10s linear infinite;
+}
+.particle-container .particle:nth-child(5) {
+  top: 67%;
+  left: 10%;
+  animation: particle-motion 6s linear infinite;
+}
+.particle-container .particle:nth-child(6) {
+  top: 80%;
+  left: 70%;
+  animation: particle-motion 11s linear infinite;
+}
+.particle-container .particle:nth-child(7) {
+  top: 60%;
+  left: 80%;
+  animation: particle-motion 6s linear infinite;
+}
+.particle-container .particle:nth-child(8) {
+  top: 32%;
+  left: 25%;
+  animation: particle-motion 6s linear infinite;
+}
+.particle-container .particle:nth-child(9) {
+  top: 90%;
+  left: 25%;
+  animation: particle-motion 9s linear infinite;
+}
+.particle-container .particle:nth-child(10) {
+  top: 10%;
+  left: 80%;
+  animation: particle-motion 5s linear infinite;
+}
+
+.particle-container .particle:nth-child(11) {
+  top: 24%;
+  left: 82%;
+  animation: particle-motion 10s linear infinite;
+}
+
+.particle-container .particle:nth-child(12) {
+  top: 97%;
+  left: 5%;
+  animation: particle-motion 7s linear infinite;
+}
+.particle-container .particle:nth-child(13) {
+  top: 97%;
+  left: 60%;
+  animation: particle-motion 9s linear infinite;
+}
+.particle-container .particle:nth-child(14) {
+  top: 30%;
+  left: 40%;
+  animation: particle-motion 5s linear infinite;
+}
+.particle-container .particle:nth-child(15) {
+  top: 47%;
+  left: 55%;
+  animation: particle-motion 7s linear infinite;
+}
+.particle-container .particle:nth-child(16) {
+  top: 70%;
+  left: 80%;
+  animation: particle-motion 8s linear infinite;
+}
+.particle-container .particle:nth-child(17) {
+  top: 40%;
+  left: 40%;
+  animation: particle-motion 10s linear infinite;
+}
+.particle-container .particle:nth-child(18) {
+  top: 23%;
+  left: 15%;
+  animation: particle-motion 4s linear infinite;
+}
+.particle-container .particle:nth-child(19) {
+  top: 90%;
+  left: 90%;
+  animation: particle-motion 3s linear infinite;
+}
+
+.particle-container .particle:nth-child(20) {
+  top: 85%;
+  left: 95%;
+  animation: particle-motion 7s linear infinite;
+}
+
+@keyframes particle-motion {
+  0% {
+    transform: translate(0);
+    opacity: 1;
+  }
+
+  20% {
+    transform: translate(5px -20px);
+    opacity: 0.8;
+  }
+
+  40% {
+    transform: translate(-10px, -30px);
+    opacity: 0.7;
+  }
+
+  60% {
+    transform: translate(15px, -40px);
+    opacity: 0.5;
+  }
+
+  80% {
+    transform: translate(-20px, -60px);
+    opacity: 0.2;
+  }
+
+  100% {
+    transform: translate(40px, -100px);
+    opacity: 0;
+  }
+}
+
+.animate-marquee {
+  animation: marquee linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
