@@ -43,7 +43,7 @@ export default function HeroSection2() {
           <div className="wrapper absolute inset-0 flex h-full flex-col justify-between gap-16 p-3">
             {/* TOP SECTION */}
             <div className="flex h-full flex-col justify-center">
-              <h1 className="mb-10 max-w-[600px] text-4xl font-bold md:text-5xl md:leading-snug">
+              <h1 className="mb-10 max-w-[600px] text-5xl font-bold md:text-6xl md:leading-snug">
                 Inclusive care for children with special needs
               </h1>
               <div className="flex flex-col gap-6 md:flex-row">

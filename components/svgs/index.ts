@@ -11,3 +11,5 @@ export { default as EmailEnvelopeIcon } from '@/public/assets/svg/email-envelope
 export { default as GooglePlayStoreColouredIcon } from '@/public/assets/svg/google-play-store_coloured.svg'
 export { default as LoveworldAppStoreColouredIcon } from '@/public/assets/svg/loveworld-app-store_coloured.svg'
 export { default as ArrowRightIcon } from '@/public/assets/svg/arrow-right.svg'
+export { default as CrossIcon } from '@/public/assets/svg/cross.svg'
+export { default as GraduationCapIcon } from '@/public/assets/svg/graduation-cap.svg'

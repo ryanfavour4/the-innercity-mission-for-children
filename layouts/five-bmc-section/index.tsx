@@ -10,8 +10,8 @@ export default function FiveBillionMealCampaignSection() {
         {/* TWIN COL */}
         <div className="grid h-full grid-cols-1 justify-center gap-5 md:grid-cols-2">
           <div className="flex h-full flex-col justify-between gap-5 pb-8">
-            <h3 className="sub-header text-2xl font-semibold md:text-3xl">
-              5 BILLION MEALS CAMPAIGN
+            <h3 className="sub-header text-2xl font-semibold capitalize md:text-3xl">
+              5 billion meals campaign
             </h3>
             <p className="leading-8 md:-mt-14">
               We are excited to announce our &quot;5 Billion Meals Campaign&quot;. This is a

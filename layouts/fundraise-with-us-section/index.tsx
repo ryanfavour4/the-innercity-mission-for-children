@@ -10,7 +10,9 @@ export default function FundraiseWithUsSection() {
         {/* TWIN COL */}
         <div className="grid h-full grid-cols-1 justify-center gap-5 md:grid-cols-2">
           <div className="flex h-full flex-col justify-between gap-5 pb-8">
-            <h3 className="sub-header text-2xl font-semibold md:text-3xl">Fund-raise With Us</h3>
+            <h3 className="sub-header text-2xl font-semibold capitalize md:text-3xl">
+              Fund-raise With Us
+            </h3>
             <p className="leading-8">
               By becoming a fundraiser, you have the power to transform the lives of indigent
               children, helping them gain access to quality education and break free from the cycle
