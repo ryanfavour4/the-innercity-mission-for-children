@@ -1,8 +1,68 @@
 import { CrossIcon, GraduationCapIcon } from '@/components/svgs'
+import Image from 'next/image'
 import Script from 'next/script'
 import React from 'react'
+import kcIcon from '@/public/assets/icons/kingschat-icon-white.png'
+import igIcon from '@/public/assets/icons/instagram-icon-white.png'
+import twIcon from '@/public/assets/icons/twitter-icon-white.png'
+import lnIcon from '@/public/assets/icons/linkeln-icon-white.png'
+import CtaSection from '@/layouts/cta-section'
 
 export default function AboutPage() {
+  const programmaticAreas = [
+    'Education',
+    'Feeding',
+    'Family Strengthening & Livelihood',
+    'Shelter',
+    'Humanitarian Response',
+    'Health and Nutrition',
+    'Child Safety and Advocacy',
+    'Faith and Development',
+  ]
+
+  const boardOfExecutives = [
+    {
+      name: 'Tom Amenkhienan',
+      position: 'Chairman',
+      image: '/assets/images/rev-tom.jpg',
+      facebook: '/',
+      instagram: '/',
+      kingschat: '',
+      linkedin: '/',
+      x: '/',
+    },
+    {
+      name: 'Vale Odu-Thomas',
+      position: 'Member',
+      image: '/assets/images/pastor-vale.jpg',
+      facebook: '/',
+      instagram: '/',
+      kingschat: '',
+      linkedin: '/',
+      x: '/',
+    },
+    {
+      name: 'Solayinka Agboola',
+      position: 'Member',
+      image: '/assets/images/pastor-solayinka.jpg',
+      facebook: '/',
+      instagram: '/',
+      kingschat: '',
+      linkedin: '/',
+      x: '/',
+    },
+    {
+      name: 'Christine Davidson-Eke',
+      position: 'Member',
+      image: '/assets/images/pastor-christine.jpg',
+      facebook: '/',
+      instagram: '/',
+      kingschat: '',
+      linkedin: '/',
+      x: '/',
+    },
+  ]
+
   return (
     <div className="bg-light pt-10">
       <div className="wrapper px-3 py-10">
@@ -23,6 +83,7 @@ export default function AboutPage() {
           </div>
         </div>
       </div>
+
       {/* ABOUT VIDEO */}
       <div className="bg-gradient-to-b from-light to-secondary px-3 py-5 pb-12">
         <iframe
@@ -210,17 +271,103 @@ export default function AboutPage() {
 
       {/* OUR PROGRAMMATIC AREAS */}
       <div className="wrapper py-16">
-        <h3 className="text-center text-2xl font-semibold capitalize leading-8 md:-mt-4 md:text-3xl">
+        <h3 className="mb-8 text-center text-2xl font-semibold capitalize leading-8 md:-mt-4 md:text-3xl">
           Our programmatic areas
         </h3>
 
-        <div className="grid grid-cols-3">
-          <div className="flex gap-2">
-            <GraduationCapIcon />
-            <p>Lorem infn on fodoedn onf dvpin</p>
+        <div className="grid grid-cols-2 gap-6 lg:grid-cols-3">
+          {programmaticAreas.map((area, index) => (
+            <div key={index} className="flex gap-2">
+              <span className="btn aspect-square flex w-fit flex-col items-center justify-center self-start bg-primary p-2">
+                <GraduationCapIcon className="2xl text-white" />
+              </span>
+              <p className="font-semibold">{area}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="wrapper px-3 py-10">
+        <div className="flex h-full flex-col justify-between gap-5 pb-8">
+          <p className="sub-header uppercase">Meet the team</p>
+          <h3 className="text-2xl font-semibold capitalize leading-8 md:-mt-4 md:text-3xl">
+            Board Of Directors
+          </h3>
+        </div>
+
+        <div className="mt-6 grid grid-cols-1 place-items-center gap-8 md:grid-cols-3 lg:grid-cols-4">
+          {boardOfExecutives.map((board) => (
+            <div
+              key={board.name}
+              className="flex w-full max-w-xs flex-col items-center justify-center gap-2.5 rounded-md border-2 p-2.5"
+            >
+              <Image
+                className="size-full rounded-md"
+                width={200}
+                height={200}
+                src={board.image}
+                alt={board.name}
+              />
+
+              <p className="mt-5 font-semibold leading-none">{board.name}</p>
+              <small>{board.position}</small>
+              <div className="flex items-center justify-between gap-6 rounded-md bg-primary px-2 py-1.5">
+                <a target="_blank" href="http://kingschat.online/">
+                  <Image src={kcIcon} alt="kcIcon" width={25} height={25} className="object-fill" />
+                </a>
+                <a target="_blank" href="http://instagram.com">
+                  <Image src={igIcon} alt="igIcon" width={20} height={20} className="object-fill" />
+                </a>
+                <a target="_blank" href="http://x.com">
+                  <Image src={twIcon} alt="twIcon" width={20} height={20} className="object-fill" />
+                </a>
+                <a target="_blank" href="http://linkedin.com">
+                  <Image src={lnIcon} alt="lnIcon" width={20} height={20} className="object-fill" />
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="wrapper border-t px-3 py-10">
+        <div className="flex h-full flex-col justify-between gap-5 pb-4">
+          <h3 className="text-center text-2xl font-semibold capitalize leading-8 md:-mt-4 md:text-3xl">
+            THE EXECUTIVE DIRECTOR
+          </h3>
+        </div>
+
+        <div className="mt-6 grid grid-cols-1 place-items-center gap-8">
+          <div className="flex w-full max-w-xs flex-col items-center justify-center gap-2.5 rounded-md border-2 p-2.5">
+            <Image
+              className="size-full rounded-md"
+              width={200}
+              height={200}
+              src={'/assets/images/pastor-omoh.jpg'}
+              alt="Omoh Alabi"
+            />
+
+            <p className="mt-5 font-semibold leading-none">Omoh Alabi</p>
+            <small>Executive Director</small>
+            <div className="flex items-center justify-between gap-6 rounded-md bg-primary px-2 py-1.5">
+              <a target="_blank" href="http://kingschat.online/">
+                <Image src={kcIcon} alt="kcIcon" width={25} height={25} className="object-fill" />
+              </a>
+              <a target="_blank" href="http://instagram.com">
+                <Image src={igIcon} alt="igIcon" width={20} height={20} className="object-fill" />
+              </a>
+              <a target="_blank" href="http://x.com">
+                <Image src={twIcon} alt="twIcon" width={20} height={20} className="object-fill" />
+              </a>
+              <a target="_blank" href="http://linkedin.com">
+                <Image src={lnIcon} alt="lnIcon" width={20} height={20} className="object-fill" />
+              </a>
+            </div>
           </div>
         </div>
       </div>
+
+      <CtaSection />
     </div>
   )
 }
