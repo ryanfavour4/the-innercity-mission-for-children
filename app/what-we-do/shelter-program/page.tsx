@@ -58,22 +58,6 @@ export default function ShelterProgram() {
             limited cash inflow, they struggle to meet the individual needs of the children in their
             care. Through this initiative, we provide support for the children they serve.
           </p>
-          <div className="flex gap-4">
-            <div className="bg-gray-200 flex h-48 w-1/2 items-center justify-center">
-              <img
-                src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80"
-                alt="Children playing"
-                className="rounded-lg shadow-md"
-              />
-            </div>
-            <div className="bg-gray-200 flex h-48 w-1/2 items-center justify-center">
-              <img
-                src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80"
-                alt="Children playing"
-                className="rounded-lg shadow-md"
-              />
-            </div>
-          </div>
         </div>
       </div>
     </div>
