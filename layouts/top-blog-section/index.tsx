@@ -1,26 +1,29 @@
 import React from 'react'
 import Image from 'next/image'
 import blogBanner from '@/public/assets/images/blog-banner-autism.jpg'
+import blog1Img from '@/public/assets/images/GAM-APP2-1.jpg'
+import blog2Img from '@/public/assets/images/WhatsApp-Image-2024-05-02-at-09.45.52_dd992226-1.jpg'
+import blog3Img from '@/public/assets/images/WhatsApp-Image-2024-04-29-at-11.11.30_1308a2c2.jpg'
 
 export default function TopBlogSection() {
   const blogs = [
     {
       id: 1,
-      image: 'http://dummyimage.com/211x100.png/cc0000/ffffff',
-      title: 'Soldier of Fortune',
-      body: 'nisl duis bibendum felis sed interdum venenatis turpis enim blandit mi in porttitor pede justo eu massa donec dapibus duis at velit eu est congue elementum in hac habitasse platea',
+      image: blog1Img,
+      title: 'Celebrate Giving with the Give A Meal App',
+      body: 'Looking for a fun and meaningful way to spend time with your loved ones? Why not host a giving party with the Give A Meal App! Whether you prefer a virtual gathering or an onsite celebration, this cre...',
     },
     {
       id: 2,
-      image: 'http://dummyimage.com/120x100.png/cc0000/ffffff',
-      title: 'The Feminine Touch',
-      body: 'massa quis augue luctus tincidunt nulla mollis molestie lorem quisque ut erat curabitur gravida nisi at nibh in hac habitasse platea dictumst aliquam augue quam sollicitudin vitae consectetuer eget rutrum at lorem integer tincidunt ante vel ipsum praesent blandit lacinia erat vestibulum sed magna at nunc commodo placerat praesent blandit nam nulla integer pede justo lacinia eget tincidunt eget tempus vel pede morbi porttitor lorem id ligula suspendisse ornare consequat lectus in est risus auctor sed tristique in tempus sit amet sem fusce consequat nulla nisl nunc nisl duis bibendum felis sed interdum',
+      image: blog2Img,
+      title: 'HARVESTING HOPE: HOW HOME GARDENS EMPOWER VULNERABLE WOMEN AND FAMILIES IN ESWATINI',
+      body: 'Through our Women Economic Empowerment Initiative, we are committed to uplifting vulnerable women like Mrs. Sihlongonyane, who, due to financial constraints, are often forced to bear the primary respo...',
     },
     {
       id: 3,
-      image: 'http://dummyimage.com/135x100.png/ff4444/ffffff',
-      title: 'Bears',
-      body: 'ante nulla justo aliquam quis turpis eget elit sodales scelerisque mauris sit amet eros suspendisse accumsan tortor quis turpis sed ante vivamus tortor duis mattis egestas metus aenean fermentum donec ut mauris eget massa tempor convallis nulla neque libero convallis eget eleifend luctus ultricies eu nibh quisque id justo sit amet sapien dignissim vestibulum vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae nulla dapibus dolor vel est donec odio justo sollicitudin ut suscipit a feugiat et eros vestibulum ac est lacinia nisi venenatis tristique fusce congue diam id ornare imperdiet sapien urna pretium nisl ut volutpat sapien arcu sed augue aliquam erat volutpat in congue etiam justo etiam pretium iaculis justo in hac habitasse platea dictumst etiam faucibus cursus urna ut tellus nulla ut erat id mauris vulputate elementum nullam varius nulla facilisi cras non velit nec nisi vulputate nonummy maecenas tincidunt lacus at velit vivamus vel nulla eget eros elementum pellentesque quisque porta volutpat',
+      image: blog3Img,
+      title: 'Celebrating the Groundbreaking Ceremony for our 15th 100% Free School in Malawi',
+      body: 'Just weeks after holding a groundbreaking ceremony for our 14th school in Liberia, we gathered once again on the 20th of April in the beautiful village of Chisikwa, Nsudwe community, Lilongwe, Malawi,...',
     },
   ]
 
@@ -45,8 +48,10 @@ export default function TopBlogSection() {
               >
                 <Image
                   alt={blog.title + ' - ' + blog.body}
-                  className="h-[7rem] w-full rounded-lg object-cover md:w-40"
-                  src={blogBanner}
+                  className="block h-[7rem] w-full rounded-lg object-cover md:w-40"
+                  src={blog.image || blogBanner}
+                  width={200}
+                  height={200}
                 />
                 <div className="flex w-full flex-col gap-2 truncate overflow-ellipsis capitalize">
                   <h4 className="ellipsis-2 text-balance text-lg font-semibold">{blog.title}</h4>
