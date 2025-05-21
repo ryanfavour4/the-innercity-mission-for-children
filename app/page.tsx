@@ -1,6 +1,6 @@
 import HeroSection from '@/layouts/hero-section'
 import IntroVideoSection from '@/layouts/intro-video-section'
-import FiveBillionMealCampaignSection from '@/layouts/five-bmc-section'
+import BillionMealCampaignSection from '@/layouts/bmc-section'
 import MetricStatsSection from '@/layouts/metrics-stats-section'
 import FundraiseWithUsSection from '@/layouts/fundraise-with-us-section'
 import ExtraExternalSection from '@/layouts/extra-external-section'
@@ -13,7 +13,7 @@ export default function Home() {
     <div className="">
       <HeroSection />
       <IntroVideoSection />
-      <FiveBillionMealCampaignSection />
+      <BillionMealCampaignSection />
       <MetricStatsSection />
       <FundraiseWithUsSection />
       <ExtraExternalSection />

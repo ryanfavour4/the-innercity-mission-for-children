@@ -1,3 +1,4 @@
+'use client'
 import React, { useEffect, useRef, useState } from 'react'
 import Input from '../input'
 import { ChevronRightIcon, HeartLoveIcon } from '../svgs'
@@ -105,7 +106,8 @@ export default function DonateSection() {
         )}
         <h3 className="text-xl font-semibold uppercase">Donate Today</h3>
         <p className="text-base">
-          Make a donation to a CD CON and make a child&apos;s dream colorful today.
+          Make a donation to The Innercity Mission for Children today and make a child&apos;s vision
+          come true.
         </p>
 
         <div className="mt-4 overflow-hidden rounded-xl">
