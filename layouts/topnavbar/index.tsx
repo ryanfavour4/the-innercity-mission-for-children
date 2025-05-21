@@ -72,7 +72,9 @@ export default function TopNavbar({ menus = defaultmenu }) {
               <span className="mr-4 hidden cursor-pointer text-2xl text-light md:inline">
                 <SearchMagnifierIcon />
               </span>
-              <button className="btn-white w-fit">Donate</button>
+              <Link href={'/donate'} className="block w-fit">
+                <button className="btn-white w-fit">Donate</button>
+              </Link>
               <button onClick={() => setNavOpen((p) => !p)} className="inline-block md:hidden">
                 <MenuFriesIcon className="btn h-12 w-12 rotate-180 px-2 text-5xl font-bold text-light ring-light" />
               </button>

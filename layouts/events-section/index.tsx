@@ -5,30 +5,11 @@ export default function EventsSection() {
   const events = [
     {
       id: 1,
-      event: 'Anser caerulescens',
-      decription:
-        'Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.',
-      day: 31,
-      month: 'US',
-      date: '7/1/2024',
-    },
-    {
-      id: 2,
-      event: 'Corvus albicollis',
-      decription:
-        'Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis. Donec semper sapien a libero. Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.',
-      day: 2,
-      month: 'US',
-      date: '2/17/2024',
-    },
-    {
-      id: 3,
-      event: 'Bucephala clangula',
-      decription:
-        'Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti. In eleifend quam a odio.',
-      day: 14,
-      month: 'PG',
-      date: '11/12/2024',
+      event: 'No Event',
+      decription: 'No upcoming event',
+      day: new Date().getDate(),
+      month: new Date().toLocaleString('default', { month: 'long' }),
+      date: new Date().toLocaleDateString(),
     },
   ]
 
@@ -42,7 +23,9 @@ export default function EventsSection() {
           <hr className="block w-full" />
         </div>
 
-        <div className="mt-6 grid gap-5 md:grid-cols-2">
+        <div
+          className={`mt-6 grid gap-5 md:grid-cols-2 ${events.length < 2 ? '!grid-cols-1' : ''}`}
+        >
           {/* Event Card */}
           {events.map((event) => (
             <div

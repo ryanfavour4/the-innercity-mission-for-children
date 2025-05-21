@@ -68,12 +68,15 @@ export default function AboutPage() {
       <div className="wrapper px-3 py-10">
         {/* TWIN COL */}
         <div className="grid h-full grid-cols-1 justify-center gap-5 md:grid-cols-2">
-          <div className="flex h-full flex-col justify-between gap-5 pb-8">
-            <p className="sub-header">Know about us</p>
-            <h3 className="text-2xl font-semibold capitalize leading-8 md:-mt-4 md:text-3xl">
+          <div className="flex flex-col gap-4">
+            <small className="sub-header before:bg-text relative text-sm font-semibold uppercase md:left-12">
+              Know about us
+            </small>
+            <h3 className="text-3xl font-semibold capitalize leading-8 md:-mt-4 md:text-4xl">
               We are the Inner City Mission for Children
             </h3>
           </div>
+
           <div className="w-full">
             <p>
               But Jesus said, suffer little children, and forbid them not, to come unto me: for of

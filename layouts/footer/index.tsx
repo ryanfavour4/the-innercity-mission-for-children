@@ -10,7 +10,7 @@ import lnIcon from '@/public/assets/icons/linkeln-icon-white.png'
 
 export default function Footer() {
   return (
-    <footer className="bg-gray p-10 text-base text-white">
+    <footer className="bg-gray px-6 pb-5 pt-10 text-base text-white">
       <div className="grid grid-cols-2 gap-6 gap-y-10 md:grid-cols-6">
         {/*  */}
         <div className="col-span-2 md:col-span-2">
@@ -69,12 +69,14 @@ export default function Footer() {
           </form>
         </div>
       </div>
-      <div className="mt-10 flex flex-col items-center border-t border-light pt-6">
-        <small className="mt-10 block text-sm">
+
+      <div className="mt-10 flex w-full flex-col-reverse items-center justify-between gap-8 border-t border-light pt-4 md:flex-row">
+        <small className="block text-sm">
           © {new Date().getFullYear()}. The InnerCity Mission for Children NGO. All Rights
           Reserved. See our Privacy Policy.
         </small>
-        <div className="mt-8 flex gap-4">
+
+        <div className="flex items-center justify-center gap-5">
           <a target="_blank" href="http://facebook.com">
             <Image src={fbIcon} alt="fbIcon" width={30} height={30} className="object-contain" />
           </a>
