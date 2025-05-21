@@ -13,3 +13,5 @@ export { default as LoveworldAppStoreColouredIcon } from '@/public/assets/svg/lo
 export { default as ArrowRightIcon } from '@/public/assets/svg/arrow-right.svg'
 export { default as CrossIcon } from '@/public/assets/svg/cross.svg'
 export { default as GraduationCapIcon } from '@/public/assets/svg/graduation-cap.svg'
+export { default as EyeIcon } from '@/public/assets/svg/eye.svg'
+export { default as EyeOffIcon } from '@/public/assets/svg/eye-off.svg'
