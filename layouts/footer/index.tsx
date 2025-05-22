@@ -78,19 +78,19 @@ export default function Footer() {
 
         <div className="flex items-center justify-center gap-5">
           <a target="_blank" href="http://facebook.com">
-            <Image src={fbIcon} alt="fbIcon" width={30} height={30} className="object-contain" />
+            <Image src={fbIcon} alt="fbIcon" width={25} height={25} className="object-contain" />
           </a>
           <a target="_blank" href="http://kingschat.online/">
-            <Image src={kcIcon} alt="kcIcon" width={35} height={35} className="object-fill" />
+            <Image src={kcIcon} alt="kcIcon" width={30} height={30} className="object-fill" />
           </a>
           <a target="_blank" href="http://instagram.com">
-            <Image src={igIcon} alt="igIcon" width={30} height={30} className="object-fill" />
+            <Image src={igIcon} alt="igIcon" width={25} height={25} className="object-fill" />
           </a>
           <a target="_blank" href="http://x.com">
-            <Image src={twIcon} alt="twIcon" width={30} height={30} className="object-fill" />
+            <Image src={twIcon} alt="twIcon" width={25} height={25} className="object-fill" />
           </a>
           <a target="_blank" href="http://linkedin.com">
-            <Image src={lnIcon} alt="lnIcon" width={30} height={30} className="object-fill" />
+            <Image src={lnIcon} alt="lnIcon" width={25} height={25} className="object-fill" />
           </a>
         </div>
       </div>

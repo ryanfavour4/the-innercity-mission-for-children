@@ -43,8 +43,8 @@ export const menus: menu_type[] = [
         path: '/shelter-program',
       },
       {
-        title: 'Humanitarian Program',
-        path: '/humanitarian-program',
+        title: 'Humanitarian Response',
+        path: '/humanitarian-response',
       },
       {
         title: 'Health & Nutrition Program',
