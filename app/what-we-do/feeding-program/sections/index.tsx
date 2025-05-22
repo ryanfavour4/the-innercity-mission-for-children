@@ -62,10 +62,10 @@ export function Overview1Section() {
               food donations, no matter the size are received from food and grocery manufacturers,
               retailers, and other organizations; and then distributed through our Food Pantries and
               different feeding interventions that serve families, children, seniors, and
-              individuals at risk of hunger. While we operate on the "front line" model at the Food
-              Bank, to directly give out food to the hungry, we also distribute to other frontline
-              agencies who provide food security to children and families in need, within their
-              constituents.
+              individuals at risk of hunger. While we operate on the &quot;front line&quot; model at
+              the Food Bank, to directly give out food to the hungry, we also distribute to other
+              frontline agencies who provide food security to children and families in need, within
+              their constituents.
             </p>
           </div>
           <div className="">
