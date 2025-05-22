@@ -47,8 +47,8 @@ export default function HeroSection2() {
                 Inclusive care for children with special needs
               </h1>
               <div className="flex flex-col gap-6 md:flex-row">
-                <Link className="btn-white max-w-fit px-8 py-3" href="/program">
-                  What we do
+                <Link className="btn-white max-w-fit px-8 py-3" href="/donate">
+                  Donate now
                 </Link>
                 <button className="btn flex w-fit items-center gap-1 p-2 py-0 ring-light/50">
                   <span className="flex h-8 w-8 items-center justify-center rounded-full bg-light">
