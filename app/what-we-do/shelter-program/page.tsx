@@ -1,13 +1,6 @@
 import React from 'react'
 import CtaSection from '@/layouts/cta-section'
-import {
-  Overview1Section,
-  Overview2Section,
-  Overview3Section,
-  Overview4Section,
-  Overview5Section,
-  PageHeroSection,
-} from './sections'
+import { Overview1Section, Overview2Section, PageHeroSection } from './sections'
 
 export default function Page() {
   return (
@@ -15,9 +8,6 @@ export default function Page() {
       <PageHeroSection />
       <Overview1Section />
       <Overview2Section />
-      <Overview3Section />
-      <Overview4Section />
-      <Overview5Section />
       <CtaSection />
     </main>
   )
