@@ -5,8 +5,6 @@ import {
   Overview2Section,
   Overview3Section,
   Overview4Section,
-  Overview5Section,
-  Overview6Section,
   PageHeroSection,
 } from './sections'
 
@@ -18,8 +16,6 @@ export default function Page() {
       <Overview2Section />
       <Overview3Section />
       <Overview4Section />
-      <Overview5Section />
-      <Overview6Section />
       <CtaSection />
     </main>
   )
