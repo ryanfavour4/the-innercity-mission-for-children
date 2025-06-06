@@ -2,7 +2,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import logo from '@/public/assets/icons/logo-white.png'
+import logo from '@/public/assets/icons/logo-black-text.png'
 import logoBlue from '@/public/assets/icons/logo-black-text.png'
 import { ChevronDownIcon, CloseXIcon, MenuFriesIcon, SearchMagnifierIcon } from '@/components/svgs'
 import useTopnavbar, { menus as defaultmenu } from './useTopnavbar'
@@ -21,14 +21,14 @@ export default function TopNavbar({ menus = defaultmenu }) {
   return (
     <>
       <nav className="relative pb-16 md:pb-20">
-        <div className="fixed left-0 right-0 top-0 z-20 w-full bg-primary py-2">
+        <div className="fixed left-0 right-0 top-0 z-20 w-full bg-light py-2">
           <div className="wrapper flex items-center justify-between">
             <Link href={'/'}>
               <Image src={logo.src} alt="logo" className="w-24 md:w-28" width={100} height={50} />
             </Link>
 
             <div className="hidden md:inline-block">
-              <ul className="flex items-center space-x-5 text-sm text-light">
+              <ul className="flex items-center space-x-5 text-sm text-dark">
                 {menus.map((menu, index) => (
                   <li
                     onMouseEnter={() => setSubMenuClicked(menu.subPath || '')}
@@ -37,7 +37,7 @@ export default function TopNavbar({ menus = defaultmenu }) {
                     className="relative"
                   >
                     <Link
-                      className="flex items-center gap-1 font-medium hover:underline"
+                      className="flex items-center gap-1 font-medium hover:text-primary hover:underline"
                       href={menu.path || ''}
                     >
                       <p>{menu.title}</p>
@@ -73,7 +73,7 @@ export default function TopNavbar({ menus = defaultmenu }) {
                 <SearchMagnifierIcon />
               </span>
               <Link href={'/donate'} className="block w-fit">
-                <button className="btn-white w-fit">Donate</button>
+                <button className="btn-primary w-fit">Donate</button>
               </Link>
               <button onClick={() => setNavOpen((p) => !p)} className="inline-block md:hidden">
                 <MenuFriesIcon className="btn h-12 w-12 rotate-180 px-2 text-5xl font-bold text-light ring-light" />

@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gaegu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap');
 :root {
   --dark: 0, 0, 0; /* rgb(0, 0, 0) */
   --light: 255, 255, 255; /* rgb(255, 255, 255) */
@@ -8,6 +8,7 @@
   --fade-blue: 216, 239, 255; /* rgb(216, 239, 255)  */
   --blue-grey: 64, 71, 86; /* rgb(64, 71, 86) */
   --primary: 0, 128, 222; /* rgb(0, 128, 222) */
+  --accent: 255 241 0; /* rgb(255, 241, 0) */
   --secondary: 230, 244, 241; /* rgb(230, 244, 241) */
   --complementary: 64, 71, 86; /* rgb(64, 71, 86) */
   --textcolor: 62, 65, 76; /* rgb(62, 65, 76) */
@@ -48,6 +49,7 @@ html.light {
   --fade-blue: 216, 239, 255; /* rgb(216, 239, 255)  */
   --blue-grey: 64, 71, 86; /* rgb(64, 71, 86) */
   --primary: 0, 128, 222; /* rgb(0, 128, 222) */
+  --accent: 255 241 0; /* rgb(255, 241, 0) */
   --secondary: 230, 244, 241; /* rgb(230, 244, 241) */
   --complementary: 64, 71, 86; /* rgb(64, 71, 86) */
   --textcolor: 62, 65, 76; /* rgb(62, 65, 76) */
@@ -64,6 +66,7 @@ html.dark {
   --fade-blue: 216, 239, 255; /* rgb(216, 239, 255)  */
   --blue-grey: 64, 71, 86; /* rgb(64, 71, 86) */
   --primary: 0, 128, 222; /* rgb(0, 128, 222) */
+  --accent: 255 241 0; /* rgb(255, 241, 0) */
   --secondary: 230, 244, 241; /* rgb(230, 244, 241) */
   --complementary: 64, 71, 86; /* rgb(64, 71, 86) */
   --textcolor: 62, 65, 76; /* rgb(62, 65, 76) */
@@ -93,7 +96,7 @@ html[class] body {
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   width: 100%;
   height: 100vh;
   box-sizing: border-box;
@@ -108,12 +111,19 @@ h3,
 h4,
 h5,
 h6,
-.font-roboto {
-  font-family: 'Roboto', sans-serif;
+.font-lato,
+.font-header {
+  font-family: 'Lato', sans-serif;
+  /* font-family: 'Zain', sans-serif; */
 }
 
-.font-open-sans {
-  font-family: 'Open Sans', sans-serif;
+.font-cursive {
+  font-family: 'Gaegu', cursive;
+}
+
+.font-open-sans,
+.font-body {
+  font-family: 'Lato', sans-serif;
 }
 
 .wrapper,

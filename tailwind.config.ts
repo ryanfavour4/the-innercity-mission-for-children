@@ -117,6 +117,7 @@ export default {
       },
       colors: {
         primary: 'rgba(var(--primary))',
+        accent: 'rgba(var(--accent))',
         secondary: 'rgba(var(--secondary))',
         complementary: 'rgba(var(--complementary))',
         textcolor: 'rgba(var(--textcolor))',
