@@ -9,9 +9,10 @@ export default function HeroSection2() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const images = [
     '/assets/images/website-banner-1.jpg',
-    '/assets/images/website-banner-2.jpg',
-    '/assets/images/website-banner-3.jpg',
+    '/assets/images/website-banner-1.jpg',
+    '/assets/images/website-banner-1.jpg',
   ]
+
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1))
@@ -37,17 +38,21 @@ export default function HeroSection2() {
               height={800}
             />
           ))}
-          <div className="absolute inset-0 -z-10 bg-black opacity-40" />
+          <div className="absolute inset-0 -z-10 bg-gradient-to-r from-dark via-white/0 to-light/0 opacity-40" />
 
           {/* HERO CONTENT */}
           <div className="wrapper absolute inset-0 flex h-full flex-col justify-between gap-16 p-3">
             {/* TOP SECTION */}
-            <div className="flex h-full flex-col justify-center">
-              <h1 className="mb-10 max-w-[600px] text-5xl font-bold md:text-6xl md:leading-snug">
-                Inclusive care for children with special needs
+            <div className="flex h-full flex-col justify-center gap-6">
+              <h1 className="max-w-lg text-5xl font-black md:text-6xl">
+                A Future for Every Child.
               </h1>
+              <p className="max-w-lg">
+                The InnerCity Mission for Children is dedicated to nurturing, educating, and
+                empowering the next generation. Join us in making a lasting difference
+              </p>
               <div className="flex flex-col gap-6 md:flex-row">
-                <Link className="btn-white max-w-fit px-8 py-3" href="/donate">
+                <Link className="btn-white hover:bg-accent max-w-fit px-8 py-3" href="/donate">
                   Donate now
                 </Link>
                 <button className="btn flex w-fit items-center gap-1 p-2 py-0 ring-light/50">
