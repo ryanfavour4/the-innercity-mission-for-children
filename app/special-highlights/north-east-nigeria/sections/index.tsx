@@ -97,351 +97,418 @@ export function Overview1Section() {
 
 export function Overview2Section() {
   return (
-    <section className="bg-light px-2 py-10 pt-6">
-      <h1 className="mb-10 pb-4 text-center text-3xl font-bold underline">
-        Our Impact In Education
-      </h1>
-      {/* SECTOR DEMARCATE */}
-      <div className="container">
-        <div className="flex grid-cols-1 flex-col-reverse gap-8 md:grid lg:grid-cols-2 lg:gap-16">
-          <div className="">
-            <Swiper
-              spaceBetween={10}
-              autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-              }}
-              pagination={{
-                clickable: true,
-              }}
-              navigation={true}
-              modules={[Autoplay, Pagination, Navigation]}
-              className="mySwiper"
-            >
-              <SwiperSlide>
-                <div className="!w-full">
-                  <Image
-                    className="mx-auto w-full"
-                    src={PicOfSchoolInDesma}
-                    alt="Overview Illustration"
-                  />
-                </div>
-              </SwiperSlide>
-            </Swiper>
-          </div>
+    <>
+      <section className="bg-light px-2 py-10 pt-6">
+        <h1 className="mb-10 pb-4 text-center text-3xl font-bold underline">
+          Our Impact In Education
+        </h1>
+        {/* SECTOR DEMARCATE */}
+        <div className="container">
+          <div className="flex grid-cols-1 flex-col-reverse gap-8 md:grid lg:grid-cols-2 lg:gap-16">
+            <div className="">
+              <Swiper
+                spaceBetween={10}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
+                pagination={{
+                  clickable: true,
+                }}
+                navigation={true}
+                modules={[Autoplay, Pagination, Navigation]}
+                className="mySwiper"
+              >
+                <SwiperSlide>
+                  <div className="!w-full">
+                    <Image
+                      className="mx-auto w-full"
+                      src={PicOfSchoolInDesma}
+                      alt="Overview Illustration"
+                    />
+                  </div>
+                </SwiperSlide>
+              </Swiper>
+            </div>
 
-          <div className="flex flex-col items-start justify-center gap-4 px-1.5 text-base leading-relaxed md:gap-6">
-            <h3 className="text-xl font-bold uppercase lg:text-2xl">
-              Provision of Formal Education:
-            </h3>
+            <div className="flex flex-col items-start justify-center gap-4 px-1.5 text-base leading-relaxed md:gap-6">
+              <h3 className="text-xl font-bold uppercase lg:text-2xl">
+                Provision of Formal Education:
+              </h3>
 
-            <p>
-              In 2019, As part of our Education in Emergency initiative, the InnerCity Mission built
-              and commissioned its first full-fledged tuition-free school in North-East Nigeria.
-            </p>
+              <p>
+                In 2019, As part of our Education in Emergency initiative, the InnerCity Mission
+                built and commissioned its first full-fledged tuition-free school in North-East
+                Nigeria.
+              </p>
 
-            <p>
-              The outcome of this education intervention in the North-East is to reduce the
-              statistics of Out-of-School Children and improve access to quality, inclusive, and
-              continued education of children of all vulnerable categories through formal and
-              non-formal approaches in a safe, protective, and healthy learning environment; with
-              support from partners, donors, and individuals who are passionate about an inclusive
-              society. This support includes 6-year tuition, school supplies (school bag, shoes,
-              socks, uniforms, school meals, and stationery) among others.
-            </p>
-          </div>
-        </div>
-      </div>
-      <br />
-      {/* SECTOR DEMARCATE */}
-      <div className="container">
-        <div className="flex grid-cols-1 flex-col-reverse gap-8 md:grid lg:grid-cols-2 lg:gap-16">
-          <div className="flex flex-col items-start justify-center gap-4 px-1.5 text-base leading-relaxed md:gap-6">
-            <h3 className="text-xl font-bold uppercase lg:text-2xl">
-              Provision Of Non Formal Education Setting:
-            </h3>
-
-            <p>
-              We worked to reduce the impact occasioned by COVID-19 and bridged the gap by
-              scaling-up its in-person educational engagement for these targeted beneficiaries who
-              do not have ANY access to online learning, who live in areas with low or no internet
-              connectivity and lack of virtual learning materials. Over a period of time, up until
-              the lockdown measures imposed by the state government eased, Mobile Temporary centers
-              were set up in communities across Adamawa and Borno , as our volunteers engaged the
-              children with a variety of fun and educative services such as learning activities in
-              basic literacy and numeracy packaged in specially designed lesson plans and
-              worksheets, we complimented the education intervention with health and psychosocial
-              support.
-            </p>
-          </div>
-
-          <div className="">
-            <Swiper
-              spaceBetween={10}
-              autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-              }}
-              pagination={{
-                clickable: true,
-              }}
-              navigation={true}
-              modules={[Autoplay, Pagination, Navigation]}
-              className="mySwiper"
-            >
-              <SwiperSlide>
-                <div className="!w-full">
-                  <Image
-                    className="mx-auto w-full"
-                    src={image4Illustration}
-                    alt="Overview Illustration"
-                  />
-                </div>
-              </SwiperSlide>
-            </Swiper>
+              <p>
+                The outcome of this education intervention in the North-East is to reduce the
+                statistics of Out-of-School Children and improve access to quality, inclusive, and
+                continued education of children of all vulnerable categories through formal and
+                non-formal approaches in a safe, protective, and healthy learning environment; with
+                support from partners, donors, and individuals who are passionate about an inclusive
+                society. This support includes 6-year tuition, school supplies (school bag, shoes,
+                socks, uniforms, school meals, and stationery) among others.
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-      <br />
-      {/* SECTOR DEMARCATE */}
-      <div className="container">
-        <div className="flex grid-cols-1 flex-col-reverse gap-8 md:grid lg:grid-cols-2 lg:gap-16">
-          <div className="">
-            <Swiper
-              spaceBetween={10}
-              autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-              }}
-              pagination={{
-                clickable: true,
-              }}
-              navigation={true}
-              modules={[Autoplay, Pagination, Navigation]}
-              className="mySwiper"
-            >
-              <SwiperSlide>
-                <div className="!w-full">
-                  <Image
-                    className="mx-auto w-full"
-                    src={image3Illustration}
-                    alt="Overview Illustration"
-                  />
-                </div>
-              </SwiperSlide>
-            </Swiper>
-          </div>
+        <br />
+        {/* SECTOR DEMARCATE */}
+        <div className="container">
+          <div className="flex grid-cols-1 flex-col-reverse gap-8 md:grid lg:grid-cols-2 lg:gap-16">
+            <div className="flex flex-col items-start justify-center gap-4 px-1.5 text-base leading-relaxed md:gap-6">
+              <h3 className="text-xl font-bold uppercase lg:text-2xl">
+                Provision Of Non Formal Education Setting:
+              </h3>
 
-          <div className="flex flex-col items-start justify-center gap-4 px-1.5 text-base leading-relaxed md:gap-6">
-            <h3 className="text-xl font-bold uppercase lg:text-2xl">
-              We constructed Temporary Learning Centers:
-            </h3>
+              <p>
+                We worked to reduce the impact occasioned by COVID-19 and bridged the gap by
+                scaling-up its in-person educational engagement for these targeted beneficiaries who
+                do not have ANY access to online learning, who live in areas with low or no internet
+                connectivity and lack of virtual learning materials. Over a period of time, up until
+                the lockdown measures imposed by the state government eased, Mobile Temporary
+                centers were set up in communities across Adamawa and Borno , as our volunteers
+                engaged the children with a variety of fun and educative services such as learning
+                activities in basic literacy and numeracy packaged in specially designed lesson
+                plans and worksheets, we complimented the education intervention with health and
+                psychosocial support.
+              </p>
+            </div>
 
-            <p>
-              We have built 2 learning centers which are Safe learning spaces, equipping the centers
-              with school furniture and supplies to aid learning.
-            </p>
-          </div>
-        </div>
-      </div>
-      <br />
-      {/* SECTOR DEMARCATE */}
-      <div className="container">
-        <div className="flex grid-cols-1 flex-col-reverse gap-8 md:grid lg:grid-cols-2 lg:gap-16">
-          <div className="flex flex-col items-start justify-center gap-4 px-1.5 text-base leading-relaxed md:gap-6">
-            <h3 className="text-xl font-bold uppercase lg:text-2xl">
-              Distribution of education kits for students
-            </h3>
-
-            <p>
-              Through the distribution of learning resources which includes note books, stationery,
-              school uniforms, shoes, school bags , we keep both boys and girls in school and
-              learning . The InnerCity Mission has successfully provided school kits for over 5000
-              children in IDP Camps and host communities.
-            </p>
-          </div>
-
-          <div className="">
-            <Swiper
-              spaceBetween={10}
-              autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-              }}
-              pagination={{
-                clickable: true,
-              }}
-              navigation={true}
-              modules={[Autoplay, Pagination, Navigation]}
-              className="mySwiper"
-            >
-              <SwiperSlide>
-                <div className="!w-full">
-                  <Image
-                    className="mx-auto w-full"
-                    src={KitForStudent}
-                    alt="Overview Illustration"
-                  />
-                </div>
-              </SwiperSlide>
-            </Swiper>
+            <div className="">
+              <Swiper
+                spaceBetween={10}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
+                pagination={{
+                  clickable: true,
+                }}
+                navigation={true}
+                modules={[Autoplay, Pagination, Navigation]}
+                className="mySwiper"
+              >
+                <SwiperSlide>
+                  <div className="!w-full">
+                    <Image
+                      className="mx-auto w-full"
+                      src={image4Illustration}
+                      alt="Overview Illustration"
+                    />
+                  </div>
+                </SwiperSlide>
+              </Swiper>
+            </div>
           </div>
         </div>
-      </div>
-      <br /> {/* SECTOR DEMARCATE */}
-      <div className="container">
-        <div className="flex grid-cols-1 flex-col-reverse gap-8 md:grid lg:grid-cols-2 lg:gap-16">
-          <div className="">
-            <Swiper
-              spaceBetween={10}
-              autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-              }}
-              pagination={{
-                clickable: true,
-              }}
-              navigation={true}
-              modules={[Autoplay, Pagination, Navigation]}
-              className="mySwiper"
-            >
-              <SwiperSlide>
-                <div className="!w-full">
-                  <Image
-                    className="mx-auto h-96 w-full object-fill object-top"
-                    src={InitiativeOfTheInnerCity}
-                    alt="Overview Illustration"
-                  />
-                </div>
-              </SwiperSlide>
-            </Swiper>
-          </div>
+        <br />
+        {/* SECTOR DEMARCATE */}
+        <div className="container">
+          <div className="flex grid-cols-1 flex-col-reverse gap-8 md:grid lg:grid-cols-2 lg:gap-16">
+            <div className="">
+              <Swiper
+                spaceBetween={10}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
+                pagination={{
+                  clickable: true,
+                }}
+                navigation={true}
+                modules={[Autoplay, Pagination, Navigation]}
+                className="mySwiper"
+              >
+                <SwiperSlide>
+                  <div className="!w-full">
+                    <Image
+                      className="mx-auto w-full"
+                      src={image3Illustration}
+                      alt="Overview Illustration"
+                    />
+                  </div>
+                </SwiperSlide>
+              </Swiper>
+            </div>
 
-          <div className="flex flex-col items-start justify-center gap-4 px-1.5 text-base leading-relaxed md:gap-6">
-            <h3 className="text-xl font-bold uppercase lg:text-2xl">
-              TEACH HER- A Girl Child Education initiative of the InnerCity Mission:
-            </h3>
+            <div className="flex flex-col items-start justify-center gap-4 px-1.5 text-base leading-relaxed md:gap-6">
+              <h3 className="text-xl font-bold uppercase lg:text-2xl">
+                We constructed Temporary Learning Centers:
+              </h3>
 
-            <p>
-              The disparity in access to education for boys and girls is wide, However, due to a
-              combination of factors in North-East Nigeria, like insecurity and poverty, many girls
-              are forced to leave school while others never had the opportunity to go to school, in
-              the first place. The InnerCity Mission is committed to providing quality education for
-              girls in North-East Nigeria and tackling the barriers that prevent them from getting
-              an education.
-            </p>
+              <p>
+                We have built 2 learning centers which are Safe learning spaces, equipping the
+                centers with school furniture and supplies to aid learning.
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-      <br />
-    </section>
+        <br />
+        {/* SECTOR DEMARCATE */}
+        <div className="container">
+          <div className="flex grid-cols-1 flex-col-reverse gap-8 md:grid lg:grid-cols-2 lg:gap-16">
+            <div className="flex flex-col items-start justify-center gap-4 px-1.5 text-base leading-relaxed md:gap-6">
+              <h3 className="text-xl font-bold uppercase lg:text-2xl">
+                Distribution of education kits for students
+              </h3>
+
+              <p>
+                Through the distribution of learning resources which includes note books,
+                stationery, school uniforms, shoes, school bags , we keep both boys and girls in
+                school and learning . The InnerCity Mission has successfully provided school kits
+                for over 5000 children in IDP Camps and host communities.
+              </p>
+            </div>
+
+            <div className="">
+              <Swiper
+                spaceBetween={10}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
+                pagination={{
+                  clickable: true,
+                }}
+                navigation={true}
+                modules={[Autoplay, Pagination, Navigation]}
+                className="mySwiper"
+              >
+                <SwiperSlide>
+                  <div className="!w-full">
+                    <Image
+                      className="mx-auto w-full"
+                      src={KitForStudent}
+                      alt="Overview Illustration"
+                    />
+                  </div>
+                </SwiperSlide>
+              </Swiper>
+            </div>
+          </div>
+        </div>
+        <br /> {/* SECTOR DEMARCATE */}
+        <div className="container">
+          <div className="flex grid-cols-1 flex-col-reverse gap-8 md:grid lg:grid-cols-2 lg:gap-16">
+            <div className="">
+              <Swiper
+                spaceBetween={10}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
+                pagination={{
+                  clickable: true,
+                }}
+                navigation={true}
+                modules={[Autoplay, Pagination, Navigation]}
+                className="mySwiper"
+              >
+                <SwiperSlide>
+                  <div className="!w-full">
+                    <Image
+                      className="mx-auto h-96 w-full object-fill object-top"
+                      src={InitiativeOfTheInnerCity}
+                      alt="Overview Illustration"
+                    />
+                  </div>
+                </SwiperSlide>
+              </Swiper>
+            </div>
+
+            <div className="flex flex-col items-start justify-center gap-4 px-1.5 text-base leading-relaxed md:gap-6">
+              <h3 className="text-xl font-bold uppercase lg:text-2xl">
+                TEACH HER- A Girl Child Education initiative of the InnerCity Mission:
+              </h3>
+
+              <p>
+                The disparity in access to education for boys and girls is wide, However, due to a
+                combination of factors in North-East Nigeria, like insecurity and poverty, many
+                girls are forced to leave school while others never had the opportunity to go to
+                school, in the first place. The InnerCity Mission is committed to providing quality
+                education for girls in North-East Nigeria and tackling the barriers that prevent
+                them from getting an education.
+              </p>
+            </div>
+          </div>
+        </div>
+        <br />
+      </section>
+      <hr />
+    </>
   )
 }
 
 export function Overview3Section() {
   return (
-    <section className="bg-light px-2 py-10">
-      <div className="container">
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
-          <div className="flex flex-col items-start justify-center gap-4 px-1.5 md:gap-6">
-            <h3 className="text-xl font-bold uppercase lg:text-2xl">
-              Economic Strengthening, Livelihoods and Food Security
-            </h3>
-            <p className="text-base leading-relaxed">
-              The InnerCity Mission helps provide food security while taking deliberate actions to
-              help victims of crises, particularly the most vulnerable i.e. women and girls, move
-              from dependence on humanitarian relief towards development. Our Economic Strengthening
-              and livelihood program is vital in achieving economic reintegration and independence,
-              as it directly provides reliable livelihood opportunities such skills acquisition
-              training and grants for small scale business startups.
-            </p>
-            <p className="text-base leading-relaxed">Our team provides the following:</p>
-            <ul className="list-disc pl-4">
-              <li>
-                Support in formal and non-formal education settings for out-of-school children,
-                including catch-up classes for ages 6-14.
-              </li>
-              <li>Distribute education kits and hygiene kits for students.</li>
-              <li>
-                Provide capacity building for teachers, school management and community stakeholders
-                on child safety measures, prevention of sexual exploitation and abuse.
-              </li>
-              <li>
-                Construction of Charity Primary schools, temporary learning centers in IDP camps and
-                host communities, as well as rehabilitating damaged classrooms in existing community
-                schools.
-              </li>
-            </ul>
-          </div>
-          <div className="">
-            <Swiper
-              spaceBetween={10}
-              autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-              }}
-              pagination={{
-                clickable: true,
-              }}
-              navigation={true}
-              modules={[Autoplay, Pagination, Navigation]}
-              className="mySwiper"
-            >
-              <SwiperSlide>
-                <div className="!w-full">
-                  <Image
-                    className="mx-auto w-full"
-                    src={OurInterventionInNorthNigeria}
-                    alt="Overview 1 Illustration"
-                  />
-                </div>
-              </SwiperSlide>
-            </Swiper>
+    <>
+      <section className="bg-light px-2 py-10 pt-6">
+        <h1 className="mb-10 pb-4 text-center text-3xl font-bold underline">
+          Economic Strengthening, Livelihoods And Food Security
+        </h1>
+        {/* SECTOR DEMARCATE */}
+        <div className="container">
+          <div className="flex grid-cols-1 flex-col-reverse gap-8 md:grid lg:grid-cols-2 lg:gap-16">
+            <div className="">
+              <Swiper
+                spaceBetween={10}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
+                pagination={{
+                  clickable: true,
+                }}
+                navigation={true}
+                modules={[Autoplay, Pagination, Navigation]}
+                className="mySwiper"
+              >
+                <SwiperSlide>
+                  <div className="!w-full">
+                    <Image
+                      className="mx-auto w-full"
+                      src={OurInterventionInNorthNigeria}
+                      alt="Overview Illustration"
+                    />
+                  </div>
+                </SwiperSlide>
+              </Swiper>
+            </div>
+
+            <div className="flex flex-col items-start justify-center gap-1 px-1.5 text-base leading-relaxed md:gap-2">
+              <p className="mb-4 text-base leading-relaxed">
+                The InnerCity Mission helps provide food security while taking deliberate actions to
+                help victims of crises, particularly the most vulnerable i.e. women and girls, move
+                from dependence on humanitarian relief towards development. Our Economic
+                Strengthening and livelihood program is vital in achieving economic reintegration
+                and independence, as it directly provides reliable livelihood opportunities such
+                skills acquisition training and grants for small scale business startups.
+              </p>
+              <p className="text-lg font-bold leading-relaxed">Our team provides the following:</p>
+              <ul className="list-disc pl-4">
+                <li>
+                  Support in formal and non-formal education settings for out-of-school children,
+                  including catch-up classes for ages 6-14.
+                </li>
+                <li>Distribute education kits and hygiene kits for students.</li>
+                <li>
+                  Provide capacity building for teachers, school management and community
+                  stakeholders on child safety measures, prevention of sexual exploitation and
+                  abuse.
+                </li>
+                <li>
+                  Construction of Charity Primary schools, temporary learning centers in IDP camps
+                  and host communities, as well as rehabilitating damaged classrooms in existing
+                  community schools.
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+      <hr />
+    </>
   )
 }
 
 export function Overview4Section() {
   return (
-    <section className="bg-light px-2 py-10">
-      <div className="container">
-        <h1 className="pb-4 text-3xl font-bold">
+    <>
+      <section className="bg-light px-2 py-10 pt-6">
+        <h1 className="mb-10 pb-4 text-center text-3xl font-bold underline">
           Our Impact In Economic Strengthening, Livelihoods And Food Security
         </h1>
+        {/* SECTOR DEMARCATE */}
+        <div className="container">
+          <div className="flex grid-cols-1 flex-col-reverse gap-8 md:grid lg:grid-cols-2 lg:gap-16">
+            <div className="">
+              <Swiper
+                spaceBetween={10}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
+                pagination={{
+                  clickable: true,
+                }}
+                navigation={true}
+                modules={[Autoplay, Pagination, Navigation]}
+                className="mySwiper"
+              >
+                <SwiperSlide>
+                  <div className="!w-full">
+                    <Image
+                      className="mx-auto w-full"
+                      src={KitForStudent}
+                      alt="Overview Illustration"
+                    />
+                  </div>
+                </SwiperSlide>
+              </Swiper>
+            </div>
 
-        {/*Food Security*/}
-        <>
-          <h1 className="pb-1 pt-5 text-2xl">Food Security:</h1>
-          <p className="pb-5">
-            Most IDPs count on humanitarian assistance as their only lifeline, as the answer to
-            their urgent need, the InnerCity Mission together with partners and volunteers organize
-            Food distributions to these vulnerable households in IDP Camps and Host Communities as
-            an immediate solution to the hunger challenges they face.
-          </p>
-          <div className="pl-4">
-            <Image className="w-auto" src={KitForStudent} alt="KitForStudent" />
+            <div className="flex flex-col items-start justify-center gap-4 px-1.5 text-base leading-relaxed md:gap-6">
+              <h3 className="text-xl font-bold uppercase lg:text-2xl">Food Security :</h3>
+
+              <p>
+                Most IDPs count on humanitarian assistance as their only lifeline, as the answer to
+                their urgent need, the InnerCity Mission together with partners and volunteers
+                organize Food distributions to these vulnerable households in IDP Camps and Host
+                Communities as an immediate solution to the hunger challenges they face.
+              </p>
+            </div>
           </div>
-        </>
-        {/*Skills acquisition Training and Economic Empowerment*/}
-        <>
-          <h1 className="pb-1 pt-5 text-2xl">
-            Skills Acquisition Training And Economic Empowerment:
-          </h1>
-          <p className="pb-5">
-            Through this initiative, we have organized skills acquisition training for internally
-            displaced persons (IDPs) in IDP Camps and targeted host communities in various
-            livelihood Opportunities such as Tailoring, beauty care, soap making, catering and
-            interior decoration. Some have been empowered with tools to start up small businesses
-            for sustenance with the skills acquired.
-          </p>
-          <div className="pl-4">
-            <Image className="h-auto w-auto" src={EconomyEmpowerment} alt="EconomyEmpowerment" />
+        </div>
+        <br />
+        {/* SECTOR DEMARCATE */}
+        <div className="container">
+          <div className="flex grid-cols-1 flex-col-reverse gap-8 md:grid lg:grid-cols-2 lg:gap-16">
+            <div className="flex flex-col items-start justify-center gap-4 px-1.5 text-base leading-relaxed md:gap-6">
+              <h3 className="text-xl font-bold uppercase lg:text-2xl">
+                Skills acquisition Training and Economic Empowerment :
+              </h3>
+
+              <p>
+                Through this initiative, we have organized skills acquisition training for
+                internally displaced persons (IDPs) in IDP Camps and targeted host communities in
+                various livelihood Opportunities such as Tailoring, beauty care, soap making,
+                catering and interior decoration. Some have been empowered with tools to start up
+                small businesses for sustenance with the skills acquired.
+              </p>
+            </div>
+
+            <div className="">
+              <Swiper
+                spaceBetween={10}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
+                pagination={{
+                  clickable: true,
+                }}
+                navigation={true}
+                modules={[Autoplay, Pagination, Navigation]}
+                className="mySwiper"
+              >
+                <SwiperSlide>
+                  <div className="!w-full">
+                    <Image
+                      className="mx-auto h-96 w-full object-fill object-top"
+                      src={EconomyEmpowerment}
+                      alt="Overview Illustration"
+                    />
+                  </div>
+                </SwiperSlide>
+              </Swiper>
+            </div>
           </div>
-        </>
-      </div>
-    </section>
+        </div>
+      </section>
+      <hr />
+    </>
   )
 }
