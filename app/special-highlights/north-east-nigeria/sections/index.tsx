@@ -52,77 +52,116 @@ export function PageHeroSection() {
 
 export function Overview1Section() {
   return (
-    <section className="bg-light px-2 py-10">
-      <div className="container">
-        <h1 className="pb-4 text-3xl font-bold">Education in Emergency</h1>
-        <p>
-          The unprecedented level of insurgency in North-East Nigeria particularly in the B.A.Y
-          States (Borno, Adamawa and Yobe) have adversely affected the gains in education achieved
-          prior to the insurgency. As a result of the crisis, large numbers of the population in
-          these affected states have been displaced leading to thousands of children being out of
-          school, this has been compounded by the setbacks caused by the Covid 19 global health
-          crisis.
-          <br />
-          <br />
-          In response to the education deprivation experienced in these regions, since 2015, our
-          Education in Emergency project has been one of our core areas of intervention in
-          North-East of Nigeria especially in two of the B.A.Y states which are Borno and Adamawa
-          states respectively, supporting education for displaced, returnee, and host community
-          children. With the Support of our Partners and a network of volunteers, we offer the
-          following:
-        </p>
-        <ul className="list-disc pl-4">
-          <li>
-            Support in formal and non-formal education settings for out-of-school children,
-            including catch-up classes for ages 6-14.
-          </li>
-          <li>Distribute education kits and hygiene kits for students.</li>
-          <li>
-            Provide capacity building for teachers, school management and community stakeholders on
-            child safety measures, prevention of sexual exploitation and abuse.
-          </li>
-          <li>
-            Construction of Charity Primary schools, temporary learning centers in IDP camps and
-            host communities, as well as rehabilitating damaged classrooms in existing community
-            schools.
-          </li>
-        </ul>
-      </div>
-    </section>
+    <>
+      <section className="bg-light px-2 py-10">
+        <div className="container">
+          <h1 className="pb-4 text-center text-3xl font-bold underline">Education in Emergency</h1>
+          <p>
+            The unprecedented level of insurgency in North-East Nigeria particularly in the B.A.Y
+            States (Borno, Adamawa and Yobe) have adversely affected the gains in education achieved
+            prior to the insurgency. As a result of the crisis, large numbers of the population in
+            these affected states have been displaced leading to thousands of children being out of
+            school, this has been compounded by the setbacks caused by the Covid 19 global health
+            crisis.
+            <br />
+            <br />
+            In response to the education deprivation experienced in these regions, since 2015, our
+            Education in Emergency project has been one of our core areas of intervention in
+            North-East of Nigeria especially in two of the B.A.Y states which are Borno and Adamawa
+            states respectively, supporting education for displaced, returnee, and host community
+            children. With the Support of our Partners and a network of volunteers, we offer the
+            following:
+          </p>
+          <ul className="list-disc pl-4">
+            <li>
+              Support in formal and non-formal education settings for out-of-school children,
+              including catch-up classes for ages 6-14.
+            </li>
+            <li>Distribute education kits and hygiene kits for students.</li>
+            <li>
+              Provide capacity building for teachers, school management and community stakeholders
+              on child safety measures, prevention of sexual exploitation and abuse.
+            </li>
+            <li>
+              Construction of Charity Primary schools, temporary learning centers in IDP camps and
+              host communities, as well as rehabilitating damaged classrooms in existing community
+              schools.
+            </li>
+          </ul>
+        </div>
+      </section>
+      <hr />
+    </>
   )
 }
 
 export function Overview2Section() {
   return (
-    <section className="bg-light px-2 py-10">
+    <section className="bg-light px-2 py-10 pt-6">
+      <h1 className="mb-10 pb-4 text-center text-3xl font-bold underline">
+        Our Impact In Education
+      </h1>
+      {/* SECTOR DEMARCATE */}
       <div className="container">
-        <h1 className="pb-4 text-3xl font-bold">Our Impact In Education</h1>
-        {/* providing of formal education */}
-        <>
-          <h1 className="pb-1 text-2xl">Provision of Formal Education:</h1>
-          <p className="pb-2">
-            In 2019, As part of our Education in Emergency initiative, the InnerCity Mission built
-            and commissioned its first full-fledged tuition-free school in North-East Nigeria.
-          </p>
-
-          <p className="pb-5">
-            The outcome of this education intervention in the North-East is to reduce the statistics
-            of Out-of-School Children and improve access to quality, inclusive, and continued
-            education of children of all vulnerable categories through formal and non-formal
-            approaches in a safe, protective, and healthy learning environment; with support from
-            partners, donors, and individuals who are passionate about an inclusive society. This
-            support includes 6-year tuition, school supplies (school bag, shoes, socks, uniforms,
-            school meals, and stationery) among others.
-          </p>
-          <div className="pl-4">
-            <Image className="w-auto" src={PicOfSchoolInDesma} alt="PicOfSchoolInDesma" />
+        <div className="flex grid-cols-1 flex-col-reverse gap-8 md:grid lg:grid-cols-2 lg:gap-16">
+          <div className="">
+            <Swiper
+              spaceBetween={10}
+              autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+              }}
+              pagination={{
+                clickable: true,
+              }}
+              navigation={true}
+              modules={[Autoplay, Pagination, Navigation]}
+              className="mySwiper"
+            >
+              <SwiperSlide>
+                <div className="!w-full">
+                  <Image
+                    className="mx-auto w-full"
+                    src={PicOfSchoolInDesma}
+                    alt="Overview Illustration"
+                  />
+                </div>
+              </SwiperSlide>
+            </Swiper>
           </div>
-        </>
-        {/* Provision of Non formal Education setting */}
-        <>
-          <h1 className="pb-1 pt-5 text-2xl">Provision Of Non Formal Education Setting:</h1>
-          <ul className="list-disc pl-4">
-            <li className="pb-5">
+
+          <div className="flex flex-col items-start justify-center gap-4 px-1.5 text-base leading-relaxed md:gap-6">
+            <h3 className="text-xl font-bold uppercase lg:text-2xl">
+              Provision of Formal Education:
+            </h3>
+
+            <p>
+              In 2019, As part of our Education in Emergency initiative, the InnerCity Mission built
+              and commissioned its first full-fledged tuition-free school in North-East Nigeria.
+            </p>
+
+            <p>
+              The outcome of this education intervention in the North-East is to reduce the
+              statistics of Out-of-School Children and improve access to quality, inclusive, and
+              continued education of children of all vulnerable categories through formal and
+              non-formal approaches in a safe, protective, and healthy learning environment; with
+              support from partners, donors, and individuals who are passionate about an inclusive
+              society. This support includes 6-year tuition, school supplies (school bag, shoes,
+              socks, uniforms, school meals, and stationery) among others.
+            </p>
+          </div>
+        </div>
+      </div>
+      <br />
+      {/* SECTOR DEMARCATE */}
+      <div className="container">
+        <div className="flex grid-cols-1 flex-col-reverse gap-8 md:grid lg:grid-cols-2 lg:gap-16">
+          <div className="flex flex-col items-start justify-center gap-4 px-1.5 text-base leading-relaxed md:gap-6">
+            <h3 className="text-xl font-bold uppercase lg:text-2xl">
+              Provision Of Non Formal Education Setting:
+            </h3>
+
+            <p>
               We worked to reduce the impact occasioned by COVID-19 and bridged the gap by
               scaling-up its in-person educational engagement for these targeted beneficiaries who
               do not have ANY access to online learning, who live in areas with low or no internet
@@ -133,51 +172,168 @@ export function Overview2Section() {
               basic literacy and numeracy packaged in specially designed lesson plans and
               worksheets, we complimented the education intervention with health and psychosocial
               support.
-            </li>
-            <Image className="" src={image4Illustration} width={550} alt="image4Illustration" />
-            <li className="pb-5 pt-5">
-              <span className="font-bold">We constructed Temporary Learning Centers:</span>We have
-              built 2 learning centers which are Safe learning spaces, equipping the centers with
-              school furniture and supplies to aid learning.
-            </li>
-            <Image className="" src={image3Illustration} width={550} alt="image3Illustration" />
-          </ul>
-        </>
-        {/*Distribution of education kits for students*/}
-        <>
-          <h1 className="pb-1 pt-5 text-2xl">Distribution Of Education Kits For Students:</h1>
-          <p className="pb-5">
-            Through the distribution of learning resources which includes note books, stationery,
-            school uniforms, shoes, school bags , we keep both boys and girls in school and learning
-            . The InnerCity Mission has successfully provided school kits for over 5000 children in
-            IDP Camps and host communities.
-          </p>
-          <div className="pl-4">
-            <Image className="w-auto" src={KitForStudent} alt="KitForStudent" />
+            </p>
           </div>
-        </>
-        {/*TEACH HER- A Girl Child Education initiative of the InnerCity Mission*/}
-        <>
-          <h1 className="pb-1 pt-5 text-2xl">
-            Teach Her- A Girl Child Education Initiative Of The InnerCity Mission:
-          </h1>
-          <p className="pb-5">
-            The disparity in access to education for boys and girls is wide, However, due to a
-            combination of factors in North-East Nigeria, like insecurity and poverty, many girls
-            are forced to leave school while others never had the opportunity to go to school, in
-            the first place. The InnerCity Mission is committed to providing quality education for
-            girls in North-East Nigeria and tackling the barriers that prevent them from getting an
-            education.
-          </p>
-          <div className="pl-4">
-            <Image
-              className="w-auto"
-              src={InitiativeOfTheInnerCity}
-              alt="InitiativeOfTheInnerCity"
-            />
+
+          <div className="">
+            <Swiper
+              spaceBetween={10}
+              autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+              }}
+              pagination={{
+                clickable: true,
+              }}
+              navigation={true}
+              modules={[Autoplay, Pagination, Navigation]}
+              className="mySwiper"
+            >
+              <SwiperSlide>
+                <div className="!w-full">
+                  <Image
+                    className="mx-auto w-full"
+                    src={image4Illustration}
+                    alt="Overview Illustration"
+                  />
+                </div>
+              </SwiperSlide>
+            </Swiper>
           </div>
-        </>
+        </div>
       </div>
+      <br />
+      {/* SECTOR DEMARCATE */}
+      <div className="container">
+        <div className="flex grid-cols-1 flex-col-reverse gap-8 md:grid lg:grid-cols-2 lg:gap-16">
+          <div className="">
+            <Swiper
+              spaceBetween={10}
+              autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+              }}
+              pagination={{
+                clickable: true,
+              }}
+              navigation={true}
+              modules={[Autoplay, Pagination, Navigation]}
+              className="mySwiper"
+            >
+              <SwiperSlide>
+                <div className="!w-full">
+                  <Image
+                    className="mx-auto w-full"
+                    src={image3Illustration}
+                    alt="Overview Illustration"
+                  />
+                </div>
+              </SwiperSlide>
+            </Swiper>
+          </div>
+
+          <div className="flex flex-col items-start justify-center gap-4 px-1.5 text-base leading-relaxed md:gap-6">
+            <h3 className="text-xl font-bold uppercase lg:text-2xl">
+              We constructed Temporary Learning Centers:
+            </h3>
+
+            <p>
+              We have built 2 learning centers which are Safe learning spaces, equipping the centers
+              with school furniture and supplies to aid learning.
+            </p>
+          </div>
+        </div>
+      </div>
+      <br />
+      {/* SECTOR DEMARCATE */}
+      <div className="container">
+        <div className="flex grid-cols-1 flex-col-reverse gap-8 md:grid lg:grid-cols-2 lg:gap-16">
+          <div className="flex flex-col items-start justify-center gap-4 px-1.5 text-base leading-relaxed md:gap-6">
+            <h3 className="text-xl font-bold uppercase lg:text-2xl">
+              Distribution of education kits for students
+            </h3>
+
+            <p>
+              Through the distribution of learning resources which includes note books, stationery,
+              school uniforms, shoes, school bags , we keep both boys and girls in school and
+              learning . The InnerCity Mission has successfully provided school kits for over 5000
+              children in IDP Camps and host communities.
+            </p>
+          </div>
+
+          <div className="">
+            <Swiper
+              spaceBetween={10}
+              autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+              }}
+              pagination={{
+                clickable: true,
+              }}
+              navigation={true}
+              modules={[Autoplay, Pagination, Navigation]}
+              className="mySwiper"
+            >
+              <SwiperSlide>
+                <div className="!w-full">
+                  <Image
+                    className="mx-auto w-full"
+                    src={KitForStudent}
+                    alt="Overview Illustration"
+                  />
+                </div>
+              </SwiperSlide>
+            </Swiper>
+          </div>
+        </div>
+      </div>
+      <br /> {/* SECTOR DEMARCATE */}
+      <div className="container">
+        <div className="flex grid-cols-1 flex-col-reverse gap-8 md:grid lg:grid-cols-2 lg:gap-16">
+          <div className="">
+            <Swiper
+              spaceBetween={10}
+              autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+              }}
+              pagination={{
+                clickable: true,
+              }}
+              navigation={true}
+              modules={[Autoplay, Pagination, Navigation]}
+              className="mySwiper"
+            >
+              <SwiperSlide>
+                <div className="!w-full">
+                  <Image
+                    className="mx-auto h-96 w-full object-fill object-top"
+                    src={InitiativeOfTheInnerCity}
+                    alt="Overview Illustration"
+                  />
+                </div>
+              </SwiperSlide>
+            </Swiper>
+          </div>
+
+          <div className="flex flex-col items-start justify-center gap-4 px-1.5 text-base leading-relaxed md:gap-6">
+            <h3 className="text-xl font-bold uppercase lg:text-2xl">
+              TEACH HER- A Girl Child Education initiative of the InnerCity Mission:
+            </h3>
+
+            <p>
+              The disparity in access to education for boys and girls is wide, However, due to a
+              combination of factors in North-East Nigeria, like insecurity and poverty, many girls
+              are forced to leave school while others never had the opportunity to go to school, in
+              the first place. The InnerCity Mission is committed to providing quality education for
+              girls in North-East Nigeria and tackling the barriers that prevent them from getting
+              an education.
+            </p>
+          </div>
+        </div>
+      </div>
+      <br />
     </section>
   )
 }
