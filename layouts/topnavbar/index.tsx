@@ -76,7 +76,7 @@ export default function TopNavbar({ menus = defaultmenu }) {
                 <button className="btn-primary w-fit">Donate</button>
               </Link>
               <button onClick={() => setNavOpen((p) => !p)} className="inline-block md:hidden">
-                <MenuFriesIcon className="btn h-12 w-12 rotate-180 px-2 text-5xl font-bold text-light ring-light" />
+                <MenuFriesIcon className="btn-white h-12 w-12 rotate-180 px-2 text-5xl font-bold text-primary ring-light hover:bg-white" />
               </button>
             </div>
           </div>

@@ -5,7 +5,7 @@ export default function CtaSection() {
   return (
     <div className="bg-light py-10">
       <div className="wrapper flex h-96 flex-col items-center justify-center gap-10 rounded-xl bg-[url('/assets/images/cta-banner.jpg')] bg-cover bg-center text-white md:rounded-xl">
-        <h3 className="text-center text-3xl font-bold tracking-wide md:text-4xl">
+        <h3 className="text-center text-4xl font-black tracking-wide md:text-6xl">
           Every Child is your Child!
         </h3>
 

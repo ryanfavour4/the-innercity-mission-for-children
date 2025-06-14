@@ -8,7 +8,7 @@ export default function BillionMealCampaignSection() {
     <div className="bg-light py-10">
       <div className="wrapper border-y border-textcolor/25 px-3 py-10">
         {/* TWIN COL */}
-        <div className="grid h-full grid-cols-1 justify-center gap-5 md:grid-cols-2">
+        <div className="grid h-full grid-cols-1 justify-center gap-5 md:grid-cols-2 md:gap-10">
           <div className="flex h-full flex-col justify-between gap-5 pb-8">
             <h3 className="sub-header text-2xl font-semibold capitalize md:text-3xl">
               7 billion meals campaign
@@ -31,7 +31,7 @@ export default function BillionMealCampaignSection() {
           <div className="w-full">
             <Image
               alt="5 billion campaign"
-              className="h-[450px] w-full rounded-md object-cover md:ml-auto md:w-[400px]"
+              className="h-[450px] w-full rounded-md object-cover md:ml-auto"
               src={fiveBmcImage}
               width={400}
               height={450}

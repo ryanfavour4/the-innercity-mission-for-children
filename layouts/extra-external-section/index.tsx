@@ -41,7 +41,7 @@ export default function ExtraExternalSection() {
             </p>
 
             <div className="flex flex-wrap items-center gap-6 md:gap-4">
-              <button className="btn-white flex w-fit items-center gap-3 border border-light px-3 py-2">
+              <button className="btn-white flex w-fit items-center gap-3 border border-light px-3 py-2 hover:bg-white">
                 <GooglePlayStoreColouredIcon width={35} height={35} />
                 <span className="flex flex-col items-start text-dark">
                   <small className="text-xs leading-tight">Get it on</small>
@@ -49,7 +49,7 @@ export default function ExtraExternalSection() {
                 </span>
               </button>
 
-              <button className="btn-white flex w-fit items-center gap-3 border border-light bg-dark px-3 py-2">
+              <button className="btn-white flex w-fit items-center gap-3 border border-light bg-dark px-3 py-2 hover:bg-dark">
                 <LoveworldAppStoreColouredIcon width={35} height={35} />
                 <span className="flex flex-col items-start text-light">
                   <small className="text-xs leading-tight">Get it on</small>
