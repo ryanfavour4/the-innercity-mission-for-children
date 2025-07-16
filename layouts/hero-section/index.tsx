@@ -66,7 +66,7 @@ export default function HeroSection2() {
             {/* BOTTOM SECTION */}
             <div className="flex flex-col items-center justify-center gap-3 md:gap-8">
               <div className="h-[2px] w-full bg-light" />
-              <small className="text-nowrap">5809 meals donated</small>
+              <small className="text-nowrap">Over 5 billion meals donated</small>
             </div>
           </div>
         </div>
