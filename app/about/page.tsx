@@ -1,12 +1,12 @@
 import { CrossIcon, GraduationCapIcon } from '@/components/svgs'
 import Image from 'next/image'
-import Script from 'next/script'
 import React from 'react'
 import kcIcon from '@/public/assets/icons/kingschat-icon-white.png'
 import igIcon from '@/public/assets/icons/instagram-icon-white.png'
 import twIcon from '@/public/assets/icons/twitter-icon-white.png'
 import lnIcon from '@/public/assets/icons/linkeln-icon-white.png'
 import CtaSection from '@/layouts/cta-section'
+import { VideoCard } from '@/components/video-card'
 
 export default function AboutPage() {
   const programmaticAreas = [
@@ -89,17 +89,8 @@ export default function AboutPage() {
 
       {/* ABOUT VIDEO */}
       <div className="bg-gradient-to-b from-light to-secondary px-3 py-5 pb-12">
-        <iframe
-          className="relative mx-auto flex h-[250px] w-full !max-w-4xl flex-col items-center justify-center rounded-lg border-4 border-dashed border-secondary bg-primary md:h-[500px]"
-          src="https://player.vimeo.com/video/440604709?h=17c8c981dc"
-          data-src="https://player.vimeo.com/video/440604709?h=17c8c981dc&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-          allow="autoplay; transcript; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-          width="1080"
-          height="250"
-          allowFullScreen
-        >
-          <Script src="https://player.vimeo.com/api/player.js"></Script>
-        </iframe>
+        {/* VIDEO */}
+        <VideoCard iframe={true} />
       </div>
 
       {/* INTRODUCTION BODY SECTION */}

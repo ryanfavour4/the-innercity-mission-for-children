@@ -1,5 +1,5 @@
 import React from 'react'
-import Script from 'next/script'
+import { VideoCard } from '@/components/video-card'
 
 function IntroVideoSection() {
   return (
@@ -15,17 +15,7 @@ function IntroVideoSection() {
           </div>
 
           {/* VIDEO */}
-          <iframe
-            className="relative mx-auto flex h-[250px] w-full !max-w-4xl flex-col items-center justify-center rounded-lg border-4 border-secondary bg-secondary md:h-[500px]"
-            src="https://player.vimeo.com/video/1049658542?h=70167c1e56"
-            data-src="https://player.vimeo.com/video/1049658542?h=70167c1e56&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
-            allow="autoplay; transcript; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-            width="1280"
-            height="720"
-            allowFullScreen
-          >
-            <Script src="https://player.vimeo.com/api/player.js"></Script>
-          </iframe>
+          <VideoCard iframe={true} />
         </div>
       </div>
     </div>
