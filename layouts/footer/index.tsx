@@ -73,7 +73,11 @@ export default function Footer() {
       <div className="mt-10 flex w-full flex-col-reverse items-center justify-between gap-8 border-t border-light pt-4 md:flex-row">
         <small className="block text-sm">
           © {new Date().getFullYear()}. The InnerCity Mission for Children NGO. All Rights
-          Reserved. See our Privacy Policy.
+          Reserved. See our{' '}
+          <Link className="font-semibold underline" href={'/privacy-policy'}>
+            Privacy Policy
+          </Link>
+          .
         </small>
 
         <div className="flex items-center justify-center gap-5">
