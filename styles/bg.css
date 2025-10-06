@@ -1,24 +1,29 @@
 .bg-hero-section {
-  background-image: linear-gradient(rgba(var(--dark-rgb) / 0.6), rgba(var(--dark-rgb) / 0.6)),
+  background-image:
+    linear-gradient(rgba(var(--dark-rgb) / 0.6), rgba(var(--dark-rgb) / 0.6)),
     url('/assets/images/hero-section.jpg');
 }
 
 .bg-volunteer-with-us {
-  background-image: linear-gradient(rgba(var(--dark-rgb) / 0.7), rgba(var(--dark-rgb) / 0.7)),
+  background-image:
+    linear-gradient(rgba(var(--dark-rgb) / 0.7), rgba(var(--dark-rgb) / 0.7)),
     url('/assets/images/volunteer-with-us.jpg');
 }
 
 .bg-give-a-meal-logo {
-  background-image: linear-gradient(rgba(var(--dark-rgb) / 0.7), rgba(var(--dark-rgb) / 0.7)),
+  background-image:
+    linear-gradient(rgba(var(--dark-rgb) / 0.7), rgba(var(--dark-rgb) / 0.7)),
     url('/assets/images/give-a-meal-logo.jpg');
 }
 
 .bg-cta-section {
-  background-image: linear-gradient(rgba(var(--dark-rgb) / 0.6), rgba(var(--dark-rgb) / 0.6)),
+  background-image:
+    linear-gradient(rgba(var(--dark-rgb) / 0.6), rgba(var(--dark-rgb) / 0.6)),
     url('/assets/images/cta-banner.jpg');
 }
 
 .bg-dashboard-white-bg {
-  background-image: linear-gradient(rgba(var(--light-rgb) / 0.2), rgba(var(--light-rgb) / 0.2)),
+  background-image:
+    linear-gradient(rgba(var(--light-rgb) / 0.2), rgba(var(--light-rgb) / 0.2)),
     url('/assets/images/dashboard-white-bg.jpg');
 }

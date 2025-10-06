@@ -9,9 +9,9 @@ function IntroVideoSection() {
         {/* <div className="absolute -mt-[60%] flex aspect-1 w-dvw flex-col items-center justify-center rounded-full bg-secondary" /> */}
         <div className="absolute flex aspect-1 w-dvw flex-col items-center justify-center bg-secondary" />
         <div className="relative z-10 flex w-full flex-col items-center justify-center text-textcolor">
-          <div className="mb-16 flex flex-col items-center justify-center gap-2 px-4 text-center">
-            <h2 className="text-2xl font-semibold md:text-3xl">— WORLD FOOD MONTH —</h2>
-            <p>Spread Christmas joy with the InnerCity Mission&apos;s Send Portions campaign.</p>
+          <div className="mb-16 flex flex-col items-center justify-center gap-2 px-4 text-center md:mt-10">
+            <h2 className="text-2xl font-semibold md:text-3xl">— ICM SCHOOL MEALS —</h2>
+            <p>Help a child learn by giving the gift of a daily meal.</p>
           </div>
 
           {/* VIDEO */}

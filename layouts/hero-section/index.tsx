@@ -55,12 +55,15 @@ export default function HeroSection2() {
                 <Link className="btn-white max-w-fit px-8 py-3 hover:bg-accent" href="/donate">
                   Donate now
                 </Link>
-                <button className="btn flex w-fit items-center gap-1 p-2 py-3 ring-light/50">
+                <a
+                  href="#intro-video-section"
+                  className="btn flex w-fit items-center gap-1 p-2 py-3 ring-light/50"
+                >
                   <span className="flex h-8 w-8 items-center justify-center rounded-full bg-light">
                     <PlayIcon className="h-6 w-6 pl-px text-dark" />
                   </span>
                   <p>Play Video</p>
-                </button>
+                </a>
               </div>
             </div>
             {/* BOTTOM SECTION */}

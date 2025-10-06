@@ -25,7 +25,7 @@ function VideoDonate({}) {
           <div className="h-96 md:col-span-7">
             <VideoCard
               className="h-96"
-              videoUrl="https://player.vimeo.com/video/1049658542?h=70167c1e56&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+              videoUrl="https://player.vimeo.com/video/1113227827?h=9ca3e574ed&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
               iframe={true}
             />
           </div>
