@@ -167,8 +167,8 @@ h6,
 }
 
 .clip-hero-illustration {
-  -webkit-mask-image: url('/assets/svg/about-illustration-image-clipboard.svg');
-  mask-image: url('/assets/svg/about-illustration-image-clipboard.svg');
+  -webkit-mask-image: url('/assets/svg/illustration-image-clipboard.svg');
+  mask-image: url('/assets/svg/illustration-image-clipboard.svg');
   mask-repeat: no-repeat;
   mask-size: contain;
   mask-position: center;

@@ -1,11 +1,58 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { PlayIcon } from '@/components/svgs'
+import { HandHeartIcon, PlayIcon } from '@/components/svgs'
 import Marquee from '@/components/marquee/marquee'
 import { Autoplay, Navigation, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import type { Swiper as SwiperClass } from 'swiper'
+
+const images = [
+  { img: '/assets/images/wen-banner.jpg', link: '/special-highlights/build-a-school/', id: 1 },
+  { img: '/assets/images/7BMC11.jpg', link: '/special-highlights/7billionmeals/', id: 2 },
+  {
+    img: '/assets/images/website-banner-3-back-to-school.jpg',
+    link: '/special-highlights/backtoschool/',
+    id: 2,
+  },
+  { img: '/assets/images/back-to-school.jpg', link: '/special-highlights/backtoschool/', id: 3 },
+  {
+    img: '/assets/images/Fiji-rebroadcast.png',
+    link: '/livestream/',
+    id: 4,
+  },
+  {
+    img: '/assets/images/october.jpg',
+    link: '/special-highlights/7billionmeals/',
+    id: 5,
+  },
+  {
+    img: '/assets/images/bannerGO.jpg',
+    link: '/special-highlights/summerinitiatives/',
+    id: 6,
+  },
+  {
+    img: '/assets/images/community-center.jpg',
+    link: '/special-highlights/summerinitiatives/',
+    id: 7,
+  },
+  {
+    img: '/assets/images/preserve1.png',
+    link: '/special-highlights/summerinitiatives/',
+    id: 8,
+  },
+  {
+    img: '/assets/images/summer-meals1.png',
+    link: '/special-highlights/summerinitiatives/',
+    id: 9,
+  },
+  {
+    img: '/assets/images/website-bag-of-hope1.png',
+    link: 'https://vfd.theinnercitymission.ngo/',
+    id: 10,
+  },
+]
 
 export default function HeroSection() {
   return (
@@ -13,11 +60,15 @@ export default function HeroSection() {
       <header className="bg-secondary pb-10">
         {/* Marquee new year roller */}
         <div className="bg-primary py-2 text-sm font-semibold uppercase tracking-widest text-light">
-          <div className="wrapper">
-            <Marquee speed={10}>
-              <p>2025 Year of Completion!</p>
+          <Link href={'/special-highlights/7billionmeals/'} className="wrapper">
+            <Marquee speed={20}>
+              <p>
+                DON&apos;T IGNORE CHILDREN,EVERYCHILD IS YOUR CHILD, CLICK TO SUPPORT OUR ON GOING
+                CAMPAIGN
+              </p>
+              {/* <p>2025 Year of Completion!</p> */}
             </Marquee>
-          </div>
+          </Link>
         </div>
         {/* HERO BG AREA */}
         {/* <HeroSection2 /> */}
@@ -29,20 +80,13 @@ export default function HeroSection() {
 
 export function HeroSection2() {
   const [currentIndex, setCurrentIndex] = useState(0)
-  const images = [
-    { img: '/assets/images/7BMC11.jpg', link: '/' },
-    { img: '/assets/images/wen-banner.jpg', link: '/' },
-    { img: '/assets/images/website-bag-of-hope1.png', link: '/' },
-    { img: '/assets/images/summer-meals1.png', link: '/' },
-    { img: '/assets/images/preserve1.png', link: '/' },
-  ]
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1))
     }, 3000)
     return () => clearInterval(timer)
-  }, [images.length])
+  }, [])
 
   return (
     <div className="relative z-10 flex h-1/2 min-h-[630px] flex-col items-center justify-center overflow-hidden bg-cover bg-center text-light">
@@ -96,13 +140,8 @@ export function HeroSection2() {
 }
 
 export function HeroSection3() {
-  const images = [
-    { img: '/assets/images/wen-banner.jpg', link: '/', id: 1 },
-    { img: '/assets/images/7BMC11.jpg', link: '/', id: 0 },
-    { img: '/assets/images/website-bag-of-hope1.png', link: '/', id: 2 },
-    { img: '/assets/images/summer-meals1.png', link: '/', id: 3 },
-    { img: '/assets/images/preserve1.png', link: '/', id: 4 },
-  ]
+  const [activeLink, setActiveLink] = useState('#intro-video-section')
+  const swiperRef = useRef<SwiperClass | null>(null)
 
   return (
     <>
@@ -115,22 +154,36 @@ export function HeroSection3() {
             The InnerCity Mission for Children focuses on nurturing, educating, and empowering the
             next generation. Join us to make a lasting difference.
           </p>
-          <a
-            href="#intro-video-section"
-            className="btn-white flex w-fit items-center gap-1 border px-8 py-2 text-base ring-light/50"
-          >
-            <span className="flex items-center justify-center rounded-full bg-light">
-              <PlayIcon className="size-5 pl-px text-dark" />
-            </span>
-            <p>Play Video</p>
-          </a>
+          <div className="flex w-full max-w-48 flex-wrap items-center justify-center gap-2 md:max-w-96">
+            <a
+              href="#intro-video-section"
+              className="btn flex w-fit items-center gap-2.5 border px-4 py-2 text-base ring-light/50"
+            >
+              <PlayIcon className="size-5 pl-px" />
+              <p>Play Video</p>
+            </a>
+            <a
+              href={activeLink}
+              className="btn-white flex w-fit items-center gap-1 border px-8 py-2 text-base ring-light/50"
+            >
+              <span className="flex items-center justify-center rounded-full bg-light p-1">
+                <HandHeartIcon className="size-4 pl-px text-dark" />
+              </span>
+              <p>Join Us</p>
+            </a>
+          </div>
         </div>
       </div>
-      <div className="relative mx-auto -mt-44 aspect-[1800/700] w-fit drop-shadow-xl md:-mt-48">
-        <div className="clip-hero-illustration mx-auto -mt-0 flex aspect-[1800/700] w-[96dvw] max-w-screen-lg">
+      <div className="relative mx-auto -mt-48 aspect-[1800/700] w-fit drop-shadow-xl md:-mt-48">
+        <div className="clip-hero-illustration mx-auto -mt-0 flex aspect-[1800/700] w-[96dvw] max-w-screen-lg hover:scale-105">
           <Swiper
+            onSwiper={(swiper) => (swiperRef.current = swiper)}
+            onSlideChange={(swiper) => {
+              setActiveLink(images[swiper.realIndex].link)
+              console.log('Active:', images[swiper.realIndex])
+            }}
             autoplay={{
-              delay: 2500,
+              delay: 5000,
               disableOnInteraction: false,
             }}
             pagination={{
@@ -142,14 +195,16 @@ export function HeroSection3() {
             {images.map((image, index) => {
               return (
                 <SwiperSlide key={index}>
-                  <Image
-                    className={`w-full object-cover transition-opacity duration-1000`}
-                    unoptimized
-                    alt="heroBannerImage"
-                    height={100}
-                    width={300}
-                    src={image.img}
-                  />
+                  <Link href={'/'}>
+                    <Image
+                      className={`group-hover:scale-1.1 w-full object-cover transition-opacity duration-1000`}
+                      unoptimized
+                      alt="heroBannerImage"
+                      height={100}
+                      width={300}
+                      src={image.img}
+                    />
+                  </Link>
                 </SwiperSlide>
               )
             })}
