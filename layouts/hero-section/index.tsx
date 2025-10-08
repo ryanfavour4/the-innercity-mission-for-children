@@ -4,8 +4,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { PlayIcon } from '@/components/svgs'
 import Marquee from '@/components/marquee/marquee'
-import heroBannerImage from '@/public/assets/images/wen-banner.jpg'
-// import heroBannerImage from '@/public/assets/images/7BMC11.jpg'
+import { Autoplay, Navigation, Pagination } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/react'
 
 export default function HeroSection() {
   return (
@@ -96,6 +96,14 @@ export function HeroSection2() {
 }
 
 export function HeroSection3() {
+  const images = [
+    { img: '/assets/images/wen-banner.jpg', link: '/', id: 1 },
+    { img: '/assets/images/7BMC11.jpg', link: '/', id: 0 },
+    { img: '/assets/images/website-bag-of-hope1.png', link: '/', id: 2 },
+    { img: '/assets/images/summer-meals1.png', link: '/', id: 3 },
+    { img: '/assets/images/preserve1.png', link: '/', id: 4 },
+  ]
+
   return (
     <>
       <div className="bg-hero-wavy-pattern">
@@ -119,15 +127,34 @@ export function HeroSection3() {
         </div>
       </div>
       <div className="relative mx-auto -mt-44 aspect-[1800/700] w-fit drop-shadow-xl md:-mt-48">
-        <div className="clip-hero-illustration mx-auto -mt-0 aspect-[1800/700] max-w-screen-lg">
-          <Image
-            className="w-full object-cover"
-            unoptimized
-            alt="heroBannerImage"
-            height={100}
-            width={300}
-            src={heroBannerImage}
-          />
+        <div className="clip-hero-illustration mx-auto -mt-0 flex aspect-[1800/700] max-w-screen-lg">
+          <Swiper
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+            pagination={{
+              clickable: true,
+            }}
+            navigation={true}
+            modules={[Autoplay, Pagination, Navigation]}
+            className="mySwiper"
+          >
+            {images.map((image, index) => {
+              return (
+                <SwiperSlide key={index}>
+                  <Image
+                    className={`w-full object-cover transition-opacity duration-1000`}
+                    unoptimized
+                    alt="heroBannerImage"
+                    height={100}
+                    width={300}
+                    src={image.img}
+                  />
+                </SwiperSlide>
+              )
+            })}
+          </Swiper>
         </div>
       </div>
     </>
