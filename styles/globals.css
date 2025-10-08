@@ -166,6 +166,15 @@ h6,
   color: rgba(var(--primary)) !important;
 }
 
+.clip-hero-illustration {
+  -webkit-mask-image: url('/assets/svg/illustration-image-clipboard.svg');
+  mask-image: url('/assets/svg/illustration-image-clipboard.svg');
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-position: center;
+  margin-inline: auto;
+}
+
 @media only screen and (max-width: 650px) {
   body {
     font-size: 16px;

@@ -16,7 +16,7 @@ export function VideoCard({
       {iframe ? (
         <>
           <iframe
-            className="relative mx-auto flex h-[250px] w-full !max-w-4xl flex-col items-center justify-center rounded-lg border-4 border-secondary bg-secondary md:h-[650px]"
+            className="relative mx-auto flex h-[350px] w-full !max-w-4xl flex-col items-center justify-center rounded-lg border-4 border-secondary bg-secondary md:h-[650px]"
             src={videoUrl}
             data-src={`${videoUrl}&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479`}
             allow="autoplay; transcript; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
