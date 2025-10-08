@@ -27,3 +27,8 @@
     linear-gradient(rgba(var(--light-rgb) / 0.2), rgba(var(--light-rgb) / 0.2)),
     url('/assets/images/dashboard-white-bg.jpg');
 }
+
+.bg-hero-wavy-pattern {
+  background-image: url('/assets/svg/bg-wavy-pattern.svg');
+  background-size: cover;
+}
