@@ -127,7 +127,7 @@ export function HeroSection3() {
         </div>
       </div>
       <div className="relative mx-auto -mt-44 aspect-[1800/700] w-fit drop-shadow-xl md:-mt-48">
-        <div className="clip-hero-illustration mx-auto -mt-0 flex aspect-[1800/700] max-w-screen-lg">
+        <div className="clip-hero-illustration mx-auto -mt-0 flex aspect-[1800/700] w-[96dvw] max-w-screen-lg">
           <Swiper
             autoplay={{
               delay: 2500,
@@ -138,7 +138,6 @@ export function HeroSection3() {
             }}
             navigation={true}
             modules={[Autoplay, Pagination, Navigation]}
-            className="mySwiper"
           >
             {images.map((image, index) => {
               return (
