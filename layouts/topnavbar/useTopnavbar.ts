@@ -69,12 +69,8 @@ export const menus: menu_type[] = [
         path: '/north-east-nigeria',
       },
       {
-        title: 'Hunger Action Month',
-        path: '/hunger-action-month',
-      },
-      {
-        title: 'Colouring Dreams Conference 2024',
-        path: '/cdcon-2024',
+        title: 'Summer Initiatives',
+        path: '/summerinitiatives',
       },
       {
         title: 'Colouring Dream tv',

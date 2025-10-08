@@ -11,7 +11,7 @@ import EventsSection from '@/layouts/events-section'
 export default function Home() {
   return (
     <div className="">
-      <HeroSection />
+      <HeroSection/>
       <IntroVideoSection />
       <BillionMealCampaignSection />
       <MetricStatsSection />
