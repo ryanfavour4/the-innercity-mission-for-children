@@ -38,21 +38,21 @@ export default function Footer() {
         <div className="">
           <h4 className="mb-6 text-lg font-semibold">Ways to help</h4>
           <div className="flex flex-col gap-2 text-sm">
-            <Link href={'/'}>Instant Donation</Link>
-            <Link href={'/'}>Give Monthly</Link>
-            <Link href={'/'}>Become a Volunteer</Link>
-            <Link href={'/'}>Sponsor Campaigns</Link>
-            <Link href={'/'}>Pray with Us</Link>
+            <Link href={'/donate'}>Instant Donation</Link>
+            <Link href={'/partner-with-us'}>Give Monthly</Link>
+            <Link href={'https://hvn.theinnercitymission.ngo/'}>Become a Volunteer</Link>
+            <Link href={'https://fundraise.theinnercitymission.ngo/'}>Sponsor Campaigns</Link>
+            <Link href={'https://prayer.theinnercitymission.ngo/'}>Pray with Us</Link>
           </div>
         </div>
         {/*  */}
         <div className="">
           <h4 className="mb-6 text-lg font-semibold">Quick Links</h4>
           <div className="flex flex-col gap-2 text-sm">
-            <Link href={'/'}>Gifting Campaigns</Link>
+            <Link href={'https://fundraise.theinnercitymission.ngo'}>Gifting Campaigns</Link>
             <Link href={'/'}>Home</Link>
-            <Link href={'/'}>About Us</Link>
-            <Link href={'/'}>Blog</Link>
+            <Link href={'/about'}>About Us</Link>
+            <Link href={'/blogs'}>Blog</Link>
           </div>
         </div>
         {/*  */}
