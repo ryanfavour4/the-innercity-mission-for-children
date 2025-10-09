@@ -1,11 +1,16 @@
-import React from 'react'
+"use client"
+import React, { useRef } from 'react'
 import Image from 'next/image'
 import blogBanner from '@/public/assets/images/blog-banner-autism.jpg'
 import blog1Img from '@/public/assets/images/GAM-APP2-1.jpg'
 import blog2Img from '@/public/assets/images/WhatsApp-Image-2024-05-02-at-09.45.52_dd992226-1.jpg'
 import blog3Img from '@/public/assets/images/WhatsApp-Image-2024-04-29-at-11.11.30_1308a2c2.jpg'
+import { useInView, motion } from 'framer-motion'
 
 export default function TopBlogSection() {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: '-50px' })
+
   const blogs = [
     {
       id: 1,
@@ -29,6 +34,12 @@ export default function TopBlogSection() {
 
   return (
     <div className="bg-secondary pb-10 text-textcolor">
+      <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 40 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.8, ease: 'easeOut' }}
+    >
       <div className="wrapper px-3">
         {/* TWIN COL */}
         <div className="grid h-full grid-cols-1 justify-center gap-x-10 gap-y-10 pt-10 md:min-h-96 md:grid-cols-2">
@@ -62,6 +73,7 @@ export default function TopBlogSection() {
           </div>
         </div>
       </div>
+      </motion.div>
     </div>
   )
 }

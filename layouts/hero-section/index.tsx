@@ -7,6 +7,7 @@ import Marquee from '@/components/marquee/marquee'
 import { Autoplay, Navigation, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import type { Swiper as SwiperClass } from 'swiper'
+import { circInOut, motion, spring, useInView } from 'framer-motion'
 
 const images = [
   { img: '/assets/images/wen-banner.jpg', link: '/special-highlights/build-a-school/', id: 1 },
@@ -55,6 +56,7 @@ const images = [
 ]
 
 export default function HeroSection() {
+  
   return (
     <>
       <header className="bg-secondary pb-10">
@@ -88,6 +90,8 @@ export function HeroSection2() {
     return () => clearInterval(timer)
   }, [])
 
+
+
   return (
     <div className="relative z-10 flex h-1/2 min-h-[630px] flex-col items-center justify-center overflow-hidden bg-cover bg-center text-light">
       {/* OVERLAY & HERO IMAGE */}
@@ -104,10 +108,12 @@ export function HeroSection2() {
         />
       ))}
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-dark via-white/0 to-light/0" />
+        
 
       {/* HERO CONTENT */}
       <div className="wrapper absolute inset-0 flex h-full flex-col justify-between gap-16 p-3">
         {/* TOP SECTION */}
+        
         <div className="flex h-full flex-col justify-center gap-6">
           <h1 className="max-w-lg text-5xl font-black md:text-6xl">A Future for Every Child.</h1>
           <p className="max-w-lg">
@@ -127,7 +133,9 @@ export function HeroSection2() {
               </span>
               <p>Play Video</p>
             </a>
+            </div>
           </div>
+
         </div>
         {/* BOTTOM SECTION */}
         <div className="flex flex-col items-center justify-center gap-3 md:gap-8">
@@ -135,7 +143,7 @@ export function HeroSection2() {
           <small className="text-nowrap">Over 5 billion meals donated</small>
         </div>
       </div>
-    </div>
+      
   )
 }
 
@@ -143,9 +151,21 @@ export function HeroSection3() {
   const [activeLink, setActiveLink] = useState('#intro-video-section')
   const swiperRef = useRef<SwiperClass | null>(null)
 
+    const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: '-50px' })
+  const transitionSpring = { duration: 0.4, ease: circInOut, type: spring, stiffness: 150 }
+
+
   return (
     <>
       <div className="bg-hero-wavy-pattern">
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+          transition={transitionSpring} 
+          className="flex h-full flex-col justify-center gap-6"
+        >
         <div className="flex flex-col items-center justify-center gap-6 px-3 py-10 pb-48 text-center text-light selection:bg-primary">
           <h1 className="max-w-xl text-4xl font-black drop-shadow-2xl md:text-6xl">
             A Future for Every Child.
@@ -173,7 +193,16 @@ export function HeroSection3() {
             </a>
           </div>
         </div>
+        </motion.div>
       </div>
+
+      <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+          transition={transitionSpring} 
+          className="flex h-full flex-col justify-center gap-6"
+        >
       <div className="relative mx-auto -mt-48 aspect-[1800/700] w-fit drop-shadow-xl md:-mt-48">
         <div className="clip-hero-illustration mx-auto -mt-0 flex aspect-[1800/700] w-[96dvw] max-w-screen-lg hover:scale-105">
           <Swiper
@@ -211,6 +240,7 @@ export function HeroSection3() {
           </Swiper>
         </div>
       </div>
+      </motion.div>
     </>
   )
 }

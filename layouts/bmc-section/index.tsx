@@ -1,14 +1,27 @@
+"use client";
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import React, { useRef } from 'react'
 import fiveBmcImage from '@/public/assets/images/bags-of-hope.png'
+import { useInView, motion } from 'framer-motion'
 
 export default function BillionMealCampaignSection() {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: '-50px' })
+
   return (
+    
     <div className="bg-light py-10">
       <div className="wrapper border-y border-textcolor/25 px-3 py-10">
         {/* TWIN COL */}
+         <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 40 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.8, ease: 'easeOut' }}
+    >
         <div className="grid h-full grid-cols-1 justify-center gap-5 md:grid-cols-2 md:gap-10">
+          
           <div className="flex h-full flex-col justify-between gap-5 pb-8 md:py-10">
             <h3 className="sub-header text-2xl font-semibold capitalize md:text-3xl">
               Bags Of Hope
@@ -42,6 +55,7 @@ export default function BillionMealCampaignSection() {
             />
           </div>
         </div>
+        </motion.div>
       </div>
     </div>
   )

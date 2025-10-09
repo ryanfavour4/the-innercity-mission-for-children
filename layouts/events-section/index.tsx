@@ -1,7 +1,12 @@
+"use client"
 import { ArrowRightIcon } from '@/components/svgs'
-import React from 'react'
+import { useInView, motion } from 'framer-motion'
+import React, { useRef } from 'react'
 
 export default function EventsSection() {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: '-50px' })
+
   const events = [
     {
       id: 1,
@@ -15,6 +20,12 @@ export default function EventsSection() {
 
   return (
     <div className="bg-light py-5">
+      <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 40 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.8, ease: 'easeOut' }}
+    >
       <div className="wrapper px-3">
         <div className="flex w-full items-center gap-4">
           <h3 className="sub-header w-full max-w-md text-nowrap text-2xl font-semibold md:text-3xl">
@@ -52,6 +63,7 @@ export default function EventsSection() {
           ))}
         </div>
       </div>
+      </motion.div>
     </div>
   )
 }

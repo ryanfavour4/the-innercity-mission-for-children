@@ -1,10 +1,21 @@
+"use client"
 import Link from 'next/link'
-import React from 'react'
+import React, { useRef } from 'react'
 import fundraiseImage from '@/public/assets/images/fundraise-with-us-image.jpg'
 import Image from 'next/image'
+import { useInView, motion } from 'framer-motion'
 
 export default function FundraiseWithUsSection() {
+    const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: '-50px' })
+
   return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 40 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.8, ease: 'easeOut' }}
+    >
     <div className="bg-light py-10">
       <div className="wrapper px-3 py-10">
         {/* TWIN COL */}
@@ -38,5 +49,6 @@ export default function FundraiseWithUsSection() {
         </div>
       </div>
     </div>
+    </motion.div>
   )
 }
