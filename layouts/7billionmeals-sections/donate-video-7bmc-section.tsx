@@ -14,7 +14,7 @@ import {
   WorldGlobeIcon,
 } from '@/components/svgs'
 
-export default function About7BmcSection() {
+export default function DonateVideo7BmcSection() {
   const ref = useRef(null)
   const ref2 = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-50px' })
@@ -133,14 +133,14 @@ export default function About7BmcSection() {
                 />
               </div>
 
-              <div className="flex h-full flex-col gap-5 gap-y-6 pb-2 md:gap-y-10 md:py-6">
+              <div className="flex h-full flex-col gap-5 gap-y-10 pb-2 md:py-6">
                 <h3 className="sub-header text-2xl font-semibold capitalize text-dark md:text-3xl">
                   How to Participate. Make G.O.O.D happen
                 </h3>
                 <p className="md:-mt-6">
                   Make GOOD Happen Everywhere by joining our efforts to fight hunger.
                 </p>
-                <div className="mt-8 grid grid-cols-1 gap-y-8 md:mt-0">
+                <div className="grid grid-cols-1 gap-y-8">
                   {/* metric */}
                   <div className="flex flex-col gap-1.5">
                     <div className="flex items-center gap-2 text-dark">

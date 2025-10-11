@@ -172,7 +172,7 @@ export default function AboutPage() {
           </h3>
         </div>
 
-        {/* MISSION AND VISION */}
+        {/* OUR CORE VALUE */}
         <div className="bg-secondary px-3 py-12">
           <div className="wrapper">
             <h3 className="text-2xl font-semibold capitalize md:text-3xl">Our Core Values</h3>
