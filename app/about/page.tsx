@@ -93,7 +93,7 @@ export default function AboutPage() {
         {/* ABOUT VIDEO */}
         <div className="bg-gradient-to-b from-light to-secondary px-3 py-5 pb-12">
           {/* VIDEO */}
-          <VideoCard iframe={true} />
+          <VideoCard classNameIframe="md:!h-[33rem]" iframe={true} />
         </div>
 
         {/* INTRODUCTION BODY SECTION */}

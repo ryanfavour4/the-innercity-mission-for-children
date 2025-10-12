@@ -12,6 +12,9 @@
   .btn-primary {
     @apply w-full rounded bg-primary px-6 py-2 text-center font-medium text-light shadow-dark ring-primary/50 transition-all hover:opacity-90 hover:shadow-sm hover:ring-1 active:scale-x-95 active:ring-4;
   }
+  .input-field {
+    @apply block w-full rounded-md border-2 border-primary/25 bg-white px-3 py-2.5 pr-3 text-base text-textcolor -outline-offset-1 outline-primary ring-primary/25 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:ring-2 disabled:cursor-not-allowed disabled:bg-gray disabled:text-gray-500 disabled:ring-0 sm:text-sm/6 md:text-sm;
+  }
   .ellipsis {
     @apply line-clamp-1 max-h-20 overflow-hidden text-ellipsis whitespace-break-spaces leading-relaxed [-webkit-box-orient:vertical] [display:-webkit-box];
   }
