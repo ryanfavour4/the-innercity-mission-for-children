@@ -60,7 +60,7 @@ export default function MetaTags(Props: MetaProps) {
       <meta name="googlebot" content="NOODP" />
       <link rel="dns-prefetch" href="https://fonts.gstatic.com/" />
       <link rel="dns-prefetch" href="https://theinnercitymission.ngo/" />
-      <link rel="preconnect" href="https://fonts.gstatic.com/" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       <link rel="profile" href="https://theinnercitymission.ngo/" />
       <meta name="apple-touch-fullscreen" content="YES" />
       <meta

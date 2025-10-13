@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import TopNavbar from '@/layouts/topnavbar'
 import Footer from '@/layouts/footer'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
@@ -193,9 +194,11 @@ export default function RootLayout({
         >
           <TopNavbar />
           {children}
+          <div id="portal"></div>
           <Footer />
         </body>
       </ThemeProvider>
+      <SpeedInsights />
     </html>
   )
 }

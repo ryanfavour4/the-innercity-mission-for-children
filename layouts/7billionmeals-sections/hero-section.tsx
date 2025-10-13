@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { EventCalenderIcon, HandGivingHeartIcon } from '@/components/svgs'
 
-export default function HeroSection7bm() {
+export default function HeroSection7bm({ openRegisterModal }: { openRegisterModal: () => void }) {
   const [currentIndex, setCurrentIndex] = useState(0)
   const images = ['/assets/images/7BMC.jpg', '/assets/images/7BMC11.jpg']
 
@@ -17,14 +17,14 @@ export default function HeroSection7bm() {
 
   return (
     <>
-      <header className="relative z-10 flex h-1/2 min-h-96 flex-col items-center justify-center overflow-hidden bg-cover bg-center text-light">
+      <header className="relative z-10 flex h-1/2 min-h-[35rem] flex-col items-center justify-center overflow-hidden bg-cover bg-center text-light">
         {/* OVERLAY & HERO IMAGE */}
         {images.map((image, index) => (
           <Image
             key={index}
             src={image}
             alt="hero-bg"
-            className={`absolute inset-0 -z-10 h-1/2 min-h-96 w-full object-cover brightness-50 transition-opacity duration-1000 md:h-full ${
+            className={`absolute inset-0 -z-10 min-h-[35em] w-full object-cover brightness-50 transition-opacity duration-1000 md:h-full ${
               index === currentIndex ? 'opacity-100' : 'opacity-0'
             }`}
             width={1500}
@@ -50,7 +50,8 @@ export default function HeroSection7bm() {
               <p>Donate Meal </p>
             </Link>
             <Link
-              href="#intro-video-section"
+              onClick={openRegisterModal}
+              href="#register-event"
               className="btn flex w-fit items-center gap-2 border px-4 text-base ring-light/50"
             >
               <EventCalenderIcon className="text-2xl" />

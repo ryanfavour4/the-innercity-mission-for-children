@@ -27,3 +27,4 @@ export { default as GiveLeafFillIcon } from '@/public/assets/svg/give-leaf-fill.
 export { default as PeopleGroupFillIcon } from '@/public/assets/svg/people-group.svg'
 export { default as CollectionStackFillIcon } from '@/public/assets/svg/collection-stack-fill.svg'
 export { default as DeliveryVanFastFillIcon } from '@/public/assets/svg/delivery-van-fast-fill.svg'
+export { default as FileDocumentIcon } from '@/public/assets/svg/file-document.svg'

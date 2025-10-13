@@ -28,6 +28,12 @@
     url('/assets/images/dashboard-white-bg.jpg');
 }
 
+.bg-register-cta-7bmc-section {
+  background:
+    linear-gradient(rgba(var(--dark), 0.7), rgba(var(--dark), 0.7)),
+    url('/assets/images/5-billion-meal-campaign-women-speaking.jpg');
+}
+
 .bg-hero-wavy-pattern {
   background-image: url('/assets/svg/bg-wavy-pattern.svg');
   background-size: cover;

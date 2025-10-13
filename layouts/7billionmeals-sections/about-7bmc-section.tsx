@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React, { useRef } from 'react'
 import fiveBmcImage from '@/public/assets/images/7bmc24.jpg'
+import fiveBmcMealFeedingImage from '@/public/assets/images/5-billion-meal-campaign-banner.jpg'
 import { useInView, motion } from 'framer-motion'
 import {
   CollectionStackFillIcon,
@@ -127,7 +128,7 @@ export default function About7BmcSection() {
                 <Image
                   alt="5 billion campaign"
                   className="h-96 w-full rounded-md object-cover object-top md:mr-auto md:h-auto md:max-w-lg"
-                  src={fiveBmcImage}
+                  src={fiveBmcMealFeedingImage}
                   width={400}
                   height={450}
                 />
