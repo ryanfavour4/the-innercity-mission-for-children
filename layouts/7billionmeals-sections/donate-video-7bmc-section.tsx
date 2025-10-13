@@ -34,8 +34,8 @@ export default function DonateVideo7BmcSection() {
             <div className="w-full max-w-3xl md:ml-auto">
               <VideoCard
                 className=""
-                thumbNail="https://i.vimeocdn.com/video/2051672422-9eeae56bb17ce34f277a44ab6c3688ccd51f8278dda7673cfa8d412b54298cda-d?mw=800&mh=533&q=70"
-                videoUrl="https://player.vimeo.com/video/1113227827?h=9ca3e574ed"
+                thumbNail="https://i.vimeocdn.com/video/1977580625-f352dc3657f2028b4b67bbc41cdd6f897c8c50621e374880a1c1aa3788e716fe-d?mw=1100&mh=620&q=70"
+                videoUrl="https://player.vimeo.com/video/1052568231?h=6234489652"
                 iframe={true}
               />
             </div>
