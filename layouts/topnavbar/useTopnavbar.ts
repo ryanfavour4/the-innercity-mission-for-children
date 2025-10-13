@@ -65,6 +65,10 @@ export const menus: menu_type[] = [
     subPath: '/special-highlights',
     subMenus: [
       {
+        title: '7 Billion Meals',
+        path: '/7billionmeals',
+      },
+      {
         title: 'North-East Nigeria',
         path: '/north-east-nigeria',
       },

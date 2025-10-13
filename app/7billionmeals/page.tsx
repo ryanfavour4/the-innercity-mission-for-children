@@ -47,8 +47,11 @@ function BillionMealsPage() {
     formData.append('download_link', link.value)
 
     axios
-      .post('https://theinnercitymission.ngo/wp-admin/admin-ajax.php', { formData })
-      .then((res) => console.log(res))
+      .post('/api/billion-meal/upload-report', formData, {
+        headers: { 'Content-Type': 'multipart/form-data' },
+      })
+      .then((res) => console.log(res.data))
+      .catch((err) => console.error(err))
   }
 
   useEffect(() => {
