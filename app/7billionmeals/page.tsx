@@ -1,4 +1,5 @@
 'use client'
+import axios from 'axios'
 import Modal from '@/components/modal'
 import countries from '@/json/countries-list.json'
 import HeroSection7bm from '@/layouts/7billionmeals-sections/hero-section'
@@ -23,10 +24,31 @@ function BillionMealsPage() {
   const [email, setEmail] = useState({ value: '' })
   const [phone, setPhone] = useState({ value: '' })
   const [country, setCountry] = useState('NG')
+  const [church, setChurch] = useState({ value: '' })
+  const [zone, setZone] = useState({ value: '' })
+  const [report, setReport] = useState({ value: '' })
+  const [link, setLink] = useState({ value: '' })
 
   const handleSubmitRegisterEvent = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     window.location.reload()
+  }
+
+  const handleSubmitReport = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const formData = new FormData()
+    formData.append('action', 'pastor_relief')
+    formData.append('current_form', 'upload_report')
+    formData.append('email', email.value)
+    formData.append('fullname', fullname.value)
+    formData.append('church', church.value)
+    formData.append('zone', zone.value)
+    formData.append('report', report.value)
+    formData.append('download_link', link.value)
+
+    axios
+      .post('https://theinnercitymission.ngo/wp-admin/admin-ajax.php', { formData })
+      .then((res) => console.log(res))
   }
 
   useEffect(() => {
@@ -120,7 +142,7 @@ function BillionMealsPage() {
             </div>
 
             <button type="submit" className="btn-primary col-span-2 mt-6">
-              Donate
+              Register
             </button>
           </div>
         </form>
@@ -132,8 +154,8 @@ function BillionMealsPage() {
         className="w-full max-w-xl"
         isModalClosed={isModalClosedReport}
       >
-        <form target="" className="!w-full rounded-xl bg-light px-4 py-4 pt-6">
-          <h3 className="font-bold">Register To Participate</h3>
+        <form onSubmit={handleSubmitReport} className="!w-full rounded-xl bg-light px-4 py-4 pt-6">
+          <h3 className="font-bold">Upload Report Details</h3>
 
           <div className="mt-6 flex flex-col gap-3 md:grid md:grid-cols-2">
             <div className="flex flex-col">
@@ -163,39 +185,69 @@ function BillionMealsPage() {
               />
             </div>
             <div className="flex flex-col">
-              <label className="text-sm font-semibold" htmlFor="country">
-                Country
-              </label>
-              <select
-                onChange={(e) => setCountry(e.target.value)}
-                value={country}
-                className="input-field"
-                id="country"
-                name="country"
-              >
-                {countries.map(({ code, name }) => (
-                  <option key={code} value={code}>
-                    {name}
-                  </option>
-                ))}
-              </select>
-            </div>
-            <div className="flex flex-col">
-              <label className="text-sm font-semibold" htmlFor="phone">
-                Phone Number
+              <label className="text-sm font-semibold" htmlFor="church">
+                Church
               </label>
               <Input
-                placeholder="Enter your phone number"
-                type="tel"
+                placeholder="Enter your Church name"
+                type="text"
                 required
-                state={phone}
-                setState={setPhone}
-                name="phone"
+                state={church}
+                setState={setChurch}
+                name="church"
               />
+            </div>
+            <div className="flex flex-col">
+              <label className="text-sm font-semibold" htmlFor="zone">
+                Zone
+              </label>
+              <Input
+                placeholder="Enter your zone name"
+                type="text"
+                required
+                state={zone}
+                setState={setZone}
+                name="zone"
+              />
+            </div>
+            <div className="col-span-2 flex flex-col">
+              <label className="text-sm font-semibold" htmlFor="report">
+                Report Note
+              </label>
+              <Input
+                placeholder="Draft your report note"
+                type="text-area"
+                required
+                state={report}
+                setState={setReport}
+                name="report"
+              />
+            </div>
+            <div className="col-span-2 flex flex-col">
+              <label className="text-sm font-semibold" htmlFor="link">
+                Download Link
+              </label>
+              <Input
+                placeholder="paste your video link here"
+                type="link"
+                required
+                state={link}
+                setState={setLink}
+                name="link"
+              />
+              <small className="mt-2 text-xs">
+                Download link (Kindly upload your pictures & videos using KingsCloud, dropbox.com or
+                drive.google.com. Copy and paste the link in Download Link field)
+                <br />
+                <br />
+                <strong>NOTE:</strong> The report will be reviewed within 24 hours.
+                <br /> If you need help with this, please use the livechat button to chat with the
+                tech team
+              </small>
             </div>
 
             <button type="submit" className="btn-primary col-span-2 mt-6">
-              Donate
+              Submit Report
             </button>
           </div>
         </form>
