@@ -3,8 +3,10 @@ import { EventCalenderIcon, FileDocumentIcon } from '@/components/svgs'
 
 export default function RegisterCta7bmcSection({
   openRegisterModal,
+  openReportModal,
 }: {
   openRegisterModal: () => void
+  openReportModal: () => void
 }) {
   return (
     <>
@@ -14,8 +16,9 @@ export default function RegisterCta7bmcSection({
           <p>Register your outreach, upload your reports, and show the change you’re making.</p>
           <div className="mt-8 flex w-full flex-wrap items-center justify-center gap-2 gap-y-4 md:max-w-96">
             <Link
-              href={'/'}
+              href={'#upload-report'}
               className="btn-white flex w-fit items-center gap-2 text-nowrap border px-8 text-base ring-light/50"
+              onClick={openReportModal}
             >
               <FileDocumentIcon className="text-2xl" />
               <p>Upload Report</p>

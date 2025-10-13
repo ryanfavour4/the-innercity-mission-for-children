@@ -14,18 +14,28 @@ import MetaTags from '@/meta'
 
 function BillionMealsPage() {
   const { closeModal, isModalClosed, openModal } = useModal()
+  const {
+    closeModal: closeModalReport,
+    isModalClosed: isModalClosedReport,
+    openModal: openModalReport,
+  } = useModal()
   const [fullname, setFullname] = useState({ value: '' })
   const [email, setEmail] = useState({ value: '' })
   const [phone, setPhone] = useState({ value: '' })
   const [country, setCountry] = useState('NG')
 
-  useEffect(() => {
-    // run once on mount
-    if (window.location.hash.includes('register-event')) openModal()
-    else
-      // optional: close modal when hash no longer matches
-      closeModal()
+  const handleSubmitRegisterEvent = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    window.location.reload()
+  }
 
+  useEffect(() => {
+    if (window.location.hash.includes('register-event')) openModal()
+    else if (window.location.hash.includes('upload-report')) openModalReport()
+    else {
+      closeModal()
+      closeModalReport()
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
@@ -37,13 +47,17 @@ function BillionMealsPage() {
         <HeroSection7bm openRegisterModal={openModal} />
         <About7BmcSection />
         <DonateVideo7BmcSection />
-        <RegisterCta7bmcSection openRegisterModal={openModal} />
+        <RegisterCta7bmcSection openRegisterModal={openModal} openReportModal={openModalReport} />
         <TopBlogSection />
         <CtaSection />
       </div>
 
+      {/* REGISTER MODAL */}
       <Modal closeModal={closeModal} className="w-full max-w-xl" isModalClosed={isModalClosed}>
-        <div className="!w-full rounded-xl bg-light px-4 py-4 pt-6">
+        <form
+          onSubmit={handleSubmitRegisterEvent}
+          className="!w-full rounded-xl bg-light px-4 py-4 pt-6"
+        >
           <h3 className="font-bold">Register To Participate</h3>
 
           <div className="mt-6 flex flex-col gap-3 md:grid md:grid-cols-2">
@@ -109,7 +123,82 @@ function BillionMealsPage() {
               Donate
             </button>
           </div>
-        </div>
+        </form>
+      </Modal>
+
+      {/* UPLOAD REPORT MODAL */}
+      <Modal
+        closeModal={closeModalReport}
+        className="w-full max-w-xl"
+        isModalClosed={isModalClosedReport}
+      >
+        <form target="" className="!w-full rounded-xl bg-light px-4 py-4 pt-6">
+          <h3 className="font-bold">Register To Participate</h3>
+
+          <div className="mt-6 flex flex-col gap-3 md:grid md:grid-cols-2">
+            <div className="flex flex-col">
+              <label className="text-sm font-semibold" htmlFor="name">
+                Name
+              </label>
+              <Input
+                placeholder="Enter your name"
+                type="text"
+                required
+                state={fullname}
+                setState={setFullname}
+                name="name"
+              />
+            </div>
+            <div className="flex flex-col">
+              <label className="text-sm font-semibold" htmlFor="email">
+                Email
+              </label>
+              <Input
+                placeholder="Enter your email"
+                type="email"
+                required
+                state={email}
+                setState={setEmail}
+                name="email"
+              />
+            </div>
+            <div className="flex flex-col">
+              <label className="text-sm font-semibold" htmlFor="country">
+                Country
+              </label>
+              <select
+                onChange={(e) => setCountry(e.target.value)}
+                value={country}
+                className="input-field"
+                id="country"
+                name="country"
+              >
+                {countries.map(({ code, name }) => (
+                  <option key={code} value={code}>
+                    {name}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div className="flex flex-col">
+              <label className="text-sm font-semibold" htmlFor="phone">
+                Phone Number
+              </label>
+              <Input
+                placeholder="Enter your phone number"
+                type="tel"
+                required
+                state={phone}
+                setState={setPhone}
+                name="phone"
+              />
+            </div>
+
+            <button type="submit" className="btn-primary col-span-2 mt-6">
+              Donate
+            </button>
+          </div>
+        </form>
       </Modal>
     </>
   )
