@@ -397,11 +397,9 @@ export default function DonateSectionV2({
                 <div
                   key={item}
                   onClick={() => setAmount({ value: item })}
-                  className={`flex cursor-pointer items-center justify-center rounded-md border border-primary px-2 py-2 hover:ring-2 ${unformatNumber(amount.value) === item ? 'bg-fade-blue' : 'bg-white'}`}
+                  className={`flex cursor-pointer items-center justify-center rounded-md border border-primary px-2 py-2 hover:ring-2 ${unformatNumber(amount.value) === item ? 'bg-primary !text-white' : 'bg-white text-textcolor/75'}`}
                 >
-                  <p className="text-sm font-medium text-textcolor/75">
-                    ₦{abbreviateNumber(Number(item))}
-                  </p>
+                  <p className="text-sm font-medium">₦{abbreviateNumber(Number(item))}</p>
                 </div>
               ))}
             </div>
