@@ -38,7 +38,7 @@ export default function HeroSection7bm({ openRegisterModal }: { openRegisterModa
           <p className="mb-3 font-normal uppercase [letter-spacing:10px]">
             Make <span className="text-lg font-black">GOOD</span> Happen Everywhere
           </p>
-          <p className="mb-8 max-w-md">
+          <p className="mb-8 max-w-md px-2">
             Join us in providing meals for children and families in need around the world.
           </p>
           <div className="flex w-full max-w-48 flex-wrap items-center justify-center gap-2 md:max-w-96">

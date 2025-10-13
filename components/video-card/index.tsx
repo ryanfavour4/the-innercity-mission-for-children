@@ -16,7 +16,7 @@ export function VideoCard({
   classNameIframe,
 }: VideoCardProps) {
   return (
-    <div id="intro-video-section" className={`${className} h-full w-full rounded-lg px-2`}>
+    <div id="intro-video-section" className={`${className} h-full w-full rounded-lg px-0`}>
       {iframe ? (
         <>
           <iframe

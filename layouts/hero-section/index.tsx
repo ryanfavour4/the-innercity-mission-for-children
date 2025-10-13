@@ -2,7 +2,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { HandHeartIcon, PlayIcon } from '@/components/svgs'
+import { ChevronRightIcon, HandHeartIcon, PlayIcon } from '@/components/svgs'
 import Marquee from '@/components/marquee/marquee'
 import { Autoplay, Navigation, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -56,7 +56,6 @@ const images = [
 ]
 
 export default function HeroSection() {
-  
   return (
     <>
       <header className="bg-secondary pb-10">
@@ -90,8 +89,6 @@ export function HeroSection2() {
     return () => clearInterval(timer)
   }, [])
 
-
-
   return (
     <div className="relative z-10 flex h-1/2 min-h-[630px] flex-col items-center justify-center overflow-hidden bg-cover bg-center text-light">
       {/* OVERLAY & HERO IMAGE */}
@@ -108,12 +105,11 @@ export function HeroSection2() {
         />
       ))}
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-dark via-white/0 to-light/0" />
-        
 
       {/* HERO CONTENT */}
       <div className="wrapper absolute inset-0 flex h-full flex-col justify-between gap-16 p-3">
         {/* TOP SECTION */}
-        
+
         <div className="flex h-full flex-col justify-center gap-6">
           <h1 className="max-w-lg text-5xl font-black md:text-6xl">A Future for Every Child.</h1>
           <p className="max-w-lg">
@@ -133,28 +129,24 @@ export function HeroSection2() {
               </span>
               <p>Play Video</p>
             </a>
-            </div>
           </div>
-
-        </div>
-        {/* BOTTOM SECTION */}
-        <div className="flex flex-col items-center justify-center gap-3 md:gap-8">
-          <div className="h-[2px] w-full bg-light" />
-          <small className="text-nowrap">Over 5 billion meals donated</small>
         </div>
       </div>
-      
+      {/* BOTTOM SECTION */}
+      <div className="flex flex-col items-center justify-center gap-3 md:gap-8">
+        <div className="h-[2px] w-full bg-light" />
+        <small className="text-nowrap">Over 5 billion meals donated</small>
+      </div>
+    </div>
   )
 }
 
 export function HeroSection3() {
   const [activeLink, setActiveLink] = useState('#intro-video-section')
   const swiperRef = useRef<SwiperClass | null>(null)
-
-    const ref = useRef(null)
+  const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-50px' })
   const transitionSpring = { duration: 0.4, ease: circInOut, type: spring, stiffness: 150 }
-
 
   return (
     <>
@@ -163,83 +155,91 @@ export function HeroSection3() {
           ref={ref}
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-          transition={transitionSpring} 
+          transition={transitionSpring}
           className="flex h-full flex-col justify-center gap-6"
         >
-        <div className="flex flex-col items-center justify-center gap-6 px-3 py-10 pb-48 text-center text-light selection:bg-primary">
-          <h1 className="max-w-xl text-4xl font-black drop-shadow-2xl md:text-6xl">
-            A Future for Every Child.
-          </h1>
-          <p className="max-w-xl drop-shadow-2xl">
-            The InnerCity Mission for Children focuses on nurturing, educating, and empowering the
-            next generation. Join us to make a lasting difference.
-          </p>
-          <div className="flex w-full max-w-48 flex-wrap items-center justify-center gap-2 md:max-w-96">
-            <a
-              href="#intro-video-section"
-              className="btn flex w-fit items-center gap-2.5 border px-4 py-2 text-base ring-light/50"
-            >
-              <PlayIcon className="size-5 pl-px" />
-              <p>Play Video</p>
-            </a>
-            <a
-              href={activeLink}
-              className="btn-white flex w-fit items-center gap-1 border px-8 py-2 text-base ring-light/50"
-            >
-              <span className="flex items-center justify-center rounded-full bg-light p-1">
-                <HandHeartIcon className="size-4 pl-px text-dark" />
-              </span>
-              <p>Join Us</p>
-            </a>
+          <div className="flex flex-col items-center justify-center gap-6 px-3 py-10 pb-48 text-center text-light selection:bg-primary">
+            <h1 className="max-w-xl text-4xl font-black drop-shadow-2xl md:text-6xl">
+              A Future for Every Child.
+            </h1>
+            <p className="max-w-xl drop-shadow-2xl">
+              The InnerCity Mission for Children focuses on nurturing, educating, and empowering the
+              next generation. Join us to make a lasting difference.
+            </p>
+            <div className="flex w-full flex-wrap items-center justify-center gap-2 gap-y-3 md:max-w-96">
+              <a
+                href="#intro-video-section"
+                className="btn flex items-center justify-center gap-2.5 border px-4 py-2 text-base ring-light/50 md:w-fit"
+              >
+                <PlayIcon className="size-5 pl-px" />
+                <p>Play Video</p>
+              </a>
+              <a
+                href={activeLink}
+                className="btn-white flex items-center justify-center gap-2 border px-8 py-2 text-base ring-light/50 md:w-fit"
+              >
+                <span className="flex items-center justify-center rounded-full bg-light p-1">
+                  <HandHeartIcon className="size-4 pl-px text-dark" />
+                </span>
+                <p>Join Us</p>
+              </a>
+            </div>
           </div>
-        </div>
         </motion.div>
       </div>
 
       <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 40 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-          transition={transitionSpring} 
-          className="flex h-full flex-col justify-center gap-6"
-        >
-      <div className="relative mx-auto -mt-48 aspect-[1800/700] w-fit drop-shadow-xl md:-mt-48">
-        <div className="clip-hero-illustration mx-auto -mt-0 flex aspect-[1800/700] w-[96dvw] max-w-screen-lg hover:scale-105">
-          <Swiper
-            onSwiper={(swiper) => (swiperRef.current = swiper)}
-            onSlideChange={(swiper) => {
-              setActiveLink(images[swiper.realIndex].link)
-              console.log('Active:', images[swiper.realIndex])
-            }}
-            autoplay={{
-              delay: 5000,
-              disableOnInteraction: false,
-            }}
-            pagination={{
-              clickable: true,
-            }}
-            navigation={true}
-            modules={[Autoplay, Pagination, Navigation]}
-          >
-            {images.map((image, index) => {
-              return (
-                <SwiperSlide key={index}>
-                  <Link href={'/'}>
-                    <Image
-                      className={`group-hover:scale-1.1 w-full object-cover transition-opacity duration-1000`}
-                      unoptimized
-                      alt="heroBannerImage"
-                      height={100}
-                      width={300}
-                      src={image.img}
-                    />
-                  </Link>
-                </SwiperSlide>
-              )
-            })}
-          </Swiper>
+        ref={ref}
+        initial={{ opacity: 0, y: 40 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+        transition={transitionSpring}
+        className="flex h-full flex-col justify-center gap-6"
+      >
+        <div className="relative mx-auto -mt-48 aspect-[1800/700] w-fit drop-shadow-xl md:-mt-48">
+          <div className="absolute top-1/3 z-10 flex w-full items-center justify-between px-1">
+            <button className="btn swiper-prev w-fit rotate-180 border-[1.5px] border-light bg-light/25 px-1 py-1 text-primary backdrop-blur">
+              <ChevronRightIcon className="text-2xl" />
+            </button>
+            <button className="btn swiper-next w-fit border-[1.5px] border-light bg-light/25 px-1 py-1 text-primary backdrop-blur">
+              <ChevronRightIcon className="text-2xl" />
+            </button>
+          </div>
+          <div className="clip-hero-illustration mx-auto -mt-0 flex aspect-[1800/700] w-[96dvw] max-w-screen-lg hover:scale-105">
+            <Swiper
+              onSwiper={(swiper) => (swiperRef.current = swiper)}
+              onSlideChange={(swiper) => {
+                setActiveLink(images[swiper.realIndex].link)
+                console.log('Active:', images[swiper.realIndex])
+              }}
+              autoplay={{
+                delay: 5000,
+                disableOnInteraction: false,
+              }}
+              pagination={{
+                clickable: true,
+              }}
+              navigation={{ prevEl: '.swiper-prev', nextEl: '.swiper-next' }}
+              modules={[Autoplay, Pagination, Navigation]}
+            >
+              {images.map((image, index) => {
+                return (
+                  <SwiperSlide key={index}>
+                    <Link href={image.link}>
+                      <Image
+                        className={`w-full object-cover transition-opacity duration-1000 group-hover:scale-105`}
+                        unoptimized
+                        alt="heroBannerImage"
+                        height={100}
+                        width={300}
+                        src={image.img}
+                      />
+                    </Link>
+                  </SwiperSlide>
+                )
+              })}
+            </Swiper>
+          </div>
         </div>
-      </div>
       </motion.div>
     </>
   )
