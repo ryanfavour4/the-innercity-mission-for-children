@@ -25,8 +25,8 @@ function VideoDonate({}) {
           <div className="w-full max-w-3xl md:ml-auto">
             <VideoCard
               className=""
-              thumbNail="https://i.vimeocdn.com/video/2051672422-9eeae56bb17ce34f277a44ab6c3688ccd51f8278dda7673cfa8d412b54298cda-d?mw=800&mh=533&q=70"
-              videoUrl="https://player.vimeo.com/video/1113227827?h=9ca3e574ed"
+              thumbNail="https://i.vimeocdn.com/video/1919716639-ece272ce01e71688bf9f38e8ae005ee05f2016f35127ee072c2af755a29839cd-d?mw=1080&q=1080"
+              videoUrl="https://player.vimeo.com/video/1003317911?h=cb2e7c8cf3"
               iframe={true}
             />
           </div>
