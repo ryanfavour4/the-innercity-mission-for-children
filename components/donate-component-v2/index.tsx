@@ -20,7 +20,7 @@ export default function DonateSectionV2({
 
   return (
     <>
-      <section id="donate-section" className="relative px-2.5 md:px-0">
+      <section id="donate-section" className="relative md:px-0">
         {submitting && (
           <div className="absolute inset-0 z-10 flex items-center justify-center rounded-lg bg-dark/25 text-center text-lg font-semibold text-dark backdrop-blur">
             Submitting... please wait

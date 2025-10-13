@@ -16,12 +16,12 @@ export default function DonateVideo7BmcSection() {
       <div className="bg-light pb-10 md:pt-10">
         <motion.div
           ref={ref}
-          className="wrapper px-3 py-10"
+          className="wrapper px-2 py-10"
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
-          <div className="flex h-full flex-col gap-5 gap-y-10 pb-2 md:py-6">
+          <div className="flex h-full flex-col gap-5 pb-2 md:gap-y-10 md:py-6">
             <h3 className="sub-header text-2xl font-semibold capitalize text-dark md:text-3xl">
               7 Billion Meals Campaign Global Launch: REBROADCAST
             </h3>
