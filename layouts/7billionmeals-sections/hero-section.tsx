@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { EventCalenderIcon, HandGivingHeartIcon } from '@/components/svgs'
+import { motion } from 'framer-motion'
 
 export default function HeroSection7bm({ openRegisterModal }: { openRegisterModal: () => void }) {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -33,7 +34,12 @@ export default function HeroSection7bm({ openRegisterModal }: { openRegisterModa
         ))}
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-dark via-white/0 to-light/0 opacity-40 brightness-50" />
 
-        <div className="flex h-full flex-col items-center justify-center gap-2 text-center md:gap-4 md:py-24 md:pb-48">
+        <motion.div
+          initial={{ opacity: 0, y: 60 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: 'easeOut' }}
+          className="flex h-full flex-col items-center justify-center gap-2 text-center md:gap-4 md:py-24 md:pb-48"
+        >
           <h1 className="text-4xl font-black md:text-5xl">7 BILLION MEALS CAMPAIGN</h1>
           <p className="mb-3 font-normal uppercase [letter-spacing:10px]">
             Make <span className="text-lg font-black">GOOD</span> Happen Everywhere
@@ -58,7 +64,7 @@ export default function HeroSection7bm({ openRegisterModal }: { openRegisterModa
               <p>Register Event</p>
             </Link>
           </div>
-        </div>
+        </motion.div>
       </header>
     </>
   )

@@ -23,6 +23,7 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({
       message: 'Upload successful',
+      success: 'Registration successful',
       data: response.data,
     })
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
