@@ -24,12 +24,15 @@ export default function ExtraExternalSection() {
           <div className="mt-10 grid h-full min-h-96 grid-cols-1 justify-center gap-x-20 gap-y-10 text-light md:grid-cols-2">
             {/* BOX */}
             <div
-              className={`flex w-full flex-col justify-center gap-8 rounded-xl bg-[linear-gradient(rgba(var(--dark),0.6),rgba(var(--dark),0.6)),url('/assets/images/icm-logo.jpg')] px-4 py-8 shadow-md md:px-6 bg-center`}
+              className={`flex w-full flex-col justify-center gap-8 rounded-xl bg-[linear-gradient(rgba(var(--dark),0.7),rgba(var(--dark),0.7)),url('/assets/images/icm-logo.jpg')] bg-center px-4 py-8 shadow-md md:px-6`}
             >
-            <h5 className="text-2xl font-semibold">THE INNERCITY MISSION APP</h5>
+              <h5 className="text-2xl font-semibold">The Innercity Mission App</h5>
 
-              <p className='line-clamp-4'>
-                Stay connected and make an impact, anytime, anywhere! The InnerCity Mission App is your all-in-one platform for supporting our work and reaching the world’s most vulnerable. You can sponsor a mission, donate to a project, watch inspiring impact stories, shop for good, send food portions to those in need, and stay updated with the latest campaigns and news — all in one place. It’s easy to use, gives you instant access to everything you need, and lets you engage, give, and serve from wherever you are. Join a growing community of changemakers. Download the InnerCity Mission App on the
+              <p className="line-clamp-5">
+                Make an impact anytime, anywhere with the InnerCity Mission App! Support vulnerable
+                communities by sponsoring missions, donating, shopping for good, and sending food
+                portions—all in one place. It&apos;s easy to use and lets you engage from anywhere.
+                Join the changemakers and download the app today!
               </p>
               <div className="flex flex-wrap items-center gap-6 md:gap-4">
                 <button className="btn-white flex w-fit items-center gap-3 border border-light px-3 py-2 hover:bg-white">

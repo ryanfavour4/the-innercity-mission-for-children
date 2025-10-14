@@ -103,6 +103,10 @@ export const menus: menu_type[] = [
     subPath: '/support-project',
     subMenus: [
       {
+        title: 'Partner With Us',
+        path: '/partner-with-us',
+      },
+      {
         title: '5 Billion Meals Campaign',
         path: '/5-billion-meals-campaign',
       },

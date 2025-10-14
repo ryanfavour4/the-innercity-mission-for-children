@@ -7,17 +7,17 @@ import ExtraExternalSection from '@/layouts/extra-external-section'
 import TopBlogSection from '@/layouts/top-blog-section'
 import CtaSection from '@/layouts/cta-section'
 import EventsSection from '@/layouts/events-section'
-import VolunteerWithUs from '@/layouts/innercity-app'
+import VolunteerWithUs from '@/layouts/volunteer-with-us'
 
 export default function Home() {
   return (
     <div className="">
-      <HeroSection/>
+      <HeroSection />
       <IntroVideoSection />
       <BillionMealCampaignSection />
       <MetricStatsSection />
       <FundraiseWithUsSection />
-      <VolunteerWithUs/>
+      <VolunteerWithUs />
       <ExtraExternalSection />
       <TopBlogSection />
       <CtaSection />

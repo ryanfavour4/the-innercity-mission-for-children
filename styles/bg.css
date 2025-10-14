@@ -10,6 +10,12 @@
     url('/assets/images/volunteer-with-us.jpg');
 }
 
+.bg-partner-with-us-hero {
+  background-image:
+    linear-gradient(to right, rgba(var(--dark), 0.9), rgba(var(--dark), 0.1)),
+    url('/assets/images/mol.jpg');
+}
+
 .bg-give-a-meal-logo {
   background-image:
     linear-gradient(rgba(var(--dark-rgb) / 0.7), rgba(var(--dark-rgb) / 0.7)),

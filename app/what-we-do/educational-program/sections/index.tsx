@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image'
-import educationalProgramBanner from '@/public/assets/images/educational-program-banner.jpg'
+import educationalProgramBanner from '@/public/assets/images/back-to-school.jpg'
 import image1Illustration from '@/public/assets/images/THE INNER CITY MISSION SCHOOLS YOLA.jpg'
 import image2Illustration from '@/public/assets/images/THE INNER CITY MISSION SCHOOLS DEMSA.jpg'
 import image3Illustration from '@/public/assets/images/BACK TO SCHOOL CAMPAIGN.jpg'

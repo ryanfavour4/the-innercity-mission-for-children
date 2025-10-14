@@ -28,3 +28,4 @@ export { default as PeopleGroupFillIcon } from '@/public/assets/svg/people-group
 export { default as CollectionStackFillIcon } from '@/public/assets/svg/collection-stack-fill.svg'
 export { default as DeliveryVanFastFillIcon } from '@/public/assets/svg/delivery-van-fast-fill.svg'
 export { default as FileDocumentIcon } from '@/public/assets/svg/file-document.svg'
+export { default as PartnerHandShakeIcon } from '@/public/assets/svg/partner-hand-shake.svg'
