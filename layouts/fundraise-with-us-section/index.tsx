@@ -10,21 +10,21 @@ export default function FundraiseWithUsSection() {
   const isInView = useInView(ref, { once: true, margin: '-50px' })
 
   return (
-    <motion.div
+    <div className="bg-light py-10">
+      <motion.div
       ref={ref}
       initial={{ opacity: 0, y: 40 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.8, ease: 'easeOut' }}
     >
-    <div className="bg-light py-10">
       <div className="wrapper px-3 py-10">
         {/* TWIN COL */}
         <div className="grid h-full grid-cols-1 justify-center gap-5 md:grid-cols-2 md:gap-10">
           <div className="flex h-full flex-col justify-between gap-5 pb-8">
-            <h3 className="sub-header text-2xl font-semibold capitalize md:text-3xl">
-              Fund-raise With Us
+            <h3 className="pre-header text-2xl font-semibold  md:text-3xl uppercase">
+              Fundraise With Us
             </h3>
-            <p className="leading-8">
+            <p className="leading-8 text-justify">
               By becoming a fundraiser, you have the power to transform the lives of indigent
               children, helping them gain access to quality education and break free from the cycle
               of poverty. Your efforts provide hope and opportunity, equipping children with the
@@ -48,7 +48,7 @@ export default function FundraiseWithUsSection() {
           </div>
         </div>
       </div>
+      </motion.div>
     </div>
-    </motion.div>
   )
 }

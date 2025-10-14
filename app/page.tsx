@@ -7,6 +7,7 @@ import ExtraExternalSection from '@/layouts/extra-external-section'
 import TopBlogSection from '@/layouts/top-blog-section'
 import CtaSection from '@/layouts/cta-section'
 import EventsSection from '@/layouts/events-section'
+import VolunteerWithUs from '@/layouts/innercity-app'
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <BillionMealCampaignSection />
       <MetricStatsSection />
       <FundraiseWithUsSection />
+      <VolunteerWithUs/>
       <ExtraExternalSection />
       <TopBlogSection />
       <CtaSection />

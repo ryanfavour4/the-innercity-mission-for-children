@@ -150,6 +150,22 @@ h6,
   border-radius: 10px;
 }
 
+.pre-header {
+  position: relative;
+}
+
+.pre-header::before {
+  content: '';
+  top: 50%;
+  right: 240px;
+  position: absolute;
+  width: 40px;
+  height: 1.5px;
+  background: rgba(var(--textcolor));
+  display: block;
+  border-radius: 10px;
+}
+
 .swiper {
   width: 100%;
   height: 100%;

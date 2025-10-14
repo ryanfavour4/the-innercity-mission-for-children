@@ -1,7 +1,6 @@
 'use client'
 import { GooglePlayStoreColouredIcon, LoveworldAppStoreColouredIcon } from '@/components/svgs'
 import { useInView, motion } from 'framer-motion'
-import Link from 'next/link'
 import React, { useRef } from 'react'
 
 export default function ExtraExternalSection() {
@@ -25,18 +24,30 @@ export default function ExtraExternalSection() {
           <div className="mt-10 grid h-full min-h-96 grid-cols-1 justify-center gap-x-20 gap-y-10 text-light md:grid-cols-2">
             {/* BOX */}
             <div
-              className={`flex w-full flex-col justify-center gap-8 rounded-xl bg-[linear-gradient(rgba(var(--dark),0.6),rgba(var(--dark),0.6)),url('/assets/images/hvn-website-banner-2-volunteer.jpg')] px-4 py-8 shadow-md md:px-6`}
+              className={`flex w-full flex-col justify-center gap-8 rounded-xl bg-[linear-gradient(rgba(var(--dark),0.6),rgba(var(--dark),0.6)),url('/assets/images/icm-logo.jpg')] px-4 py-8 shadow-md md:px-6 bg-center`}
             >
-              <h5 className="text-2xl font-semibold">Volunteer With Us</h5>
+            <h5 className="text-2xl font-semibold">THE INNERCITY MISSION APP</h5>
 
-              <p>
-                Join the Humanitarian Volunteer Network (HVN) and help transform lives. Support
-                quality education for indigent children through the SP.A.C.E initiative.
+              <p className='line-clamp-4'>
+                Stay connected and make an impact, anytime, anywhere! The InnerCity Mission App is your all-in-one platform for supporting our work and reaching the world’s most vulnerable. You can sponsor a mission, donate to a project, watch inspiring impact stories, shop for good, send food portions to those in need, and stay updated with the latest campaigns and news — all in one place. It’s easy to use, gives you instant access to everything you need, and lets you engage, give, and serve from wherever you are. Join a growing community of changemakers. Download the InnerCity Mission App on the
               </p>
+              <div className="flex flex-wrap items-center gap-6 md:gap-4">
+                <button className="btn-white flex w-fit items-center gap-3 border border-light px-3 py-2 hover:bg-white">
+                  <GooglePlayStoreColouredIcon width={35} height={35} />
+                  <span className="flex flex-col items-start text-dark">
+                    <small className="text-xs leading-tight">Get it on</small>
+                    <p className="text-sm">Google Play Store</p>
+                  </span>
+                </button>
 
-              <Link className="btn-white block w-fit py-3" href={'/'}>
-                Learn More
-              </Link>
+                <button className="btn-white flex w-fit items-center gap-3 border border-light bg-dark px-3 py-2 hover:bg-dark">
+                  <LoveworldAppStoreColouredIcon width={35} height={35} />
+                  <span className="flex flex-col items-start text-light">
+                    <small className="text-xs leading-tight">Get it on</small>
+                    <p className="text-sm">Loveworld App Store</p>
+                  </span>
+                </button>
+              </div>
             </div>
 
             {/* BOX */}
