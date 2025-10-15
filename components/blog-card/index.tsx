@@ -30,7 +30,7 @@ export default function BlogCard({ post }: BlogCardProps) {
           alt={post.title}
           className="h-48 w-full bg-primary/75 object-cover"
         />
-        <div className="p-6">
+        <div className="px-3 py-6 md:p-6">
           <div className="mb-2 flex items-center space-x-2">
             <TagIcon className="h-4 w-4 text-primary" />
             <span className="text-sm text-primary">{post.category}</span>

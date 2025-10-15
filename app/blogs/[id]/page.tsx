@@ -3,7 +3,8 @@ import { notFound } from 'next/navigation'
 import blogsData from '@/json/blog-posts.json'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ClockIcon, TagIcon, UsersIcon } from '@/components/svgs'
+import { ArrowRightIcon, ClockIcon, TagIcon, UsersIcon } from '@/components/svgs'
+import { BlogContent } from '@/components/blog-details-content'
 
 export async function generateStaticParams() {
   return blogsData.map((post) => ({
@@ -26,25 +27,26 @@ export default function BlogDetailsPage({ params }: BlogPostPageProps) {
 
   console.log(post)
   return (
-    <>
-      <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+    <div className="bg-white">
+      <div className="wrapper mx-auto px-2 py-12 md:px-4 lg:px-8">
         <Link
           href="/blogs"
-          className="mb-8 inline-flex items-center text-primary hover:text-primary/75"
+          className="btn mb-6 flex w-fit items-center justify-center px-2 py-2 text-primary md:mb-8"
         >
-          {/* <ArrowLeftIcon className="mr-2 h-4 w-4" /> */}
-          Back to blog
+          <ArrowRightIcon className="rotate-180" />
         </Link>
+
+        <h1 className="mb-4 text-3xl font-bold text-dark md:text-4xl">{post.title}</h1>
 
         <Image
           width={200}
           height={200}
           src={post.image}
           alt={post.title}
-          className="mb-8 h-[400px] w-full rounded-lg object-cover"
+          className="mb-8 h-[400px] w-full rounded-lg bg-primary/75 object-contain"
         />
 
-        <div className="mb-6 flex items-center space-x-4">
+        <div className="mb-6 flex flex-wrap items-center gap-4">
           <div className="flex items-center text-gray-600">
             <UsersIcon className="mr-1 h-4 w-4" />
             <span>{post.author}</span>
@@ -59,16 +61,10 @@ export default function BlogDetailsPage({ params }: BlogPostPageProps) {
           </div>
         </div>
 
-        <h1 className="mb-4 text-4xl font-bold text-gray-900">{post.title}</h1>
         <div className="prose prose-lg max-w-none">
-          {<div dangerouslySetInnerHTML={{ __html: post.content }} />}
-          {/* {post.content.split('\n\n').map((paragraph, index) => (
-            <p key={index} className="mb-4 text-gray-700">
-              {paragraph}
-            </p>
-          ))} */}
+          <BlogContent content={post.content} />
         </div>
       </div>
-    </>
+    </div>
   )
 }
