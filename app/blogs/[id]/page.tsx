@@ -13,19 +13,17 @@ export async function generateStaticParams() {
 }
 
 interface BlogPostPageProps {
-  params: {
+  params: Promise<{
     id: string
-  }
+  }>
 }
 
-export default function BlogDetailsPage({ params }: BlogPostPageProps) {
-  const post = blogsData.find((p) => p.id === params.id)
+export default async function BlogDetailsPage({ params }: BlogPostPageProps) {
+  const { id } = await params // ✅ await it
+  const post = blogsData.find((p) => p.id === id)
 
-  if (!post) {
-    notFound() // triggers the 404 page
-  }
+  if (!post) notFound()
 
-  console.log(post)
   return (
     <div className="bg-white">
       <div className="wrapper mx-auto px-2 py-12 md:px-4 lg:px-8">
