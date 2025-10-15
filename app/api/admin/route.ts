@@ -31,3 +31,18 @@ export async function POST(req: NextRequest) {
     return handleError(error, 'Error while uploading!')
   }
 }
+
+export async function GET() {
+  try {
+    return NextResponse.json({
+      message: 'Welcome admin!',
+      status: 201,
+    })
+  } catch (error) {
+    return NextResponse.json({
+      message: 'Error!',
+      error,
+      status: 500,
+    })
+  }
+}

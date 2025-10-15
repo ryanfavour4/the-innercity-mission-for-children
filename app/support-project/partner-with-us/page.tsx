@@ -1,22 +1,97 @@
+'use client'
 import { HandGivingHeartIcon, PartnerHandShakeIcon } from '@/components/svgs'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
 import spaceImage from '@/public/assets/images/po.jpg'
 import billionMealImage from '@/public/assets/images/7billion.jpg'
 import globalMissionImage from '@/public/assets/images/global-missions.jpg'
 import indigentChildrenImage from '@/public/assets/images/indigent_children_family.jpg'
+import signUpformImage from '@/public/assets/images/indigent-children-tuition-free-school-innercity.jpg'
+import Input from '@/components/input'
+import countries from '@/json/countries-list.json'
+import axios from 'axios'
+import CtaSection from '@/layouts/cta-section'
+import { motion, Variants } from 'framer-motion'
 
 export default function PartnerWithUsPage() {
+  const [fullname, setFullname] = useState({ value: '' })
+  const [email, setEmail] = useState({ value: '' })
+  const [phone, setPhone] = useState({ value: '' })
+  const [country, setCountry] = useState('NG')
+  const [kingschatUsername, setKingschatUsername] = useState({ value: '' })
+  const [amount, setAmount] = useState({ value: '' })
+
+  const fadeInUp: Variants = {
+    hidden: { opacity: 0, y: 40 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { type: 'spring', stiffness: 60, damping: 12, duration: 0.6 },
+    },
+  }
+
+  const fadeInDown: Variants = {
+    hidden: { opacity: 0, y: -40 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { type: 'spring', stiffness: 60, damping: 12, duration: 0.6 },
+    },
+  }
+
+  const fadeInLeft: Variants = {
+    hidden: { opacity: 0, x: -40 },
+    show: {
+      opacity: 1,
+      x: 0,
+      transition: { type: 'spring', stiffness: 60, damping: 12, duration: 0.6 },
+    },
+  }
+
+  const fadeInRight: Variants = {
+    hidden: { opacity: 0, x: 40 },
+    show: {
+      opacity: 1,
+      x: 0,
+      transition: { type: 'spring', stiffness: 60, damping: 12, duration: 0.6 },
+    },
+  }
+
+  const handleSubmitGemForm = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const formData = new FormData()
+    formData.append('action', 'partnerWithUs')
+    formData.append('referrer', 'icm4c')
+    formData.append('fullname', fullname.value)
+    formData.append('email', email.value)
+    formData.append('kingschat_username', kingschatUsername.value)
+    formData.append('phone', phone.value)
+    formData.append('currency', 'USD')
+    formData.append('amount', amount.value)
+
+    axios
+      .post('/api/admin', formData, {
+        headers: { 'Content-Type': 'multipart/form-data' },
+      })
+      .then((res) => console.log(res.data))
+      .catch((err) => console.error(err))
+  }
+
   return (
     <>
       <div className="bg-partner-with-us-hero bg-[100%,250%] bg-right-top px-2 py-24 md:min-h-96 md:bg-cover md:py-48">
-        <div className="wrapper text-light">
+        <motion.div
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="show"
+          className="wrapper text-light"
+        >
           <h1 className="text-4xl font-black md:text-5xl">Don&apos;t Ignore Children</h1>
           <p className="mb-8 mt-4 max-w-sm">
             Partner with the InnerCity Mission to to make a difference for needy children
           </p>
-          <div className="flex w-full max-w-48 flex-wrap items-center gap-2 md:max-w-96">
+          <div className="flex w-full flex-wrap items-center gap-2 md:max-w-96">
             <Link
               href={'/donate'}
               className="btn-white flex w-fit items-center gap-2 border px-4 text-base ring-light/50"
@@ -32,7 +107,7 @@ export default function PartnerWithUsPage() {
               <p>Become A GEM</p>
             </Link>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       <div className="bg-white px-2.5 py-6">
@@ -41,11 +116,16 @@ export default function PartnerWithUsPage() {
         </h2>
 
         {/* section 1 */}
-        <div className="container grid h-full max-w-5xl grid-cols-1 justify-center gap-2 md:grid-cols-2">
-          <div className="w-full max-w-96">
+        <motion.div
+          variants={fadeInLeft}
+          initial="hidden"
+          whileInView="show"
+          className="container grid h-full max-w-5xl grid-cols-1 justify-center gap-2 md:grid-cols-2"
+        >
+          <div className="mr-auto h-96 w-full md:max-h-full md:max-w-96">
             <Image
               alt="Space Image"
-              className="w-full rounded-md object-cover object-top md:h-auto md:max-w-lg"
+              className="h-full w-full rounded-md object-cover object-center md:h-auto md:max-w-lg"
               src={spaceImage}
               width={400}
               height={450}
@@ -74,10 +154,15 @@ export default function PartnerWithUsPage() {
               </a>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* section 2 */}
-        <div className="container mt-8 flex h-full max-w-5xl flex-col-reverse justify-center gap-2 md:mt-16 md:grid md:grid-cols-2">
+        <motion.div
+          variants={fadeInRight}
+          initial="hidden"
+          whileInView="show"
+          className="container mt-8 flex h-full max-w-5xl flex-col-reverse justify-center gap-2 md:mt-16 md:grid md:grid-cols-2"
+        >
           <div className="flex h-full flex-col gap-5 gap-y-6 pb-2 md:gap-y-10 md:py-6">
             <h3 className="sub-header text-2xl font-semibold capitalize text-dark md:text-3xl">
               #7BillionMeals Campaign
@@ -101,23 +186,28 @@ export default function PartnerWithUsPage() {
             </div>
           </div>
 
-          <div className="ml-auto w-full max-w-96">
+          <div className="ml-auto h-96 w-full md:max-h-full md:max-w-96">
             <Image
               alt="7 billion campaign"
-              className="w-full rounded-md object-cover object-top md:h-auto md:max-w-lg"
+              className="h-full w-full rounded-md object-cover object-top md:h-auto md:max-w-lg"
               src={billionMealImage}
               width={400}
               height={450}
             />
           </div>
-        </div>
+        </motion.div>
 
         {/* section 1 */}
-        <div className="container mt-8 grid h-full max-w-5xl grid-cols-1 justify-center gap-2 md:mt-16 md:grid-cols-2">
-          <div className="w-full max-w-96">
+        <motion.div
+          variants={fadeInLeft}
+          initial="hidden"
+          whileInView="show"
+          className="container mt-8 grid h-full max-w-5xl grid-cols-1 justify-center gap-2 md:mt-16 md:grid-cols-2"
+        >
+          <div className="mr-auto h-96 w-full md:max-h-full md:max-w-96">
             <Image
-              alt="globalMissionImage"
-              className="w-full rounded-md object-cover object-top md:h-auto md:max-w-lg"
+              alt="Global Missions"
+              className="h-full w-full rounded-md object-cover object-center md:h-auto md:max-w-lg"
               src={globalMissionImage}
               width={400}
               height={450}
@@ -145,10 +235,15 @@ export default function PartnerWithUsPage() {
               </a>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* section 2 */}
-        <div className="container mt-8 flex h-full max-w-5xl flex-col-reverse justify-center gap-2 md:mt-16 md:grid md:grid-cols-2">
+        <motion.div
+          variants={fadeInRight}
+          initial="hidden"
+          whileInView="show"
+          className="container mt-8 flex h-full max-w-5xl flex-col-reverse justify-center gap-2 md:mt-16 md:grid md:grid-cols-2"
+        >
           <div className="flex h-full flex-col gap-5 gap-y-6 pb-2 md:gap-y-10 md:py-6">
             <h3 className="sub-header text-2xl font-semibold capitalize text-dark md:text-3xl">
               Preserve Families
@@ -172,19 +267,144 @@ export default function PartnerWithUsPage() {
             </div>
           </div>
 
-          <div className="ml-auto w-full max-w-96">
+          <div className="ml-auto h-96 w-full md:max-h-full md:max-w-96">
             <Image
-              alt="7 billion campaign"
-              className="w-full rounded-md object-cover object-top md:h-auto md:max-w-lg"
+              alt="Preserve Families"
+              className="h-full w-full rounded-md object-cover object-top md:h-auto md:max-w-lg"
               src={indigentChildrenImage}
               width={400}
               height={450}
             />
           </div>
-        </div>
+        </motion.div>
       </div>
 
-      <div className="bg-"></div>
+      <div className="flex flex-col items-center justify-center bg-primary px-3 py-20 text-center text-light">
+        <h3 className="mb-4 max-w-4xl text-3xl font-bold !leading-tight md:text-5xl">
+          Sign Up to Partner With Us Reach the Unreached, Touch the Untouched
+        </h3>
+        <Link
+          href={'/donate'}
+          className="btn-white flex w-fit items-center gap-2 border px-4 text-base ring-light/50"
+        >
+          <PartnerHandShakeIcon className="text-2xl" />
+          <p>Signup as a Partner</p>
+        </Link>
+      </div>
+
+      <div id="partner-with-us" className="flex flex-col-reverse gap-4 bg-white pb-8 md:flex-row">
+        <motion.form
+          variants={fadeInRight}
+          initial="hidden"
+          whileInView="show"
+          onSubmit={handleSubmitGemForm}
+          className="px-4 py-6 md:ml-auto md:w-1/2 md:max-w-lg md:py-16"
+        >
+          <h3 className="text-xl font-bold md:text-2xl">Every Child Needs a G.E.M</h3>
+          <p>Sign up to Give Every Month (G.E.M)</p>
+
+          <div className="mt-6 flex flex-col gap-3 md:grid md:grid-cols-2">
+            <div className="flex flex-col">
+              <label className="text-sm font-semibold" htmlFor="name">
+                Name
+              </label>
+              <Input
+                placeholder="Enter your name"
+                type="text"
+                required
+                state={fullname}
+                setState={setFullname}
+                name="name"
+              />
+            </div>
+            <div className="flex flex-col">
+              <label className="text-sm font-semibold" htmlFor="email">
+                Email
+              </label>
+              <Input
+                placeholder="Enter your email"
+                type="email"
+                required
+                state={email}
+                setState={setEmail}
+                name="email"
+              />
+            </div>
+            <div className="flex flex-col">
+              <label className="text-sm font-semibold" htmlFor="country">
+                Country
+              </label>
+              <select
+                onChange={(e) => setCountry(e.target.value)}
+                value={country}
+                className="input-field"
+                id="country"
+                name="country"
+              >
+                {countries.map(({ code, name }) => (
+                  <option key={code} value={code}>
+                    {name}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div className="flex flex-col">
+              <label className="text-sm font-semibold" htmlFor="phone">
+                Phone
+              </label>
+              <Input
+                placeholder="Enter your phone number"
+                type="tel"
+                required
+                state={phone}
+                setState={setPhone}
+                name="phone"
+              />
+            </div>
+            <div className="flex flex-col">
+              <label className="text-sm font-semibold" htmlFor="kingschat_username">
+                Kings Chat Username
+              </label>
+              <Input
+                placeholder="Enter your Kingschat username"
+                type="text"
+                required
+                state={kingschatUsername}
+                setState={setKingschatUsername}
+                name="kingschat_username"
+              />
+            </div>
+            <div className="flex flex-col">
+              <label className="text-sm font-semibold" htmlFor="amount">
+                Monthly Giving Amount ($)
+              </label>
+              <Input
+                placeholder="Monthly Giving Amount $"
+                type="text"
+                required
+                state={amount}
+                setState={setAmount}
+                name="amount"
+              />
+            </div>
+
+            <button type="submit" className="btn-primary col-span-2 mt-6">
+              I am ready
+            </button>
+          </div>
+        </motion.form>
+        <motion.div variants={fadeInDown} initial="hidden" whileInView="show" className="md:w-1/2">
+          <Image
+            alt="Space Image"
+            className="h-96 w-full rounded-b-full object-cover md:mx-auto md:aspect-[unset] md:h-full md:w-3/5"
+            src={signUpformImage}
+            width={400}
+            height={450}
+          />
+        </motion.div>
+      </div>
+
+      <CtaSection />
     </>
   )
 }

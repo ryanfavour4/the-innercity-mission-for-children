@@ -1,17 +1,28 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { BlogPost } from './data'
 import { ClockIcon, TagIcon } from '../svgs'
 
+export interface IBlogPost {
+  id: string
+  title: string
+  excerpt: string
+  content: string
+  author: string
+  date: string
+  readTime: string
+  category: string
+  image: string
+}
+
 interface BlogCardProps {
-  post: BlogPost
+  post: IBlogPost
 }
 
 export default function BlogCard({ post }: BlogCardProps) {
   return (
     <article className="overflow-hidden rounded-lg bg-white shadow-md transition-transform hover:scale-[1.02]">
-      <Link href={`/blogs/#`}>
+      <Link href={`/blogs/${post.id}`}>
         <Image
           width={200}
           height={200}

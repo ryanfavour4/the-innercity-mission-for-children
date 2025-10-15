@@ -47,7 +47,7 @@ function BillionMealsPage() {
     formData.append('download_link', link.value)
 
     axios
-      .post('/api/billion-meal/upload-report', formData, {
+      .post('/api/admin', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       })
       .then((res) => console.log(res.data))

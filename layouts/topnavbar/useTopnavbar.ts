@@ -10,6 +10,7 @@ export type menu_type = {
     title: string
     path: string
     external?: boolean
+    inherit?: boolean
   }[]
 }
 
@@ -107,8 +108,19 @@ export const menus: menu_type[] = [
         path: '/partner-with-us',
       },
       {
-        title: '5 Billion Meals Campaign',
-        path: '/5-billion-meals-campaign',
+        title: 'Volunteer',
+        path: 'https://hvn.theinnercitymission.ngo/',
+        external: true,
+      },
+      {
+        title: 'Online Fundraising',
+        path: 'https://fundraise.theinnercitymission.ngo/',
+        external: true,
+      },
+      {
+        title: '7 Billion Meals',
+        path: '/special-highlights/7billionmeals',
+        inherit: false,
       },
     ],
   },

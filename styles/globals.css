@@ -103,6 +103,7 @@ body {
   scroll-behavior: smooth;
   font-size: 18px;
   overflow-x: hidden;
+  scroll-padding-top: 8rem;
 }
 
 h1,

@@ -51,7 +51,13 @@ export default function TopNavbar({ menus = defaultmenu }) {
                           <li key={index}>
                             <Link
                               className="flex w-full items-center justify-between border-4 border-transparent px-3 py-2 text-textcolor hover:border-l-primary hover:bg-secondary/50 hover:font-semibold hover:text-primary"
-                              href={subMenu.external ? subMenu.path : menu.subPath + subMenu.path}
+                              href={
+                                subMenu.external
+                                  ? subMenu.path
+                                  : subMenu.inherit === false
+                                    ? subMenu.path
+                                    : menu.subPath + subMenu.path
+                              }
                               target={subMenu.external ? '_blank' : '_self'}
                             >
                               <p>{subMenu.title}</p>
@@ -121,7 +127,13 @@ export default function TopNavbar({ menus = defaultmenu }) {
                         <li key={index}>
                           <Link
                             className={`flex w-full items-center justify-between border-2 border-transparent px-3 py-2 hover:border-l-primary hover:bg-secondary/50 hover:font-semibold ${pathName === menu.subPath + subMenu.path && 'border-l-primary bg-secondary/50 font-semibold'}`}
-                            href={subMenu.external ? subMenu.path : menu.subPath + subMenu.path}
+                            href={
+                              subMenu.external
+                                ? subMenu.path
+                                : subMenu.inherit === false
+                                  ? subMenu.path
+                                  : menu.subPath + subMenu.path
+                            }
                             target={subMenu.external ? '_blank' : '_self'}
                           >
                             <p>{subMenu.title}</p>

@@ -1,5 +1,5 @@
 import BlogCard from '@/components/blog-card'
-import { posts } from '@/components/blog-card/data'
+import blogsData from '@/json/blog-posts.json'
 import CtaSection from '@/layouts/cta-section'
 import React from 'react'
 
@@ -34,7 +34,7 @@ export default function BlogPage() {
           </div>
 
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {posts.map((post) => (
+            {blogsData.map((post) => (
               <BlogCard key={post.id} post={post} />
             ))}
           </div>
