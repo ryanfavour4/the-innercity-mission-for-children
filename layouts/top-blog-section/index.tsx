@@ -7,6 +7,8 @@ import blog2Img from '@/public/assets/images/WhatsApp-Image-2024-05-02-at-09.45.
 import blog3Img from '@/public/assets/images/WhatsApp-Image-2024-04-29-at-11.11.30_1308a2c2.jpg'
 import { useInView, motion } from 'framer-motion'
 import { formatDate } from '@/utils/format-date'
+import Link from 'next/link'
+import { ArrowRightIcon } from '@/components/svgs'
 
 export default function TopBlogSection() {
   const ref = useRef(null)
@@ -43,26 +45,30 @@ export default function TopBlogSection() {
       >
         <div className="wrapper px-3">
           {/* TWIN COL */}
-          <div className="grid h-full grid-cols-1 justify-center gap-x-10 gap-y-10 pt-10 md:min-h-96 md:grid-cols-2">
+          <div className="grid h-full grid-cols-1 justify-center gap-x-10 gap-y-10 pt-10 md:min-h-96">
             <div>
               <h3 className="sub-header max-w-md text-2xl font-semibold before:top-4 md:text-3xl">
                 See recent blogs and stories
               </h3>
-              <p className="mt-2 text-base font-semibold">
+              <Link href={'/blogs'} className="mb-6 mt-2 flex items-center gap-2 text-base">
+                <p>See More Blogs</p>
+                <ArrowRightIcon className="text-sm" />
+              </Link>
+              <small className="text-primary">
                 Today: {formatDate(new Date()).commaDateFormat}
-              </p>
+              </small>
             </div>
-
-            <div className="flex flex-col gap-3 rounded-2xl bg-light px-4 py-4">
+            {/* //TODO: ADD A SEE ALL BLOGS AND ADJUST THE LAYOUT OF THE BLOGS */}
+            <div className="grid grid-cols-1 gap-3 rounded-2xl bg-light px-4 py-4 pt-2 md:grid-cols-2 lg:grid-cols-3">
               {/* Blog */}
               {blogs.map((blog, idx) => (
                 <div
                   key={idx}
-                  className="flex w-full cursor-pointer flex-col items-center gap-3 rounded-xl border border-transparent px-2 py-2 hover:border-textcolor/20 hover:bg-secondary/50 hover:shadow md:flex-row md:gap-6"
+                  className="flex w-full cursor-pointer flex-col items-center gap-3 rounded-xl border border-transparent px-2 py-2 hover:border-textcolor/20 hover:bg-secondary/50 hover:shadow md:gap-6"
                 >
                   <Image
                     alt={blog.title + ' - ' + blog.body}
-                    className="block h-[7rem] w-full rounded-lg object-cover md:w-40"
+                    className="block h-48 w-full rounded-lg object-cover"
                     src={blog.image || blogBanner}
                     width={200}
                     height={200}

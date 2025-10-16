@@ -40,7 +40,10 @@ export default function VolunteerWithUs() {
                 children who deserve it. Your support can make a significant difference in their
                 future!
               </p>
-              <Link className="btn-primary block w-fit py-2" href={'/'}>
+              <Link
+                className="btn-primary block w-fit py-2"
+                href={'https://hvn.theinnercitymission.ngo/'}
+              >
                 Learn More
               </Link>
             </div>

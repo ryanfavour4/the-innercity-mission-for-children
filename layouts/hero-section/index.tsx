@@ -142,7 +142,8 @@ export function HeroSection2() {
 }
 
 export function HeroSection3() {
-  const [activeLink, setActiveLink] = useState('#intro-video-section')
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [_, setActiveLink] = useState('#intro-video-section')
   const swiperRef = useRef<SwiperClass | null>(null)
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-50px' })
@@ -175,7 +176,7 @@ export function HeroSection3() {
                 <p>Play Video</p>
               </a>
               <a
-                href={activeLink}
+                href={'https://gems.theinnercitymission.ngo/home'}
                 className="btn-white flex items-center justify-center gap-2 border px-8 py-2 text-base ring-light/50 md:w-fit"
               >
                 <span className="flex items-center justify-center rounded-full bg-light p-1">

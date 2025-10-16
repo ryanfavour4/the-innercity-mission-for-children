@@ -1,4 +1,4 @@
-"use client"
+'use client'
 import Link from 'next/link'
 import React from 'react'
 import CountUp from 'react-countup'
@@ -16,7 +16,7 @@ export default function MetricStatsSection() {
     },
     {
       id: 2,
-      link: '/',
+      link: '/donate',
       stat: 4000000000,
       suffix: '+',
       title: 'Meals Distributed',
@@ -45,7 +45,11 @@ export default function MetricStatsSection() {
   )
 }
 
-function StatCard({ stat }: { stat: { stat: number, suffix: string, link: string, title: string, description: string } }) {
+function StatCard({
+  stat,
+}: {
+  stat: { stat: number; suffix: string; link: string; title: string; description: string }
+}) {
   const { ref, inView } = useInView({
     triggerOnce: true, // only trigger once when it comes into view
     threshold: 0.3, // how much of the component should be visible (30%)
@@ -55,17 +59,11 @@ function StatCard({ stat }: { stat: { stat: number, suffix: string, link: string
     <Link
       href={stat.link}
       ref={ref}
-      className="flex max-w-96 flex-col items-center justify-center gap-y-3 px-3 py-5 text-center hover:scale-105 hover:bg-secondary/10 transition-transform duration-300"
+      className="flex max-w-96 flex-col items-center justify-center gap-y-3 px-3 py-5 text-center transition-transform duration-300 hover:scale-105 hover:bg-secondary/10"
     >
       <h3 className="text-3xl font-semibold md:text-4xl">
         {inView ? (
-          <CountUp
-            start={0}
-            end={stat.stat}
-            duration={2.5}
-            separator=","
-            suffix={stat.suffix}
-          />
+          <CountUp start={0} end={stat.stat} duration={2.5} separator="," suffix={stat.suffix} />
         ) : (
           '0' + stat.suffix
         )}
