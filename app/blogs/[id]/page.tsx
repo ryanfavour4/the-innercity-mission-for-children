@@ -41,7 +41,7 @@ export default async function BlogDetailsPage({ params }: BlogPostPageProps) {
           height={200}
           src={post.image}
           alt={post.title}
-          className="mb-8 h-[400px] w-full rounded-lg bg-primary/75 object-contain"
+          className="mb-8 h-96 w-full rounded-lg bg-primary/75 object-contain md:h-[400px]"
         />
 
         <div className="mb-6 flex flex-wrap items-center gap-4">

@@ -16,8 +16,8 @@ export default function DonatePage() {
 
 function VideoDonate({}) {
   return (
-    <div className="bg-white py-14">
-      <div className="container">
+    <div className="bg-white px-2 py-14">
+      <div className="container max-w-6xl">
         <div className="flex flex-col gap-6 md:flex-row">
           <div className="md:max-w-md">
             <DonateSectionV2 />
