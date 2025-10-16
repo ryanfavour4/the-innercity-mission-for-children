@@ -2,16 +2,16 @@
 import axios from 'axios'
 import Modal from '@/components/modal'
 import countries from '@/json/countries-list.json'
-import HeroSection7bm from '@/layouts/7billionmeals-sections/hero-section'
-import About7BmcSection from '@/layouts/7billionmeals-sections/about-7bmc-section'
-import DonateVideo7BmcSection from '@/layouts/7billionmeals-sections/donate-video-7bmc-section'
-import RegisterCta7bmcSection from '@/layouts/7billionmeals-sections/register-cta-7bmc-section'
 import { useModal } from '@/components/modal/useModal'
 import { useEffect, useState } from 'react'
 import Input from '@/components/input'
 import TopBlogSection from '@/layouts/top-blog-section'
 import CtaSection from '@/layouts/cta-section'
 import MetaTags from '@/meta'
+import About7BmcSection from './sections/about-7bmc-section'
+import HeroSection7bm from './sections/hero-section'
+import DonateVideo7BmcSection from './sections/donate-video-7bmc-section'
+import RegisterCta7bmcSection from './sections/register-cta-7bmc-section'
 
 function BillionMealsPage() {
   const { closeModal, isModalClosed, openModal } = useModal()

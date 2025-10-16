@@ -24,7 +24,7 @@ export default function BillionMealCampaignSection() {
               <h3 className="sub-header text-2xl font-semibold capitalize md:text-3xl">
                 Bags Of Hope
               </h3>
-              <p className="md:-mt-14">
+              <p className="">
                 is a heartfelt initiative dedicated to supporting indigent families by providing
                 essential food items such as rice, beans, garri, and other staples. Each bag is more
                 than just a meal—it’s a symbol of care, compassion, and community. Through this

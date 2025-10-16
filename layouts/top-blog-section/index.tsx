@@ -50,7 +50,10 @@ export default function TopBlogSection() {
               <h3 className="sub-header max-w-md text-2xl font-semibold before:top-4 md:text-3xl">
                 See recent blogs and stories
               </h3>
-              <Link href={'/blogs'} className="mb-6 mt-2 flex items-center gap-2 text-base">
+              <Link
+                href={'/blogs'}
+                className="mb-3 mt-2 flex w-fit items-center justify-center gap-1 text-base"
+              >
                 <p>See More Blogs</p>
                 <ArrowRightIcon className="text-sm" />
               </Link>
@@ -59,7 +62,7 @@ export default function TopBlogSection() {
               </small>
             </div>
             {/* //TODO: ADD A SEE ALL BLOGS AND ADJUST THE LAYOUT OF THE BLOGS */}
-            <div className="grid grid-cols-1 gap-3 rounded-2xl bg-light px-4 py-4 pt-2 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 gap-3 rounded-2xl bg-light px-4 py-4 pt-1 md:grid-cols-2 lg:grid-cols-3">
               {/* Blog */}
               {blogs.map((blog, idx) => (
                 <div
@@ -73,7 +76,7 @@ export default function TopBlogSection() {
                     width={200}
                     height={200}
                   />
-                  <div className="flex w-full flex-col gap-2 truncate overflow-ellipsis capitalize">
+                  <div className="flex h-full w-full flex-col justify-between gap-1 truncate overflow-ellipsis capitalize">
                     <h4 className="ellipsis-2 text-balance text-lg font-semibold">{blog.title}</h4>
                     <p className="ellipsis-2 text-sm">{blog.body}</p>
                   </div>

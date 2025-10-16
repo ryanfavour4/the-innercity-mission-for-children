@@ -9,8 +9,8 @@ type VideoCardProps = {
 }
 
 export function VideoCard({
-  videoUrl = 'https://player.vimeo.com/video/1113227827?h=9ca3e574ed',
-  thumbNail = 'https://i.vimeocdn.com/video/2051672422-9eeae56bb17ce34f277a44ab6c3688ccd51f8278dda7673cfa8d412b54298cda-d?mw=800&mh=533&q=70',
+  videoUrl = 'https://player.vimeo.com/video/1127232588?h=e690936168',
+  thumbNail = 'https://i.vimeocdn.com/video/2069904404-1063d9db1483b9fda92eae24141c3ddb6fa25159a1a765bab06975a5cafc4c9a-d?mw=1080&q=1080',
   iframe,
   className,
   classNameIframe,
