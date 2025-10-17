@@ -6,6 +6,7 @@ import { VideoCard } from '@/components/video-card'
 import MetaTags from '@/meta'
 import Image from 'next/image'
 import spreadTruthFlyer from '@/public/assets/images/spread-truth-campaign-banner.jpg'
+import CtaSection from '@/layouts/cta-section'
 
 export default function SpreadTruthPage() {
   return (
@@ -42,6 +43,7 @@ export default function SpreadTruthPage() {
       </div>
 
       <DonateVideoSection />
+      <CtaSection />
     </>
   )
 }
@@ -52,10 +54,10 @@ function DonateVideoSection() {
 
   return (
     <>
-      <div className="bg-light pb-10 md:pt-10">
+      <div className="bg-light pb-0 md:pt-10">
         <motion.div
           ref={ref}
-          className="wrapper px-2 py-10"
+          className="wrapper px-2 py-6"
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, ease: 'easeOut' }}
