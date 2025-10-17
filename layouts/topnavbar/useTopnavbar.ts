@@ -66,16 +66,28 @@ export const menus: menu_type[] = [
     subPath: '/special-highlights',
     subMenus: [
       {
+        title: 'Summer Initiatives',
+        path: '/summerinitiatives',
+      },
+      {
         title: '7 Billion Meals',
         path: '/7billionmeals',
       },
       {
-        title: 'North-East Nigeria',
-        path: '/north-east-nigeria',
+        title: 'Back To School',
+        path: '/backtoschool',
       },
       {
-        title: 'Summer Initiatives',
-        path: '/summerinitiatives',
+        title: 'Video Livestream',
+        path: '/livestream/',
+      },
+      {
+        title: 'Spread Truth Campaign',
+        path: '/spread-truth/',
+      },
+      {
+        title: 'North-East Nigeria',
+        path: '/north-east-nigeria',
       },
       {
         title: 'Colouring Dream tv',
@@ -85,16 +97,6 @@ export const menus: menu_type[] = [
       {
         title: '360 Virtual Tours',
         path: 'https://360.theinnercitymission.ngo/',
-        external: true,
-      },
-      {
-        title: 'Video Livestreams',
-        path: 'https://icm.ngo/livestream/',
-        external: true,
-      },
-      {
-        title: 'Spread Truth Campaign',
-        path: 'https://icm.ngo/SpreadTruth/',
         external: true,
       },
     ],
@@ -108,6 +110,11 @@ export const menus: menu_type[] = [
         path: '/partner-with-us',
       },
       {
+        title: '7 Billion Meals',
+        path: '/special-highlights/7billionmeals',
+        inherit: false,
+      },
+      {
         title: 'Volunteer',
         path: 'https://hvn.theinnercitymission.ngo/',
         external: true,
@@ -116,11 +123,6 @@ export const menus: menu_type[] = [
         title: 'Online Fundraising',
         path: 'https://fundraise.theinnercitymission.ngo/',
         external: true,
-      },
-      {
-        title: '7 Billion Meals',
-        path: '/special-highlights/7billionmeals',
-        inherit: false,
       },
     ],
   },

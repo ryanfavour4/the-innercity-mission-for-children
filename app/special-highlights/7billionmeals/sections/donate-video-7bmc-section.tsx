@@ -1,5 +1,4 @@
 'use client'
-
 import React, { useRef } from 'react'
 import { useInView, motion } from 'framer-motion'
 import DonateSectionV2 from '@/components/donate-component-v2'
@@ -7,13 +6,11 @@ import { VideoCard } from '@/components/video-card'
 
 export default function DonateVideo7BmcSection() {
   const ref = useRef(null)
-  // const ref2 = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-50px' })
-  // const isInView2 = useInView(ref2, { once: true, margin: '-50px' })
 
   return (
     <>
-      <div className="bg-light pb-10 md:pt-10">
+      <div id="donate-meal" className="bg-light pb-10 md:pt-10">
         <motion.div
           ref={ref}
           className="wrapper px-2 py-10"
@@ -25,7 +22,8 @@ export default function DonateVideo7BmcSection() {
             <h3 className="sub-header text-2xl font-semibold capitalize text-dark md:text-3xl">
               7 Billion Meals Campaign Global Launch: REBROADCAST
             </h3>
-            <p className="md:-mt-6">Provide donation options: monetary or meal sponsorship</p>
+            {/* <p className="md:-mt-6">Provide donation options: monetary or meal sponsorship</p> */}
+            <p className="md:-mt-6">Provide donation informations</p>
           </div>
           <div className="flex flex-col gap-6 md:flex-row">
             <div className="md:max-w-md">

@@ -49,11 +49,11 @@ export default function HeroSection7bm({ openRegisterModal }: { openRegisterModa
           </p>
           <div className="flex w-full max-w-48 flex-wrap items-center justify-center gap-2 md:max-w-96">
             <Link
-              href={'/'}
+              href={'#donate-meal'}
               className="btn-white flex w-fit items-center gap-2 border px-8 text-base ring-light/50"
             >
               <HandGivingHeartIcon className="text-2xl" />
-              <p>Donate Meal </p>
+              <p>Donate Meal</p>
             </Link>
             <Link
               onClick={openRegisterModal}

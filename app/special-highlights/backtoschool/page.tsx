@@ -1,5 +1,5 @@
 import React from 'react'
-import backToSchoolFLyer from '@/public/assets/images/back-to-school.jpg'
+import backToSchoolFlyer from '@/public/assets/images/back-to-school.jpg'
 import Image from 'next/image'
 import MetaTags from '@/meta'
 import DonateSectionV2 from '@/components/donate-component-v2'
@@ -39,8 +39,8 @@ export default function BackToSchoolPage() {
           className="h-full w-full bg-cover bg-center object-cover md:aspect-3"
           width={300}
           height={200}
-          src={backToSchoolFLyer}
-          alt="backToSchoolFLyer"
+          src={backToSchoolFlyer}
+          alt="backToSchoolFlyer"
         />
       </div>
 
@@ -51,8 +51,9 @@ export default function BackToSchoolPage() {
           </h3>
         </div>
       </div>
+
       <div className="bg-white pt-4">
-        <div className="wrapper max-w-4xl">
+        <div className="wrapper max-w-3xl">
           <p>
             Support the InnerCity Mission’s Back to School Campaign. This is an opportunity for you
             to make a significant impact by sponsoring a child with 100 Espees
