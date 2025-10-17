@@ -4,7 +4,6 @@ import Image from 'next/image'
 import MetaTags from '@/meta'
 import DonateSectionV2 from '@/components/donate-component-v2'
 import { VideoCard } from '@/components/video-card'
-// import { motion } from 'framer-motion'
 import VideoPlayer from '@/components/video-player'
 import CtaSection from '@/layouts/cta-section'
 
