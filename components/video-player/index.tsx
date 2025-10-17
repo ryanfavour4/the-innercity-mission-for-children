@@ -6,6 +6,7 @@ import PercentageBar from '@/components/percentage-bar'
 import { formatTime } from '@/utils/format-time'
 import thumbnail from '@/public/assets/images/video-thumbnail.jpg'
 import Image, { StaticImageData } from 'next/image'
+import { PauseIcon, PlayIcon, SkipBackward10Icon, SkipForward10Icon } from '../svgs'
 
 interface VideoPlayerProps {
   src: string
@@ -118,9 +119,9 @@ const VideoPlayer = ({ src, thumb = thumbnail, autoplay = false, className }: Vi
           >
             <button className="btn-primary w-fit px-5 py-1">
               {playing ? (
-                <Icon icon="mdi:pause" className="size-9 text-4xl" />
+                <PauseIcon className="size-9 text-4xl" />
               ) : (
-                <Icon icon="mdi:play" className="size-9 text-4xl" />
+                <PlayIcon className="size-9 text-4xl" />
               )}
             </button>
           </div>
@@ -138,7 +139,7 @@ const VideoPlayer = ({ src, thumb = thumbnail, autoplay = false, className }: Vi
                 <div className="flex w-full items-center justify-start gap-2">
                   <small className="">
                     {duration
-                      ? `${formatTime(progress * duration)} / ${formatTime(duration)}`
+                      ? `${formatTime(progress * duration) || '00:00'} / ${formatTime(duration) || '00:00'}`
                       : '00:00 / 00:00'}
                   </small>
 
@@ -155,7 +156,7 @@ const VideoPlayer = ({ src, thumb = thumbnail, autoplay = false, className }: Vi
                     onClick={() => handleJumpPlayerCurrentTime(-10)}
                     className="rounded border border-light bg-light/25 p-1 text-light backdrop-blur active:scale-95"
                   >
-                    <Icon icon="fluent:skip-backward-10-28-regular" className="text-base" />
+                    <SkipBackward10Icon className="size-4 text-base" />
                   </button>
                   <button
                     onClick={togglePlay}
@@ -174,7 +175,7 @@ const VideoPlayer = ({ src, thumb = thumbnail, autoplay = false, className }: Vi
                     onClick={() => handleJumpPlayerCurrentTime(10)}
                     className="rounded border border-light bg-light/25 p-1 text-light backdrop-blur active:scale-95"
                   >
-                    <Icon icon="fluent:skip-forward-10-28-regular" className="text-base" />
+                    <SkipForward10Icon className="size-4 text-base" />
                   </button>
                 </div>
               </div>
