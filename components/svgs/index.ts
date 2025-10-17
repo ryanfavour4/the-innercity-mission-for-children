@@ -4,6 +4,8 @@ export { default as ChevronDownIcon } from '@/public/assets/svg/chevron-down.svg
 export { default as SearchMagnifierIcon } from '@/public/assets/svg/search-magnifier.svg'
 export { default as PlayIcon } from '@/public/assets/svg/play.svg'
 export { default as PauseIcon } from '@/public/assets/svg/pause.svg'
+export { default as VolumeIcon } from '@/public/assets/svg/volume.svg'
+export { default as MuteIcon } from '@/public/assets/svg/mute.svg'
 export { default as SkipBackward10Icon } from '@/public/assets/svg/skip-backward-10.svg'
 export { default as SkipForward10Icon } from '@/public/assets/svg/skip-forward-10.svg'
 export { default as HeartLoveIcon } from '@/public/assets/svg/heart-love.svg'

@@ -1,12 +1,18 @@
 'use client'
-import { Icon } from '@iconify/react'
 import { useRef, useState } from 'react'
 import ReactPlayer from 'react-player'
 import PercentageBar from '@/components/percentage-bar'
 import { formatTime } from '@/utils/format-time'
 import thumbnail from '@/public/assets/images/video-thumbnail.jpg'
 import Image, { StaticImageData } from 'next/image'
-import { PauseIcon, PlayIcon, SkipBackward10Icon, SkipForward10Icon } from '../svgs'
+import {
+  MuteIcon,
+  PauseIcon,
+  PlayIcon,
+  SkipBackward10Icon,
+  SkipForward10Icon,
+  VolumeIcon,
+} from '../svgs'
 
 interface VideoPlayerProps {
   src: string
@@ -147,7 +153,11 @@ const VideoPlayer = ({ src, thumb = thumbnail, autoplay = false, className }: Vi
                     onClick={toggleMute}
                     className="rounded border border-light bg-light/25 p-1 text-light backdrop-blur active:scale-95"
                   >
-                    <Icon icon={isMuted ? 'mdi:mute' : 'mdi:volume-high'} className="text-base" />
+                    {isMuted ? (
+                      <MuteIcon className="size-4 text-4xl" />
+                    ) : (
+                      <VolumeIcon className="size-4 text-4xl" />
+                    )}
                   </button>
                 </div>
 
@@ -162,14 +172,11 @@ const VideoPlayer = ({ src, thumb = thumbnail, autoplay = false, className }: Vi
                     onClick={togglePlay}
                     className="rounded border border-light bg-light/25 p-1 text-light backdrop-blur active:scale-95"
                   >
-                    <Icon
-                      icon={
-                        playing
-                          ? 'material-symbols-light:pause-rounded'
-                          : 'material-symbols:play-arrow-rounded'
-                      }
-                      className="text-base"
-                    />
+                    {playing ? (
+                      <PauseIcon className="size-4 text-4xl" />
+                    ) : (
+                      <PlayIcon className="size-4 text-4xl" />
+                    )}
                   </button>
                   <button
                     onClick={() => handleJumpPlayerCurrentTime(10)}
