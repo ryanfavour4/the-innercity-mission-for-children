@@ -1,5 +1,5 @@
 import BlogCard from '@/components/blog-card'
-import blogsData from '@/json/blog-posts.json'
+import { blogsData } from '@/json/blog-posts'
 import CtaSection from '@/layouts/cta-section'
 import React from 'react'
 
@@ -39,7 +39,6 @@ export default function BlogPage() {
             ))}
           </div>
         </div>
-
         <CtaSection />
       </div>
     </>

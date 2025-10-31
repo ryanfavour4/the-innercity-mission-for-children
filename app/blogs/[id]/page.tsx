@@ -1,6 +1,6 @@
 import React from 'react'
 import { notFound } from 'next/navigation'
-import blogsData from '@/json/blog-posts.json'
+import { blogsData } from '@/json/blog-posts'
 import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRightIcon, ClockIcon, TagIcon, UsersIcon } from '@/components/svgs'
