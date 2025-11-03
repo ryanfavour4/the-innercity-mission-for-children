@@ -7,7 +7,7 @@ import logoBlue from '@/public/assets/icons/logo-black-text.png'
 import { ChevronDownIcon, CloseXIcon, MenuFriesIcon, SearchMagnifierIcon } from '@/components/svgs'
 import useTopnavbar, { menus as defaultmenu } from './useTopnavbar'
 
-export default function TopNavbar({ menus = defaultmenu, logo = logoDefault }) {
+export default function TopNavbar({ menus = defaultmenu, logo = logoDefault, primary = '' }) {
   const {
     setNavOpen,
     getActiveUrl,
@@ -86,7 +86,7 @@ export default function TopNavbar({ menus = defaultmenu, logo = logoDefault }) {
                 <SearchMagnifierIcon />
               </span>
               <Link href={'/donate'} className="block w-fit">
-                <button className="btn-primary w-fit">Donate</button>
+                <button className={`btn-primary w-fit bg-[${primary}]`}>Donate</button>
               </Link>
               <button onClick={() => setNavOpen((p) => !p)} className="inline-block md:hidden">
                 <MenuFriesIcon className="btn-white h-12 w-12 rotate-180 px-2 text-5xl font-bold text-primary ring-light hover:bg-white" />

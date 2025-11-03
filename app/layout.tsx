@@ -1,7 +1,4 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
-import TopNavbar from '@/layouts/topnavbar'
-import Footer from '@/layouts/footer'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import 'swiper/css'
 import 'swiper/css/navigation'
@@ -11,16 +8,6 @@ import '@/styles/bg.css'
 import '@/styles/tailwind.css'
 import '@/styles/animation.css'
 import { ThemeProvider } from '@/context/theme'
-
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-})
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-})
 
 export const metadata: Metadata = {
   title: 'Home Page - InnerCity Mission 4 Children HQ',
@@ -188,14 +175,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <ThemeProvider>
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} hidden antialiased`}
-          suppressHydrationWarning
-        >
-          <TopNavbar />
+        <body className={`hidden antialiased`} suppressHydrationWarning>
           {children}
           <div id="portal"></div>
-          <Footer />
         </body>
       </ThemeProvider>
       <SpeedInsights />
