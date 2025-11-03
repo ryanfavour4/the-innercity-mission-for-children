@@ -2,12 +2,12 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import logo from '@/public/assets/icons/logo-black-text.png'
+import logoDefault from '@/public/assets/icons/logo-black-text.png'
 import logoBlue from '@/public/assets/icons/logo-black-text.png'
 import { ChevronDownIcon, CloseXIcon, MenuFriesIcon, SearchMagnifierIcon } from '@/components/svgs'
 import useTopnavbar, { menus as defaultmenu } from './useTopnavbar'
 
-export default function TopNavbar({ menus = defaultmenu }) {
+export default function TopNavbar({ menus = defaultmenu, logo = logoDefault }) {
   const {
     setNavOpen,
     getActiveUrl,
@@ -24,7 +24,14 @@ export default function TopNavbar({ menus = defaultmenu }) {
         <div className="fixed left-0 right-0 top-0 z-20 w-full bg-light py-2">
           <div className="wrapper flex items-center justify-between">
             <Link href={'/'}>
-              <Image src={logo.src} alt="logo" className="w-24 md:w-28" width={100} height={50} />
+              <Image
+                src={logo.src}
+                unoptimized
+                alt="logo"
+                className="w-24 md:w-28"
+                width={100}
+                height={50}
+              />
             </Link>
 
             <div className="hidden md:inline-block">

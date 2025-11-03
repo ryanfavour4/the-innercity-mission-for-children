@@ -7,7 +7,7 @@ export default function CreateBlogPage() {
   const [title, setTitle] = useState('')
   const [category, setCategory] = useState('')
   const [content, setContent] = useState('')
-  
+
   console.log(setContent)
 
   useEffect(() => {

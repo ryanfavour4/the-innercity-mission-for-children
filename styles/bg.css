@@ -50,3 +50,9 @@
   background-image: url('/assets/svg/bg-wavy-pattern.svg');
   background-size: cover;
 }
+
+.bg-sendportions-hero {
+  background-image:
+    linear-gradient(to right, rgba(var(--dark), 0.8), rgba(var(--dark), 0.2)),
+    url('/assets/images/send-portion-bg.jpeg');
+}

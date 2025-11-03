@@ -34,3 +34,5 @@ export { default as CollectionStackFillIcon } from '@/public/assets/svg/collecti
 export { default as DeliveryVanFastFillIcon } from '@/public/assets/svg/delivery-van-fast-fill.svg'
 export { default as FileDocumentIcon } from '@/public/assets/svg/file-document.svg'
 export { default as PartnerHandShakeIcon } from '@/public/assets/svg/partner-hand-shake.svg'
+export { default as ChristmasWreathIcon } from '@/public/assets/svg/christmas-wreath.svg'
+export { default as ChristmasSantaCapIcon } from '@/public/assets/svg/christmas-santa-cap.svg'
