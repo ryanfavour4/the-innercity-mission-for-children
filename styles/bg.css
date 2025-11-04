@@ -46,6 +46,12 @@
     url('/assets/images/5-billion-meal-campaign-women-speaking.jpg');
 }
 
+.bg-christmas-sendportion-cta {
+  background:
+    linear-gradient(rgba(var(--dark), 0.7), rgba(var(--dark), 0.7)),
+    url('/assets/images/christmas-sendportion-cta-bg.jpg');
+}
+
 .bg-hero-wavy-pattern {
   background-image: url('/assets/svg/bg-wavy-pattern.svg');
   background-size: cover;

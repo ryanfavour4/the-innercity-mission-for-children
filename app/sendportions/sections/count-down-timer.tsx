@@ -12,15 +12,15 @@ export default function CountdownTimer() {
       </div>
       <div className="w-full max-w-24 rounded-md border bg-[#007853] px-2 py-4">
         <h5 className="text-2xl font-bold leading-none md:text-3xl">{hours}</h5>
-        <p className="text-base">Days</p>
+        <p className="text-base">Hours</p>
       </div>
       <div className="w-full max-w-24 rounded-md border bg-[#007853] px-2 py-4">
         <h5 className="text-2xl font-bold leading-none md:text-3xl">{minutes}</h5>
-        <p className="text-base">Days</p>
+        <p className="text-base">Minutes</p>
       </div>
       <div className="w-full max-w-24 rounded-md border bg-[#007853] px-2 py-4">
         <h5 className="text-2xl font-bold leading-none md:text-3xl">{seconds}</h5>
-        <p className="text-base">Days</p>
+        <p className="text-base">Seconds</p>
       </div>
     </div>
   )

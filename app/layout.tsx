@@ -8,6 +8,7 @@ import '@/styles/bg.css'
 import '@/styles/tailwind.css'
 import '@/styles/animation.css'
 import { ThemeProvider } from '@/context/theme'
+import { ToastContainer } from 'react-toastify'
 
 export const metadata: Metadata = {
   title: 'Home Page - InnerCity Mission 4 Children HQ',
@@ -178,6 +179,7 @@ export default function RootLayout({
         <body className={`hidden antialiased`} suppressHydrationWarning>
           {children}
           <div id="portal"></div>
+          <ToastContainer />
         </body>
       </ThemeProvider>
       <SpeedInsights />
