@@ -30,6 +30,7 @@ export default function NumberCounter({
         onClick={() => handleChange(value - step)}
         className="btn w-fit bg-[#007853] p-2 text-light disabled:opacity-30"
         disabled={value <= min}
+        type="button"
       >
         −
       </button>
@@ -44,6 +45,7 @@ export default function NumberCounter({
         onClick={() => handleChange(value + step)}
         className="btn w-fit bg-[#007853] p-2 text-light disabled:opacity-30"
         disabled={value >= max}
+        type="button"
       >
         +
       </button>

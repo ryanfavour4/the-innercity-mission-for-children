@@ -59,7 +59,7 @@ export default function SendPortionPage() {
             </h1>
             <div className="mt-6 flex w-full flex-wrap items-center gap-2 gap-y-3 md:max-w-96">
               <a
-                href="#intro-video-section"
+                href="#give-portion-section"
                 className="btn flex items-center justify-center gap-2.5 border px-4 py-3 text-base ring-light/50 md:w-fit"
               >
                 <MealForkPlateKnifeIcon className="size-5 pl-px" />
@@ -135,7 +135,10 @@ export default function SendPortionPage() {
           </div>
         </div>
 
-        <div className="bg-christmas-sendportion-cta min-h-[12rem] bg-cover px-3 py-10 text-white md:min-h-96">
+        <div
+          id="give-portion-section"
+          className="bg-christmas-sendportion-cta min-h-[12rem] bg-cover px-3 py-10 text-white md:min-h-96"
+        >
           <h3 className="mb-2 text-center text-3xl font-bold capitalize md:text-4xl">
             Choose a Portion to Sponsor
           </h3>
@@ -186,7 +189,7 @@ export default function SendPortionPage() {
                         <a
                           onClick={() => {
                             setSelectedHamperPlan(item)
-                            toast('Plan selected 🎉')
+                            toast.success('Plan selected 🎉')
                           }}
                           href="#sub-donate-inputs"
                           className={`${selectedHamperPlan?.id === item.id && 'bg-[#007853] !text-white'} btn block border-2 border-[#007853] text-[#007853]`}
@@ -228,9 +231,8 @@ export default function SendPortionPage() {
                 <p className="mx-auto mb-8 max-w-2xl text-gray-700">
                   You’ve chosen:{' '}
                   <span className="font-semibold text-red-800">{quantityNumberMeter}</span> Portion
-                  of
+                  of{' '}
                   <span className="font-semibold text-red-800">
-                    {quantityNumberMeter} Portions of
                     {selectedHamperPlan?.plan || 'No Box Selected'}
                   </span>{' '}
                   for{' '}
