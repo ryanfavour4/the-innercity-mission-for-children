@@ -193,8 +193,7 @@ h6,
 }
 
 button.ReactFlagsSelect-module_selectBtn__19wW7 {
-  /* border: 0 !important; */
-  /* padding-inline: 0px; */
+  width: 100%;
 }
 
 span.ReactFlagsSelect-module_selectValue__152eS,
@@ -203,7 +202,6 @@ div.ReactFlagsSelect-module_filterBox__3m8EU {
   font-size: 0.99rem /* 14px */;
   line-height: 1.25rem /* 20px */;
   padding-block: 0.1rem;
-
   color: rgba(var(--textcolor));
 }
 

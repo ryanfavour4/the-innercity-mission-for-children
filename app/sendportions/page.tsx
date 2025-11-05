@@ -5,6 +5,7 @@ import {
   ChristmasSantaCapIcon,
   ChristmasWreathIcon,
   EventDateFillIcon,
+  HandGivingGiftIcon,
   HeartLoveIcon,
   MealForkPlateKnifeIcon,
 } from '@/components/svgs'
@@ -12,40 +13,47 @@ import React from 'react'
 import Snowfall from 'react-snowfall'
 import CountdownTimer from './sections/count-down-timer'
 import Image from 'next/image'
-import sendPortionHamperBag from '@/public/assets/icons/send-portions-bag.png'
+// import sendPortionHamperBag from '@/public/assets/icons/send-portions-bag.png'
+import sendPortionHamperBox from '@/public/assets/icons/send-portion-box.png'
 import espeesCoin from '@/public/assets/icons/espees.png'
+import sendPortionsArtboard from '@/public/assets/images/sendportion-artboard-2.png'
 import CountrySelect from '@/components/country-select'
 import NumberCounter from '@/components/number-counter'
+import Input from '@/components/input'
 
 const hampers = [
   {
     id: 1,
-    plan: 'A Christmas Box For Children contains',
+    plan: 'Christmas Box For Children',
+    planPlural: 'Christmas Boxes For Children',
     items: ['Food & Drink Pack', 'Gift Item', 'ROR', 'Essentials'],
     espees: 5,
   },
   {
     id: 2,
-    plan: 'A Christmas Box for Families contains',
+    plan: 'Christmas Box for Families',
+    planPlural: 'Christmas Boxes for Families',
     items: ['1 Month Food Parcel', 'ROR family Pack'],
-    espees: 5,
+    espees: 50,
   },
-  {
-    id: 3,
-    plan: 'A Christmas Box for Indigent New Mums',
-    items: [
-      'New Mum Nutrition Pack',
-      'Newborn Essentials (Clothing, towel set & blanket)',
-      'Diaper Pack',
-    ],
-    espees: 10,
-  },
+  // {
+  //   id: 3,
+  //   plan: 'A Christmas Box for Indigent New Mums',
+  //   items: [
+  //     'New Mum Nutrition Pack',
+  //     'Newborn Essentials (Clothing, towel set & blanket)',
+  //     'Diaper Pack',
+  //   ],
+  //   espees: 10,
+  // },
 ]
 
 export default function SendPortionPage() {
   const [selectedHamperPlan, setSelectedHamperPlan] = useState<(typeof hampers)[0] | null>(null)
   const [selectedRegion, setSelectedRegion] = useState('Nigeria')
-  const [quantityNumberMeter, setQuantityNumberMeter] = useState('')
+  const [quantityNumberMeter, setQuantityNumberMeter] = useState(1)
+  const [fullname, setFullname] = useState({ value: '' })
+  const [email, setEmail] = useState({ value: '' })
 
   return (
     <>
@@ -63,7 +71,7 @@ export default function SendPortionPage() {
                 className="btn flex items-center justify-center gap-2.5 border px-4 py-3 text-base ring-light/50 md:w-fit"
               >
                 <MealForkPlateKnifeIcon className="size-5 pl-px" />
-                <p>Give a Portion</p>
+                <p>Sponsor Portions</p>
               </a>
               <a
                 href={'https://sendportions.theinnercitymission.ngo/register'}
@@ -135,23 +143,68 @@ export default function SendPortionPage() {
           </div>
         </div>
 
+        <div className="bg-[#007853]/85 text-light">
+          <div className="container flex max-w-6xl grid-cols-2 flex-col gap-6 px-2 py-8 md:grid">
+            <div className="flex flex-col justify-between px-4 py-12">
+              <h4 className="mb-6 max-w-4xl text-3xl font-bold capitalize leading-relaxed md:text-4xl">
+                How to Participate in Send Portions Outreaches 2025
+              </h4>
+
+              <div className="mx-auto grid grid-cols-2 gap-4">
+                <div className="flex flex-col gap-3 text-base">
+                  <div className="flex w-fit items-center justify-center rounded-md border border-red-800 bg-red-700 p-2.5 text-light">
+                    <HandGivingGiftIcon className="text-xs" />
+                  </div>
+
+                  <p>
+                    Sponsor Send Portions Christmas Gift Boxes for
+                    <br />• Children, <br />• Families <br />• and Inidgent New Mums
+                  </p>
+                </div>
+
+                <div className="flex flex-col gap-3 text-base">
+                  <div className="flex w-fit items-center justify-center rounded-md border border-red-800 bg-red-700 p-2.5 text-light">
+                    <HandGivingGiftIcon className="text-xs" />
+                  </div>
+
+                  <p>
+                    Organize a Send Portions Outreach in <br /> • Communities,
+                    <br /> • Childrens Homes/Orphanages, <br /> • IDP or Refugee Camps
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="">
+              <Image
+                src={sendPortionsArtboard}
+                width="100"
+                height="100"
+                unoptimized
+                className={`mx-auto w-full rounded-md md:max-w-xs`}
+                alt="espeesCoin"
+              />
+            </div>
+          </div>
+        </div>
+
         <div
           id="give-portion-section"
-          className="bg-christmas-sendportion-cta min-h-[12rem] bg-cover px-3 py-10 text-white md:min-h-96"
+          className="bg-christmas-sendportion-cta min-h-[12rem] bg-cover px-3 py-10 pt-16 text-white md:min-h-96"
         >
-          <h3 className="mb-2 text-center text-3xl font-bold capitalize md:text-4xl">
-            Choose a Portion to Sponsor
+          <h3 className="mx-auto mb-2 max-w-3xl text-balance text-center text-3xl font-bold capitalize md:text-4xl">
+            {/* Choose a Portion to Sponsor */}
+            Join us to Sponsor Portions of Christmas Gift Boxes to Indigent Children and Families
           </h3>
-          <p className="mx-auto max-w-2xl text-center">
-            Join us to Send Portions of Christmas Gift Boxes to Children, Families and New Indigent
-            Mums:
+          <p className="mx-auto max-w-2xl text-center text-lg md:text-xl">
+            Choose Your Portions Package
           </p>
         </div>
 
-        <div className="relative mx-auto mb-10 min-h-48 md:mb-[33rem]">
+        <div className="relative mx-auto mb-10 min-h-48 md:mb-[36rem]">
           <div className="item-center left-0 right-0 flex w-full justify-center border-t-4 border-[#007853] md:border-4">
-            <form className="-bottom-[270%] mx-auto min-h-48 w-full max-w-6xl rounded-md bg-white px-4 py-4 shadow md:absolute">
-              <div className="flex flex-wrap items-center justify-center gap-5 md:grid md:grid-cols-3 md:items-start md:justify-start">
+            <div className="-bottom-[290%] mx-auto min-h-48 w-full max-w-4xl rounded-md bg-white px-4 py-4 shadow md:absolute">
+              <div className="flex flex-wrap items-center justify-center gap-5 md:grid md:grid-cols-2 md:items-start md:justify-start">
                 {hampers.map((item, idx) => (
                   <div
                     key={idx}
@@ -169,10 +222,10 @@ export default function SendPortionPage() {
                         <p>{item.espees} Espee</p>
                       </div>
                       <Image
-                        src={sendPortionHamperBag}
+                        src={sendPortionHamperBox}
                         width="100"
                         height="100"
-                        className={`w-full max-w-[12rem] animate-wiggle`}
+                        className={`w-full max-w-[14rem] animate-wiggle`}
                         alt=""
                       />
                     </div>
@@ -207,20 +260,44 @@ export default function SendPortionPage() {
               {/* ❤️ Donate Section */}
               <section
                 id="sub-donate-inputs"
-                className="flex flex-col items-center justify-center py-6 pt-8 text-center"
+                className="flex flex-col items-center justify-center py-6 pt-8"
               >
-                <div className="mb-8 flex w-full flex-col items-center justify-center gap-5 rounded-md bg-red-50 py-8 md:flex-row">
-                  <div className="flex flex-col gap-1">
-                    <label className="font-semibold">Portion Quantity</label>
-                    <NumberCounter onChange={(e) => setQuantityNumberMeter(String(e))} />
-                  </div>
-                  <div className="flex flex-col gap-1">
-                    <label className="max-w-xs font-semibold">Destination Country</label>
-                    <CountrySelect
-                      className="w-56 bg-white"
-                      onChange={(e) => setSelectedRegion(e.target.name)}
-                      value={selectedRegion}
-                    />
+                <div className="mb-8 w-full rounded-md border-2 bg-red-50 py-8">
+                  <div className="mx-auto flex w-full flex-col items-center justify-center gap-5 px-3 md:grid md:max-w-3xl md:grid-cols-2 md:flex-row md:px-10">
+                    <div className="flex w-full flex-col gap-1">
+                      <label className="text-base font-medium">Portion Quantity</label>
+                      <NumberCounter onChange={(e) => setQuantityNumberMeter(Number(e))} />
+                    </div>
+                    <div className="flex w-full flex-col gap-1">
+                      <label className="text-base font-medium">Destination Country</label>
+                      <CountrySelect
+                        className="bg-white"
+                        onChange={(e) => setSelectedRegion(e.target.name)}
+                        value={selectedRegion}
+                      />
+                    </div>
+                    <div className="flex w-full flex-col gap-1">
+                      <label className="text-base font-medium">Full Name</label>
+                      <Input
+                        placeholder="Enter your name"
+                        type="text"
+                        required
+                        state={fullname}
+                        setState={setFullname}
+                        name="name"
+                      />
+                    </div>
+                    <div className="flex w-full flex-col gap-1">
+                      <label className="text-base font-medium">Email Address</label>
+                      <Input
+                        placeholder="Email"
+                        type="email"
+                        state={email}
+                        required
+                        setState={setEmail}
+                        name="email"
+                      />
+                    </div>
                   </div>
                 </div>
 
@@ -228,159 +305,37 @@ export default function SendPortionPage() {
                 <h4 className="mx-auto mb-6 max-w-4xl text-center text-2xl font-bold capitalize text-red-800 md:text-3xl">
                   Ready to Make Someone Smile?
                 </h4>
-                <p className="mx-auto mb-8 max-w-2xl text-gray-700">
+                <p className="mx-auto mb-3 max-w-2xl text-base text-gray-700">
                   You’ve chosen:{' '}
                   <span className="font-semibold text-red-800">{quantityNumberMeter}</span> Portion
-                  of{' '}
+                  {Number(quantityNumberMeter) > 1 ? 's' : ''} of{' '}
                   <span className="font-semibold text-red-800">
-                    {selectedHamperPlan?.plan || 'No Box Selected'}
+                    {(Number(quantityNumberMeter) > 1
+                      ? selectedHamperPlan?.planPlural
+                      : selectedHamperPlan?.plan) || 'No Box Selected'}
                   </span>{' '}
-                  for{' '}
+                  in{' '}
                   <span className="font-semibold text-red-800">
                     {selectedRegion || 'No Region Selected'}
                   </span>
                 </p>
+                <p className="mb-8 font-semibold">
+                  Total {Number(selectedHamperPlan?.espees) * Number(quantityNumberMeter) || 0}{' '}
+                  Espees
+                </p>
+
+                <form method="post" action="https://gateway.theinnercitymission.ngo/pay">
+                  <input type="hidden" name="c" />
+                </form>
+
                 <button type="submit" className="btn w-fit bg-[#007853] px-8 py-2.5 text-light">
                   Proceed to Donate
                 </button>
               </section>
-            </form>
+            </div>
           </div>
         </div>
-
-        {/* <SendPortionsLanding /> */}
       </div>
     </>
   )
 }
-
-// export function SendPortionsLanding() {
-//   const [selectedBox, setSelectedBox] = useState('')
-//   const [selectedRegion, setSelectedRegion] = useState('')
-
-//   const boxes = [
-//     {
-//       id: 'child',
-//       title: 'Christmas Box for Children',
-//       items: ['Food & Drink Pack', 'Gift Item', 'Rhapsody of Realities', 'Essentials'],
-//     },
-//     {
-//       id: 'family',
-//       title: 'Christmas Box for Families',
-//       items: ['1-Month Food Parcel', 'ROR Family Pack'],
-//     },
-//     {
-//       id: 'mum',
-//       title: 'Christmas Box for New Mums',
-//       items: ['Nutrition Pack', 'Newborn Essentials', 'Diaper Pack'],
-//     },
-//   ]
-
-//   const regions = ['Nigeria', 'Kenya', 'Ghana', 'South Africa', 'India', 'Philippines']
-
-//   return (
-//     <div className="min-h-screen bg-gradient-to-b from-red-100 to-white text-gray-800">
-//       {/* 🎄 Hero Section */}
-//       <section className="relative bg-[url('/christmas-bg.jpg')] bg-cover bg-center px-6 py-20 text-center">
-//         <div className="absolute inset-0 bg-red-900/60" />
-//         <motion.div
-//           initial={{ opacity: 0, y: 20 }}
-//           animate={{ opacity: 1, y: 0 }}
-//           transition={{ duration: 0.8 }}
-//           className="relative z-10"
-//         >
-//           <h1 className="mb-4 text-4xl font-bold text-white md:text-6xl">
-//             Send Portions This Christmas 🎁
-//           </h1>
-//           <p className="mx-auto mb-8 max-w-2xl text-white/90">
-//             Join The InnerCity Mission to share love, joy, and hope with children, families, and new
-//             mums this Christmas.
-//           </p>
-//           <button className="bg-yellow-400 font-semibold text-black hover:bg-yellow-300">
-//             Sponsor a Box
-//           </button>
-//         </motion.div>
-//       </section>
-
-//       {/* 📖 Scripture */}
-//       <section className="px-6 py-12 text-center">
-//         <h2 className="mb-3 text-2xl font-semibold text-red-800">Nehemiah 8:10</h2>
-//         <p className="mx-auto max-w-2xl text-lg italic text-gray-700">
-//           “Go, eat rich food, drink sweet drinks, and send portions to those who can’t provide for
-//           themselves.”
-//         </p>
-//       </section>
-
-//       {/* 🎁 Choose Box */}
-//       <section className="bg-white px-6 py-14 text-center">
-//         <h2 className="mb-10 text-3xl font-bold text-red-800">Choose a Christmas Box to Sponsor</h2>
-//         <div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-3">
-//           {boxes.map((box) => (
-//             <div
-//               key={box.id}
-//               onClick={() => setSelectedBox(box.id)}
-//               className={`w-full max-w-4xl cursor-pointer rounded-md border-2 bg-white px-2.5 py-3 shadow ${
-//                 selectedBox === box.id ? 'border-yellow-500 bg-yellow-50' : 'border-gray-200'
-//               } transition hover:shadow-lg`}
-//             >
-//               <div className="p-6">
-//                 <HandGivingHeartIcon className="mx-auto mb-4 text-red-700" size={36} />
-//                 <h3 className="mb-3 text-xl font-semibold">{box.title}</h3>
-//                 <ul className="space-y-1 text-sm text-gray-700">
-//                   {box.items.map((item, i) => (
-//                     <li key={i}>• {item}</li>
-//                   ))}
-//                 </ul>
-//               </div>
-//             </div>
-//           ))}
-//         </div>
-//       </section>
-
-//       {/* 🌍 Choose Region */}
-//       <section className="bg-red-50 px-6 py-14 text-center">
-//         <h2 className="mb-6 text-3xl font-bold text-red-800">Choose Where to Send</h2>
-//         <div className="mx-auto flex max-w-3xl flex-wrap justify-center gap-4">
-//           {regions.map((region) => (
-//             <button
-//               key={region}
-//               onClick={() => setSelectedRegion(region)}
-//               className={`rounded-full border-2 px-5 py-2 ${
-//                 selectedRegion === region
-//                   ? 'border-yellow-400 bg-yellow-400 text-black'
-//                   : 'border-red-700 text-red-700 hover:bg-red-700 hover:text-white'
-//               } transition`}
-//             >
-//               <ClockIcon className="mr-2 inline h-4 w-4" />
-//               {region}
-//             </button>
-//           ))}
-//         </div>
-//       </section>
-
-//       {/* ❤️ Donate Section */}
-//       <section className="bg-gradient-to-b from-yellow-100 to-yellow-200 px-6 py-20 text-center">
-//         <HeartLoveIcon className="mx-auto mb-4 text-red-600" size={40} />
-//         <h2 className="mb-4 text-3xl font-bold text-red-800">Ready to Make Someone Smile?</h2>
-//         <p className="mx-auto mb-8 max-w-2xl text-gray-700">
-//           You’ve chosen:{' '}
-//           <span className="font-semibold text-red-800">
-//             {selectedBox ? boxes.find((b) => b.id === selectedBox)?.title : 'No Box Selected'}
-//           </span>{' '}
-//           for{' '}
-//           <span className="font-semibold text-red-800">
-//             {selectedRegion || 'No Region Selected'}
-//           </span>
-//         </p>
-//         <button className="rounded-full bg-red-700 px-8 py-3 text-lg text-white hover:bg-red-800">
-//           Proceed to Donate
-//         </button>
-//       </section>
-
-//       {/* ✨ Footer */}
-//       <footer className="border-t bg-white py-10 text-center text-sm text-gray-600">
-//         © 2025 The InnerCity Mission — Send Portions Christmas Outreach
-//       </footer>
-//     </div>
-//   )
-// }
