@@ -332,16 +332,9 @@ export default function SendPortionPage() {
                     type="hidden"
                     name="amount"
                     id="amount"
-                    value={
-                      (Number(selectedHamperPlan?.espees) * Number(quantityNumberMeter)) & 2000
-                    }
+                    value={Number(selectedHamperPlan?.espees) * Number(quantityNumberMeter) * 1700}
                   />
-                  <input
-                    type="hidden"
-                    name="Send Portions (Family)"
-                    id="item"
-                    value={'Send Portions (Family)'}
-                  />
+                  <input type="hidden" name="item" id="item" value={'Send Portions (Family)'} />
                   <input
                     type="hidden"
                     name="description"
