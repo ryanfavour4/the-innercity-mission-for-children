@@ -59,8 +59,8 @@ export default function SendPortionPage() {
     <>
       <div>
         <Snowfall style={{ zIndex: 99 }} />
-        <div className="bg-sendportions-hero min-h-48 bg-cover bg-[70%]">
-          <div className="container px-3 py-28 text-light md:min-h-[30rem] md:px-2">
+        <div className="bg-sendportions-hero min-h-96 bg-cover bg-[70%]">
+          <div className="container px-3 py-28 text-light md:min-h-[35rem] md:px-2">
             <h1 className="relative max-w-3xl text-4xl font-black drop-shadow-2xl md:text-balance md:text-6xl">
               <ChristmasSantaCapIcon className="absolute -left-2 -top-3 size-6 -rotate-[30deg] pl-px md:size-8" />
               Send Portions at Christmas Outreaches and Crusades
@@ -325,12 +325,52 @@ export default function SendPortionPage() {
                 </p>
 
                 <form method="post" action="https://gateway.theinnercitymission.ngo/pay">
-                  <input type="hidden" name="c" />
-                </form>
+                  <input type="hidden" name="name" id="name" value={fullname.value} />
+                  <input type="hidden" name="email" id="email" value={email.value} />
+                  <input type="hidden" name="country" id="country" value={selectedRegion} />
+                  <input
+                    type="hidden"
+                    name="amount"
+                    id="amount"
+                    value={
+                      (Number(selectedHamperPlan?.espees) * Number(quantityNumberMeter)) & 2000
+                    }
+                  />
+                  <input
+                    type="hidden"
+                    name="Send Portions (Family)"
+                    id="item"
+                    value={'Send Portions (Family)'}
+                  />
+                  <input
+                    type="hidden"
+                    name="description"
+                    id="description"
+                    value={selectedHamperPlan?.plan}
+                  />
 
-                <button type="submit" className="btn w-fit bg-[#007853] px-8 py-2.5 text-light">
-                  Proceed to Donate
-                </button>
+                  {/* INVISIBLE TAGS FOR TRACKING DONATIONS  */}
+                  <div className="invisible">
+                    <input type="hidden" value={'NGN'} name="currency" />
+
+                    <input
+                      type="hidden"
+                      value={selectedHamperPlan?.plan}
+                      name="given-description"
+                    />
+                    <input
+                      type="hidden"
+                      value={'https://theinnercitymission.ngo/donate/?action=step-2'}
+                      name="domain"
+                    />
+                    <input type="hidden" value={'icm4c'} name="txn_prefix" />
+                    <input type="hidden" value={'icm4c'} name="dept" />
+                    <input type="hidden" value={'Bank Transfer'} name="paymentType" />
+                  </div>
+                  <button type="submit" className="btn w-fit bg-[#007853] px-8 py-2.5 text-light">
+                    Proceed to Donate
+                  </button>
+                </form>
               </section>
             </div>
           </div>
