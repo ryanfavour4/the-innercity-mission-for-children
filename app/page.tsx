@@ -8,10 +8,13 @@ import MetricStatsSection from '@/app/_section_home/metrics-stats-section'
 import FundraiseWithUsSection from '@/app/_section_home/fundraise-with-us-section'
 import VolunteerWithUs from '@/app/_section_home/volunteer-with-us'
 import ExtraExternalSection from '@/app/_section_home/extra-external-section'
+import TopNavbar from '@/layouts/topnavbar'
+import Footer from '@/layouts/footer'
 
 export default function Home() {
   return (
-    <div className="">
+    <>
+      <TopNavbar />
       <HeroSection />
       <IntroVideoSection />
       <BillionMealCampaignSection />
@@ -22,6 +25,7 @@ export default function Home() {
       <TopBlogSection />
       <CtaSection />
       <EventsSection />
-    </div>
+      <Footer />
+    </>
   )
 }

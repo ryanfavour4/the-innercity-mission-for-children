@@ -2,6 +2,7 @@
 
 import { useEditor, EditorContent } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
+import MenuFormatting from './menu-formatting'
 
 const BlogContentEditorBoard = () => {
   const editor = useEditor({
@@ -12,12 +13,17 @@ const BlogContentEditorBoard = () => {
     editorProps: {
       attributes: {
         class:
-          'prose prose-sm sm:prose lg:prose-lg xl:prose-2xl focus:outline-none border w-full bg-white !w-full md:min-h-96 rounded-sm !text-base blog-content-editor-board p-4 border-textcolor/25 h-full min-h-48 active:none focus:none',
+          'prose focus:outline-none border bg-white md:min-h-96 rounded-sm p-4 border-textcolor/25 h-full min-h-48 active:none focus:none',
       },
     },
   })
 
-  return <EditorContent editor={editor} />
+  return (
+    <>
+      <MenuFormatting editor={editor} />
+      <EditorContent editor={editor} />
+    </>
+  )
 }
 
 export default BlogContentEditorBoard
