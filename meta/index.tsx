@@ -1,4 +1,5 @@
 'use client'
+import Head from 'next/head'
 import React from 'react'
 
 type MetaProps = {
@@ -12,7 +13,7 @@ export default function MetaTags(Props: MetaProps) {
   const { title, description, icon, keyword } = Props
 
   return (
-    <>
+    <Head>
       {/* <!-- Primary Meta Tags --> */}
       <title>{title?.length ? title : 'InnerCity Mission HQ'}</title>
       <meta
@@ -98,6 +99,6 @@ export default function MetaTags(Props: MetaProps) {
       <meta name="twitter:image" content="https://theinnercitymission.ngo/inner-city-banner.png" />
       <meta name="twitter:site" content="@theinnercitymission" />
       <meta name="twitter:card" content="summary" />
-    </>
+    </Head>
   )
 }

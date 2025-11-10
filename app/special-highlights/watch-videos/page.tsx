@@ -1,5 +1,4 @@
 'use client'
-export const dynamic = 'force-dynamic'
 import React, { useEffect, useState } from 'react'
 import Input from '@/components/input'
 import countries from '@/json/countries-list.json'
@@ -14,10 +13,6 @@ export default function LiveStreamPage() {
   const searchParams = useSearchParams()
   const videoCode = searchParams.get('video')
   const [videoInView, setVideoInView] = useState<(typeof videosData)[0] | null>(null)
-
-  console.log(videoCode)
-  console.log(videosData)
-  console.log(videoInView)
   const [fullname, setFullname] = useState({ value: '' })
   const [email, setEmail] = useState({ value: '' })
   const [message, setMessage] = useState({ value: '' })
