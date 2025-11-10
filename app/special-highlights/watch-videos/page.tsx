@@ -1,4 +1,6 @@
 'use client'
+export const dynamic = 'force-dynamic'
+
 import React, { useEffect, useState } from 'react'
 import Input from '@/components/input'
 import countries from '@/json/countries-list.json'
