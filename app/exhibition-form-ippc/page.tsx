@@ -48,7 +48,7 @@ export default function Page() {
   return (
     <div className="pb-6">
       <div className="bg-exhibition-form-ippc min-h-48 border-2 bg-cover bg-center py-2 text-light">
-        <div className="container pb-16">
+        <div className="container px-4 pb-16">
           <Image
             src={logoDefault.src}
             unoptimized
@@ -70,7 +70,7 @@ export default function Page() {
 
         {message && <p className="mt-3 bg-secondary py-4 text-center text-sm">{message}</p>}
 
-        <div className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-2">
+        <div className="f mt-8 flex flex-col gap-5 md:grid md:grid-cols-2">
           <div className="col-span-2">
             <label htmlFor="name" className="text-base font-medium">
               Full Name
