@@ -52,6 +52,12 @@
     url('/assets/images/christmas-sendportion-cta-bg.jpg');
 }
 
+.bg-exhibition-form-ippc {
+  background:
+    linear-gradient(rgba(var(--primary), 0.7), rgba(var(--primary), 0.7)),
+    url('/assets/images/bg-exhibition-form-ippc.jpg');
+}
+
 .bg-hero-wavy-pattern {
   background-image: url('/assets/svg/bg-wavy-pattern.svg');
   background-size: cover;
