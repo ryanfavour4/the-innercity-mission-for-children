@@ -12,11 +12,11 @@ import { circInOut, motion, spring, useInView } from 'framer-motion'
 const images = [
   { img: '/assets/images/wen-banner.jpg', link: '/special-highlights/build-a-school/', id: 1 },
   { img: '/assets/images/7BMC11.jpg', link: '/special-highlights/7billionmeals/', id: 2 },
-  // {
-  //   img: '/assets/images/website-banner-3-back-to-school.jpg',
-  //   link: '/special-highlights/backtoschool/',
-  //   id: 2,
-  // },
+  {
+    img: '/assets/images/SEND-PORTION-HEADER-WEB.png',
+    link: '/sendportions/',
+    id: 3,
+  },
   // { img: '/assets/images/back-to-school.jpg', link: '/special-highlights/backtoschool/', id: 3 },
   // {
   //   img: '/assets/images/Fiji-rebroadcast.png',
