@@ -12,42 +12,42 @@ import { circInOut, motion, spring, useInView } from 'framer-motion'
 const images = [
   { img: '/assets/images/wen-banner.jpg', link: '/special-highlights/build-a-school/', id: 1 },
   { img: '/assets/images/7BMC11.jpg', link: '/special-highlights/7billionmeals/', id: 2 },
-  {
-    img: '/assets/images/website-banner-3-back-to-school.jpg',
-    link: '/special-highlights/backtoschool/',
-    id: 2,
-  },
-  { img: '/assets/images/back-to-school.jpg', link: '/special-highlights/backtoschool/', id: 3 },
-  {
-    img: '/assets/images/Fiji-rebroadcast.png',
-    link: '/livestream/',
-    id: 4,
-  },
-  {
-    img: '/assets/images/october.jpg',
-    link: '/special-highlights/7billionmeals/',
-    id: 5,
-  },
-  {
-    img: '/assets/images/bannerGO.jpg',
-    link: '/special-highlights/summerinitiatives/',
-    id: 6,
-  },
-  {
-    img: '/assets/images/community-center.jpg',
-    link: '/special-highlights/summerinitiatives/',
-    id: 7,
-  },
+  // {
+  //   img: '/assets/images/website-banner-3-back-to-school.jpg',
+  //   link: '/special-highlights/backtoschool/',
+  //   id: 2,
+  // },
+  // { img: '/assets/images/back-to-school.jpg', link: '/special-highlights/backtoschool/', id: 3 },
+  // {
+  //   img: '/assets/images/Fiji-rebroadcast.png',
+  //   link: '/livestream/',
+  //   id: 4,
+  // },
+  // {
+  //   img: '/assets/images/october.jpg',
+  //   link: '/special-highlights/7billionmeals/',
+  //   id: 5,
+  // },
+  // {
+  //   img: '/assets/images/bannerGO.jpg',
+  //   link: '/special-highlights/summerinitiatives/',
+  //   id: 6,
+  // },
+  // {
+  //   img: '/assets/images/community-center.jpg',
+  //   link: '/special-highlights/summerinitiatives/',
+  //   id: 7,
+  // },
   {
     img: '/assets/images/preserve1.png',
     link: '/special-highlights/summerinitiatives/',
     id: 8,
   },
-  {
-    img: '/assets/images/summer-meals1.png',
-    link: '/special-highlights/summerinitiatives/',
-    id: 9,
-  },
+  // {
+  //   img: '/assets/images/summer-meals1.png',
+  //   link: '/special-highlights/summerinitiatives/',
+  //   id: 9,
+  // },
   {
     img: '/assets/images/website-bag-of-hope1.png',
     link: 'https://vfd.theinnercitymission.ngo/',

@@ -102,6 +102,7 @@ export default function DonateSectionV2({
                 id="item"
                 name="item"
               >
+                <option value="Send Portions">Send Portions</option>
                 <option value="7 Billion Meal Campaign">7 Billion Meals Campaign</option>
                 <option value="Colouring Dreams Conference">
                   Colouring Dreams Conference 2025{' '}
@@ -110,7 +111,6 @@ export default function DonateSectionV2({
                   Sponsor A Child&apos;s Education S.P.A.C.E
                 </option>
                 <option value="Back to School">Back to School</option>
-                <option value="Send Portions">Send Portions</option>
                 <option value="School Building Projects">School Building Projects</option>
                 <option value="Food Parcel For The Needy Family">
                   Food Parcel For The Needy Family
