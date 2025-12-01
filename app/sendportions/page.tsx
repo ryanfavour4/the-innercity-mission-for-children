@@ -27,14 +27,14 @@ const hampers = [
     plan: 'Christmas Box For Children',
     planPlural: 'Christmas Boxes For Children',
     items: ['Food & Drink Pack', 'Gift Item', 'ROR', 'Essentials'],
-    espees: 5,
+    espees: 3,
   },
   {
     id: 2,
     plan: 'Christmas Box for Families',
     planPlural: 'Christmas Boxes for Families',
     items: ['1 Month Food Parcel', 'ROR family Pack'],
-    espees: 50,
+    espees: 10,
   },
   // {
   //   id: 3,

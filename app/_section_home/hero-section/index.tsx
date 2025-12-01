@@ -155,7 +155,7 @@ export function HeroSection3() {
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 40 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+          animate={true ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
           transition={transitionSpring}
           className="flex h-full flex-col justify-center gap-6"
         >
