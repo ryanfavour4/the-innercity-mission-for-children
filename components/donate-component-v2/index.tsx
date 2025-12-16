@@ -16,7 +16,7 @@ export default function DonateSectionV2({
   const [fullname, setFullname] = useState({ value: '' })
   const [email, setEmail] = useState({ value: '' })
   const [country, setCountry] = useState('NG')
-  const [sponsoring, setSponsoring] = useState('7 Billion Meal Campaign')
+  const [sponsoring, setSponsoring] = useState('Send Portions')
   const [submitting, setSubmitting] = useState(false)
 
   return (

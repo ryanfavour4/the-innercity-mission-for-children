@@ -17,7 +17,7 @@ export default function MetricStatsSection() {
     {
       id: 2,
       link: '/donate',
-      stat: 4000000000,
+      stat: 1300000000,
       suffix: '+',
       title: 'Meals Distributed',
       description: 'Supporting communities through food distribution initiatives.',
