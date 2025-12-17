@@ -31,7 +31,7 @@ export default function DonateSectionV2({
         <form
           method="post"
           onSubmit={() => setSubmitting(true)}
-          action="https://gateway.theinnercitymission.ngo/pay"
+          action="https://gateway.theinnercitymission.tv/pay"
           className="flex w-full flex-col items-start overflow-hidden rounded-md border border-textcolor/25 bg-white px-3 pb-4 pt-1"
         >
           <div className="flex w-full flex-wrap items-center justify-between gap-1 border-b border-textcolor/25 pt-1.5 lg:gap-3">

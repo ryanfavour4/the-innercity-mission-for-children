@@ -324,7 +324,7 @@ export default function SendPortionPage() {
                   Espees
                 </p>
 
-                <form method="post" action="https://gateway.theinnercitymission.ngo/pay">
+                <form method="post" action="https://gateway.theinnercitymission.tv/pay">
                   <input type="hidden" name="name" id="name" value={fullname.value} />
                   <input type="hidden" name="email" id="email" value={email.value} />
                   <input type="hidden" name="country" id="country" value={selectedRegion} />
