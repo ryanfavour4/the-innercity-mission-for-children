@@ -113,7 +113,7 @@ export default function DonateSection() {
         <div className="mt-4 overflow-hidden rounded-xl">
           <form
             method="post"
-            action="https://gateway.theinnercitymission.tv/pay"
+            action="https://gateway.theinnercitymission.ngo/pay"
             className="flex items-start"
           >
             {/* SLIDE */}
