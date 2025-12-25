@@ -202,7 +202,7 @@ export function HeroSection3() {
         className="flex h-full flex-col justify-center gap-6"
       >
         <div className="relative mx-auto -mt-48 aspect-[1800/700] w-fit drop-shadow-xl md:-mt-48">
-          <div className="absolute top-1/3 z-10 flex w-full items-center justify-between px-1">
+          <div className="absolute top-1/2 z-10 -mt-5 flex w-full items-center justify-between px-1">
             <button className="btn swiper-prev w-fit rotate-180 border-[1.5px] border-light bg-light/25 px-1 py-1 text-primary backdrop-blur">
               <ChevronRightIcon className="text-2xl" />
             </button>

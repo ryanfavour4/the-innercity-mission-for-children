@@ -16,8 +16,10 @@ function IntroVideoSection() {
       <div className="relative min-h-20 overflow-hidden bg-secondary md:py-10">
         <div className="wrapper flex flex-col items-center justify-center">
           <div className="mb-5 flex flex-col items-center justify-center gap-2 px-4 text-center">
-            <h2 className="text-2xl font-extrabold uppercase md:text-3xl">— WORLD FOOD DAY —</h2>
-            <p>Join the innercity mission for children to make hunger history</p>
+            <h2 className="text-2xl font-extrabold uppercase md:text-3xl">
+              — MAKE CHRISTMAS MEMORABLE —
+            </h2>
+            <p>Join the innercity mission for children to make christmas memorable</p>
           </div>
 
           {/* VIDEO */}
