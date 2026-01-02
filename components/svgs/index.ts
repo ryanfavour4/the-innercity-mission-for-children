@@ -37,3 +37,7 @@ export { default as FileDocumentIcon } from '@/public/assets/svg/file-document.s
 export { default as PartnerHandShakeIcon } from '@/public/assets/svg/partner-hand-shake.svg'
 export { default as ChristmasWreathIcon } from '@/public/assets/svg/christmas-wreath.svg'
 export { default as ChristmasSantaCapIcon } from '@/public/assets/svg/christmas-santa-cap.svg'
+export { default as HandShakeOutlineIcon } from '@/public/assets/svg/handshake.svg'
+export { default as BuildingOutlineIcon } from '@/public/assets/svg/building.svg'
+export { default as LoveFlowerMoneyOutlineIcon } from '@/public/assets/svg/love-flower-money.svg'
+export { default as LeafBudOutlineIcon } from '@/public/assets/svg/leaf-bud.svg'

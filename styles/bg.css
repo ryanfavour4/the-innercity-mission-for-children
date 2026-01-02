@@ -58,6 +58,12 @@
     url('/assets/images/bg-exhibition-form-ippc.jpg');
 }
 
+.bg-cooperate-partnership {
+  background:
+    linear-gradient(to right, rgba(var(--dark), 0.9), rgba(var(--dark), 0.25)),
+    url('/assets/images/cooperate-partnership-hero-banner.jpg');
+}
+
 .bg-hero-wavy-pattern {
   background-image: url('/assets/svg/bg-wavy-pattern.svg');
   background-size: cover;
