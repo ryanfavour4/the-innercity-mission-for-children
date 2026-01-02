@@ -53,7 +53,8 @@ export default function AboutPage() {
       x: '/',
     },
     {
-      name: 'Christine Davidson-Eke',
+      // name: 'Christine Davidson-Eke',
+      name: 'Christine Okechukwu',
       position: 'Member',
       image: '/assets/images/pastor-christine.jpg',
       facebook: '/',
@@ -103,7 +104,7 @@ export default function AboutPage() {
           </h3>
           <br />
           <p>
-            The InnerCity Mission was birthed in December 2004 after the Founder, Rev Chris
+            The InnerCity Mission was birthed in December 2005 after the Founder, Rev Chris
             Oyakhilome (D.Sc., D.Sc., D.D.), the President of LoveWorld Inc, made a profound
             statement “Every Child is your Child”.
             <br />
@@ -118,9 +119,9 @@ export default function AboutPage() {
             needs, is the CORE of our work.
             <br />
             <br />
-            Over the years, our programs and interventions, have impacted the lives of over 50
-            million indigent beneficiaries, mostly children around the world in underserved,
-            hard-to-reach communities, from one country in 2005, to over 100 countries in 2022.
+            Over the years, our programs and interventions, have impacted the lives of over 1.1
+            Billion indigent beneficiaries, mostly children around the world in underserved,
+            hard-to-reach communities, from one country in 2005, to over 132 countries in 2025.
           </p>
         </div>
 
@@ -129,9 +130,9 @@ export default function AboutPage() {
           <div className="wrapper grid gap-12 md:grid-cols-2">
             <div className="flex flex-col gap-2">
               <h3 className="font-semibold">Our Mission</h3>
-              <h3 className="text-balance text-xl font-semibold">
+              {/* <h3 className="text-balance text-xl font-semibold">
                 Ensure every child thrives, escapes poverty, & contributes to progress.
-              </h3>
+              </h3> */}
               <p>
                 To create an environment where every child survives, lives above poverty, and
                 becomes an active participant in socio-economic development irrespective of race,
@@ -143,9 +144,9 @@ export default function AboutPage() {
             </div>
             <div className="flex flex-col gap-2">
               <h3 className="font-semibold">Our Vision</h3>
-              <h3 className="text-balance text-xl font-semibold">
+              {/* <h3 className="text-balance text-xl font-semibold">
                 A poverty-free world where every child can thrive.
-              </h3>
+              </h3> */}
               <p>
                 We envision a world, free of poverty, where every child has equal opportunities to
                 thrive and fulfill their God-given potential.
@@ -168,7 +169,7 @@ export default function AboutPage() {
           <br />
           <br />
           <h3 className="text-2xl font-semibold md:text-3xl">
-            Founder, The InnerCity Mission: Rev Dr. Chris Oyakhilome (D.Sc., D.Sc., D.D.) 2004
+            Founder, The InnerCity Mission: Rev Chris Oyakhilome (D.Sc., D.Sc., D.D.) 2005
           </h3>
         </div>
 
@@ -309,7 +310,7 @@ export default function AboutPage() {
 
                 <p className="mt-5 font-semibold leading-none">{board.name}</p>
                 <small>{board.position}</small>
-                <div className="flex items-center justify-between gap-6 rounded-md bg-primary px-2 py-1.5">
+                <div className="hidden items-center justify-between gap-6 rounded-md bg-primary px-2 py-1.5">
                   <a target="_blank" href="http://kingschat.online/">
                     <Image
                       src={kcIcon}
@@ -371,7 +372,7 @@ export default function AboutPage() {
 
               <p className="mt-5 font-semibold leading-none">Omoh Alabi</p>
               <small>Executive Director</small>
-              <div className="flex items-center justify-between gap-6 rounded-md bg-primary px-2 py-1.5">
+              <div className="hidden items-center justify-between gap-6 rounded-md bg-primary px-2 py-1.5">
                 <a target="_blank" href="http://kingschat.online/">
                   <Image src={kcIcon} alt="kcIcon" width={25} height={25} className="object-fill" />
                 </a>
