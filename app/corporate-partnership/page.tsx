@@ -92,7 +92,7 @@ export default function page() {
                 Our Programmatic Areas:
               </h3>
               {programmaticAreas.map((area, index) => (
-                <div key={index} className="mb-2 flex items-center gap-2">
+                <div key={index} className="mb-3 flex items-center gap-2">
                   <span className="rounded-full bg-light p-1">
                     <DoubleCheckIcon className="text-lg text-primary" />
                   </span>
