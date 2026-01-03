@@ -41,3 +41,5 @@ export { default as HandShakeOutlineIcon } from '@/public/assets/svg/handshake.s
 export { default as BuildingOutlineIcon } from '@/public/assets/svg/building.svg'
 export { default as LoveFlowerMoneyOutlineIcon } from '@/public/assets/svg/love-flower-money.svg'
 export { default as LeafBudOutlineIcon } from '@/public/assets/svg/leaf-bud.svg'
+export { default as DoubleCheckIcon } from '@/public/assets/svg/double-check.svg'
+export { default as UpTrendArrowIcon } from '@/public/assets/svg/up-trend-graph-arrow.svg'
