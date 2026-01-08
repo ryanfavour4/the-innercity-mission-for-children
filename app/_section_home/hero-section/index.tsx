@@ -10,11 +10,11 @@ import type { Swiper as SwiperClass } from 'swiper'
 import { circInOut, motion, spring, useInView } from 'framer-motion'
 
 const images = [
-  {
-    img: '/assets/images/SEND-PORTION-HEADER-WEB.png',
-    link: '/sendportions/',
-    id: 3,
-  },
+  // {
+  //   img: '/assets/images/SEND-PORTION-HEADER-WEB.png',
+  //   link: '/sendportions/',
+  //   id: 3,
+  // },
   {
     img: '/assets/images/icm-at-20.jpeg',
     link: 'https://icmat20.org/',
