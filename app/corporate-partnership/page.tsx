@@ -7,6 +7,8 @@ import {
   PeopleGroupFillIcon,
   DoubleCheckIcon,
   UpTrendArrowIcon,
+  EmailEnvelopeOutlineIcon,
+  PhoneCallOutlineIcon,
 } from '@/components/svgs'
 import Image from 'next/image'
 import CtaSection from '@/layouts/cta-section'
@@ -15,6 +17,9 @@ import image1 from '@/public/assets/images/cooperate-partnership-image-1.jpg'
 import image2 from '@/public/assets/images/cooperate-partnership-image-2.jpg'
 import image3 from '@/public/assets/images/cooperate-partnership-image-3.jpg'
 import image4 from '@/public/assets/images/cooperate-partnership-image-4.jpg'
+import unileverLogo from '@/public/assets/icons/unilever-logo.png'
+import accaLogo from '@/public/assets/icons/acca-logo.png'
+import Marquee from '@/components/marquee/marquee'
 
 const programmaticAreas = [
   'Education',
@@ -156,6 +161,8 @@ const waysToPartner = [
   },
 ]
 
+const partnersLogo = [unileverLogo, accaLogo, unileverLogo, accaLogo]
+
 export default function page() {
   return (
     <main className="bg-light">
@@ -231,7 +238,7 @@ export default function page() {
             </div>
           </div>
 
-          <div className="corporate-partnership-grid-container col-span-5 gap-4">
+          <div className="corporate-partnership-grid-container col-span-5 mt-10 gap-4">
             <div className="corporate-partnership-grid-image1 overflow-hidden rounded-lg">
               <Image
                 className="h-full w-full object-cover"
@@ -300,43 +307,6 @@ export default function page() {
           </h3>
 
           <div className="grid-cols-2 gap-6 md:grid">
-            {/* <div className="relative ml-10 mt-16">
-              <h2 className="font-abhaya-libre-extrabold absolute -left-10 -top-16 text-9xl text-dark/15">
-                a)
-              </h2>
-              <h3 className="text-2xl font-extrabold text-dark md:text-3xl">Corporate donations</h3>
-              <p className="mb-5 text-textcolor/75">
-                Make your contributions to the InnerCity Mission work by providing a one-off or
-                regular financial donation or a gift in kind.
-              </p>
-              <ul className="flex flex-col gap-3 text-base text-textcolor/75">
-                <li className="list-inside list-disc">
-                  <span className="font-extrabold">Make a financial donation</span>
-                  <p>
-                    Globally, the InnerCity Mission has transformed the lives of over 20 million
-                    Indigent beneficiaries mostly children. This was made possible by the generous
-                    donations from Corporate Organizations like YOURS.
-                  </p>
-                </li>
-                <li className="list-inside list-disc">
-                  <span className="font-extrabold">Make a financial donation</span>
-                  <p>
-                    Globally, the InnerCity Mission has transformed the lives of over 20 million
-                    Indigent beneficiaries mostly children. This was made possible by the generous
-                    donations from Corporate Organizations like YOURS.
-                  </p>
-                </li>
-              </ul>
-              <p className="mt-6 text-textcolor/75">
-                Here are some of the ways your company could get involved:
-              </p>
-              <ul className="flex list-inside flex-col gap-3 text-base text-textcolor/75">
-                <li className="list-disc">
-                  Globally, the InnerCity Mission has transformed the lives of over 20 million
-                  Indigent beneficiaries mostly children. This was made possible by the generous
-                </li>
-              </ul>
-            </div> */}
             {waysToPartner.map((item) => (
               <div key={item.title} dangerouslySetInnerHTML={{ __html: item.description }}></div>
             ))}
@@ -345,7 +315,7 @@ export default function page() {
       </section>
 
       <section className="relative bg-secondary py-8 text-light">
-        <div className="container flex max-w-2xl flex-col items-center justify-center gap-5 py-10 pb-20 text-center">
+        <div className="container flex max-w-3xl flex-col items-center justify-center gap-5 py-10 pb-20 text-center">
           <HandShakeOutlineIcon className="absolute bottom-1 right-3/4 text-textcolor/75 md:top-3/4" />
           <LeafBudOutlineIcon className="absolute left-3/4 top-3 text-textcolor/75 md:bottom-1/2" />
           <LoveFlowerMoneyOutlineIcon className="absolute left-[5%] top-3 text-textcolor/75" />
@@ -358,6 +328,53 @@ export default function page() {
             partners, and in return, we provide creative ways to help them meet their sustainable
             business objectives.
           </p>
+
+          <Marquee>
+            <div className="flex w-full items-center justify-center gap-5">
+              {partnersLogo.map((logo, idx) => (
+                <span key={idx} className="w-fit rounded-lg border-2 border-primary bg-white p-5">
+                  <Image
+                    className="h-full w-24 object-cover"
+                    src={logo}
+                    alt="logo"
+                    width={100}
+                    height={100}
+                  />
+                </span>
+              ))}
+            </div>
+          </Marquee>
+        </div>
+      </section>
+
+      <section className="relative py-8 pb-0 text-dark">
+        <div className="container flex max-w-3xl flex-col items-center justify-center gap-5 py-10 pb-20 text-center">
+          <h3 className="text-2xl font-extrabold text-dark md:text-3xl">Contact us</h3>
+
+          <p className="text-textcolor/75">
+            As you share in our vision of building a world without poverty, we would as well as help
+            create opportunities to meet your business objectives whilst making a real social
+            impact.
+            <br />
+            For inquiries and clarifications. email or call us at 
+          </p>
+
+          <div className="mt-5 flex w-full flex-wrap items-center justify-center gap-5">
+            <span className="flex items-center gap-3 text-lg font-semibold text-primary">
+              <button className="btn-primary w-fit p-2">
+                <EmailEnvelopeOutlineIcon />
+              </button>
+              <a href="mailto:corporate@theinnercitymission.org ">
+                corporate@theinnercitymission.org
+              </a>
+            </span>
+            <span className="flex items-center gap-3 text-lg font-semibold text-primary">
+              <button className="btn-primary w-fit p-2">
+                <PhoneCallOutlineIcon />
+              </button>
+              <a href="tel:+2348081747005">+234 (808) 174 7005</a>
+            </span>
+          </div>
         </div>
       </section>
 
