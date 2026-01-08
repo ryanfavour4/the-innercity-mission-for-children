@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Gaegu&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&display=swap');
+
 :root {
   --dark: 0, 0, 0; /* rgb(0, 0, 0) */
   --light: 255, 255, 255; /* rgb(255, 255, 255) */
@@ -127,6 +129,40 @@ h6,
   font-family: 'Lato', sans-serif;
 }
 
+.font-abhaya-libre {
+  font-family: 'Abhaya Libre', serif;
+}
+
+.font-abhaya-libre-regular {
+  font-family: 'Abhaya Libre', serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.font-abhaya-libre-medium {
+  font-family: 'Abhaya Libre', serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.font-abhaya-libre-semibold {
+  font-family: 'Abhaya Libre', serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.font-abhaya-libre-bold {
+  font-family: 'Abhaya Libre', serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.font-abhaya-libre-extrabold {
+  font-family: 'Abhaya Libre', serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
 .wrapper,
 .container {
   width: 98%;
@@ -165,6 +201,36 @@ h6,
   background: rgba(var(--textcolor));
   display: block;
   border-radius: 10px;
+}
+
+.corporate-partnership-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    'corporate-partnership-grid-image1 corporate-partnership-grid-image1 corporate-partnership-grid-image2 corporate-partnership-grid-image2'
+    'corporate-partnership-grid-image1 corporate-partnership-grid-image1 corporate-partnership-grid-image2 corporate-partnership-grid-image2'
+    'corporate-partnership-grid-image1 corporate-partnership-grid-image1 corporate-partnership-grid-image4 corporate-partnership-grid-image4'
+    'corporate-partnership-grid-image3 corporate-partnership-grid-image3 corporate-partnership-grid-image4 corporate-partnership-grid-image4'
+    'corporate-partnership-grid-image3 corporate-partnership-grid-image3 corporate-partnership-grid-image4 corporate-partnership-grid-image4';
+}
+
+.corporate-partnership-grid-image1 {
+  grid-area: corporate-partnership-grid-image1;
+}
+
+.corporate-partnership-grid-image2 {
+  grid-area: corporate-partnership-grid-image2;
+}
+
+.corporate-partnership-grid-image3 {
+  grid-area: corporate-partnership-grid-image3;
+}
+
+.corporate-partnership-grid-image4 {
+  grid-area: corporate-partnership-grid-image4;
 }
 
 .swiper {

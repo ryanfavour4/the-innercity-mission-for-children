@@ -40,6 +40,7 @@ export default function Footer() {
           <div className="flex flex-col gap-2 text-sm">
             <Link href={'/donate'}>Instant Donation</Link>
             <Link href={'/partner-with-us'}>Give Monthly</Link>
+            <Link href={'/corporate-partnership'}>Corporate Partnership</Link>
             <Link href={'https://hvn.theinnercitymission.ngo/'}>Become a Volunteer</Link>
             <Link href={'https://fundraise.theinnercitymission.ngo/'}>Sponsor Campaigns</Link>
             <Link href={'https://prayer.theinnercitymission.ngo/'}>Pray with Us</Link>
