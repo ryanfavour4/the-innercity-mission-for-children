@@ -35,12 +35,8 @@ export default function LiveStreamPage() {
       <MetaTags title="Livestream – InnerCity Mission HQ" />
       <div className="bg-white py-6">
         <div className="wrapper">
-          <h3 className="sub-header max-w-md text-2xl font-semibold before:top-4 md:text-3xl">
-            I.C.M Watch Page
-          </h3>
-          <p>--</p>
+          <p>School and Learning Center Sponsorship</p>
         </div>
-
         <div className="wrapper mt-6 grid grid-cols-12 gap-6">
           <div className="col-span-12 flex flex-col gap-4 md:col-span-7 lg:col-span-8">
             <VideoPlayer
@@ -50,7 +46,9 @@ export default function LiveStreamPage() {
               }
               className="w-full !max-w-6xl md:!h-full"
             />
-            <h4 className="ellipsis-2 text-xl font-bold uppercase md:text-2xl">--</h4>
+            <h4 className="ellipsis-2 text-xl font-bold uppercase md:text-2xl">
+              School and Learning Center Sponsorship
+            </h4>
           </div>
           <div className="rounlg col-span-12 border-2 px-2 py-3 md:col-span-5 lg:col-span-4">
             <h3 className="text-balance text-lg font-semibold">Write a message</h3>
