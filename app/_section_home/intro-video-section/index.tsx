@@ -17,9 +17,12 @@ function IntroVideoSection() {
         <div className="wrapper flex flex-col items-center justify-center">
           <div className="mb-5 flex flex-col items-center justify-center gap-2 px-4 text-center">
             <h2 className="text-2xl font-extrabold uppercase md:text-3xl">
-              — MAKE CHRISTMAS MEMORABLE —
+              — School and Learning Center Sponsorship —
             </h2>
-            <p>Join the innercity mission for children to make christmas memorable</p>
+            <p className="max-w-xl text-center">
+              Join us to build more schools, strengthen learning centers, and carry the light of the
+              gospel into communities where hope is scarce.
+            </p>
           </div>
 
           {/* VIDEO */}
