@@ -91,6 +91,11 @@ export const menus: menu_type[] = [
         path: '/livestream/',
       },
       {
+        title: 'Watch Video',
+        path: '/watch',
+        inherit: false,
+      },
+      {
         title: 'Spread Truth Campaign',
         path: '/spread-truth/',
       },

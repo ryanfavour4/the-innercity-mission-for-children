@@ -36,7 +36,7 @@ export default function LiveStreamPage() {
       <div className="bg-white py-6">
         <div className="wrapper">
           <h3 className="sub-header max-w-md text-2xl font-semibold before:top-4 md:text-3xl">
-            ICM Watch
+            I.C.M Watch Page
           </h3>
           <p>--</p>
         </div>
@@ -104,11 +104,11 @@ export default function LiveStreamPage() {
                 </select>
               </div>
               <div className="col-span-2 flex flex-col">
-                <label className="text-sm font-semibold" htmlFor="testimony">
-                  Testimony
+                <label className="text-sm font-semibold" htmlFor="message">
+                  Message
                 </label>
                 <Input
-                  placeholder="Share your testimony"
+                  placeholder="Share a message"
                   type="text-area"
                   required
                   state={testimony}
