@@ -6,6 +6,7 @@ import VideoPlayer from '@/components/video-player'
 import MetaTags from '@/meta'
 import CtaSection from '@/layouts/cta-section'
 import axios from 'axios'
+import { VideoCard } from '@/components/video-card'
 
 export default function LiveStreamPage() {
   const [fullname, setFullname] = useState({ value: '' })
@@ -41,13 +42,14 @@ export default function LiveStreamPage() {
         </div>
         <div className="wrapper mt-6 grid grid-cols-12 gap-6">
           <div className="col-span-12 flex flex-col gap-4 md:col-span-7 lg:col-span-8">
-            <VideoPlayer
+            <VideoCard className="w-full !max-w-6xl md:!h-full" />
+            {/* <VideoPlayer
               src={
                 // 'https://playlist.dacast.com/live/602498bd0ab279ef90d21c11e370e84f-live-ba817332-b74a-3b86-e4ae-0a059bdc404d/master.m3u8'
                 'https://vimeo.com/1155683488/0ef607f31a?fl=ip&fe=ec'
               }
               className="w-full !max-w-6xl md:!h-full"
-            />
+            /> */}
             <h4 className="ellipsis-2 text-xl font-bold uppercase md:text-2xl">
               School Building and Children&apos;s Learning Center Sponsorship Promo
             </h4>
