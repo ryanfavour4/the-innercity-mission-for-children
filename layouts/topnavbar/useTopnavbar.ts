@@ -80,6 +80,7 @@ export const menus: menu_type[] = [
       {
         title: 'Corporate Partnership',
         path: '/corporate-partnership',
+        inherit: false,
       },
       // {
       //   title: 'Send Portions',
