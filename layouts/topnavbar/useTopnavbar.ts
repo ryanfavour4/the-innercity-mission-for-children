@@ -78,10 +78,14 @@ export const menus: menu_type[] = [
         path: '/backtoschool',
       },
       {
-        title: 'Send Portions',
-        path: '/sendportions',
-        inherit: false,
+        title: 'Corporate Partnership',
+        path: '/corporate-partnership',
       },
+      // {
+      //   title: 'Send Portions',
+      //   path: '/sendportions',
+      //   inherit: false,
+      // },
       {
         title: 'Video Livestream',
         path: '/livestream/',
