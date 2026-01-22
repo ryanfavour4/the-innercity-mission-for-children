@@ -1,0 +1,27 @@
+STEPS TO DEPLOYING
+
+- RUN (ssh-agent bash)
+  this adds git bash as your ssh agent connecting to your git locally
+
+- RUN (ssh-add ~/.ssh/id_rsa)
+  this adds the id_rsa file as a middleware to authenticate the user password when trying to perform server related actions, the password in you id_rsa file will be required by a prompt after running this script.
+  > $ Enter passphrase for /c/Users/ryanf/.ssh/id_rsa: 
+      Identity added: /c/Users/ryanf/.ssh/id_rsa (ryanfave022@gmail.com)
+
+- NEXT RUN (git push prod main)
+  this is the final step for the main repository before moving to the script folder, this helps push the current code to the production env branch for server to update its code.
+sometimes you might see
+$ git push prod main
+Everything up-to-date
+which signinfies everything is already updated, good.
+
+
+- GO TO script/deploy-prod.sh DIR
+  open your terminal in this directory and run the following command
+  (./deploy-prod.sh -r)
+  this will begin the deployment and everything should be live and running.
+
+ryanf@HP MINGW64 ~/Downloads/code/the-innercity-mission-for-children (main)
+
+ryanf@HP MINGW64 ~/Downloads/code/the-innercity-mission-for-children (main)
+

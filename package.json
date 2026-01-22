@@ -6,6 +6,7 @@
     "dev": "next dev --port 3030 --webpack",
     "build": "next build --webpack",
     "start": "next start",
+    "deploy:prod": "git push prod main",
     "lint": "next lint"
   },
   "dependencies": {
