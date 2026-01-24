@@ -1,8 +1,9 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import countries from '@/json/countries-list.json'
 import Input from '../input'
 import { abbreviateNumber, unformatNumber } from '@/utils/format-number'
+import axios from 'axios'
 
 export default function DonateSectionV2({
   givingItemDescription = 'Donation & Support for the InnerCity Mission',
@@ -18,6 +19,13 @@ export default function DonateSectionV2({
   const [country, setCountry] = useState('NG')
   const [sponsoring, setSponsoring] = useState('Send Portions')
   const [submitting, setSubmitting] = useState(false)
+
+  useEffect(() => {
+    axios
+      .get('/api/ip-location')
+      .then((res) => console.log(res.data, "IILOC"))
+      .catch((err) => console.error(err))
+  }, [])
 
   return (
     <>
