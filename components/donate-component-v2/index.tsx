@@ -5,14 +5,25 @@ import Input from '../input'
 import { abbreviateNumber, unformatNumber } from '@/utils/format-number'
 import axios from 'axios'
 import { decryptClient } from '@/utils/crypt.client'
+import { CurrencyInfo, getCurrencyFromIP } from '@/utils/geo-currency'
 
 export interface IPLocResData {
-  ip: string
+  ip_address: string
   country: string
+  country_code: string
+  continent: string
+  continent_code: string
   city: string
-  latitude: number
-  longitude: number
+  county: string
+  region: string
+  region_code: string
+  postal_code: string
   timezone: string
+  owner: string
+  longitude: number
+  latitude: number
+  currency: string
+  languages: string[]
 }
 
 export default function DonateSectionV2({
@@ -21,30 +32,37 @@ export default function DonateSectionV2({
   givingItemDescription?: string
 }) {
   const amountList = ['1000', '20000', '50000', '100000']
-  const paymentTypeList = ['Local', 'International', 'Bank Transfer']
+  const paymentTypeList = ['Local (NG)', 'International', 'Bank Transfer']
+  const [currency, setCurrency] = useState<CurrencyInfo>({
+    code: 'NGN',
+    symbol: '₦',
+    name: 'Nigerian Naira',
+  })
   const [amount, setAmount] = useState({ value: '' })
   const [paymentType, setPaymentType] = useState({ value: 'Local' })
   const [fullname, setFullname] = useState({ value: '' })
   const [email, setEmail] = useState({ value: '' })
   const [country, setCountry] = useState('NG')
   const [ip, setIp] = useState<IPLocResData | null>(null)
-  const [sponsoring, setSponsoring] = useState('Send Portions')
+  const [sponsoring, setSponsoring] = useState('School Building Projects')
   const [submitting, setSubmitting] = useState(false)
 
   useEffect(() => {
     axios
       .get('/api/ip-location')
       .then((res) => {
-        const ipres = res.data
-        console.log(ipres, 'IILOC')
-        console.log(decryptClient(ipres), 'IILOC')
-        setIp(decryptClient(ipres) as unknown as IPLocResData)
+        setIp(decryptClient(res.data) as unknown as IPLocResData)
       })
       .catch((err) => console.error(err, 'IILOC'))
   }, [])
 
   useEffect(() => {
-    console.log(ip, 'II')
+    if (ip?.country_code) {
+      setCurrency(getCurrencyFromIP({ country_code: ip.country_code }))
+    }
+    if (ip?.country_code && ip.country_code.toUpperCase() !== 'NG') {
+      setPaymentType({ value: 'International' })
+    }
   }, [ip])
 
   return (
@@ -130,7 +148,7 @@ export default function DonateSectionV2({
                 id="item"
                 name="item"
               >
-                <option value="Send Portions">Send Portions</option>
+                {/* <option value="Send Portions">Send Portions</option> */}
                 <option value="7 Billion Meal Campaign">7 Billion Meals Campaign</option>
                 <option value="Colouring Dreams Conference">
                   Colouring Dreams Conference 2025{' '}
@@ -160,9 +178,9 @@ export default function DonateSectionV2({
                 Amount
               </label>
               <div className="flex h-fit w-full gap-1">
-                <div className="flex aspect-1 max-h-12 items-center justify-center rounded-md border border-textcolor/50 px-3 text-sm text-textcolor/75 md:max-h-11">
-                  ₦
-                </div>
+                <span className="flex aspect-1 max-h-12 items-center justify-center rounded-md border border-textcolor/50 px-3 text-sm text-textcolor/75 md:max-h-11">
+                  {currency.symbol}
+                </span>
                 <Input
                   placeholder="Enter other amount..."
                   type="number"
@@ -182,7 +200,10 @@ export default function DonateSectionV2({
                   onClick={() => setAmount({ value: item })}
                   className={`flex cursor-pointer items-center justify-center rounded-md border border-primary px-2 py-2 hover:ring-2 ${unformatNumber(amount.value) === item ? 'bg-primary !text-white' : 'bg-white text-textcolor/75'}`}
                 >
-                  <p className="text-sm font-medium">₦{abbreviateNumber(Number(item))}</p>
+                  <p className="text-sm font-medium">
+                    {currency.symbol}
+                    {abbreviateNumber(Number(item))}
+                  </p>
                 </div>
               ))}
             </div>
@@ -192,7 +213,7 @@ export default function DonateSectionV2({
             <div className="invisible">
               <Input
                 type="hidden"
-                state={{ value: 'NGN' }}
+                state={{ value: currency.code }}
                 setState={() => {
                   return { value: '' }
                 }}

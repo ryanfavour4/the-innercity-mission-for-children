@@ -16,13 +16,7 @@ export async function GET(req: NextRequest) {
   console.log(res.json())
   return NextResponse.json(
     encryptServer({
-      ip: data.ip_address,
-      country: data.country,
-      city: data.city,
-      latitude: data.latitude,
-      longitude: data.longitude,
-      timezone: data.timezone,
-      data,
+      ...data,
     }),
   )
 }
