@@ -1,87 +1,40 @@
-'use client'
+import CryptoJS from 'crypto-js'
 
-import { ITERATIONS, KEY_LENGTH } from './crypto.config'
+// Note: NEXT_PUBLIC_ makes this visible to the browser!
+const KEY = CryptoJS.enc.Hex.parse(process.env.NEXT_PUBLIC_ENCRYPTION_KEY || '')
+const IV = CryptoJS.enc.Hex.parse(process.env.NEXT_PUBLIC_ENCRYPTION_IV || '')
 
-const password = process.env.NEXT_PUBLIC_CRYPTO_PASSWORD!
-
-const encoder = new TextEncoder()
-const decoder = new TextDecoder()
-
-const IV_LENGTH = 12
-const SALT_LENGTH = 16
-const AUTH_TAG_LENGTH = 16 // bytes (128 bits)
-
-export type EncryptedPayload = {
-  iv: number[]
-  salt: number[]
-  data: number[]
-  authTag: number[]
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const encryptClient = (data: Record<string, any>) => {
+  const encrypted = CryptoJS.AES.encrypt(JSON.stringify(data), KEY, {
+    iv: IV,
+    mode: CryptoJS.mode.CBC,
+    padding: CryptoJS.pad.Pkcs7,
+  })
+  return encrypted.ciphertext.toString() // Outputs Hex
 }
 
-async function deriveKey(salt: Uint8Array) {
-  const baseKey = await crypto.subtle.importKey(
-    'raw',
-    encoder.encode(password),
-    { name: 'PBKDF2' },
-    false,
-    ['deriveKey'],
-  )
+// ... KEY and IV definitions ...
+export const decryptClient = (hexData: string) => {
+  try {
+    if (!hexData) return null
 
-  return crypto.subtle.deriveKey(
-    {
-      name: 'PBKDF2',
-      salt: salt as BufferSource,
-      iterations: Number(ITERATIONS),
-      hash: 'SHA-256',
-    },
-    baseKey,
-    {
-      name: 'AES-GCM',
-      length: KEY_LENGTH,
-    },
-    false,
-    ['encrypt', 'decrypt'],
-  )
-}
+    const ciphertext = CryptoJS.enc.Hex.parse(hexData)
+    const cipherParams = CryptoJS.lib.CipherParams.create({ ciphertext })
 
-export async function encryptClient(data: unknown): Promise<EncryptedPayload> {
-  const iv = crypto.getRandomValues(new Uint8Array(IV_LENGTH))
-  const salt = crypto.getRandomValues(new Uint8Array(SALT_LENGTH))
-  const key = await deriveKey(salt)
+    const decrypted = CryptoJS.AES.decrypt(cipherParams, KEY, {
+      iv: IV,
+      mode: CryptoJS.mode.CBC,
+      padding: CryptoJS.pad.Pkcs7,
+    })
 
-  const encrypted = await crypto.subtle.encrypt(
-    { name: 'AES-GCM', iv, tagLength: 128 },
-    key,
-    encoder.encode(JSON.stringify(data)),
-  )
+    const decryptedStr = decrypted.toString(CryptoJS.enc.Utf8)
 
-  const bytes = new Uint8Array(encrypted)
+    if (!decryptedStr) throw new Error('Decryption resulted in empty string')
 
-  const ciphertext = bytes.slice(0, bytes.length - AUTH_TAG_LENGTH)
-  const authTag = bytes.slice(bytes.length - AUTH_TAG_LENGTH)
-
-  return {
-    iv: Array.from(iv),
-    salt: Array.from(salt),
-    data: Array.from(ciphertext),
-    authTag: Array.from(authTag),
+    return JSON.parse(decryptedStr)
+  } catch (error) {
+    console.error('Client Decryption Error:', error)
+    return null
   }
-}
-
-export async function decryptClient(payload: EncryptedPayload) {
-  const key = await deriveKey(new Uint8Array(payload.salt))
-
-  const combined = new Uint8Array([...payload.data, ...payload.authTag])
-
-  const decrypted = await crypto.subtle.decrypt(
-    {
-      name: 'AES-GCM',
-      iv: new Uint8Array(payload.iv),
-      tagLength: 128,
-    },
-    key,
-    combined,
-  )
-
-  return JSON.parse(decoder.decode(decrypted))
 }

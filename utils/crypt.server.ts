@@ -1,75 +1,25 @@
-import 'server-only'
 import crypto from 'crypto'
-import { ITERATIONS, KEY_LENGTH } from './crypto.config'
 
-const PASSWORD = process.env.ENCRYPTION_KEY!
-const ALGORITHM = 'aes-256-gcm'
-const IV_LENGTH = 12
-const SALT_LENGTH = 16
-const AUTH_TAG_LENGTH = 16 // bytes (128 bits)
+// In Next.js, store these in .env.local
+const KEY = Buffer.from(process.env.ENCRYPTION_KEY || '', 'hex')
+const IV = Buffer.from(process.env.ENCRYPTION_IV || '', 'hex')
 
-function deriveKey(salt: Buffer) {
-  return crypto.pbkdf2Sync(
-    PASSWORD,
-    salt,
-    ITERATIONS,
-    KEY_LENGTH / 8,
-    'sha256',
-  )
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const encryptServer = (data: Record<string, any>) => {
+  const cipher = crypto.createCipheriv('aes-256-cbc', KEY, IV)
+  let encrypted = cipher.update(JSON.stringify(data), 'utf8', 'hex')
+  encrypted += cipher.final('hex')
+  return encrypted
 }
 
-export type EncryptedPayload = {
-  iv: number[]
-  salt: number[]
-  data: number[]
-  authTag: number[]
-}
-
-export function encryptServer(data: unknown): EncryptedPayload {
-  const iv = crypto.randomBytes(IV_LENGTH)
-  const salt = crypto.randomBytes(SALT_LENGTH)
-  const key = deriveKey(salt)
-
-  const cipher = crypto.createCipheriv(ALGORITHM, key, iv)
-
-  const ciphertext = Buffer.concat([
-    cipher.update(JSON.stringify(data), 'utf8'),
-    cipher.final(),
-  ])
-
-  const authTag = cipher.getAuthTag()
-
-  if (authTag.length !== AUTH_TAG_LENGTH) {
-    throw new Error('Invalid auth tag length')
+export const decryptServer = (hexData: string) => {
+  try {
+    const decipher = crypto.createDecipheriv('aes-256-cbc', KEY, IV)
+    let decrypted = decipher.update(hexData, 'hex', 'utf8')
+    decrypted += decipher.final('utf8')
+    return JSON.parse(decrypted)
+  } catch (error) {
+    console.error('Decryption or Parsing failed:', error)
+    return null // or throw a specific error for your API to handle
   }
-
-  return {
-    iv: [...iv],
-    salt: [...salt],
-    data: [...ciphertext],
-    authTag: [...authTag],
-  }
-}
-
-export function decryptServer(payload: EncryptedPayload) {
-  const iv = Buffer.from(payload.iv)
-  const salt = Buffer.from(payload.salt)
-  const data = Buffer.from(payload.data)
-  const authTag = Buffer.from(payload.authTag)
-
-  if (authTag.length !== AUTH_TAG_LENGTH) {
-    throw new Error('Invalid auth tag length')
-  }
-
-  const key = deriveKey(salt)
-
-  const decipher = crypto.createDecipheriv(ALGORITHM, key, iv)
-  decipher.setAuthTag(authTag)
-
-  const decrypted = Buffer.concat([
-    decipher.update(data),
-    decipher.final(),
-  ])
-
-  return JSON.parse(decrypted.toString('utf8'))
 }

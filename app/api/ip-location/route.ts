@@ -22,6 +22,7 @@ export async function GET(req: NextRequest) {
       latitude: data.latitude,
       longitude: data.longitude,
       timezone: data.timezone,
+      data,
     }),
   )
 }
