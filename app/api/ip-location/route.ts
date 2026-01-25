@@ -1,4 +1,4 @@
-import { encryptObject } from '@/utils/crypt'
+import { encryptServer } from '@/utils/crypt.server'
 import { NextRequest, NextResponse } from 'next/server'
 
 export async function GET(req: NextRequest) {
@@ -15,7 +15,7 @@ export async function GET(req: NextRequest) {
   const data = await res.json()
   console.log(res.json())
   return NextResponse.json(
-    encryptObject({
+    encryptServer({
       ip: data.ip_address,
       country: data.country,
       city: data.city,

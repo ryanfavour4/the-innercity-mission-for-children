@@ -4,7 +4,7 @@ import countries from '@/json/countries-list.json'
 import Input from '../input'
 import { abbreviateNumber, unformatNumber } from '@/utils/format-number'
 import axios from 'axios'
-import { decryptObject } from '@/utils/crypt'
+import { decryptClient } from '@/utils/crypt.client'
 
 export interface IPLocResData {
   ip: string
@@ -37,8 +37,8 @@ export default function DonateSectionV2({
       .then((res) => {
         const ipres = res.data
         console.log(ipres, 'IILOC')
-        console.log(decryptObject(ipres), 'IILOC')
-        setIp(decryptObject(ipres) as unknown as IPLocResData)
+        console.log(decryptClient(ipres), 'IILOC')
+        setIp(decryptClient(ipres) as unknown as IPLocResData)
       })
       .catch((err) => console.error(err, 'IILOC'))
   }, [])
