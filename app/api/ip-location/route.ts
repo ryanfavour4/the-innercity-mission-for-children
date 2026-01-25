@@ -1,3 +1,4 @@
+import { encryptObject } from '@/utils/crypt'
 import { NextRequest, NextResponse } from 'next/server'
 
 export async function GET(req: NextRequest) {
@@ -13,12 +14,14 @@ export async function GET(req: NextRequest) {
 
   const data = await res.json()
   console.log(res.json())
-  return NextResponse.json({
-    ip: data.ip_address,
-    country: data.country,
-    city: data.city,
-    latitude: data.latitude,
-    longitude: data.longitude,
-    timezone: data.timezone,
-  })
+  return NextResponse.json(
+    encryptObject({
+      ip: data.ip_address,
+      country: data.country,
+      city: data.city,
+      latitude: data.latitude,
+      longitude: data.longitude,
+      timezone: data.timezone,
+    }),
+  )
 }

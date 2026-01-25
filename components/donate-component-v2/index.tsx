@@ -4,6 +4,16 @@ import countries from '@/json/countries-list.json'
 import Input from '../input'
 import { abbreviateNumber, unformatNumber } from '@/utils/format-number'
 import axios from 'axios'
+import { decryptObject } from '@/utils/crypt'
+
+export interface IPLocResData {
+  ip: string
+  country: string
+  city: string
+  latitude: number
+  longitude: number
+  timezone: string
+}
 
 export default function DonateSectionV2({
   givingItemDescription = 'Donation & Support for the InnerCity Mission',
@@ -17,15 +27,25 @@ export default function DonateSectionV2({
   const [fullname, setFullname] = useState({ value: '' })
   const [email, setEmail] = useState({ value: '' })
   const [country, setCountry] = useState('NG')
+  const [ip, setIp] = useState<IPLocResData | null>(null)
   const [sponsoring, setSponsoring] = useState('Send Portions')
   const [submitting, setSubmitting] = useState(false)
 
   useEffect(() => {
     axios
       .get('/api/ip-location')
-      .then((res) => console.log(res.data, "IILOC"))
-      .catch((err) => console.error(err))
+      .then((res) => {
+        const ipres = res.data
+        console.log(ipres, 'IILOC')
+        console.log(decryptObject(ipres), 'IILOC')
+        setIp(decryptObject(ipres) as unknown as IPLocResData)
+      })
+      .catch((err) => console.error(err, 'IILOC'))
   }, [])
+
+  useEffect(() => {
+    console.log(ip, 'II')
+  }, [ip])
 
   return (
     <>
