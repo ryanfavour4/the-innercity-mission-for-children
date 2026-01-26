@@ -284,7 +284,7 @@ export default function PartnerWithUsPage() {
           Sign Up to Partner With Us Reach the Unreached, Touch the Untouched
         </h3>
         <Link
-          href={'/donate'}
+          href={'#partner-with-us'}
           className="btn-white flex w-fit items-center gap-2 border px-4 text-base ring-light/50"
         >
           <PartnerHandShakeIcon className="text-2xl" />
