@@ -9,23 +9,24 @@ export default function EventsSection() {
   const isInView = useInView(ref, { once: true, margin: '-50px' })
 
   const events = [
-    // {
-    //   id: 1,
-    //   event: 'No Event',
-    //   decription: 'No upcoming event',
-    //   day: new Date().getDate(),
-    //   month: new Date().toLocaleString('default', { month: 'long' }),
-    //   date: new Date().toLocaleDateString(),
-    // },
     {
       id: 1,
-      event: 'Send Portions',
-      decription: 'Send Portions at Christmas Outreaches and Crusades',
-      day: 25,
-      month: 'Dec',
-      date: '2025',
-      link: '/sendportions',
+      event: 'No Event',
+      decription: 'No upcoming event',
+      day: new Date().getDate(),
+      month: new Date().toLocaleString('default', { month: 'long' }),
+      date: new Date().toLocaleDateString(),
+      link: '#',
     },
+    // {
+    //   id: 1,
+    //   event: 'Send Portions',
+    //   decription: 'Send Portions at Christmas Outreaches and Crusades',
+    //   day: 25,
+    //   month: 'Dec',
+    //   date: '2025',
+    //   link: '/sendportions',
+    // },
   ]
 
   return (
