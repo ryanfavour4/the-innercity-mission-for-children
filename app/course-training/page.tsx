@@ -5,6 +5,7 @@ import logoDefault from '@/public/assets/icons/logo-black-text.png'
 import { MenuFriesIcon } from '@/components/svgs'
 import { useState } from 'react'
 import { CourseSidebar } from './section'
+import VideoPlayer from '@/components/video-player'
 
 export default function CourseTraining() {
   const [navOpen, setNavOpen] = useState(false)
@@ -41,24 +42,28 @@ export default function CourseTraining() {
             </p>
           </header>
 
+          {/* Progress */}
+          <section className="rounded-xl bg-light p-4 shadow">
+            <div className="mb-2 flex justify-between text-sm font-medium">
+              <span>Overall Progress</span>
+              <span>10%</span>
+            </div>
+            <div className="h-2 w-full rounded-full bg-ghost-white">
+              <div className="h-2 rounded-full bg-primary" style={{ width: `50%` }} />
+            </div>
+          </section>
+
           {/* Video or Quiz Toggle */}
           <div className="aspect-video overflow-hidden rounded-2xl bg-light text-base shadow-2xl transition-all">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates reiciendis
-            delectus, eligendi provident optio dolorem unde aspernatur aperiam aliquam voluptate
-            tempora numquam fugiat amet asperiores recusandae. Explicabo aperiam corrupti iure.
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi aut dolore autem,
-            reprehenderit totam culpa aperiam necessitatibus facilis exercitationem tempore harum
-            quas. Officia enim sequi itaque nisi doloribus illo sint. Lorem, ipsum dolor sit amet
-            consectetur adipisicing elit. At architecto nostrum odit in aliquam incidunt accusamus
-            nihil iusto fuga adipisci? Totam beatae quibusdam necessitatibus porro sit obcaecati
-            illum fuga temporibus? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo
-            iusto quos et minus sint ad minima quidem est quas odio saepe cumque excepturi
-            voluptatum doloribus, beatae dolor expedita mollitia impedit.
+            <VideoPlayer
+              src="https://player.vimeo.com/video/1052568231?h=6234489652"
+              className="max-w-full"
+            />
           </div>
 
           <div className="flex items-center justify-between rounded-xl border border-textcolor/25 bg-light p-5">
             <button className="btn-primary w-fit text-base">Back to Video</button>
-            <button className="rounded-lg border border-slate-300 px-6 py-2 transition hover:bg-slate-100 dark:border-slate-700 dark:hover:bg-slate-800">
+            <button className="btn w-fit border border-textcolor/25 text-base text-textcolor">
               Next Lesson →
             </button>
           </div>
