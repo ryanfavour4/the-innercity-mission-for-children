@@ -6,7 +6,7 @@ import logoDefault from '@/public/assets/icons/logo-black-text.png'
 export function CourseSidebar({ navOpen }: { navOpen: boolean }) {
   return (
     <aside
-      className={`absolute bottom-0 top-0 w-80 overflow-y-auto border-r bg-light md:relative md:block md:!translate-x-0 ${navOpen ? '!-translate-x-full' : ''}`}
+      className={`absolute bottom-0 top-0 z-20 w-80 overflow-y-auto border-r bg-light md:relative md:block md:!translate-x-0 ${!navOpen && '!-translate-x-full'}`}
     >
       <div className="flex items-center gap-4 border-b border-textcolor/25 p-6">
         <Link href={'#'}>
@@ -14,7 +14,7 @@ export function CourseSidebar({ navOpen }: { navOpen: boolean }) {
             src={logoDefault}
             unoptimized
             alt="logo"
-            className="w-8 md:w-12"
+            className="w-16 md:w-16"
             width={100}
             height={50}
           />
