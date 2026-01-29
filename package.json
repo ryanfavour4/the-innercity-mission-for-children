@@ -10,6 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@iconify/react": "^6.0.2",
     "@supabase/supabase-js": "^2.81.1",
     "@svgr/webpack": "^8.1.0",
     "@tailwindcss/aspect-ratio": "^0.4.2",

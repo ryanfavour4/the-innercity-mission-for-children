@@ -38,7 +38,7 @@ export default function LiveStreamPage() {
           <h3 className="sub-header max-w-md text-2xl font-semibold before:top-4 md:text-3xl">
             Live Stream
           </h3>
-          <p>LIVE: GLOBAL PRAYER AND FASTING WITH PASTOR CHRIS || JANUARY 22ND 2026</p>
+          <p>LIVE: COMING SOON</p>
         </div>
 
         <div className="wrapper mt-6 grid grid-cols-12 gap-6">
@@ -51,7 +51,7 @@ export default function LiveStreamPage() {
               className="w-full !max-w-6xl md:!h-full"
             />
             <h4 className="ellipsis-2 text-xl font-bold uppercase md:text-2xl">
-              LIVE: GLOBAL PRAYER AND FASTING WITH PASTOR CHRIS || JANUARY 22ND 2026{' '}
+              LIVE: COMING SOON
             </h4>
           </div>
           <div className="rounlg col-span-12 border-2 px-2 py-3 md:col-span-5 lg:col-span-4">

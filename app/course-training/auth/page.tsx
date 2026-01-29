@@ -1,0 +1,172 @@
+'use client'
+import React, { useState } from 'react'
+import { Icon } from '@iconify/react'
+import Link from 'next/link'
+import Image from 'next/image'
+import logo from '@/public/assets/icons/logo-icon.png'
+
+export default function AuthPage() {
+  const [isLogin, setIsLogin] = useState(true)
+
+  return (
+    <div className="flex min-h-screen flex-col items-center justify-center bg-slate-50 p-6">
+      {/* Back to Home Link */}
+      <Link
+        href="/course-training/"
+        className="left-8 top-8 mb-6 mr-auto flex items-center gap-2 text-base text-textcolor/75 transition hover:text-primary md:absolute"
+      >
+        <Icon icon="lucide:arrow-left" />
+        <span>Back to Home</span>
+      </Link>
+
+      <div className="max-auto w-full md:max-w-[450px]">
+        {/* The Card */}
+        <div className="rounded-3xl border border-gray-100 bg-white p-10 shadow-lg">
+          {/* Header */}
+          <div className="mb-10 text-center">
+            <span className="flex flex-col items-center font-bold tracking-tighter">
+              <Image
+                src={logo}
+                unoptimized
+                alt="logo"
+                className="w-12 md:w-16"
+                width={100}
+                height={50}
+              />
+              <small className="text-xs">ICM Training</small>
+            </span>
+            <h1 className="text-3xl font-bold text-gray-900">
+              {isLogin ? 'Welcome Back' : 'Create Account'}
+            </h1>
+            <p className="mt-2 text-textcolor/75">
+              {isLogin
+                ? 'Glad to see you again! Please log in.'
+                : 'Start your learning journey with us today.'}
+            </p>
+          </div>
+
+          {/* Form */}
+          <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+            {!isLogin && (
+              <div>
+                <label className="mb-1 ml-1 block text-sm font-semibold text-gray-700">
+                  Full Name
+                </label>
+                <div className="relative">
+                  <Icon
+                    icon="lucide:user"
+                    className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
+                  />
+                  <input
+                    type="text"
+                    placeholder="John Doe"
+                    className="bg-gray-50 w-full rounded-2xl border border-gray-200 py-3.5 pl-11 pr-4 outline-none transition-all focus:bg-white focus:ring-2 focus:ring-blue-500"
+                  />
+                </div>
+              </div>
+            )}
+
+            <div>
+              <label className="mb-1 ml-1 block text-sm font-semibold text-gray-700">
+                Email Address
+              </label>
+              <div className="relative">
+                <Icon
+                  icon="lucide:mail"
+                  className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
+                />
+                <input
+                  type="email"
+                  placeholder="name@example.com"
+                  className="bg-gray-50 w-full rounded-2xl border border-gray-200 py-3.5 pl-11 pr-4 outline-none transition-all focus:bg-white focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+            </div>
+
+            <div>
+              <div className="mb-1 ml-1 flex justify-between">
+                <label className="text-sm font-semibold text-gray-700">Password</label>
+                {isLogin && (
+                  <a href="#" className="text-sm text-primary hover:underline">
+                    Forgot?
+                  </a>
+                )}
+              </div>
+              <div className="relative">
+                <Icon
+                  icon="lucide:lock"
+                  className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
+                />
+                <input
+                  type="password"
+                  placeholder="••••••••"
+                  className="bg-gray-50 w-full rounded-2xl border border-gray-200 py-3.5 pl-11 pr-4 outline-none transition-all focus:bg-white focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+            </div>
+
+            {!isLogin && (
+              <div>
+                <label className="mb-1 ml-1 block text-sm font-semibold text-gray-700">
+                  Confirm Password
+                </label>
+                <div className="relative">
+                  <Icon
+                    icon="lucide:shield-check"
+                    className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
+                  />
+                  <input
+                    type="password"
+                    placeholder="••••••••"
+                    className="bg-gray-50 w-full rounded-2xl border border-gray-200 py-3.5 pl-11 pr-4 outline-none transition-all focus:bg-white focus:ring-2 focus:ring-blue-500"
+                  />
+                </div>
+              </div>
+            )}
+
+            <button className="btn-primary mt-10 block w-full shadow-lg shadow-blue-200 transition-all active:scale-[0.98]">
+              {isLogin ? 'Sign In' : 'Create Account'}
+            </button>
+          </form>
+
+          {/* Social Login Divider */}
+          <div className="relative my-8 text-center">
+            <div className="absolute inset-0 flex items-center">
+              <div className="w-full border-t border-textcolor/75"></div>
+            </div>
+            <span className="relative bg-light px-4 text-sm text-textcolor/75">
+              Or continue with
+            </span>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4">
+            <button className="hover:bg-gray-50 flex items-center justify-center gap-2 rounded-2xl border border-gray-200 py-3 transition">
+              <Icon icon="logos:google-icon" className="text-lg" />
+              <span className="text-sm font-semibold">Google</span>
+            </button>
+            <button className="hover:bg-gray-50 flex items-center justify-center gap-2 rounded-2xl border border-gray-200 py-3 transition">
+              <Icon icon="logos:apple" className="text-lg" />
+              <span className="text-sm font-semibold">Apple</span>
+            </button>
+          </div>
+
+          {/* Toggle Link */}
+          <p className="mt-8 text-center text-base text-textcolor/75">
+            {isLogin ? "Don't have an account?" : 'Already have an account?'}{' '}
+            <button
+              onClick={() => setIsLogin(!isLogin)}
+              className="font-bold text-primary hover:underline"
+            >
+              {isLogin ? 'Sign Up' : 'Log In'}
+            </button>
+          </p>
+        </div>
+
+        {/* Small Footer Text */}
+        <p className="mt-8 text-center text-xs text-gray-400">
+          By continuing, you agree to ICM&apos;s Terms of Service and Privacy Policy.
+        </p>
+      </div>
+    </div>
+  )
+}
