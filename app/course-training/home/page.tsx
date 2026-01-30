@@ -1,44 +1,14 @@
+'use client'
 import Footer from '@/layouts/footer'
 import logo from '@/public/assets/icons/logo-icon.png'
+import { getCoursesSubModulesService } from '@/services/course-training/courses.service'
 import { Icon } from '@iconify/react'
 import Image from 'next/image'
-
-// Reusable Course Card Component
-const CourseCard = ({
-  title,
-  quizzes,
-  level,
-}: {
-  title: string
-  quizzes: string
-  level: string
-}) => (
-  <div className="rounded-xl border border-textcolor/25 bg-light p-6 shadow-sm transition-shadow hover:shadow-md">
-    <div className="bg-blue-50 mb-4 flex h-12 w-12 items-center justify-center rounded-lg">
-      <Icon icon="lucide:book-open" className="text-2xl text-blue-600" />
-    </div>
-    <h3 className="mb-2 text-xl font-bold">{title}</h3>
-    <div className="flex items-center gap-4 text-sm text-gray-500">
-      <span className="flex items-center gap-1">
-        <Icon icon="fluent:quiz-28-regular" /> {quizzes}
-      </span>
-      <span className="flex items-center gap-1">
-        <Icon icon="lucide:bar-chart" /> {level}
-      </span>
-    </div>
-  </div>
-)
-
-// Reusable Testimonial Card
-const Testimonial = ({ quote, author }: { quote: string; author: string }) => (
-  <div className="bg-gray-50 relative rounded-3xl p-8 italic text-gray-700">
-    <Icon icon="ri:double-quotes-l" className="absolute left-4 top-4 text-4xl text-gray-200" />
-    <p className="relative z-10 mb-4">&quot;{quote}&quot;</p>
-    <p className="font-bold not-italic text-gray-900">— {author}</p>
-  </div>
-)
+import useSWRImmutable from 'swr/immutable'
 
 export default function LandingPage() {
+  const { data } = useSWRImmutable('get-courses-submodule-service', getCoursesSubModulesService)
+
   return (
     <div className="min-h-screen bg-light">
       {/* Navigation - Keep it simple */}
@@ -91,9 +61,14 @@ export default function LandingPage() {
           </div>
 
           <div className="grid gap-8 md:grid-cols-3">
-            <CourseCard title="Fullstack Web Dev" quizzes="12 Quizzes" level="3 Classes" />
-            <CourseCard title="UI/UX Design Masterclass" quizzes="12 Quizzes" level="3 Classes" />
-            <CourseCard title="Data Science 101" quizzes="12 Quizzes" level="3 Classes" />
+            {data?.map((course) => (
+              <CourseCard
+                key={course._id}
+                title={course.title}
+                quizzes={`${course.questionsCount} Quizzes`}
+                level={`${course.classesCount} Classes`}
+              />
+            ))}
           </div>
         </div>
       </section>
@@ -164,3 +139,38 @@ export default function LandingPage() {
     </div>
   )
 }
+
+// Reusable Course Card Component
+const CourseCard = ({
+  title,
+  quizzes,
+  level,
+}: {
+  title: string
+  quizzes: string
+  level: string
+}) => (
+  <div className="rounded-xl border border-textcolor/25 bg-light p-6 shadow-sm transition-shadow hover:shadow-md">
+    <div className="bg-blue-50 mb-4 flex h-12 w-12 items-center justify-center rounded-lg">
+      <Icon icon="lucide:book-open" className="text-2xl text-blue-600" />
+    </div>
+    <h3 className="mb-2 text-xl font-bold">{title}</h3>
+    <div className="flex items-center gap-4 text-sm text-gray-500">
+      <span className="flex items-center gap-1">
+        <Icon icon="fluent:quiz-28-regular" /> {quizzes}
+      </span>
+      <span className="flex items-center gap-1">
+        <Icon icon="lucide:bar-chart" /> {level}
+      </span>
+    </div>
+  </div>
+)
+
+// Reusable Testimonial Card
+const Testimonial = ({ quote, author }: { quote: string; author: string }) => (
+  <div className="bg-gray-50 relative rounded-3xl p-8 italic text-gray-700">
+    <Icon icon="ri:double-quotes-l" className="absolute left-4 top-4 text-4xl text-gray-200" />
+    <p className="relative z-10 mb-4">&quot;{quote}&quot;</p>
+    <p className="font-bold not-italic text-gray-900">— {author}</p>
+  </div>
+)

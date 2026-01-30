@@ -20,7 +20,7 @@
     "@tiptap/react": "^3.9.0",
     "@tiptap/starter-kit": "^3.9.0",
     "@vercel/speed-insights": "^1.2.0",
-    "axios": "^1.12.2",
+    "axios": "^1.13.1",
     "clsx": "^2.1.1",
     "crypto": "^1.0.1",
     "crypto-js": "^4.2.0",
@@ -41,6 +41,7 @@
     "react-toastify": "^11.0.5",
     "remark-gfm": "^4.0.1",
     "swiper": "^11.2.6",
+    "swr": "^2.3.8",
     "tailwind-clip-path": "^1.0.0",
     "tailwind-merge": "^3.3.1",
     "tailwindcss": "^3.4.17"

@@ -39,7 +39,7 @@ importers:
         specifier: ^1.2.0
         version: 1.2.0(next@16.0.10(@babel/core@7.28.5)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(sass@1.93.3))(react@19.2.0)
       axios:
-        specifier: ^1.12.2
+        specifier: ^1.13.1
         version: 1.13.1
       clsx:
         specifier: ^2.1.1
@@ -101,6 +101,9 @@ importers:
       swiper:
         specifier: ^11.2.6
         version: 11.2.10
+      swr:
+        specifier: ^2.3.8
+        version: 2.3.8(react@19.2.0)
       tailwind-clip-path:
         specifier: ^1.0.0
         version: 1.0.0
@@ -3737,6 +3740,11 @@ packages:
   swiper@11.2.10:
     resolution: {integrity: sha512-RMeVUUjTQH+6N3ckimK93oxz6Sn5la4aDlgPzB+rBrG/smPdCTicXyhxa+woIpopz+jewEloiEE3lKo1h9w2YQ==}
     engines: {node: '>= 4.7.0'}
+
+  swr@2.3.8:
+    resolution: {integrity: sha512-gaCPRVoMq8WGDcWj9p4YWzCMPHzE0WNl6W8ADIx9c3JBEIdMkJGMzW+uzXvxHMltwcYACr9jP+32H8/hgwMR7w==}
+    peerDependencies:
+      react: ^16.11.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
   tailwind-clip-path@1.0.0:
     resolution: {integrity: sha512-pac3BiCZCEKtX+3In4508PFcX2eZL7JwliZMtfYE0RoqFMjfbCVLmu+uuEFqn1y/f2vrOB5rY4XNcmaOSG1csw==}
@@ -8195,6 +8203,12 @@ snapshots:
       picocolors: 1.1.1
 
   swiper@11.2.10: {}
+
+  swr@2.3.8(react@19.2.0):
+    dependencies:
+      dequal: 2.0.3
+      react: 19.2.0
+      use-sync-external-store: 1.6.0(react@19.2.0)
 
   tailwind-clip-path@1.0.0: {}
 
