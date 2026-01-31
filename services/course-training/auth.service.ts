@@ -74,7 +74,7 @@ export const getKingChatProfile = async ({
     refreshToken,
   })
   const res: IProfileRes = response.data
-  sessionStorage.setItem('profile', encryptClient(res))
+  sessionStorage.setItem('course-training-profile', encryptClient(res))
 
   if (response.status < 200 || response.status >= 300) {
     const errorMessage = response?.data?.message || response.data || 'Something went wrong'
