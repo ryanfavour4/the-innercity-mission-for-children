@@ -86,13 +86,15 @@ const VideoPlayer = ({ src, thumb = thumbnail, autoplay = false, className }: Vi
         className={`relative aspect-[1.5] w-full max-w-3xl overflow-hidden rounded-lg bg-black backdrop-filter md:aspect-[1.8] ${className}`}
       >
         {/* Video */}
-        <Image
-          alt="thumbnail"
-          src={thumb}
-          className={`absolute inset-0 z-[1] h-full w-full ${showThumbnail ? 'block' : 'hidden'}`}
-          width={640}
-          height={360}
-        />
+        {thumb && (
+          <Image
+            alt="thumbnail"
+            src={thumb}
+            className={`absolute inset-0 z-[1] h-full w-full ${showThumbnail ? 'block' : 'hidden'}`}
+            width={640}
+            height={360}
+          />
+        )}
         <ReactPlayer
           ref={playerRef}
           src={src}

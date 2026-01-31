@@ -101,7 +101,7 @@ export default function CourseTraining() {
               {activeScreen == 'video' ? (
                 <VideoPlayer thumb={''} src={activeClass?.videoUrl || ''} className="max-w-full" />
               ) : (
-                <QuizzesSlider />
+                <QuizzesSlider setActiveClass={setActiveClass} activeClass={activeClass} />
               )}
             </div>
 

@@ -111,16 +111,23 @@ export function ClassesSidebar({
 }
 
 // !! ++++++++
-export function QuizzesSlider() {
+
+type QuizzesSliderType = {
+  setActiveClass: Dispatch<SetStateAction<IGetClassesByCourseIdService | null>>
+  activeClass: IGetClassesByCourseIdService | null
+}
+
+export function QuizzesSlider({ activeClass }: QuizzesSliderType) {
   const swiperRef = useRef<SwiperClass | null>(null)
   const [selectedAnswer, setSelectedAnswer] = useState('1')
+  console.log(activeClass)
 
   return (
     <>
       <Swiper
         onSwiper={(swiper) => (swiperRef.current = swiper)}
         allowTouchMove={false}
-        className="mx-auto block h-full w-[95%] px-4 py-10 md:min-h-96"
+        className="mx-auto block h-full w-[95%] px-2 py-10 md:min-h-96 md:px-4"
         spaceBetween={40}
       >
         {questions.map((q, idx) => (
@@ -128,8 +135,10 @@ export function QuizzesSlider() {
             <p className="mb-2 text-sm text-primary/75">
               Question {idx + 1} of {questions.length}
             </p>
-            <h3 className="mb-8 text-lg font-semibold">{q.question}</h3>
-
+            <h3 className="text-lg font-semibold">{q.question}</h3>
+            <small className="mb-8 block text-textcolor/50">
+              Your result and score will be shown after submission
+            </small>
             <div className="flex flex-col gap-4 md:grid md:grid-cols-2">
               {q.options.map((o) => (
                 <span
@@ -146,6 +155,11 @@ export function QuizzesSlider() {
             </div>
           </SwiperSlide>
         ))}
+
+        <div className="mt-16 flex h-full items-center gap-5">
+          <button className="btn-primary text-base md:w-fit">Prev ←</button>
+          <button className="btn-primary text-base md:w-fit">Next →</button>
+        </div>
       </Swiper>
     </>
   )
