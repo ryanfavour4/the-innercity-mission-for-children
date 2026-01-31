@@ -1,13 +1,74 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import logoDefault from '@/public/assets/icons/logo-black-text.png'
-import { useRef, useState } from 'react'
+import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react'
 import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react'
 import { Icon } from '@iconify/react'
 import { questions } from './dummy-data'
+import { IGetClassesByCourseIdService } from '@/services/course-training/types'
+import { addHashParams } from '@/utils/url-hash'
+import { useStorageListener } from '@/hooks/use-storage'
 
-// components/CourseSidebar.tsx
-export function CourseSidebar({ navOpen }: { navOpen: boolean }) {
+type ClassesSidebarType = {
+  navOpen: boolean
+  classIsLoading: boolean
+  classes: IGetClassesByCourseIdService[] | []
+  setActiveClass: Dispatch<SetStateAction<IGetClassesByCourseIdService | null>>
+  activeClass: IGetClassesByCourseIdService | null
+}
+
+// components/ClassesSidebar.tsx
+export function ClassesSidebar({
+  navOpen,
+  classIsLoading,
+  classes,
+  setActiveClass,
+}: ClassesSidebarType) {
+  const searchParams =
+    typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : null
+  const classId = searchParams?.get('class')
+  const courseId = searchParams?.get('course')
+  const [checkpoint, setCheckpoint] = useState({ class: '' })
+  const courseCheckpoint: { class: string; course: string } = JSON.parse(
+    useStorageListener('course-checkpoint') || '{}',
+  )
+
+  const onClassClick = ({ classObj }: { classObj: IGetClassesByCourseIdService }) => {
+    setActiveClass(classObj)
+    const progress = { ...checkpoint, class: classObj._id }
+    setCheckpoint(progress)
+    addHashParams(progress)
+    console.log(progress)
+    sessionStorage.setItem('course-checkpoint', JSON.stringify({ ...progress, course: courseId }))
+  }
+
+  useEffect(() => {
+    if (courseCheckpoint && !courseId && !classId) {
+      addHashParams(courseCheckpoint)
+    }
+  }, [classId, courseCheckpoint, courseId])
+
+  useEffect(() => {
+    if (courseCheckpoint) setCheckpoint({ class: courseCheckpoint.class })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  useEffect(() => {
+    if (courseCheckpoint) {
+      const activeCl = classes.find((item) => item._id == courseCheckpoint.class)
+      setActiveClass(activeCl || null)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [courseCheckpoint])
+
+  useEffect(() => {
+    if (classes.length && !courseCheckpoint.class) {
+      console.log(classes)
+      onClassClick({ classObj: classes[0] })
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [classes, courseCheckpoint])
+
   return (
     <aside
       className={`absolute bottom-0 top-0 z-20 w-80 overflow-y-auto border-r bg-light md:relative md:block md:!translate-x-0 ${!navOpen && '!-translate-x-full'}`}
@@ -26,18 +87,30 @@ export function CourseSidebar({ navOpen }: { navOpen: boolean }) {
         <h2 className="text-xl font-bold">Course Content</h2>
       </div>
       <nav className="p-2">
-        <button
-          className={`mb-1 flex w-full items-center gap-3 rounded-lg p-3 text-left text-base text-textcolor/75 transition-colors ${'bg-primary/25 font-semibold !text-primary'}`}
-        >
-          <span className="font-mono text-xs opacity-50">{String(0 + 1).padStart(2, '0')}</span>
-          <span className="truncate text-base">Jumping away now</span>
-        </button>
-        <button
-          className={`mb-1 flex w-full items-center gap-3 rounded-lg p-3 text-left text-base text-textcolor/75 transition-colors ${''}`}
-        >
-          <span className="font-mono text-xs opacity-50">{String(0 + 1).padStart(2, '0')}</span>
-          <span className="truncate text-base">Jumping away now</span>
-        </button>
+        {classes.map((item) => (
+          <button
+            key={item._id}
+            onClick={() => onClassClick({ classObj: item })}
+            className={`mb-1 flex w-full items-center gap-3 rounded-lg p-3 text-left text-base text-textcolor/75 transition-colors hover:bg-primary/10 ${checkpoint.class == item._id && 'bg-primary/25 font-semibold !text-primary'}`}
+          >
+            <span className="font-mono text-xs opacity-50">
+              {String(item.order).padStart(2, '0')}
+            </span>
+            <span className="truncate text-base">Jumping away now</span>
+          </button>
+        ))}
+
+        {/* skeleton */}
+        {classIsLoading &&
+          [1, 2, 3, 4, 5].map((i) => (
+            <button
+              key={i}
+              className={`mb-1 flex w-full items-center gap-3 rounded-lg bg-textcolor/15 p-3 text-left text-base transition-colors`}
+            >
+              <span className="h-3 w-3 animate-pulse rounded bg-textcolor/50 font-mono text-xs"></span>
+              <span className="h-5 w-full animate-pulse truncate rounded-md bg-textcolor/50"></span>
+            </button>
+          ))}
       </nav>
     </aside>
   )

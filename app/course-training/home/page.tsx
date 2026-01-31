@@ -200,7 +200,7 @@ const CourseCard = ({
   id: string
 }) => (
   <Link
-    href={`/course-training?course${id}`}
+    href={`/course-training?course=${id}`}
     className="rounded-xl border border-textcolor/25 bg-light p-6 shadow-sm transition-shadow hover:shadow-md"
   >
     <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/25">

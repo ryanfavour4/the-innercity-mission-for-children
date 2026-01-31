@@ -54,3 +54,30 @@ export interface IGetCoursesSubModuleService {
   classesCount: number
   questionsCount: number
 }
+
+// !!! CLASSES
+export type IGetClassesByCourseIdServiceRes = IGetClassesByCourseIdService[]
+
+export interface IGetClassesByCourseIdService {
+  _id: string
+  courseId: string
+  title: string
+  description: string
+  videoUrl: string
+  order: number
+  createdAt: string
+  updatedAt: string
+  __v: number
+}
+
+export type IGetClassesServiceRes = IGetClassesService[]
+
+export interface IGetClassesService {
+  coursePassPercent: number
+  _id: string
+  title: string
+  description: string
+  createdAt: string
+  updatedAt: string
+  __v: number
+}

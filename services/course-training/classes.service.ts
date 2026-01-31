@@ -1,10 +1,10 @@
 import axios from 'axios'
-import { IGetCoursesService, IGetCoursesServiceRes, IGetCoursesSubModuleServiceRes } from './types'
+import { IGetClassesService, IGetClassesServiceRes, IGetClassesByCourseIdServiceRes } from './types'
 import { baseUrl } from './constants'
 
-export const getCoursesService = async () => {
-  const response = await axios.get(`${baseUrl}/courses`)
-  const res: IGetCoursesServiceRes = response.data
+export const getClassesService = async () => {
+  const response = await axios.get(`${baseUrl}/classes`)
+  const res: IGetClassesServiceRes = response.data
 
   if (response.status < 200 || response.status >= 300) {
     const errorMessage = response?.data?.message || response.data || 'Something went wrong'
@@ -14,9 +14,9 @@ export const getCoursesService = async () => {
   return res
 }
 
-export const getCoursesSubModulesService = async () => {
-  const response = await axios.get(`${baseUrl}/courses/sub-modules`)
-  const res: IGetCoursesSubModuleServiceRes = response.data
+export const getClassesByCourseIdService = async ({ id }: { id: string }) => {
+  const response = await axios.get(`${baseUrl}/classes/course/${id}`)
+  const res: IGetClassesByCourseIdServiceRes = response.data
 
   if (response.status < 200 || response.status >= 300) {
     const errorMessage = response?.data?.message || response.data || 'Something went wrong'
@@ -26,9 +26,9 @@ export const getCoursesSubModulesService = async () => {
   return res
 }
 
-export const getCourseByIdService = async ({ id }: { id: string }) => {
-  const response = await axios.get(`${baseUrl}/courses/id/${id}`)
-  const res: IGetCoursesService = response.data
+export const getClassesByIdService = async ({ id }: { id: string }) => {
+  const response = await axios.get(`${baseUrl}/class/${id}`)
+  const res: IGetClassesService = response.data
 
   if (response.status < 200 || response.status >= 300) {
     const errorMessage = response?.data?.message || response.data || 'Something went wrong'
@@ -43,7 +43,7 @@ export const postCreateCourseService = async (payload: {
   title: string
   description: string
 }) => {
-  const response = await axios.post(`${baseUrl}/courses/`, payload)
+  const response = await axios.post(`${baseUrl}/classes/`, payload)
   const res = response.data
 
   if (response.status < 200 || response.status >= 300) {
