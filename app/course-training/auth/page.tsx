@@ -19,7 +19,6 @@ export default function AuthPage() {
   const profileSS: IProfileRes | null = decryptClient(
     useStorageListener('course-training-profile') || '',
   )
-  console.log(profileSS)
 
   useEffect(() => {
     if (profileSS) navigate.push('/course-training/home#courses')

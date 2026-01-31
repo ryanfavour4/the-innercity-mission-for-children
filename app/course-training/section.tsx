@@ -1,6 +1,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import logoDefault from '@/public/assets/icons/logo-black-text.png'
+import { useRef, useState } from 'react'
+import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react'
+import { Icon } from '@iconify/react'
+import { questions } from './dummy-data'
 
 // components/CourseSidebar.tsx
 export function CourseSidebar({ navOpen }: { navOpen: boolean }) {
@@ -36,5 +40,46 @@ export function CourseSidebar({ navOpen }: { navOpen: boolean }) {
         </button>
       </nav>
     </aside>
+  )
+}
+
+// !! ++++++++
+export function QuizzesSlider() {
+  const swiperRef = useRef<SwiperClass | null>(null)
+  const [selectedAnswer, setSelectedAnswer] = useState('1')
+
+  return (
+    <>
+      <Swiper
+        onSwiper={(swiper) => (swiperRef.current = swiper)}
+        allowTouchMove={false}
+        className="mx-auto block h-full w-[95%] px-4 py-10 md:min-h-96"
+        spaceBetween={40}
+      >
+        {questions.map((q, idx) => (
+          <SwiperSlide key={q._id} className="">
+            <p className="mb-2 text-sm text-primary/75">
+              Question {idx + 1} of {questions.length}
+            </p>
+            <h3 className="mb-8 text-lg font-semibold">{q.question}</h3>
+
+            <div className="flex flex-col gap-4 md:grid md:grid-cols-2">
+              {q.options.map((o) => (
+                <span
+                  key={o}
+                  onClick={() => setSelectedAnswer(o)}
+                  className={`relative flex cursor-pointer items-center justify-between rounded-xl border border-textcolor/5 bg-textcolor/10 p-4 py-3 text-textcolor duration-300 hover:scale-[1.01] hover:bg-primary/25 hover:shadow ${selectedAnswer === o ? '!border-primary !bg-primary/25' : 'bg-textcolor/10'}`}
+                >
+                  <p>{o}</p>
+                  {selectedAnswer === o ? (
+                    <Icon icon={'entypo:pin'} className="text-xl text-primary" />
+                  ) : null}
+                </span>
+              ))}
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </>
   )
 }

@@ -3,15 +3,13 @@ import Image from 'next/image'
 import Link from 'next/link'
 import logoDefault from '@/public/assets/icons/logo-black-text.png'
 import { MenuFriesIcon } from '@/components/svgs'
-import { useRef, useState } from 'react'
-import { CourseSidebar } from './section'
+import { useState } from 'react'
+import { CourseSidebar, QuizzesSlider } from './section'
 import VideoPlayer from '@/components/video-player'
-import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react'
-import { Icon } from '@iconify/react'
-import { questions } from './dummy-data'
 
 export default function CourseTraining() {
   const [navOpen, setNavOpen] = useState(false)
+  const [activeScreen, setActiveScreen] = useState<'quiz' | 'video'>('video')
 
   return (
     <div className="flex h-screen bg-ghost-white">
@@ -58,62 +56,36 @@ export default function CourseTraining() {
 
           {/* Video or Quiz Toggle */}
           <div className="aspect-video h-full overflow-hidden rounded-xl bg-light text-base shadow-2xl transition-all md:rounded-2xl">
-            <QuizzesSlider />
-
-            <VideoPlayer
-              src="https://player.vimeo.com/video/1052568231?h=6234489652"
-              className="max-w-full"
-            />
+            {activeScreen == 'video' ? (
+              <VideoPlayer
+                src="https://player.vimeo.com/video/1052568231?h=6234489652"
+                className="max-w-full"
+              />
+            ) : (
+              <QuizzesSlider />
+            )}
           </div>
 
           <div className="flex flex-wrap-reverse items-center justify-between gap-3 rounded-xl border border-textcolor/25 bg-light p-3 md:p-5">
-            <button className="btn border border-textcolor/25 text-base text-textcolor md:w-fit">
-              Back to Video
-            </button>
+            {activeScreen == 'video' ? (
+              <button
+                onClick={() => setActiveScreen('quiz')}
+                className="btn border border-textcolor/25 text-base text-textcolor md:w-fit"
+              >
+                Start Quiz
+              </button>
+            ) : (
+              <button
+                onClick={() => setActiveScreen('video')}
+                className="btn border border-textcolor/25 text-base text-textcolor md:w-fit"
+              >
+                Back to Video
+              </button>
+            )}
             <button className="btn-primary text-base md:w-fit">Next Lesson →</button>
           </div>
         </div>
       </main>
     </div>
-  )
-}
-
-export function QuizzesSlider() {
-  const swiperRef = useRef<SwiperClass | null>(null)
-  const [selectedAnswer, setSelectedAnswer] = useState('1')
-
-  return (
-    <>
-      <Swiper
-        onSwiper={(swiper) => (swiperRef.current = swiper)}
-        allowTouchMove={false}
-        className="mx-auto block h-full w-[95%] px-4 py-10 md:min-h-96"
-        spaceBetween={40}
-      >
-        {questions.map((q, idx) => (
-          <SwiperSlide key={q._id} className="">
-            <p className="mb-2 text-sm text-primary/75">
-              Question {idx + 1} of {questions.length}
-            </p>
-            <h3 className="mb-8 text-lg font-semibold">{q.question}</h3>
-
-            <div className="flex flex-col gap-4 md:grid md:grid-cols-2">
-              {q.options.map((o) => (
-                <span
-                  key={o}
-                  onClick={() => setSelectedAnswer(o)}
-                  className={`relative flex cursor-pointer items-center justify-between rounded-xl border border-textcolor/5 bg-textcolor/10 p-4 py-3 text-textcolor duration-300 hover:scale-[1.01] hover:bg-primary/25 hover:shadow ${selectedAnswer === o ? '!border-primary !bg-primary/25' : 'bg-textcolor/10'}`}
-                >
-                  <p>{o}</p>
-                  {selectedAnswer === o ? (
-                    <Icon icon={'entypo:pin'} className="text-xl text-primary" />
-                  ) : null}
-                </span>
-              ))}
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </>
   )
 }
