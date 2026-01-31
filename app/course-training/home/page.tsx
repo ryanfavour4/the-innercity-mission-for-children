@@ -41,7 +41,7 @@ export default function LandingPage() {
                 {profileSS.user.name[0]}
               </small>
               <button
-                onClick={() => trigger().then(() => window.location.reload())}
+                onClick={() => trigger().finally(() => window.location.reload())}
                 className="btn w-fit bg-error/25 text-sm font-medium text-error transition"
               >
                 Log Out
