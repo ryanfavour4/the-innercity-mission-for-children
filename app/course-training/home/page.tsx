@@ -1,14 +1,23 @@
 'use client'
+import { useStorageListener } from '@/hooks/use-storage'
 import Footer from '@/layouts/footer'
 import logo from '@/public/assets/icons/logo-icon.png'
+import { postLogoutService } from '@/services/course-training/auth.service'
 import { getCoursesSubModulesService } from '@/services/course-training/courses.service'
+import { IProfileRes } from '@/services/course-training/types'
+import { decryptClient } from '@/utils/crypt.client'
 import { Icon } from '@iconify/react'
 import Image from 'next/image'
 import Link from 'next/link'
 import useSWRImmutable from 'swr/immutable'
+import useSWRMutation from 'swr/mutation'
 
 export default function LandingPage() {
-  const { data } = useSWRImmutable('courses/sub-modules', getCoursesSubModulesService)
+  const { data, isLoading } = useSWRImmutable('courses/sub-modules', getCoursesSubModulesService)
+  const { trigger } = useSWRMutation('/auth/signout', postLogoutService)
+  const profileSS: IProfileRes | null = decryptClient(
+    useStorageListener('course-training-profile') || '',
+  )
 
   return (
     <div className="min-h-screen bg-light">
@@ -26,14 +35,28 @@ export default function LandingPage() {
             />
             <small className="text-xs">ICM Training</small>
           </span>
-          <Link href={'/course-training'} className="btn-primary w-fit transition">
-            Get Started
-          </Link>
+          {profileSS ? (
+            <div className="flex items-center justify-center gap-2">
+              <small className="flex aspect-2 size-9 items-center justify-center rounded-full bg-primary text-sm font-semibold text-light">
+                {profileSS.user.name[0]}
+              </small>
+              <button
+                onClick={() => trigger().then(() => window.location.reload())}
+                className="btn w-fit bg-error/25 text-sm font-medium text-error transition"
+              >
+                Log Out
+              </button>
+            </div>
+          ) : (
+            <Link href={'/course-training/auth'} className="btn-primary w-fit transition">
+              Get Started
+            </Link>
+          )}
         </div>
       </nav>
 
       {/* Hero Section */}
-      <header className="mx-auto max-w-7xl border-b px-8 pb-24 pt-16 text-center">
+      <header className="border-b bg-primary/15 px-8 pb-24 pt-16 text-center">
         <h1 className="mb-6 text-4xl font-extrabold tracking-tight md:text-6xl">
           Enroll In The <br />
           <span className="text-primary">ICM Course Training.</span> Program
@@ -69,9 +92,12 @@ export default function LandingPage() {
           </div>
 
           <div className="grid gap-8 md:grid-cols-3">
+            {isLoading && [1, 2, 3].map((i) => <CourseCardSkeleton key={i} />)}
+
             {data?.map((course) => (
               <CourseCard
                 key={course._id}
+                id={course._id}
                 title={course.title}
                 quizzes={`${course.questionsCount} Quizzes`}
                 level={`${course.classesCount} Classes`}
@@ -147,19 +173,37 @@ export default function LandingPage() {
     </div>
   )
 }
+// Skeleton Loading Component
+const CourseCardSkeleton = () => (
+  <>
+    <div className="animate-pulse rounded-xl border border-textcolor/25 bg-light p-6 shadow-sm">
+      <div className="mb-4 h-12 w-12 rounded-lg bg-textcolor" />
+      <div className="mb-2 h-6 w-3/4 rounded bg-textcolor" />
+      <div className="flex gap-4">
+        <div className="h-4 w-1/2 rounded bg-textcolor" />
+        <div className="h-4 w-1/2 rounded bg-textcolor" />
+      </div>
+    </div>
+  </>
+)
 
 // Reusable Course Card Component
 const CourseCard = ({
   title,
   quizzes,
   level,
+  id,
 }: {
   title: string
   quizzes: string
   level: string
+  id: string
 }) => (
-  <div className="rounded-xl border border-textcolor/25 bg-light p-6 shadow-sm transition-shadow hover:shadow-md">
-    <div className="bg-blue-50 mb-4 flex h-12 w-12 items-center justify-center rounded-lg">
+  <Link
+    href={`/course-training?course${id}`}
+    className="rounded-xl border border-textcolor/25 bg-light p-6 shadow-sm transition-shadow hover:shadow-md"
+  >
+    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/25">
       <Icon icon="lucide:book-open" className="text-2xl text-blue-600" />
     </div>
     <h3 className="mb-2 text-xl font-bold">{title}</h3>
@@ -171,7 +215,7 @@ const CourseCard = ({
         <Icon icon="lucide:bar-chart" /> {level}
       </span>
     </div>
-  </div>
+  </Link>
 )
 
 // Reusable Testimonial Card

@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Icon } from '@iconify/react'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -7,17 +7,30 @@ import logo from '@/public/assets/icons/logo-icon.png'
 import kingsChatLogo from '@/public/assets/icons/kingschat-logo.png'
 import useSWRMutation from 'swr/mutation'
 import { loginWithKingsChat } from '@/services/course-training/auth.service'
+import { useStorageListener } from '@/hooks/use-storage'
+import { decryptClient } from '@/utils/crypt.client'
+import { IProfileRes } from '@/services/course-training/types'
+import { useRouter } from 'next/navigation'
 
 export default function AuthPage() {
   const [isLogin, setIsLogin] = useState(true)
+  const navigate = useRouter()
+  const { trigger, isMutating } = useSWRMutation('/auth/kingschat', loginWithKingsChat)
+  const profileSS: IProfileRes | null = decryptClient(
+    useStorageListener('course-training-profile') || '',
+  )
+  console.log(profileSS)
+
+  useEffect(() => {
+    if (profileSS) navigate.push('/course-training/home#courses')
+  }, [navigate, profileSS])
+
   //   const kingChatFetcher = (
   //   _key: string,
   //   { arg }: { arg: { accessToken: string; refreshToken: string } }
   // ) => getKingChatProfile(arg);
-  const { trigger, isMutating } = useSWRMutation('/auth/kingschat', loginWithKingsChat)
-
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-slate-50 p-6">
+    <div className="flex min-h-screen flex-col items-center justify-center bg-slate-50 px-2 py-6 md:p-6">
       {/* Back to Home Link */}
       <Link
         href="/course-training/home"
@@ -29,7 +42,7 @@ export default function AuthPage() {
 
       <div className="max-auto w-full md:max-w-[450px]">
         {/* The Card */}
-        <div className="rounded-3xl border border-gray-100 bg-white p-10 shadow-lg">
+        <div className="rounded-3xl border border-gray-100 bg-light px-4 py-10 shadow-lg md:p-10">
           {/* Header */}
           <div className="mb-10 text-center">
             <span className="flex flex-col items-center font-bold tracking-tighter">

@@ -106,7 +106,7 @@ export function QuizzesSlider() {
                 >
                   <p>{o}</p>
                   {selectedAnswer === o ? (
-                    <Icon icon={'entypo:pin'} className="border text-xl text-primary" />
+                    <Icon icon={'entypo:pin'} className="text-xl text-primary" />
                   ) : null}
                 </span>
               ))}
