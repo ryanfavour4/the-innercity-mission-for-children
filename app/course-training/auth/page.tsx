@@ -1,18 +1,26 @@
 'use client'
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { Icon } from '@iconify/react'
 import Link from 'next/link'
 import Image from 'next/image'
 import logo from '@/public/assets/icons/logo-icon.png'
+import kingsChatLogo from '@/public/assets/icons/kingschat-logo.png'
+import useSWRMutation from 'swr/mutation'
+import { loginWithKingsChat } from '@/services/course-training/auth.service'
 
 export default function AuthPage() {
   const [isLogin, setIsLogin] = useState(true)
+  //   const kingChatFetcher = (
+  //   _key: string,
+  //   { arg }: { arg: { accessToken: string; refreshToken: string } }
+  // ) => getKingChatProfile(arg);
+  const { trigger, isMutating } = useSWRMutation('/auth/kingschat', loginWithKingsChat)
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-slate-50 p-6">
       {/* Back to Home Link */}
       <Link
-        href="/course-training/"
+        href="/course-training/home"
         className="left-8 top-8 mb-6 mr-auto flex items-center gap-2 text-base text-textcolor/75 transition hover:text-primary md:absolute"
       >
         <Icon icon="lucide:arrow-left" />
@@ -124,7 +132,11 @@ export default function AuthPage() {
               </div>
             )}
 
-            <button className="btn-primary mt-10 block w-full shadow-lg shadow-blue-200 transition-all active:scale-[0.98]">
+            <button
+              disabled={isMutating}
+              className="btn-primary mt-10 flex w-full items-center justify-center shadow-lg shadow-blue-200 transition-all active:scale-[0.98]"
+            >
+              {isMutating && <Icon icon={'codex:loader'} className="text-2xl" />}
               {isLogin ? 'Sign In' : 'Create Account'}
             </button>
           </form>
@@ -139,14 +151,19 @@ export default function AuthPage() {
             </span>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
-            <button className="hover:bg-gray-50 flex items-center justify-center gap-2 rounded-2xl border border-gray-200 py-3 transition">
+          <div className="grid grid-cols-1 gap-4">
+            <button className="hover:bg-gray-50 hidden items-center justify-center gap-2 rounded-2xl border border-gray-200 py-3 transition">
               <Icon icon="logos:google-icon" className="text-lg" />
               <span className="text-sm font-semibold">Google</span>
             </button>
-            <button className="hover:bg-gray-50 flex items-center justify-center gap-2 rounded-2xl border border-gray-200 py-3 transition">
-              <Icon icon="logos:apple" className="text-lg" />
-              <span className="text-sm font-semibold">Apple</span>
+            <button
+              onClick={() => trigger()}
+              disabled={isMutating}
+              className="hover:bg-gray-50 flex items-center justify-center gap-2 rounded-2xl border border-primary py-3 transition"
+            >
+              {isMutating && <Icon icon={'codex:loader'} className="text-2xl" />}
+              <Image alt="kingsChatLogo" unoptimized src={kingsChatLogo} className="size-5" />
+              <span className="text-sm font-semibold">Signin With Kingchat</span>
             </button>
           </div>
 

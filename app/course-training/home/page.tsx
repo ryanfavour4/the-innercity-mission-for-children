@@ -4,10 +4,11 @@ import logo from '@/public/assets/icons/logo-icon.png'
 import { getCoursesSubModulesService } from '@/services/course-training/courses.service'
 import { Icon } from '@iconify/react'
 import Image from 'next/image'
+import Link from 'next/link'
 import useSWRImmutable from 'swr/immutable'
 
 export default function LandingPage() {
-  const { data } = useSWRImmutable('get-courses-submodule-service', getCoursesSubModulesService)
+  const { data } = useSWRImmutable('courses/sub-modules', getCoursesSubModulesService)
 
   return (
     <div className="min-h-screen bg-light">
@@ -25,7 +26,9 @@ export default function LandingPage() {
             />
             <small className="text-xs">ICM Training</small>
           </span>
-          <button className="btn-primary w-fit transition">Get Started</button>
+          <Link href={'/course-training'} className="btn-primary w-fit transition">
+            Get Started
+          </Link>
         </div>
       </nav>
 
@@ -40,15 +43,20 @@ export default function LandingPage() {
           courses and earn certified credentials.
         </p>
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <button className="btn-primary px-8 transition md:w-fit">Explore Course</button>
-          <button className="btn-white border border-textcolor/25 px-8 transition md:w-fit">
+          <Link href={'#courses'} className="btn-primary px-8 transition md:w-fit">
+            Explore Course
+          </Link>
+          <Link
+            href={'/course-training/auth'}
+            className="btn-white border border-textcolor/25 px-8 transition md:w-fit"
+          >
             Sign Up
-          </button>
+          </Link>
         </div>
       </header>
 
       {/* Course Section */}
-      <section className="bg-gray-50 px-8 py-24">
+      <section id="courses" className="bg-gray-50 px-8 py-24">
         <div className="mx-auto max-w-7xl">
           <div className="mb-8 flex flex-wrap items-end justify-between gap-5 md:mb-12">
             <div>

@@ -6,12 +6,22 @@ export interface IPostLoginServiceRes {
   status: number
 }
 
+export interface IProfileRes {
+  token: string
+  user: User
+}
+
 export interface User {
-  id: number
-  fullname: string
   email: string
+  name: string
+  avatar: string
+  kingschatId: string
+  provider: string
+  emailVerified: boolean
+  _id: string
   createdAt: string
   updatedAt: string
+  __v: number
 }
 
 export interface Session {

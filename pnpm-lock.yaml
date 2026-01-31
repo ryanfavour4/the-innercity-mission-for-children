@@ -53,6 +53,9 @@ importers:
       framer-motion:
         specifier: ^12.23.22
         version: 12.23.24(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+      kingschat-web-sdk:
+        specifier: ^0.1.0
+        version: 0.1.0
       motion:
         specifier: ^12.23.22
         version: 12.23.24(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
@@ -2710,6 +2713,9 @@ packages:
 
   keyv@4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}
+
+  kingschat-web-sdk@0.1.0:
+    resolution: {integrity: sha512-+4+uQw2IZdDCiIoqMBQ/LwgqiBhn6dY6bCmHO5ZlT4wA/y2udKMQCo4ha/84Et3Dz3d9T6ScSYIfccvqpFQR4g==}
 
   language-subtag-registry@0.3.23:
     resolution: {integrity: sha512-0K65Lea881pHotoGEa5gDlMxt3pctLi2RplBb7Ezh4rRdLEOtgi7n4EwK9lamnUCkKBqaeKRVebTq6BAxSkpXQ==}
@@ -6868,6 +6874,8 @@ snapshots:
   keyv@4.5.4:
     dependencies:
       json-buffer: 3.0.1
+
+  kingschat-web-sdk@0.1.0: {}
 
   language-subtag-registry@0.3.23: {}
 
