@@ -38,14 +38,11 @@ export function ClassesSidebar({
     const progress = { ...checkpoint, class: classObj._id }
     setCheckpoint(progress)
     addHashParams(progress)
-    console.log(progress)
     sessionStorage.setItem('course-checkpoint', JSON.stringify({ ...progress, course: courseId }))
   }
 
   useEffect(() => {
-    if (courseCheckpoint && !courseId && !classId) {
-      addHashParams(courseCheckpoint)
-    }
+    if (courseCheckpoint && !courseId && !classId) addHashParams(courseCheckpoint)
   }, [classId, courseCheckpoint, courseId])
 
   useEffect(() => {
@@ -62,10 +59,7 @@ export function ClassesSidebar({
   }, [courseCheckpoint])
 
   useEffect(() => {
-    if (classes.length && !courseCheckpoint.class) {
-      console.log(classes)
-      onClassClick({ classObj: classes[0] })
-    }
+    if (classes.length && !courseCheckpoint.class) onClassClick({ classObj: classes[0] })
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [classes, courseCheckpoint])
 
@@ -91,12 +85,12 @@ export function ClassesSidebar({
           <button
             key={item._id}
             onClick={() => onClassClick({ classObj: item })}
-            className={`mb-1 flex w-full items-center gap-3 rounded-lg p-3 text-left text-base text-textcolor/75 transition-colors hover:bg-primary/10 ${checkpoint.class == item._id && 'bg-primary/25 font-semibold !text-primary'}`}
+            className={`mb-1 flex w-full items-center gap-3 rounded-lg p-3 text-left text-base text-textcolor/75 transition-colors hover:bg-primary/10 ${checkpoint.class == item._id && 'bg-primary/25 font-medium !text-primary'}`}
           >
             <span className="font-mono text-xs opacity-50">
               {String(item.order).padStart(2, '0')}
             </span>
-            <span className="truncate text-base">Jumping away now</span>
+            <span className="truncate text-base">{item.title}</span>
           </button>
         ))}
 

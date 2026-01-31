@@ -41,6 +41,10 @@ export default function CourseTraining() {
     console.log(classId)
   }, [classId])
 
+  useEffect(() => {
+    console.log(activeClass)
+  }, [activeClass])
+
   return (
     <>
       <div className="flex h-screen bg-ghost-white">
@@ -74,11 +78,10 @@ export default function CourseTraining() {
 
           <div className="mx-auto max-w-5xl space-y-5">
             <header>
-              <h1 className="text-lg font-bold text-dark md:text-2xl">
-                Introduction to App Router
-              </h1>
+              <h1 className="text-lg font-bold text-dark md:text-2xl">{activeClass?.title}</h1>
               <p className="mt-1 text-sm text-textcolor/75 md:mt-2 md:text-base">
-                <span>Modern Web Development with Next.js</span> <b> •</b> <span>Module 1</span>
+                <span>{activeClass?.description}</span> <b> •</b>{' '}
+                <span>Module {activeClass?.order}</span>
               </p>
             </header>
 
@@ -96,10 +99,7 @@ export default function CourseTraining() {
             {/* Video or Quiz Toggle */}
             <div className="aspect-video h-full overflow-hidden rounded-xl bg-light text-base shadow-2xl transition-all md:rounded-2xl">
               {activeScreen == 'video' ? (
-                <VideoPlayer
-                  src="https://player.vimeo.com/video/1052568231?h=6234489652"
-                  className="max-w-full"
-                />
+                <VideoPlayer thumb={''} src={activeClass?.videoUrl || ''} className="max-w-full" />
               ) : (
                 <QuizzesSlider />
               )}
