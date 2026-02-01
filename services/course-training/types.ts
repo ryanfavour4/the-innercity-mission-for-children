@@ -1,3 +1,14 @@
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type SwrMutateType<T, F = any> = (
+  _key: string,
+  {
+    arg,
+  }: {
+    arg: T
+  },
+) => Promise<F> | void
+
+// !!!!! ========== AUTH
 export interface IPostLoginServiceRes {
   message: string
   user: User
@@ -30,7 +41,7 @@ export interface Session {
   user: User
 }
 
-// !!! COURSES
+// !!! ========== COURSES
 export type IGetCoursesServiceRes = IGetCoursesService[]
 
 export interface IGetCoursesService {
@@ -55,7 +66,7 @@ export interface IGetCoursesSubModuleService {
   questionsCount: number
 }
 
-// !!! CLASSES
+// !!! ========== CLASSES
 export type IGetClassesByCourseIdServiceRes = IGetClassesByCourseIdService[]
 
 export interface IGetClassesByCourseIdService {
@@ -113,4 +124,52 @@ export interface IQuestionOption {
   id: string
   text: string
   _id: string
+}
+
+//  !!!! ======== ANSWERS
+export type IGetAnswersServiceRes = IGetAnswersService[]
+
+export interface IGetAnswersService {
+  _id: string
+  classId: IGetClassesService
+  courseId: IGetCoursesService
+  answers: IAnswersAnswerType[]
+  totalQuestions: number
+  correctAnswers: number
+  percentage: number
+  passed: boolean
+  createdAt: string
+  updatedAt: string
+  __v: number
+}
+
+export interface IGetAnswersByClassIdServiceRes {
+  _id: string
+  classId: IGetClassesService
+  courseId: IGetCoursesService
+  answers: IAnswersAnswerType[]
+  totalQuestions: number
+  correctAnswers: number
+  percentage: number
+  passed: boolean
+  createdAt: string
+  updatedAt: string
+  __v: number
+}
+
+export interface IPostSubmitAnswersServicePayload {
+  classId: string
+  courseId: string
+  answers: IAnswersAnswerType[]
+}
+
+export interface IPostSubmitAnswers {
+  questionId: string
+  selectedAnswerId: string
+}
+
+export interface IAnswersAnswerType {
+  questionId: string
+  selectedAnswerId: string
+  isCorrect?: boolean
 }

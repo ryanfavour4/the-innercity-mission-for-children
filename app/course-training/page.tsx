@@ -59,7 +59,7 @@ export default function CourseTraining() {
 
         {/* Main Content Area */}
         <main className="flex-1 overflow-y-auto p-3 pt-20 md:p-6 md:pt-6 lg:p-10">
-          <nav className="fixed left-0 right-0 top-0 flex h-fit items-center justify-between bg-light px-2 py-2 md:hidden">
+          <nav className="fixed left-0 right-0 top-0 z-20 flex h-fit items-center justify-between bg-light px-2 py-2 md:hidden">
             <Link href={'#'}>
               <Image
                 src={logoDefault}

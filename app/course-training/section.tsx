@@ -4,11 +4,17 @@ import logoDefault from '@/public/assets/icons/logo-black-text.png'
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react'
 import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react'
 import { Icon } from '@iconify/react'
-import { IGetClassesByCourseIdService } from '@/services/course-training/types'
+import {
+  IGetClassesByCourseIdService,
+  IPostSubmitAnswersServicePayload,
+  SwrMutateType,
+} from '@/services/course-training/types'
 import { addHashParams } from '@/utils/url-hash'
 import { useStorageListener } from '@/hooks/use-storage'
 import { getQuestionsByClassIdService } from '@/services/course-training/questions.service'
 import useSWR from 'swr'
+import { postSubmitAnswersService } from '@/services/course-training/answers.service'
+import useSWRMutation from 'swr/mutation'
 
 type ClassesSidebarType = {
   navOpen: boolean
@@ -119,17 +125,19 @@ type QuizzesSliderType = {
 }
 
 export function QuizzesSlider({ activeClass }: QuizzesSliderType) {
+  const searchParams =
+    typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : null
+  const classId = searchParams?.get('class')
+  const courseId = searchParams?.get('course')
+  const [activeSlideIndex, setActiveSlideIndex] = useState(0)
   const swiperRef = useRef<SwiperClass | null>(null)
-
-  /**
-   * answers = {
-   *   questionId: selectedAnswerId
-   * }
-   */
   const [answers, setAnswers] = useState<{ questionId: string; selectedAnswerId: string }[]>([])
   const { data, isLoading } = useSWR(`questions/class/${activeClass?._id}`, () =>
     getQuestionsByClassIdService({ id: activeClass?._id || '' }),
   )
+  const answerSubmitSwrMutate: SwrMutateType<IPostSubmitAnswersServicePayload> = (_, { arg }) =>
+    postSubmitAnswersService(arg)
+  const { trigger, isMutating } = useSWRMutation('/answer/submit', answerSubmitSwrMutate)
 
   const getSelectedAnswer = (questionId: string) =>
     answers.find((a) => a.questionId === questionId)?.selectedAnswerId
@@ -146,6 +154,14 @@ export function QuizzesSlider({ activeClass }: QuizzesSliderType) {
 
       return [...prev, { questionId, selectedAnswerId: answerId }]
     })
+  }
+
+  const submitQuestion = () => {
+    if (courseId && classId) {
+      const payload = { courseId, classId, answers }
+      trigger(payload)
+      console.log(payload)
+    }
   }
 
   /* ---------------------------- navigation logic ---------------------------- */
@@ -196,7 +212,8 @@ export function QuizzesSlider({ activeClass }: QuizzesSliderType) {
     <Swiper
       onSwiper={(swiper) => (swiperRef.current = swiper)}
       allowTouchMove={false}
-      className="mx-auto block h-full w-[95%] px-2 py-10 md:min-h-96 md:px-4"
+      onSlideChange={(e) => setActiveSlideIndex(e.activeIndex)}
+      className="mx-auto block h-full px-3 py-10 md:min-h-96 md:w-[95%] md:px-4"
       spaceBetween={40}
     >
       {data?.map((q, idx) => (
@@ -240,9 +257,15 @@ export function QuizzesSlider({ activeClass }: QuizzesSliderType) {
           Prev ←
         </button>
 
-        <button onClick={nextQuizClick} className="btn-primary text-sm md:w-fit">
-          Next →
-        </button>
+        {data?.length == activeSlideIndex + 1 ? (
+          <button onClick={submitQuestion} className="btn-primary text-sm md:w-fit">
+            {isMutating ? 'Submitting...' : '  Submit Quiz ✓'}
+          </button>
+        ) : (
+          <button onClick={nextQuizClick} className="btn-primary text-sm md:w-fit">
+            Next →
+          </button>
+        )}
       </div>
     </Swiper>
   )
