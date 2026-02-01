@@ -1,10 +1,14 @@
 import axios from 'axios'
-import { IGetClassesService, IGetClassesServiceRes, IGetClassesByCourseIdServiceRes } from './types'
+import {
+  IGetQuestionsByClassIdServiceRes,
+  IGetQuestionsService,
+  IGetQuestionsServiceRes,
+} from './types'
 import { baseUrl } from './constants'
 
-export const getClassesService = async () => {
-  const response = await axios.get(`${baseUrl}/classes`)
-  const res: IGetClassesServiceRes = response.data
+export const getQuestionsService = async () => {
+  const response = await axios.get(`${baseUrl}/questions`)
+  const res: IGetQuestionsServiceRes = response.data
 
   if (response.status < 200 || response.status >= 300) {
     const errorMessage = response?.data?.message || response.data || 'Something went wrong'
@@ -14,9 +18,9 @@ export const getClassesService = async () => {
   return res
 }
 
-export const getClassesByCourseIdService = async ({ id }: { id: string }) => {
-  const response = await axios.get(`${baseUrl}/classes/course/${id}`)
-  const res: IGetClassesByCourseIdServiceRes = response.data
+export const getQuestionsByClassIdService = async ({ id }: { id: string }) => {
+  const response = await axios.get(`${baseUrl}/questions/class/${id}`)
+  const res: IGetQuestionsByClassIdServiceRes = response.data
 
   if (response.status < 200 || response.status >= 300) {
     const errorMessage = response?.data?.message || response.data || 'Something went wrong'
@@ -26,9 +30,9 @@ export const getClassesByCourseIdService = async ({ id }: { id: string }) => {
   return res
 }
 
-export const getClassesByIdService = async ({ id }: { id: string }) => {
-  const response = await axios.get(`${baseUrl}/class/${id}`)
-  const res: IGetClassesService = response.data
+export const getQuestionsByIdService = async ({ id }: { id: string }) => {
+  const response = await axios.get(`${baseUrl}/questions/${id}`)
+  const res: IGetQuestionsService = response.data
 
   if (response.status < 200 || response.status >= 300) {
     const errorMessage = response?.data?.message || response.data || 'Something went wrong'
@@ -38,14 +42,12 @@ export const getClassesByIdService = async ({ id }: { id: string }) => {
   return res
 }
 
-export const postCreateClassService = async (payload: {
-  courseId: string
+export const postCreateQuestionService = async (payload: {
+  coursePassPercent?: number
   title: string
   description: string
-  videoUrl: string
-  order: number
 }) => {
-  const response = await axios.post(`${baseUrl}/classes`, payload)
+  const response = await axios.post(`${baseUrl}/questions/`, payload)
   const res = response.data
 
   if (response.status < 200 || response.status >= 300) {

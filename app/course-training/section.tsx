@@ -4,10 +4,11 @@ import logoDefault from '@/public/assets/icons/logo-black-text.png'
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react'
 import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react'
 import { Icon } from '@iconify/react'
-import { questions } from './dummy-data'
 import { IGetClassesByCourseIdService } from '@/services/course-training/types'
 import { addHashParams } from '@/utils/url-hash'
 import { useStorageListener } from '@/hooks/use-storage'
+import { getQuestionsByClassIdService } from '@/services/course-training/questions.service'
+import useSWR from 'swr'
 
 type ClassesSidebarType = {
   navOpen: boolean
@@ -119,48 +120,130 @@ type QuizzesSliderType = {
 
 export function QuizzesSlider({ activeClass }: QuizzesSliderType) {
   const swiperRef = useRef<SwiperClass | null>(null)
-  const [selectedAnswer, setSelectedAnswer] = useState('1')
-  console.log(activeClass)
+
+  /**
+   * answers = {
+   *   questionId: selectedAnswerId
+   * }
+   */
+  const [answers, setAnswers] = useState<{ questionId: string; selectedAnswerId: string }[]>([])
+  const { data, isLoading } = useSWR(`questions/class/${activeClass?._id}`, () =>
+    getQuestionsByClassIdService({ id: activeClass?._id || '' }),
+  )
+
+  const getSelectedAnswer = (questionId: string) =>
+    answers.find((a) => a.questionId === questionId)?.selectedAnswerId
+
+  const selectAnswer = (questionId: string, answerId: string) => {
+    setAnswers((prev) => {
+      const exists = prev.find((a) => a.questionId === questionId)
+
+      if (exists) {
+        return prev.map((a) =>
+          a.questionId === questionId ? { ...a, selectedAnswerId: answerId } : a,
+        )
+      }
+
+      return [...prev, { questionId, selectedAnswerId: answerId }]
+    })
+  }
+
+  /* ---------------------------- navigation logic ---------------------------- */
+  const nextQuizClick = () => {
+    if (!swiperRef.current || !data?.length) return
+
+    const currentIndex = swiperRef.current.activeIndex
+    const currentQuestion = data[currentIndex]
+
+    const answered = answers.some((a) => a.questionId === currentQuestion._id)
+
+    if (answered) {
+      swiperRef.current.slideNext()
+    }
+  }
+
+  const prevQuizClick = () => {
+    swiperRef.current?.slidePrev()
+  }
+
+  const resetQuiz = () => {
+    setAnswers([])
+    sessionStorage.removeItem('quiz-answers')
+    swiperRef.current?.slideTo(0)
+  }
+
+  /* ------------------ session storage (optional but solid) ------------------ */
+  useEffect(() => {
+    resetQuiz()
+  }, [activeClass?._id])
+
+  useEffect(() => {
+    const saved = sessionStorage.getItem('quiz-answers')
+    if (saved) {
+      setAnswers(JSON.parse(saved))
+    }
+  }, [])
+
+  useEffect(() => {
+    sessionStorage.setItem('quiz-answers', JSON.stringify(answers))
+  }, [answers])
+
+  if (isLoading) {
+    return <p className="text-center">Loading questions…</p>
+  }
 
   return (
-    <>
-      <Swiper
-        onSwiper={(swiper) => (swiperRef.current = swiper)}
-        allowTouchMove={false}
-        className="mx-auto block h-full w-[95%] px-2 py-10 md:min-h-96 md:px-4"
-        spaceBetween={40}
-      >
-        {questions.map((q, idx) => (
-          <SwiperSlide key={q._id} className="">
-            <p className="mb-2 text-sm text-primary/75">
-              Question {idx + 1} of {questions.length}
-            </p>
-            <h3 className="text-lg font-semibold">{q.question}</h3>
-            <small className="mb-8 block text-textcolor/50">
-              Your result and score will be shown after submission
-            </small>
-            <div className="flex flex-col gap-4 md:grid md:grid-cols-2">
-              {q.options.map((o) => (
-                <span
-                  key={o}
-                  onClick={() => setSelectedAnswer(o)}
-                  className={`relative flex cursor-pointer items-center justify-between rounded-xl border border-textcolor/5 bg-textcolor/10 p-4 py-3 text-textcolor duration-300 hover:scale-[1.01] hover:bg-primary/25 hover:shadow ${selectedAnswer === o ? '!border-primary !bg-primary/25' : 'bg-textcolor/10'}`}
-                >
-                  <p>{o}</p>
-                  {selectedAnswer === o ? (
-                    <Icon icon={'entypo:pin'} className="text-xl text-primary" />
-                  ) : null}
-                </span>
-              ))}
-            </div>
-          </SwiperSlide>
-        ))}
+    <Swiper
+      onSwiper={(swiper) => (swiperRef.current = swiper)}
+      allowTouchMove={false}
+      className="mx-auto block h-full w-[95%] px-2 py-10 md:min-h-96 md:px-4"
+      spaceBetween={40}
+    >
+      {data?.map((q, idx) => (
+        <SwiperSlide key={q._id}>
+          <p className="mb-2 text-sm text-primary/75">
+            Question {idx + 1} of {data.length}
+          </p>
 
-        <div className="mt-16 flex h-full items-center gap-5">
-          <button className="btn-primary text-base md:w-fit">Prev ←</button>
-          <button className="btn-primary text-base md:w-fit">Next →</button>
-        </div>
-      </Swiper>
-    </>
+          <h3 className="text-lg font-semibold">{q.question}</h3>
+
+          <small className="mb-8 block text-textcolor/50">
+            Your result and score will be shown after submission
+          </small>
+
+          <div className="flex flex-col gap-4 md:grid md:grid-cols-2">
+            {q.options.map((o) => {
+              const isSelected = getSelectedAnswer(q._id) === o._id
+
+              return (
+                <span
+                  key={o._id}
+                  onClick={() => selectAnswer(q._id, o._id)}
+                  className={`relative flex cursor-pointer items-center justify-between rounded-xl border p-4 py-3 duration-300 ${
+                    isSelected
+                      ? 'border-primary bg-primary/25'
+                      : 'border-textcolor/5 bg-textcolor/10'
+                  } hover:scale-[1.01] hover:bg-primary/25 hover:shadow`}
+                >
+                  <p>{o.text}</p>
+
+                  {isSelected && <Icon icon="entypo:pin" className="text-xl text-primary" />}
+                </span>
+              )
+            })}
+          </div>
+        </SwiperSlide>
+      ))}
+
+      <div className="mt-16 flex h-full items-center gap-5">
+        <button onClick={prevQuizClick} className="btn-primary text-sm md:w-fit">
+          Prev ←
+        </button>
+
+        <button onClick={nextQuizClick} className="btn-primary text-sm md:w-fit">
+          Next →
+        </button>
+      </div>
+    </Swiper>
   )
 }

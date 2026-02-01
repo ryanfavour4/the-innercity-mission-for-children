@@ -81,3 +81,36 @@ export interface IGetClassesService {
   updatedAt: string
   __v: number
 }
+
+//  !!!! ======== QUESTIONS
+export type IGetQuestionsServiceRes = IGetQuestionsService[]
+
+export interface IGetQuestionsService {
+  _id: string
+  classId: IGetClassesByCourseIdService
+  question: string
+  options: IQuestionOption[]
+  correctOptionId: string
+  createdAt: string
+  updatedAt: string
+  __v: number
+}
+
+export type IGetQuestionsByClassIdServiceRes = IGetQuestionsByClassIdService[]
+
+export interface IGetQuestionsByClassIdService {
+  _id: string
+  classId: IGetClassesByCourseIdService
+  question: string
+  options: IQuestionOption[]
+  correctOptionId: string
+  createdAt: string
+  updatedAt: string
+  __v: number
+}
+
+export interface IQuestionOption {
+  id: string
+  text: string
+  _id: string
+}
