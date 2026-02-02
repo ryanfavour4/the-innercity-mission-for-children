@@ -58,21 +58,15 @@ export default function LandingPage() {
       {/* Hero Section */}
       <header className="border-b bg-primary/15 px-8 pb-24 pt-16 text-center">
         <h1 className="mb-6 text-4xl font-extrabold tracking-tight md:text-6xl">
-          Enroll In The <br />
-          <span className="text-primary">ICM Course Training.</span> Program
+          Take The <br />
+          <span className="text-primary">ICM Educators Certification</span> <br /> Program
         </h1>
         <p className="mx-auto mb-10 max-w-2xl text-base text-textcolor/75">
           Stop watching endless tutorials. Start building real projects with our industry-led
           courses and earn certified credentials.
         </p>
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Link href={'#courses'} className="btn-primary px-8 transition md:w-fit">
-            Explore Course
-          </Link>
-          <Link
-            href={'/course-training/auth'}
-            className="btn-white border border-textcolor/25 px-8 transition md:w-fit"
-          >
+          <Link href={'/course-training/auth'} className="btn-primary px-12 md:w-fit">
             Sign Up
           </Link>
         </div>

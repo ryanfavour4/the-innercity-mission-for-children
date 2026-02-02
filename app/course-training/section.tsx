@@ -1,4 +1,5 @@
 'use client'
+export const dynamic = 'force-dynamic'
 import Image from 'next/image'
 import Link from 'next/link'
 import logoDefault from '@/public/assets/icons/logo-black-text.png'
@@ -11,7 +12,6 @@ import {
   IPostSubmitAnswersServiceRes,
   SwrMutateType,
 } from '@/services/course-training/types'
-import { addHashParams } from '@/utils/url-hash'
 import { useStorageListener } from '@/hooks/use-storage'
 import { getQuestionsByClassIdService } from '@/services/course-training/questions.service'
 import useSWR from 'swr'
@@ -19,6 +19,8 @@ import { postSubmitAnswersService } from '@/services/course-training/answers.ser
 import useSWRMutation from 'swr/mutation'
 import { toast } from 'react-toastify'
 import { useRouter, useSearchParams } from 'next/navigation'
+import { useHasMounted } from '@/hooks/use-mounted'
+import { useUpdateQueryParams } from '@/hooks/use-query-params'
 
 type ClassesSidebarType = {
   navOpen: boolean
@@ -35,10 +37,11 @@ export function ClassesSidebar({
   classes,
   setActiveClass,
 }: ClassesSidebarType) {
-  const searchParams =
-    typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : null
-  const classId = searchParams?.get('class')
-  const courseId = searchParams?.get('course')
+  const updateParams = useUpdateQueryParams()
+  const hasMounted = useHasMounted()
+  const searchParams = useSearchParams()
+  const classId = searchParams.get('class')
+  const courseId = searchParams.get('course')
   const [checkpoint, setCheckpoint] = useState({ class: '' })
   const courseCheckpoint: { class: string; course: string } = JSON.parse(
     useStorageListener('course-checkpoint') || '{}',
@@ -48,12 +51,12 @@ export function ClassesSidebar({
     setActiveClass(classObj)
     const progress = { ...checkpoint, class: classObj._id }
     setCheckpoint(progress)
-    addHashParams(progress)
+    updateParams(progress)
     sessionStorage.setItem('course-checkpoint', JSON.stringify({ ...progress, course: courseId }))
   }
 
   useEffect(() => {
-    if (courseCheckpoint && !courseId && !classId) addHashParams(courseCheckpoint)
+    // if (courseCheckpoint && !courseId && !classId) updateParams(courseCheckpoint)
   }, [classId, courseCheckpoint, courseId])
 
   useEffect(() => {
@@ -70,9 +73,13 @@ export function ClassesSidebar({
   }, [courseCheckpoint])
 
   useEffect(() => {
-    if (classes.length && !courseCheckpoint.class) onClassClick({ classObj: classes[0] })
+    if (!hasMounted) return
+    if (!classes.length) return
+    if (courseCheckpoint.class) return
+
+    onClassClick({ classObj: classes[0] })
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [classes, courseCheckpoint])
+  }, [classes, courseCheckpoint.class, hasMounted])
 
   return (
     <aside
@@ -122,7 +129,6 @@ export function ClassesSidebar({
 }
 
 // !! ++++++++
-
 type QuizzesSliderType = {
   setActiveClass: Dispatch<SetStateAction<IGetClassesByCourseIdService | null>>
   activeClass: IGetClassesByCourseIdService | null

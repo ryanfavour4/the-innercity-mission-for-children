@@ -57,9 +57,7 @@ export default function AuthPage() {
               {isLogin ? 'Welcome Back' : 'Create Account'}
             </h1>
             <p className="mt-2 text-textcolor/75">
-              {isLogin
-                ? 'Glad to see you again! Please log in.'
-                : 'Start your learning journey with us today.'}
+              {isLogin ? 'Please log in.' : 'Start your learning journey with us today.'}
             </p>
           </div>
 
@@ -105,7 +103,7 @@ export default function AuthPage() {
               <div className="mb-1 ml-1 flex justify-between">
                 <label className="text-sm font-semibold text-gray-700">Password</label>
                 {isLogin && (
-                  <a href="#" className="text-sm text-primary hover:underline">
+                  <a href="#" className="hidden text-sm text-primary hover:underline">
                     Forgot?
                   </a>
                 )}

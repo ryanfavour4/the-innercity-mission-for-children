@@ -11,8 +11,10 @@ import { getClassesByCourseIdService } from '@/services/course-training/classes.
 import { IGetClassesByCourseIdService } from '@/services/course-training/types'
 import { toast } from 'react-toastify'
 import useSWR from 'swr'
+import { useHasMounted } from '@/hooks/use-mounted'
 
 export default function CourseTraining() {
+  const hasMounted = useHasMounted()
   const searchParams = useSearchParams()
   const classId = searchParams.get('class')
   const courseId = searchParams.get('course')
@@ -25,16 +27,16 @@ export default function CourseTraining() {
   const [activeScreen, setActiveScreen] = useState<'quiz' | 'video'>('video')
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      if (courseId == null) {
-        console.log(courseId)
-        navigate.replace('/course-training/home#courses')
-        toast.warn('Please select a course from the options below')
-      }
-    }, 3000)
+    if (!hasMounted) return
+    if (courseId !== null) return
 
-    return () => clearTimeout(timer)
-  }, [courseId, navigate])
+    const t = setTimeout(() => {
+      toast.warn('Please select a course from the options below')
+      navigate.replace('/course-training/home#courses')
+    }, 300)
+
+    return () => clearTimeout(t)
+  }, [courseId, hasMounted, navigate])
 
   useEffect(() => {
     console.log(classId)
@@ -47,6 +49,10 @@ export default function CourseTraining() {
   useEffect(() => {
     console.log(activeClass)
   }, [activeClass])
+
+  if (!hasMounted) {
+    return <div className="p-6">Loading course…</div>
+  }
 
   return (
     <>
@@ -61,7 +67,7 @@ export default function CourseTraining() {
         />
 
         {/* Main Content Area */}
-        <main className="flex-1 overflow-y-auto p-3 pt-20 md:p-6 md:pt-6 lg:p-10">
+        <main className="flex-1 overflow-y-auto p-2 pt-20 md:p-6 md:pt-6 lg:p-10">
           <nav className="fixed left-0 right-0 top-0 z-20 flex h-fit items-center justify-between bg-light px-2 py-2 md:hidden">
             <Link href={'#'}>
               <Image
@@ -108,23 +114,19 @@ export default function CourseTraining() {
               )}
             </div>
 
-            <div className="flex flex-wrap-reverse items-center justify-between gap-3 rounded-xl border border-textcolor/25 bg-light p-3 md:p-5">
+            <div className="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-textcolor/25 bg-light p-3 md:p-5">
               {activeScreen == 'video' ? (
-                <button
-                  onClick={() => setActiveScreen('quiz')}
-                  className="btn border border-textcolor/25 text-base text-textcolor md:w-fit"
-                >
+                <button onClick={() => setActiveScreen('quiz')} className="btn-primary md:w-fit">
                   Start Quiz
                 </button>
               ) : (
-                <button
-                  onClick={() => setActiveScreen('video')}
-                  className="btn border border-textcolor/25 text-base text-textcolor md:w-fit"
-                >
+                <button onClick={() => setActiveScreen('video')} className="btn-primary md:w-fit">
                   Back to Video
                 </button>
               )}
-              <button className="btn-primary text-base md:w-fit">Next Lesson →</button>
+              <button className="btn border border-textcolor/25 text-base text-textcolor md:w-fit">
+                Next Lesson →
+              </button>
             </div>
           </div>
         </main>

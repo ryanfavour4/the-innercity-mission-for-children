@@ -1,16 +1,14 @@
 export function addHashParams(newParams: Record<string, string>) {
-  // Get current query params (remove the ? if present)
-  const currentSearch = typeof window !== 'undefined' ? window.location.search.slice(1) : null
+  if (typeof window === 'undefined') return
 
-  // Create URLSearchParams from current search
-  const params = new URLSearchParams(currentSearch || '')
+  requestAnimationFrame(() => {
+    const params = new URLSearchParams(window.location.search)
 
-  // Add new parameters
-  Object.entries(newParams).forEach(([key, value]) => {
-    params.set(key, value)
+    Object.entries(newParams).forEach(([key, value]) => {
+      params.set(key, value)
+    })
+
+    const newUrl = `${window.location.pathname}?${params.toString()}${window.location.hash}`
+    window.history.replaceState(null, '', newUrl)
   })
-
-  // Update URL with search params, keeping hash if it exists
-  const newUrl = `${window.location.pathname}?${params.toString()}${window.location.hash}`
-  window.history.replaceState({}, '', newUrl)
 }
