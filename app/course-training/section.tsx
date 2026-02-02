@@ -234,7 +234,7 @@ export function QuizzesSlider({ activeClass }: QuizzesSliderType) {
       spaceBetween={40}
     >
       {data?.map((q, idx) => (
-        <SwiperSlide key={q._id}>
+        <SwiperSlide className={'flex flex-col items-start'} key={q._id}>
           <p className="mb-2 text-sm text-primary/75">
             Question {idx + 1} of {data.length}
           </p>
@@ -245,7 +245,7 @@ export function QuizzesSlider({ activeClass }: QuizzesSliderType) {
             Your result and score will be shown after submission
           </small>
 
-          <div className="flex flex-col gap-4 md:grid md:grid-cols-2">
+          <div className="flex w-full flex-col gap-4 md:grid md:grid-cols-2">
             {q.options.map((o) => {
               const isSelected = getSelectedAnswer(q._id) === o._id
 
