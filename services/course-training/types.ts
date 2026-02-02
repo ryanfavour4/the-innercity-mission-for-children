@@ -173,3 +173,25 @@ export interface IAnswersAnswerType {
   selectedAnswerId: string
   isCorrect?: boolean
 }
+
+export interface IPostSubmitAnswersServiceRes {
+  userId: string
+  courseId: string
+  classId: string
+  answers: IPostSubmitAnswersServiceAnswer[]
+  totalQuestions: number
+  correctAnswers: number
+  percentage: number
+  passed: boolean
+  _id: string
+  createdAt: string
+  updatedAt: string
+  __v: number
+}
+
+export interface IPostSubmitAnswersServiceAnswer {
+  questionId: string
+  selectedAnswerId: string
+  isCorrect: boolean
+  _id: string
+}

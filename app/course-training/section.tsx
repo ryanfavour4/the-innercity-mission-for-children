@@ -7,6 +7,7 @@ import { Icon } from '@iconify/react'
 import {
   IGetClassesByCourseIdService,
   IPostSubmitAnswersServicePayload,
+  IPostSubmitAnswersServiceRes,
   SwrMutateType,
 } from '@/services/course-training/types'
 import { addHashParams } from '@/utils/url-hash'
@@ -163,7 +164,11 @@ export function QuizzesSlider({ activeClass }: QuizzesSliderType) {
     if (courseId && classId) {
       const payload = { courseId, classId, answers }
       trigger(payload)
-        .then((res) => console.log(res))
+        .then((res: IPostSubmitAnswersServiceRes) => {
+          toast.success(
+            `Quiz submitted, you got ${res.correctAnswers} answers right, (${res.percentage}%)`,
+          )
+        })
         .catch((err) => {
           console.log(err.response.status)
           if (err.response.status === 401) {
