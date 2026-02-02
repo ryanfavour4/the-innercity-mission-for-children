@@ -37,7 +37,7 @@ export default function LiveStreamPage() {
       <div className="bg-white py-6">
         <div className="wrapper">
           <h3 className="sub-header max-w-xl text-xl font-bold before:top-4 md:text-2xl">
-            School Building and Children&apos;s Learning Center Sponsorship Promo
+            The InnerCity Mission Refugee Mission to Bidibidi IDP Camp
           </h3>
         </div>
         <div className="wrapper mt-6 grid grid-cols-12 gap-6">
@@ -45,12 +45,12 @@ export default function LiveStreamPage() {
             <VideoPlayer
               src={
                 // 'https://playlist.dacast.com/live/602498bd0ab279ef90d21c11e370e84f-live-ba817332-b74a-3b86-e4ae-0a059bdc404d/master.m3u8'
-                'https://player.vimeo.com/video/1155683488?h=0ef607f31a'
+                'https://player.vimeo.com/video/1160837876?h=94bedf0605'
               }
               className="w-full !max-w-6xl md:!h-full"
             />
             <h4 className="ellipsis-2 text-xl font-bold uppercase md:text-2xl">
-              School Building and Children&apos;s Learning Center Sponsorship Promo
+              The InnerCity Mission Refugee Mission to Bidibidi IDP Camp
             </h4>
           </div>
           <div className="rounlg col-span-12 border-2 px-2 py-3 md:col-span-5 lg:col-span-4">

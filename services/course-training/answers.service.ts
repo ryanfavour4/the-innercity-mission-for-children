@@ -45,13 +45,17 @@ export const getAnswersByIdService = async ({ id }: { id: string }) => {
 }
 
 export const postSubmitAnswersService = async (payload: IPostSubmitAnswersServicePayload) => {
+  console.log('RIGHT HERE', payload)
   const response = await axiosInstance.post(`${baseUrl}/answers/submit`, payload)
+  console.log('RIGHT HERE', response)
   const res = response.data
 
   if (response.status < 200 || response.status >= 300) {
     const errorMessage = response.data?.message || 'Something went wrong'
     throw new Error(errorMessage)
   }
+
+  // if (response.)
 
   return res
 }

@@ -15,6 +15,8 @@ import { getQuestionsByClassIdService } from '@/services/course-training/questio
 import useSWR from 'swr'
 import { postSubmitAnswersService } from '@/services/course-training/answers.service'
 import useSWRMutation from 'swr/mutation'
+import { toast } from 'react-toastify'
+import { useRouter } from 'next/navigation'
 
 type ClassesSidebarType = {
   navOpen: boolean
@@ -125,6 +127,7 @@ type QuizzesSliderType = {
 }
 
 export function QuizzesSlider({ activeClass }: QuizzesSliderType) {
+  const navigate = useRouter()
   const searchParams =
     typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : null
   const classId = searchParams?.get('class')
@@ -160,6 +163,15 @@ export function QuizzesSlider({ activeClass }: QuizzesSliderType) {
     if (courseId && classId) {
       const payload = { courseId, classId, answers }
       trigger(payload)
+        .then((res) => console.log(res))
+        .catch((err) => {
+          console.log(err.response.status)
+          if (err.response.status === 401) {
+            toast.error('Please login to continue your course')
+            navigate.push('/course-training/auth')
+          }
+        })
+        .finally(() => console.log())
       console.log(payload)
     }
   }
