@@ -1,3 +1,4 @@
+'use client'
 import Image from 'next/image'
 import Link from 'next/link'
 import logoDefault from '@/public/assets/icons/logo-black-text.png'
