@@ -1,5 +1,19 @@
-// ✅ Do this instead
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 export default function SubLayout({ children }: { children: React.ReactNode }) {
-  return <div className="antialiased">{children}</div>
+  return (
+    <div className="antialiased">
+      {children}
+      <ToastContainer
+        position="top-center"
+        autoClose={3000}
+        newestOnTop
+        closeOnClick
+        pauseOnFocusLoss={false}
+        pauseOnHover={false}
+        draggable={false}
+      />
+    </div>
+  )
 }

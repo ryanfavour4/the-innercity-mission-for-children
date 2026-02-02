@@ -6,20 +6,19 @@ import { MenuFriesIcon } from '@/components/svgs'
 import { useEffect, useState } from 'react'
 import { ClassesSidebar, QuizzesSlider } from './section'
 import VideoPlayer from '@/components/video-player'
-import useSWRImmutable from 'swr/immutable'
-import { useRouter } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 import { getClassesByCourseIdService } from '@/services/course-training/classes.service'
 import { IGetClassesByCourseIdService } from '@/services/course-training/types'
 import { toast } from 'react-toastify'
+import useSWR from 'swr'
 
 export default function CourseTraining() {
-  const searchParams =
-    typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : null
+  const searchParams = useSearchParams()
+  const classId = searchParams.get('class')
+  const courseId = searchParams.get('course')
   const navigate = useRouter()
-  const courseId = searchParams?.get('course')
-  const classId = searchParams?.get('class')
   const [activeClass, setActiveClass] = useState<IGetClassesByCourseIdService | null>(null)
-  const { data: classData, isLoading: classIsLoading } = useSWRImmutable('classes/id', () =>
+  const { data: classData, isLoading: classIsLoading } = useSWR('classes/id', () =>
     getClassesByCourseIdService({ id: courseId || '' }),
   )
   const [navOpen, setNavOpen] = useState(false)
@@ -29,7 +28,7 @@ export default function CourseTraining() {
     const timer = setTimeout(() => {
       if (courseId == null) {
         console.log(courseId)
-        navigate.push('/course-training/home#courses')
+        navigate.replace('/course-training/home#courses')
         toast.warn('Please select a course from the options below')
       }
     }, 3000)
@@ -40,6 +39,10 @@ export default function CourseTraining() {
   useEffect(() => {
     console.log(classId)
   }, [classId])
+
+  useEffect(() => {
+    console.log(courseId)
+  }, [courseId])
 
   useEffect(() => {
     console.log(activeClass)

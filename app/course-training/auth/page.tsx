@@ -21,13 +21,11 @@ export default function AuthPage() {
   )
 
   useEffect(() => {
-    if (profileSS) navigate.push('/course-training/home#courses')
-  }, [navigate, profileSS])
+    if (profileSS) navigate.replace('/course-training/home#courses')
+    console.log(profileSS)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [profileSS])
 
-  //   const kingChatFetcher = (
-  //   _key: string,
-  //   { arg }: { arg: { accessToken: string; refreshToken: string } }
-  // ) => getKingChatProfile(arg);
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-slate-50 px-2 py-6 md:p-6">
       {/* Back to Home Link */}

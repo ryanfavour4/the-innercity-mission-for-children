@@ -19,6 +19,10 @@ export const getQuestionsService = async () => {
 }
 
 export const getQuestionsByClassIdService = async ({ id }: { id: string }) => {
+  if (!id) {
+    return null
+  }
+  console.log(id, 'THE ID GOT HERE')
   const response = await axios.get(`${baseUrl}/questions/class/${id}`)
   const res: IGetQuestionsByClassIdServiceRes = response.data
 

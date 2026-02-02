@@ -15,6 +15,10 @@ export const getClassesService = async () => {
 }
 
 export const getClassesByCourseIdService = async ({ id }: { id: string }) => {
+  if (!id) {
+    return null
+  }
+
   const response = await axios.get(`${baseUrl}/classes/course/${id}`)
   const res: IGetClassesByCourseIdServiceRes = response.data
 
@@ -27,6 +31,10 @@ export const getClassesByCourseIdService = async ({ id }: { id: string }) => {
 }
 
 export const getClassesByIdService = async ({ id }: { id: string }) => {
+  if (!id) {
+    return null
+  }
+
   const response = await axios.get(`${baseUrl}/class/${id}`)
   const res: IGetClassesService = response.data
 

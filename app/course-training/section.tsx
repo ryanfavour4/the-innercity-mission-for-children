@@ -18,7 +18,7 @@ import useSWR from 'swr'
 import { postSubmitAnswersService } from '@/services/course-training/answers.service'
 import useSWRMutation from 'swr/mutation'
 import { toast } from 'react-toastify'
-import { useRouter } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 
 type ClassesSidebarType = {
   navOpen: boolean
@@ -130,16 +130,19 @@ type QuizzesSliderType = {
 
 export function QuizzesSlider({ activeClass }: QuizzesSliderType) {
   const navigate = useRouter()
-  const searchParams =
-    typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : null
-  const classId = searchParams?.get('class')
-  const courseId = searchParams?.get('course')
+  const isNavigatingRef = useRef(false)
+  const searchParams = useSearchParams()
+  const classId = searchParams.get('class')
+  const courseId = searchParams.get('course')
   const [activeSlideIndex, setActiveSlideIndex] = useState(0)
   const swiperRef = useRef<SwiperClass | null>(null)
   const [answers, setAnswers] = useState<{ questionId: string; selectedAnswerId: string }[]>([])
-  const { data, isLoading } = useSWR(`questions/class/${activeClass?._id}`, () =>
-    getQuestionsByClassIdService({ id: activeClass?._id || '' }),
+  const shouldFetch = !!activeClass?._id
+  const { data, isLoading } = useSWR(
+    shouldFetch ? `questions/class/${activeClass._id}` : null,
+    () => getQuestionsByClassIdService({ id: activeClass!._id }),
   )
+
   const answerSubmitSwrMutate: SwrMutateType<IPostSubmitAnswersServicePayload> = (_, { arg }) =>
     postSubmitAnswersService(arg)
   const { trigger, isMutating } = useSWRMutation('/answer/submit', answerSubmitSwrMutate)
@@ -162,24 +165,19 @@ export function QuizzesSlider({ activeClass }: QuizzesSliderType) {
   }
 
   const submitQuestion = () => {
-    if (courseId && classId) {
-      const payload = { courseId, classId, answers }
-      trigger(payload)
-        .then((res: IPostSubmitAnswersServiceRes) => {
-          toast.success(
-            `Quiz submitted, you got ${res.correctAnswers} answers right, (${res.percentage}%)`,
-          )
-        })
-        .catch((err) => {
-          console.log(err.response.status)
-          if (err.response.status === 401) {
-            toast.error('Please login to continue your course')
-            navigate.push('/course-training/auth')
-          }
-        })
-        .finally(() => console.log())
-      console.log(payload)
-    }
+    if (!courseId || !classId) return
+
+    trigger({ courseId, classId, answers })
+      .then((res: IPostSubmitAnswersServiceRes) => {
+        toast.success(`Quiz submitted, you got ${res.correctAnswers} answers right`)
+      })
+      .catch((err) => {
+        if (err?.response?.status === 401 && !isNavigatingRef.current) {
+          isNavigatingRef.current = true
+          toast.error('Please login to continue your course')
+          navigate.replace('/course-training/auth')
+        }
+      })
   }
 
   /* ---------------------------- navigation logic ---------------------------- */
@@ -208,7 +206,11 @@ export function QuizzesSlider({ activeClass }: QuizzesSliderType) {
 
   /* ------------------ session storage (optional but solid) ------------------ */
   useEffect(() => {
-    resetQuiz()
+    if (!activeClass?._id || !swiperRef.current) return
+
+    requestAnimationFrame(() => {
+      resetQuiz()
+    })
   }, [activeClass?._id])
 
   useEffect(() => {

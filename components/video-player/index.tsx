@@ -89,7 +89,8 @@ const VideoPlayer = ({ src, thumb = thumbnail, autoplay = false, className }: Vi
         {thumb && (
           <Image
             alt="thumbnail"
-            src={thumb}
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            src={thumb || (null as any)}
             className={`absolute inset-0 z-[1] h-full w-full ${showThumbnail ? 'block' : 'hidden'}`}
             width={640}
             height={360}
@@ -97,7 +98,8 @@ const VideoPlayer = ({ src, thumb = thumbnail, autoplay = false, className }: Vi
         )}
         <ReactPlayer
           ref={playerRef}
-          src={src}
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          src={src || (null as any)}
           // src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
           playing={playing}
           controls={false} // hide native controls
