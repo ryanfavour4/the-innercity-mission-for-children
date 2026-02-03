@@ -12,7 +12,6 @@ import {
   IPostSubmitAnswersServiceRes,
   SwrMutateType,
 } from '@/services/course-training/types'
-import { useStorageListener } from '@/hooks/use-storage'
 import { getQuestionsByClassIdService } from '@/services/course-training/questions.service'
 import useSWR from 'swr'
 import { postSubmitAnswersService } from '@/services/course-training/answers.service'
@@ -38,12 +37,13 @@ export function ClassesSidebar({
 }: ClassesSidebarType) {
   const updateParams = useUpdateQueryParams()
   const searchParams = useSearchParams()
+  // const [courseCheckpoint, setCourseCheckpoint] = useState<{
+  //   class: string
+  //   course: string
+  // } | null>(null)
   const classId = searchParams.get('class')
   const courseId = searchParams.get('course')
   const [checkpoint, setCheckpoint] = useState({ class: '' })
-  const courseCheckpoint: { class: string; course: string } = JSON.parse(
-    useStorageListener('course-checkpoint') || '{}',
-  )
 
   const onClassClick = ({ classObj }: { classObj: IGetClassesByCourseIdService }) => {
     setActiveClass(classObj)
@@ -54,29 +54,21 @@ export function ClassesSidebar({
   }
 
   useEffect(() => {
-    if (courseCheckpoint && !courseId && !classId) updateParams(courseCheckpoint)
-  }, [classId, courseCheckpoint, courseId, updateParams])
-
-  useEffect(() => {
-    if (courseCheckpoint) setCheckpoint({ class: courseCheckpoint.class })
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
-
-  useEffect(() => {
-    if (courseCheckpoint) {
-      const activeCl = classes.find((item) => item._id == courseCheckpoint.class)
-      setActiveClass(activeCl || null)
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [courseCheckpoint])
-
-  useEffect(() => {
     if (!classes.length) return
-    if (courseCheckpoint.class) return
+    const lastCourseCheckpoint: {
+      class: string
+      course: string
+    } | null = JSON.parse(sessionStorage.getItem('course-checkpoint') || '{}')
+    console.log(lastCourseCheckpoint)
+    if (lastCourseCheckpoint?.class && classes.length) {
+      const activeCl = classes.find((item) => item._id == classId)
+      if (activeCl) onClassClick({ classObj: activeCl })
+    } else {
+      onClassClick({ classObj: classes[0] })
+    }
 
-    onClassClick({ classObj: classes[0] })
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [classes, courseCheckpoint.class])
+  }, [classes])
 
   return (
     <aside
