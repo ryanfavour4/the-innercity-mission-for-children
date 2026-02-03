@@ -19,7 +19,6 @@ import { postSubmitAnswersService } from '@/services/course-training/answers.ser
 import useSWRMutation from 'swr/mutation'
 import { toast } from 'react-toastify'
 import { useRouter, useSearchParams } from 'next/navigation'
-import { useHasMounted } from '@/hooks/use-mounted'
 import { useUpdateQueryParams } from '@/hooks/use-query-params'
 
 type ClassesSidebarType = {
@@ -38,7 +37,6 @@ export function ClassesSidebar({
   setActiveClass,
 }: ClassesSidebarType) {
   const updateParams = useUpdateQueryParams()
-  const hasMounted = useHasMounted()
   const searchParams = useSearchParams()
   const classId = searchParams.get('class')
   const courseId = searchParams.get('course')
@@ -56,8 +54,8 @@ export function ClassesSidebar({
   }
 
   useEffect(() => {
-    // if (courseCheckpoint && !courseId && !classId) updateParams(courseCheckpoint)
-  }, [classId, courseCheckpoint, courseId])
+    if (courseCheckpoint && !courseId && !classId) updateParams(courseCheckpoint)
+  }, [classId, courseCheckpoint, courseId, updateParams])
 
   useEffect(() => {
     if (courseCheckpoint) setCheckpoint({ class: courseCheckpoint.class })
@@ -73,13 +71,12 @@ export function ClassesSidebar({
   }, [courseCheckpoint])
 
   useEffect(() => {
-    if (!hasMounted) return
     if (!classes.length) return
     if (courseCheckpoint.class) return
 
     onClassClick({ classObj: classes[0] })
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [classes, courseCheckpoint.class, hasMounted])
+  }, [classes, courseCheckpoint.class])
 
   return (
     <aside

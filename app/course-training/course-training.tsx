@@ -50,10 +50,6 @@ export default function CourseTraining() {
     console.log(activeClass)
   }, [activeClass])
 
-  if (!hasMounted) {
-    return <div className="p-6">Loading course…</div>
-  }
-
   return (
     <>
       <div className="flex h-screen bg-ghost-white">
