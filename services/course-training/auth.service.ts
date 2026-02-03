@@ -1,15 +1,15 @@
 import axios from 'axios'
 import kingsChatWebSdk from 'kingschat-web-sdk'
-import { IPostLoginServiceRes, IProfileRes } from './types'
+import { IProfileRes } from './types'
 import { baseUrl, kingsChatClientId } from './constants'
 import { encryptClient } from '@/utils/crypt.client'
 
 export const postLoginService = async (credentials: { email: string; password: string }) => {
   const response = await axios.post(`${baseUrl}/auth/login`, credentials)
-  const res: IPostLoginServiceRes = response.data
+  const res: IProfileRes = response.data
 
-  if (res.status < 200 || (res.status >= 300 && res?.error)) {
-    const errorMessage = res?.error?.message || res.message || 'Something went wrong'
+  if (response.status < 200 || response.status >= 300) {
+    const errorMessage = response?.data?.message || response.data || 'Something went wrong'
     throw new Error(errorMessage)
   }
 
@@ -30,19 +30,19 @@ export const postLogoutService = async () => {
 }
 
 export const postRegisterService = async (credentials: {
-  fullname: string
+  name: string
   email: string
   password: string
 }) => {
   const response = await axios.post(`${baseUrl}/auth/register`, credentials)
-  const res = response.data
+  const res: IProfileRes = response.data
 
-  if (res.status < 200 || res.status >= 300) {
-    const errorMessage = res.error?.message || res.message || 'Something went wrong'
+  if (response.status < 200 || response.status >= 300) {
+    const errorMessage = response?.data?.message || response.data || 'Something went wrong'
     throw new Error(errorMessage)
   }
 
-  return response
+  return res
 }
 
 export const loginWithKingsChat = async () => {

@@ -29,7 +29,7 @@ export default function CourseTraining() {
   useEffect(() => {
     if (!hasMounted) return
     if (courseId !== null) return
-
+    console.log(classId)
     const t = setTimeout(() => {
       toast.warn('Please select a course from the options below')
       navigate.replace('/course-training/home#courses')
@@ -37,18 +37,6 @@ export default function CourseTraining() {
 
     return () => clearTimeout(t)
   }, [courseId, hasMounted, navigate])
-
-  useEffect(() => {
-    console.log(classId)
-  }, [classId])
-
-  useEffect(() => {
-    console.log(courseId)
-  }, [courseId])
-
-  useEffect(() => {
-    console.log(activeClass)
-  }, [activeClass])
 
   return (
     <>

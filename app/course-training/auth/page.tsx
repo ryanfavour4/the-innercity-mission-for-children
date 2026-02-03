@@ -1,20 +1,41 @@
 'use client'
-import { useEffect, useState } from 'react'
+import { FormEvent, useEffect, useState } from 'react'
 import { Icon } from '@iconify/react'
 import Link from 'next/link'
 import Image from 'next/image'
 import logo from '@/public/assets/icons/logo-icon.png'
 import kingsChatLogo from '@/public/assets/icons/kingschat-logo.png'
 import useSWRMutation from 'swr/mutation'
-import { loginWithKingsChat } from '@/services/course-training/auth.service'
+import {
+  loginWithKingsChat,
+  postLoginService,
+  postRegisterService,
+} from '@/services/course-training/auth.service'
 import { useStorageListener } from '@/hooks/use-storage'
-import { decryptClient } from '@/utils/crypt.client'
-import { IProfileRes } from '@/services/course-training/types'
+import { decryptClient, encryptClient } from '@/utils/crypt.client'
+import { IProfileRes, SwrMutateType } from '@/services/course-training/types'
 import { useRouter } from 'next/navigation'
+import { toast } from 'react-toastify'
 
 export default function AuthPage() {
   const [isLogin, setIsLogin] = useState(true)
+  const [email, setEmail] = useState('')
+  const [name, setName] = useState('')
   const navigate = useRouter()
+  const loginSwrMutate: SwrMutateType<{ email: string; password: string }> = (_, { arg }) =>
+    postLoginService(arg)
+  const { trigger: triggerLogin, isMutating: loginLoading } = useSWRMutation(
+    '/auth/login',
+    loginSwrMutate,
+  )
+  const registerSwrMutate: SwrMutateType<{ email: string; password: string; name: string }> = (
+    _,
+    { arg },
+  ) => postRegisterService(arg)
+  const { trigger: triggerRegister, isMutating: registerLoading } = useSWRMutation(
+    '/auth/register',
+    registerSwrMutate,
+  )
   const { trigger, isMutating } = useSWRMutation('/auth/kingschat', loginWithKingsChat)
   const profileSS: IProfileRes | null = decryptClient(
     useStorageListener('course-training-profile') || '',
@@ -25,6 +46,30 @@ export default function AuthPage() {
     console.log(profileSS)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [profileSS])
+
+  const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    if (isLogin) {
+      triggerLogin({ email, password: email })
+        .catch((err) => {
+          toast.error(err?.response?.data?.message)
+          console.log(err)
+        })
+        .then((res) => {
+          console.log(res)
+          sessionStorage.setItem('course-training-profile', encryptClient(res))
+        })
+    } else {
+      triggerRegister({ email, name, password: email })
+        .catch((err) => {
+          toast.error(err?.response?.data?.message)
+          console.log(err)
+        })
+        .then((res: IProfileRes) => {
+          sessionStorage.setItem('course-training-profile', encryptClient(res))
+        })
+    }
+  }
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-slate-50 px-2 py-6 md:p-6">
@@ -56,13 +101,20 @@ export default function AuthPage() {
             <h1 className="text-3xl font-bold text-gray-900">
               {isLogin ? 'Welcome Back' : 'Create Account'}
             </h1>
-            <p className="mt-2 text-textcolor/75">
-              {isLogin ? 'Please log in.' : 'Start your learning journey with us today.'}
+            <p className="mt-2 text-base text-textcolor/75">
+              {isLogin ? "Don't have an account?" : 'Already have an account?'}{' '}
+              <button
+                onClick={() => setIsLogin(!isLogin)}
+                className="font-bold text-primary hover:underline"
+                disabled={isMutating || loginLoading || registerLoading}
+              >
+                {isLogin ? 'Sign Up' : 'Log In'}
+              </button>
             </p>
           </div>
 
           {/* Form */}
-          <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+          <form className="space-y-4" onSubmit={handleFormSubmit}>
             {!isLogin && (
               <div>
                 <label className="mb-1 ml-1 block text-sm font-semibold text-gray-700">
@@ -77,6 +129,9 @@ export default function AuthPage() {
                     type="text"
                     placeholder="John Doe"
                     className="bg-gray-50 w-full rounded-2xl border border-gray-200 py-3.5 pl-11 pr-4 outline-none transition-all focus:bg-white focus:ring-2 focus:ring-blue-500"
+                    required
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
                   />
                 </div>
               </div>
@@ -95,11 +150,14 @@ export default function AuthPage() {
                   type="email"
                   placeholder="name@example.com"
                   className="bg-gray-50 w-full rounded-2xl border border-gray-200 py-3.5 pl-11 pr-4 outline-none transition-all focus:bg-white focus:ring-2 focus:ring-blue-500"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
             </div>
 
-            <div>
+            <div className="hidden">
               <div className="mb-1 ml-1 flex justify-between">
                 <label className="text-sm font-semibold text-gray-700">Password</label>
                 {isLogin && (
@@ -121,30 +179,13 @@ export default function AuthPage() {
               </div>
             </div>
 
-            {!isLogin && (
-              <div>
-                <label className="mb-1 ml-1 block text-sm font-semibold text-gray-700">
-                  Confirm Password
-                </label>
-                <div className="relative">
-                  <Icon
-                    icon="lucide:shield-check"
-                    className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
-                  />
-                  <input
-                    type="password"
-                    placeholder="••••••••"
-                    className="bg-gray-50 w-full rounded-2xl border border-gray-200 py-3.5 pl-11 pr-4 outline-none transition-all focus:bg-white focus:ring-2 focus:ring-blue-500"
-                  />
-                </div>
-              </div>
-            )}
-
             <button
-              disabled={isMutating}
+              disabled={isMutating || loginLoading || registerLoading}
               className="btn-primary mt-10 flex w-full items-center justify-center shadow-lg shadow-blue-200 transition-all active:scale-[0.98]"
             >
-              {isMutating && <Icon icon={'codex:loader'} className="text-2xl" />}
+              {(isMutating || loginLoading || registerLoading) && (
+                <Icon icon={'codex:loader'} className="text-2xl" />
+              )}
               {isLogin ? 'Sign In' : 'Create Account'}
             </button>
           </form>
@@ -166,21 +207,24 @@ export default function AuthPage() {
             </button>
             <button
               onClick={() => trigger()}
-              disabled={isMutating}
+              disabled={isMutating || loginLoading || registerLoading}
               className="hover:bg-gray-50 flex items-center justify-center gap-2 rounded-2xl border border-primary py-3 transition"
             >
-              {isMutating && <Icon icon={'codex:loader'} className="text-2xl" />}
+              {(isMutating || loginLoading || registerLoading) && (
+                <Icon icon={'codex:loader'} className="text-2xl" />
+              )}
               <Image alt="kingsChatLogo" unoptimized src={kingsChatLogo} className="size-5" />
               <span className="text-sm font-semibold">Signin With Kingchat</span>
             </button>
           </div>
 
           {/* Toggle Link */}
-          <p className="mt-8 text-center text-base text-textcolor/75">
+          <p className="mt-8 hidden text-center text-base text-textcolor/75">
             {isLogin ? "Don't have an account?" : 'Already have an account?'}{' '}
             <button
               onClick={() => setIsLogin(!isLogin)}
               className="font-bold text-primary hover:underline"
+              disabled={isMutating || loginLoading || registerLoading}
             >
               {isLogin ? 'Sign Up' : 'Log In'}
             </button>

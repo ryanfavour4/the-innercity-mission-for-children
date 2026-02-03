@@ -75,7 +75,7 @@ export function ClassesSidebar({
       className={`absolute bottom-0 top-0 z-20 w-80 overflow-y-auto border-r bg-light md:relative md:block md:!translate-x-0 ${!navOpen && '!-translate-x-full'}`}
     >
       <div className="flex items-center gap-4 border-b border-textcolor/25 p-6">
-        <Link href={'#'}>
+        <Link href={'/course-training/home#courses'}>
           <Image
             src={logoDefault}
             unoptimized
@@ -113,6 +113,12 @@ export function ClassesSidebar({
             </button>
           ))}
       </nav>
+
+      <div className="border border-red-500">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda modi reprehenderit vero
+        consequuntur debitis. Quasi asperiores, impedit quidem saepe sunt possimus, aliquid dolor
+        sit sed modi eius molestiae quisquam labore.
+      </div>
     </aside>
   )
 }
