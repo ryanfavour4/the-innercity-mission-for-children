@@ -139,8 +139,7 @@ export default function CertificatePage() {
             ICM Education Certification program 101
           </h1>
           <p className="mt-2 text-base text-textcolor/75">
-            This certificates will prove that you have successfully met the standards of the ICM
-            Education Certification program 101
+            Please note these certificates will always be scanned for authenticity
           </p>
           <CertificateImage name={name} />
         </div>
