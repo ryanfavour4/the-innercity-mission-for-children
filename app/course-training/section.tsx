@@ -34,6 +34,7 @@ export function ClassesSidebar({
   navOpen,
   classIsLoading,
   classes,
+  activeClass,
   setActiveClass,
 }: ClassesSidebarType) {
   const updateParams = useUpdateQueryParams()
@@ -66,16 +67,19 @@ export function ClassesSidebar({
       if (activeCl) onClassClick({ classObj: activeCl })
       return
     }
+    if (activeClass && activeClass?._id !== lastCourseCheckpoint?.class) {
+      onClassClick({ classObj: activeClass })
+    }
     onClassClick({ classObj: classes[0] })
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [classes])
+  }, [classes, activeClass])
 
   return (
     <aside
       className={`absolute bottom-0 top-0 z-20 w-80 overflow-y-auto border-r bg-light md:relative md:block md:!translate-x-0 ${!navOpen && '!-translate-x-full'}`}
     >
-      <div className="flex items-center gap-4 border-b border-textcolor/25 p-6">
+      <div className="flex items-center gap-4 border-b border-textcolor/25 p-6 py-2">
         <Link href={'/course-training/home#courses'}>
           <Image
             src={logoDefault}
@@ -116,7 +120,7 @@ export function ClassesSidebar({
       </nav>
 
       <Link
-        href={'/'}
+        href={'/course-training/certificate'}
         className="relative mx-auto mt-16 flex w-[97%] gap-4 rounded-md border-2 border-light bg-primary p-3 text-light ring-2 ring-primary ring-offset-0"
       >
         <Icon
@@ -142,9 +146,16 @@ type QuizzesSliderType = {
   setActiveClass: Dispatch<SetStateAction<IGetClassesByCourseIdService | null>>
   activeClass: IGetClassesByCourseIdService | null
   refetchProgressByCourseId: KeyedMutator<IGetProgressByCourseIdService | null>
+  setQuizCompleted: Dispatch<SetStateAction<boolean>>
+  openSuccessModal: () => void
 }
 
-export function QuizzesSlider({ activeClass, refetchProgressByCourseId }: QuizzesSliderType) {
+export function QuizzesSlider({
+  activeClass,
+  setQuizCompleted,
+  refetchProgressByCourseId,
+  openSuccessModal,
+}: QuizzesSliderType) {
   const navigate = useRouter()
   const isNavigatingRef = useRef(false)
   const searchParams = useSearchParams()
@@ -187,6 +198,8 @@ export function QuizzesSlider({ activeClass, refetchProgressByCourseId }: Quizze
       .then((res: IPostSubmitAnswersServiceRes) => {
         toast.success(`Quiz submitted, you got ${res.correctAnswers} answers right`)
         refetchProgressByCourseId()
+        setQuizCompleted(true)
+        openSuccessModal()
       })
       .catch((err) => {
         if (err?.response?.status === 401 && !isNavigatingRef.current) {

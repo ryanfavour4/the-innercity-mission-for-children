@@ -211,3 +211,19 @@ export interface IGetProgressByCourseIdService {
   updatedAt: string
   __v: number
 }
+
+// !!! =========== CERTIFICATE
+export type IGetCertificateByCourseIdServiceRes = IGetCertificateByCourseIdService[]
+
+export interface IGetCertificateByCourseIdService {
+  _id: string
+  userId: string
+  completedClassIds: string[]
+  totalClasses: number
+  completedClasses: number
+  progressPercent: number
+  isCompleted: boolean
+  createdAt: string
+  updatedAt: string
+  __v: number
+}

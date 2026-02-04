@@ -76,7 +76,9 @@ export default function LandingPage() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-8 flex flex-wrap items-end justify-between gap-5 md:mb-12">
             <div>
-              <h2 className="mb-2 text-xl font-bold md:text-3xl">Popular Courses</h2>
+              <h2 className="mb-2 text-xl font-bold md:text-3xl">
+                Educators Certification Courses
+              </h2>
               <p className="text-textcolor/75">Pick a path and start your journey today.</p>
             </div>
             <button className="hidden items-center gap-1 font-semibold text-primary">
@@ -84,7 +86,7 @@ export default function LandingPage() {
             </button>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-3">
+          <div className="grid gap-8 md:grid-cols-2">
             {isLoading && [1, 2, 3].map((i) => <CourseCardSkeleton key={i} />)}
 
             {data?.map((course) => (
@@ -92,6 +94,7 @@ export default function LandingPage() {
                 key={course._id}
                 id={course._id}
                 title={course.title}
+                description={course.description}
                 quizzes={`${course.questionsCount} Quizzes`}
                 level={`${course.classesCount} Classes`}
               />
@@ -183,11 +186,13 @@ const CourseCardSkeleton = () => (
 // Reusable Course Card Component
 const CourseCard = ({
   title,
+  description,
   quizzes,
   level,
   id,
 }: {
   title: string
+  description: string
   quizzes: string
   level: string
   id: string
@@ -196,11 +201,14 @@ const CourseCard = ({
     href={`/course-training?course=${id}`}
     className="rounded-xl border border-textcolor/25 bg-light p-6 shadow-sm transition-shadow hover:shadow-md"
   >
-    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/25">
-      <Icon icon="lucide:book-open" className="text-2xl text-blue-600" />
+    <div className="flex items-center gap-2">
+      <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/25">
+        <Icon icon="lucide:book-open" className="text-xl text-primary" />
+      </div>
+      <h3 className="mb-2 text-2xl font-bold">{title}</h3>
     </div>
-    <h3 className="mb-2 text-xl font-bold">{title}</h3>
-    <div className="flex items-center gap-4 text-sm text-gray-500">
+    <p className="mb-3 text-base text-textcolor/75">{description}</p>
+    <div className="flex items-center gap-4 text-base font-semibold text-gray-500">
       <span className="flex items-center gap-1">
         <Icon icon="fluent:quiz-28-regular" /> {quizzes}
       </span>

@@ -97,7 +97,7 @@ export default function AuthPage() {
                 height={50}
               />
             </span>
-            <h1 className="text-3xl font-bold text-gray-900">
+            <h1 className="text-3xl font-bold text-dark">
               {isLogin ? 'Welcome Back' : 'Create Account'}
             </h1>
             <p className="mt-2 text-base text-textcolor/75">

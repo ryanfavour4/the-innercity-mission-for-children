@@ -14,6 +14,10 @@ import useSWR from 'swr'
 import { useHasMounted } from '@/hooks/use-mounted'
 import { getProgressByCourseIdService } from '@/services/course-training/progress.service'
 import useSWRImmutable from 'swr/immutable'
+import { useUpdateQueryParams } from '@/hooks/use-query-params'
+import Modal from '@/components/modal'
+import { useModal } from '@/components/modal/useModal'
+import { Icon } from '@iconify/react'
 
 export default function CourseTraining() {
   const hasMounted = useHasMounted()
@@ -21,6 +25,7 @@ export default function CourseTraining() {
   const classId = searchParams.get('class')
   const courseId = searchParams.get('course')
   const navigate = useRouter()
+  const updateParams = useUpdateQueryParams()
   const [activeClass, setActiveClass] = useState<IGetClassesByCourseIdService | null>(null)
   const { data: classData, isLoading: classIsLoading } = useSWR('classes/id', () =>
     getClassesByCourseIdService({ id: courseId || '' }),
@@ -32,8 +37,48 @@ export default function CourseTraining() {
   } = useSWRImmutable(`progress/${courseId}`, () =>
     getProgressByCourseIdService({ id: courseId || '' }),
   )
+  const {
+    closeModal: closeSuccessModal,
+    isModalClosed: isSuccessModalClosed,
+    openModal: openSuccessModal,
+  } = useModal()
+  const [quizCompleted, setQuizCompleted] = useState(false)
   const [navOpen, setNavOpen] = useState(false)
   const [activeScreen, setActiveScreen] = useState<'quiz' | 'video'>('video')
+
+  function getNextClass(classes: IGetClassesByCourseIdService[], currentClassId: string | null) {
+    if (!currentClassId) return null
+
+    const sorted = [...classes].sort((a, b) => a.order - b.order)
+    const index = sorted.findIndex((c) => c._id === currentClassId)
+
+    if (index === -1) return null
+    return sorted[index + 1] ?? null
+  }
+
+  const nextClass = getNextClass(classData || [], activeClass?._id || null)
+
+  const goToNextClass = () => {
+    if (!nextClass) return
+
+    setActiveClass(nextClass)
+
+    updateParams({
+      class: nextClass._id,
+    })
+
+    sessionStorage.setItem(
+      'course-checkpoint',
+      JSON.stringify({
+        course: courseId,
+        class: nextClass._id,
+      }),
+    )
+
+    setQuizCompleted(false)
+    setActiveScreen('video')
+    closeSuccessModal()
+  }
 
   useEffect(() => {
     if (!hasMounted) return
@@ -45,8 +90,7 @@ export default function CourseTraining() {
     }, 300)
 
     return () => clearTimeout(t)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [courseId, hasMounted, navigate])
+  }, [classId, courseId, hasMounted, navigate])
 
   return (
     <>
@@ -115,6 +159,8 @@ export default function CourseTraining() {
                 <QuizzesSlider
                   setActiveClass={setActiveClass}
                   activeClass={activeClass}
+                  setQuizCompleted={setQuizCompleted}
+                  openSuccessModal={openSuccessModal}
                   refetchProgressByCourseId={refetchProgressByCourseId}
                 />
               )}
@@ -130,13 +176,35 @@ export default function CourseTraining() {
                   Back to Video
                 </button>
               )}
-              <button className="btn border border-textcolor/25 text-base text-textcolor md:w-fit">
-                Next Lesson →
-              </button>
+              {quizCompleted && nextClass && (
+                <button
+                  onClick={goToNextClass}
+                  className="btn border border-textcolor/25 text-base text-textcolor md:w-fit"
+                >
+                  Next Class →
+                </button>
+              )}
             </div>
           </div>
         </main>
       </div>
+
+      <Modal
+        closeModal={closeSuccessModal}
+        parentClassName="px-2"
+        isModalClosed={isSuccessModalClosed}
+      >
+        <div className="flex max-w-4xl flex-col items-center gap-2 rounded-lg bg-light p-6 py-8 text-center">
+          <div className="mb-3 aspect-1 w-fit rounded-full border-2 border-light bg-green-500 p-3 text-center text-light ring-2 ring-green-500 ring-offset-0">
+            <Icon icon={'line-md:check-all'} />
+          </div>
+          <h3 className="font-bold">{activeClass?.title}</h3>
+          <p>Congratulations on completing this class, you&apos;re making progress</p>
+          <button onClick={goToNextClass} className="btn-primary mt-4 md:w-fit">
+            Next Class →
+          </button>
+        </div>
+      </Modal>
     </>
   )
 }
