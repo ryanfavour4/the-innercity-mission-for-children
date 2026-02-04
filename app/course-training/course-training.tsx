@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import Link from 'next/link'
-import logoDefault from '@/public/assets/icons/logo-black-text.png'
+import logoDefault from '@/public/assets/icons/educators-cdrtification-program-logo.png'
 import { MenuFriesIcon } from '@/components/svgs'
 import { useEffect, useState } from 'react'
 import { ClassesSidebar, QuizzesSlider } from './section'
@@ -12,6 +12,8 @@ import { IGetClassesByCourseIdService } from '@/services/course-training/types'
 import { toast } from 'react-toastify'
 import useSWR from 'swr'
 import { useHasMounted } from '@/hooks/use-mounted'
+import { getProgressByCourseIdService } from '@/services/course-training/progress.service'
+import useSWRImmutable from 'swr/immutable'
 
 export default function CourseTraining() {
   const hasMounted = useHasMounted()
@@ -22,6 +24,13 @@ export default function CourseTraining() {
   const [activeClass, setActiveClass] = useState<IGetClassesByCourseIdService | null>(null)
   const { data: classData, isLoading: classIsLoading } = useSWR('classes/id', () =>
     getClassesByCourseIdService({ id: courseId || '' }),
+  )
+  const {
+    data: progressData,
+    isLoading: progressIsLoading,
+    mutate: refetchProgressByCourseId,
+  } = useSWRImmutable(`progress/${courseId}`, () =>
+    getProgressByCourseIdService({ id: courseId || '' }),
   )
   const [navOpen, setNavOpen] = useState(false)
   const [activeScreen, setActiveScreen] = useState<'quiz' | 'video'>('video')
@@ -36,6 +45,7 @@ export default function CourseTraining() {
     }, 300)
 
     return () => clearTimeout(t)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [courseId, hasMounted, navigate])
 
   return (
@@ -51,14 +61,14 @@ export default function CourseTraining() {
         />
 
         {/* Main Content Area */}
-        <main className="flex-1 overflow-y-auto p-2 pt-20 md:p-6 md:pt-6 lg:p-10">
+        <main className="flex-1 overflow-y-auto p-2 pt-24 md:p-6 md:pt-6 lg:p-10">
           <nav className="fixed left-0 right-0 top-0 z-20 flex h-fit items-center justify-between bg-light px-2 py-2 md:hidden">
             <Link href={'#'}>
               <Image
                 src={logoDefault}
                 unoptimized
                 alt="logo"
-                className="w-20 md:w-24"
+                className="w-14 md:w-16"
                 width={100}
                 height={50}
               />
@@ -82,10 +92,18 @@ export default function CourseTraining() {
             <section className="rounded-lg bg-light p-3 shadow md:rounded-xl">
               <div className="mb-2 flex justify-between text-sm font-medium">
                 <span>Overall Progress</span>
-                <span>10%</span>
+                <span>{progressData?.progressPercent || 0}%</span>
               </div>
               <div className="h-2 w-full rounded-full bg-ghost-white">
-                <div className="h-2 rounded-full bg-primary" style={{ width: `50%` }} />
+                {!progressIsLoading && (
+                  <div
+                    className="h-2 rounded-full bg-primary"
+                    style={{ width: `${progressData?.progressPercent || 0}%` }}
+                  />
+                )}
+                {progressIsLoading && (
+                  <div className={`h-2 w-full animate-pulse rounded-full bg-textcolor/25`} />
+                )}
               </div>
             </section>
 
@@ -94,7 +112,11 @@ export default function CourseTraining() {
               {activeScreen == 'video' ? (
                 <VideoPlayer thumb={''} src={activeClass?.videoUrl || ''} className="max-w-full" />
               ) : (
-                <QuizzesSlider setActiveClass={setActiveClass} activeClass={activeClass} />
+                <QuizzesSlider
+                  setActiveClass={setActiveClass}
+                  activeClass={activeClass}
+                  refetchProgressByCourseId={refetchProgressByCourseId}
+                />
               )}
             </div>
 

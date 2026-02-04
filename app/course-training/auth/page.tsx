@@ -3,7 +3,7 @@ import { FormEvent, useEffect, useState } from 'react'
 import { Icon } from '@iconify/react'
 import Link from 'next/link'
 import Image from 'next/image'
-import logo from '@/public/assets/icons/logo-icon.png'
+import logo from '@/public/assets/icons/educators-cdrtification-program-logo.png'
 import kingsChatLogo from '@/public/assets/icons/kingschat-logo.png'
 import useSWRMutation from 'swr/mutation'
 import {
@@ -96,7 +96,6 @@ export default function AuthPage() {
                 width={100}
                 height={50}
               />
-              <small className="text-xs">ICM Training</small>
             </span>
             <h1 className="text-3xl font-bold text-gray-900">
               {isLogin ? 'Welcome Back' : 'Create Account'}

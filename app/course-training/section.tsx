@@ -2,18 +2,19 @@
 export const dynamic = 'force-dynamic'
 import Image from 'next/image'
 import Link from 'next/link'
-import logoDefault from '@/public/assets/icons/logo-black-text.png'
+import logoDefault from '@/public/assets/icons/educators-cdrtification-program-logo.png'
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react'
 import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react'
 import { Icon } from '@iconify/react'
 import {
   IGetClassesByCourseIdService,
+  IGetProgressByCourseIdService,
   IPostSubmitAnswersServicePayload,
   IPostSubmitAnswersServiceRes,
   SwrMutateType,
 } from '@/services/course-training/types'
 import { getQuestionsByClassIdService } from '@/services/course-training/questions.service'
-import useSWR from 'swr'
+import useSWR, { KeyedMutator } from 'swr'
 import { postSubmitAnswersService } from '@/services/course-training/answers.service'
 import useSWRMutation from 'swr/mutation'
 import { toast } from 'react-toastify'
@@ -80,7 +81,7 @@ export function ClassesSidebar({
             src={logoDefault}
             unoptimized
             alt="logo"
-            className="w-16 md:w-16"
+            className="w-16 md:w-14"
             width={100}
             height={50}
           />
@@ -140,9 +141,10 @@ export function ClassesSidebar({
 type QuizzesSliderType = {
   setActiveClass: Dispatch<SetStateAction<IGetClassesByCourseIdService | null>>
   activeClass: IGetClassesByCourseIdService | null
+  refetchProgressByCourseId: KeyedMutator<IGetProgressByCourseIdService | null>
 }
 
-export function QuizzesSlider({ activeClass }: QuizzesSliderType) {
+export function QuizzesSlider({ activeClass, refetchProgressByCourseId }: QuizzesSliderType) {
   const navigate = useRouter()
   const isNavigatingRef = useRef(false)
   const searchParams = useSearchParams()
@@ -184,6 +186,7 @@ export function QuizzesSlider({ activeClass }: QuizzesSliderType) {
     trigger({ courseId, classId, answers })
       .then((res: IPostSubmitAnswersServiceRes) => {
         toast.success(`Quiz submitted, you got ${res.correctAnswers} answers right`)
+        refetchProgressByCourseId()
       })
       .catch((err) => {
         if (err?.response?.status === 401 && !isNavigatingRef.current) {
@@ -191,6 +194,8 @@ export function QuizzesSlider({ activeClass }: QuizzesSliderType) {
           toast.error('Please login to continue your course')
           navigate.replace('/course-training/auth')
         }
+        toast.error(err.response.data.message)
+        console.log(err)
       })
   }
 

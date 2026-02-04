@@ -195,3 +195,19 @@ export interface IPostSubmitAnswersServiceAnswer {
   isCorrect: boolean
   _id: string
 }
+
+// !!! =========== PROGRESS
+export type IGetProgressByCourseIdServiceRes = IGetProgressByCourseIdService[]
+
+export interface IGetProgressByCourseIdService {
+  _id: string
+  userId: string
+  completedClassIds: string[]
+  totalClasses: number
+  completedClasses: number
+  progressPercent: number
+  isCompleted: boolean
+  createdAt: string
+  updatedAt: string
+  __v: number
+}

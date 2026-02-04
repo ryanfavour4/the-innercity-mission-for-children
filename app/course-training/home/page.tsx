@@ -1,7 +1,7 @@
 'use client'
 import { useStorageListener } from '@/hooks/use-storage'
 import Footer from '@/layouts/footer'
-import logo from '@/public/assets/icons/logo-icon.png'
+import logo from '@/public/assets/icons/educators-cdrtification-program-logo.png'
 import { postLogoutService } from '@/services/course-training/auth.service'
 import { getCoursesSubModulesService } from '@/services/course-training/courses.service'
 import { IProfileRes } from '@/services/course-training/types'
@@ -33,7 +33,6 @@ export default function LandingPage() {
               width={100}
               height={50}
             />
-            <small className="text-xs">ICM Training</small>
           </span>
           {profileSS ? (
             <div className="flex items-center justify-center gap-2">
