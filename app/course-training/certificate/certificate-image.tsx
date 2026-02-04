@@ -29,7 +29,8 @@ export default function CertificateImage({ name }: CertificateImageProps) {
 
       if (name) {
         // Name styling
-        ctx.font = 'bold 64px serif'
+        ctx.font = '600 64px "Playfair Display", serif'
+        // ctx.font = 'bold 64px serif'
         ctx.fillStyle = '#1f2937' // dark slate
         ctx.textAlign = 'center'
 
@@ -52,7 +53,7 @@ export default function CertificateImage({ name }: CertificateImageProps) {
     <div className="space-y-4">
       <canvas ref={canvasRef} className="w-full rounded-xl border" />
 
-      <button onClick={downloadCertificate} className="btn-primary w-fit" disabled={!name}>
+      <button onClick={downloadCertificate} className="btn-primary md:w-fit" disabled={!name}>
         Download Certificate
       </button>
     </div>

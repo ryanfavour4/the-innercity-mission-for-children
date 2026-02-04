@@ -72,7 +72,7 @@ export default function LandingPage() {
       </header>
 
       {/* Course Section */}
-      <section id="courses" className="bg-gray-50 px-8 py-24">
+      <section id="courses" className="bg-gray-50 px-3 py-24 md:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="mb-8 flex flex-wrap items-end justify-between gap-5 md:mb-12">
             <div>
