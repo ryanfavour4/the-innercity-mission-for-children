@@ -61,11 +61,11 @@ export function ClassesSidebar({
     } | null = JSON.parse(sessionStorage.getItem('course-checkpoint') || '{}')
     console.log(lastCourseCheckpoint)
     if (lastCourseCheckpoint?.class && classes.length) {
-      const activeCl = classes.find((item) => item._id == classId)
+      const activeCl = classes.find((item) => item._id == lastCourseCheckpoint.class || classId)
       if (activeCl) onClassClick({ classObj: activeCl })
-    } else {
-      onClassClick({ classObj: classes[0] })
+      return
     }
+    onClassClick({ classObj: classes[0] })
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [classes])
@@ -114,11 +114,24 @@ export function ClassesSidebar({
           ))}
       </nav>
 
-      <div className="border border-red-500">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda modi reprehenderit vero
-        consequuntur debitis. Quasi asperiores, impedit quidem saepe sunt possimus, aliquid dolor
-        sit sed modi eius molestiae quisquam labore.
-      </div>
+      <Link
+        href={'/'}
+        className="relative mx-auto mt-16 flex w-[97%] gap-4 rounded-md border-2 border-light bg-primary p-3 text-light ring-2 ring-primary ring-offset-0"
+      >
+        <Icon
+          icon={'meteocons:star-fill'}
+          className="absolute -top-1 right-0 size-6 animate-pulse"
+        />
+        <Icon
+          icon={'meteocons:star-fill'}
+          className="absolute -bottom-1 left-0 size-6 animate-pulse"
+        />
+        <Icon icon={'tdesign:certificate-filled'} className="size-7" />
+        <span className="text-sm">
+          <p className="font-semibold">Claim Certificate</p>
+          <p>Claim your certificate after completing this course</p>
+        </span>
+      </Link>
     </aside>
   )
 }
