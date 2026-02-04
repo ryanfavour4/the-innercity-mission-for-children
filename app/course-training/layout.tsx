@@ -10,6 +10,7 @@ export default function SubLayout({ children }: { children: React.ReactNode }) {
         autoClose={3000}
         newestOnTop
         closeOnClick
+        theme="colored"
         pauseOnFocusLoss={false}
         pauseOnHover={false}
         draggable={false}
