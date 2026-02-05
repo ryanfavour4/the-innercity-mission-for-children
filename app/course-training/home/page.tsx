@@ -156,16 +156,16 @@ export default function LandingPage() {
         </div>
         <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-2 lg:grid-cols-3">
           <Testimonial
-            quote="The UI/UX course was worth every penny. I landed my first junior role within a month."
-            author="Sarah J."
+            quote="The training transformed how I teach and engage children. I now feel confident, equipped, and purposeful."
+            author="Stella- ICM School Teacher (Nigeria)."
           />
           <Testimonial
-            quote="Practical, hands-on, and no fluff. Exactly what I was looking for."
-            author="David K."
+            quote="The support didn’t end with the training. ICM truly walks with you as you serve and grow."
+            author="Nellie- Volunteer (Eswatini)."
           />
           <Testimonial
-            quote="The community support is insane. You're never stuck for long."
-            author="Michael R."
+            quote="This program is a true blessing. It didn't just give me teaching tools; it gave me a burden for these children. Now, my classroom in the slum feels like a place of hope."
+            author="Sister Amaka- Volunteer Educator (Nigeria)"
           />
         </div>
       </section>
