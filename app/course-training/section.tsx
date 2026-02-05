@@ -204,6 +204,7 @@ export function QuizzesSlider({
           toast.error('Please login to continue your course')
           navigate.replace('/course-training/auth')
         }
+        resetQuiz()
         toast.error(err.response.data.message)
         console.log(err)
       })
