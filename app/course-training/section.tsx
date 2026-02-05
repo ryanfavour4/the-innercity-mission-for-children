@@ -194,6 +194,7 @@ export function QuizzesSlider({
     trigger({ courseId, classId, answers })
       .then((res: IPostSubmitAnswersServiceRes) => {
         toast.success(`Quiz submitted, you got ${res.correctAnswers} answers right`)
+        resetQuiz()
         refetchProgressByCourseId()
         setQuizCompleted(true)
         openSuccessModal()
