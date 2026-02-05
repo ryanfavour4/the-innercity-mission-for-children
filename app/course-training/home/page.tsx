@@ -61,8 +61,7 @@ export default function LandingPage() {
           <span className="text-primary">ICM Educators Certification</span> <br /> Program
         </h1>
         <p className="mx-auto mb-10 max-w-2xl text-base text-textcolor/75">
-          Stop watching endless tutorials. Start building real projects with our industry-led
-          courses and earn certified credentials.
+          Equipping educators to shape futures and reach every child.
         </p>
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Link href={'/course-training/auth'} className="btn-primary px-12 md:w-fit">
