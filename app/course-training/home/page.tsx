@@ -76,9 +76,7 @@ export default function LandingPage() {
         <div className="mx-auto max-w-7xl">
           <div className="mb-8 flex flex-wrap items-end justify-between gap-5 md:mb-12">
             <div>
-              <h2 className="mb-2 text-xl font-bold md:text-3xl">
-                Educators Certification Courses
-              </h2>
+              <h2 className="mb-2 text-xl font-bold md:text-3xl">Certification Courses</h2>
               <p className="text-textcolor/75">Pick a path and start your journey today.</p>
             </div>
             <button className="hidden items-center gap-1 font-semibold text-primary">
@@ -118,18 +116,27 @@ export default function LandingPage() {
             <div className="absolute -bottom-6 -right-6 flex items-center gap-4 rounded-2xl bg-white p-6 shadow-xl">
               <Icon icon="lucide:check-circle" className="text-3xl text-green-500" />
               <div>
-                <p className="font-bold text-dark">Industry Recognized</p>
+                <p className="font-bold text-dark"> I.C.M Recognized</p>
                 <p className="text-sm text-gray-500">Verified Certificates</p>
               </div>
             </div>
           </div>
           <div>
-            <h2 className="mb-6 text-4xl font-bold">Build a portfolio that upgrades you.</h2>
+            <h2 className="mb-6 text-4xl font-bold">Equip your heart and hands for impact.</h2>
             <ul className="space-y-6">
               {[
-                { icon: 'lucide:zap', text: 'Learn at your own pace with lifetime access.' },
-                { icon: 'lucide:users', text: 'Join a community of 1k+ ambitious learners.' },
-                { icon: 'lucide:file-badge', text: 'Get a sharable certificate upon completion.' },
+                {
+                  icon: 'lucide:zap',
+                  text: 'Mission-Ready Training: Access specialized tools designed for underserved learning centers.',
+                },
+                {
+                  icon: 'lucide:users',
+                  text: 'Join a Community of Grace: Connect with 1k+ educators dedicated to transforming lives.',
+                },
+                {
+                  icon: 'lucide:file-badge',
+                  text: 'Certified for Service: Receive a recognized certificate as a testament to your commitment.',
+                },
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-4">
                   <div className="rounded-lg bg-light p-2">
@@ -207,8 +214,8 @@ const CourseCard = ({
       </div>
       <h3 className="mb-2 text-2xl font-bold">{title}</h3>
     </div>
-    <p className="mb-3 text-base text-textcolor/75">{description}</p>
-    <div className="flex items-center gap-4 text-base font-semibold text-gray-500">
+    <p className="ellipsis-3 mb-3 text-base text-textcolor/75">{description}</p>
+    <div className="flex items-center gap-4 text-sm font-semibold text-textcolor/75">
       <span className="flex items-center gap-1">
         <Icon icon="fluent:quiz-28-regular" /> {quizzes}
       </span>

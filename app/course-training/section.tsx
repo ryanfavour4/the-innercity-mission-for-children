@@ -39,16 +39,13 @@ export function ClassesSidebar({
 }: ClassesSidebarType) {
   const updateParams = useUpdateQueryParams()
   const searchParams = useSearchParams()
-  // const [courseCheckpoint, setCourseCheckpoint] = useState<{
-  //   class: string
-  //   course: string
-  // } | null>(null)
   const classId = searchParams.get('class')
   const courseId = searchParams.get('course')
   const [checkpoint, setCheckpoint] = useState({ class: '' })
 
   const onClassClick = ({ classObj }: { classObj: IGetClassesByCourseIdService }) => {
     setActiveClass(classObj)
+    console.log(classObj)
     const progress = { ...checkpoint, class: classObj._id }
     setCheckpoint(progress)
     updateParams(progress)
@@ -68,12 +65,12 @@ export function ClassesSidebar({
       return
     }
     if (activeClass && activeClass?._id !== lastCourseCheckpoint?.class) {
-      onClassClick({ classObj: activeClass })
+      console.log(activeClass)
     }
     onClassClick({ classObj: classes[0] })
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [classes, activeClass])
+  }, [classes])
 
   return (
     <aside
@@ -120,7 +117,7 @@ export function ClassesSidebar({
       </nav>
 
       <Link
-        href={'/course-training/certificate'}
+        href={`/course-training/certificate?course=${courseId}`}
         className="relative mx-auto mt-16 flex w-[97%] gap-4 rounded-md border-2 border-light bg-primary p-3 text-light ring-2 ring-primary ring-offset-0"
       >
         <Icon
@@ -282,12 +279,12 @@ export function QuizzesSlider({
 
           <div className="flex w-full flex-col gap-4 md:grid md:grid-cols-2">
             {q.options.map((o) => {
-              const isSelected = getSelectedAnswer(q._id) === o._id
+              const isSelected = getSelectedAnswer(q._id) === o.id
 
               return (
                 <span
                   key={o._id}
-                  onClick={() => selectAnswer(q._id, o._id)}
+                  onClick={() => selectAnswer(q._id, o.id)}
                   className={`relative flex cursor-pointer items-center justify-between rounded-xl border p-4 py-3 duration-300 ${
                     isSelected
                       ? 'border-primary bg-primary/25'

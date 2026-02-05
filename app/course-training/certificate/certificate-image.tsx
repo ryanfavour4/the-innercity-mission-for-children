@@ -4,9 +4,10 @@ import { useEffect, useRef } from 'react'
 
 type CertificateImageProps = {
   name: string
+  downloadable: boolean
 }
 
-export default function CertificateImage({ name }: CertificateImageProps) {
+export default function CertificateImage({ name, downloadable }: CertificateImageProps) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
 
   useEffect(() => {
@@ -29,13 +30,13 @@ export default function CertificateImage({ name }: CertificateImageProps) {
 
       if (name) {
         // Name styling
-        ctx.font = '600 64px "Playfair Display", serif'
+        ctx.font = '600 100px "Pacifico", cursive'
         // ctx.font = 'bold 64px serif'
         ctx.fillStyle = '#1f2937' // dark slate
         ctx.textAlign = 'center'
 
         // Position name (adjust Y to match your template)
-        ctx.fillText(name, canvas.width / 2, canvas.height / 2 + 40)
+        ctx.fillText(name, canvas.width / 2, canvas.height / 2 + 80)
       }
     }
   }, [name])
@@ -53,9 +54,11 @@ export default function CertificateImage({ name }: CertificateImageProps) {
     <div className="space-y-4">
       <canvas ref={canvasRef} className="w-full rounded-xl border" />
 
-      <button onClick={downloadCertificate} className="btn-primary md:w-fit" disabled={!name}>
-        Download Certificate
-      </button>
+      {downloadable && (
+        <button onClick={downloadCertificate} className="btn-primary md:w-fit" disabled={!name}>
+          Download Certificate
+        </button>
+      )}
     </div>
   )
 }

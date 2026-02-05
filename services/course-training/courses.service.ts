@@ -27,6 +27,10 @@ export const getCoursesSubModulesService = async () => {
 }
 
 export const getCourseByIdService = async ({ id }: { id: string }) => {
+  if (!id) {
+    return null
+  }
+
   const response = await axios.get(`${baseUrl}/courses/id/${id}`)
   const res: IGetCoursesService = response.data
 

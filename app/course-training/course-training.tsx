@@ -90,7 +90,8 @@ export default function CourseTraining() {
     }, 300)
 
     return () => clearTimeout(t)
-  }, [classId, courseId, hasMounted, navigate])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [courseId, hasMounted, navigate])
 
   return (
     <>

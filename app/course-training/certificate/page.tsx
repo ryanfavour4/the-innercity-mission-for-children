@@ -14,13 +14,20 @@ import CertificateImage from './certificate-image'
 import { toast } from 'react-toastify'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { postCreateCertificateService } from '@/services/course-training/certificate.service'
+import { getCourseByIdService } from '@/services/course-training/courses.service'
+import useSWRImmutable from 'swr/immutable'
+import LoadingScreen from '@/layouts/loading'
 
 export default function CertificatePage() {
   const navigate = useRouter()
   const searchParams = useSearchParams()
   const courseId = searchParams.get('course')
   const [name, setName] = useState('')
+  const [isEligible, setIsEligible] = useState(false)
   const { trigger } = useSWRMutation('/auth/signout', postLogoutService)
+  const { data, isLoading } = useSWRImmutable(`courses/id/${courseId}`, () =>
+    getCourseByIdService({ id: courseId || '' }),
+  )
 
   const postCreateCertificateSwrMutate: SwrMutateType<{
     courseId: string
@@ -41,6 +48,7 @@ export default function CertificatePage() {
       .then((res) => {
         console.log(res)
         toast.success(`Congratulations Champion`)
+        setIsEligible(true)
       })
       .catch((err) => {
         if (err?.response?.status === 401) {
@@ -50,6 +58,10 @@ export default function CertificatePage() {
         toast.error(err.response.data.message)
         console.log(err)
       })
+  }
+
+  if (isLoading) {
+    return <LoadingScreen />
   }
 
   return (
@@ -136,12 +148,13 @@ export default function CertificatePage() {
         {/* Certificate */}
         <div className="col-span-3 space-y-4 rounded-3xl border border-gray-100 bg-light px-4 py-8 shadow-lg md:p-10">
           <h1 className="text-xl font-bold text-dark md:text-3xl">
-            ICM Education Certification program 101
+            {/* ICM Education Certification program 101 */}
+            {data?.title}
           </h1>
           <p className="mt-2 text-base text-textcolor/75">
             Please note these certificates will always be scanned for authenticity
           </p>
-          <CertificateImage name={name} />
+          <CertificateImage name={name} downloadable={isEligible} />
         </div>
       </div>
     </div>
