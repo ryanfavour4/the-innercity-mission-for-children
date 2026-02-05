@@ -103,7 +103,7 @@ export default function LandingPage() {
           </div>
 
           <div className="container mt-4 grid grid-cols-1 gap-2 md:grid-cols-3">
-            <div className="p-4">
+            <Link href={`/course-training?course=${data && data[0]._id}`} className="p-4">
               <Image
                 alt="edu-certification-training-banner-1"
                 src={banner1}
@@ -114,8 +114,8 @@ export default function LandingPage() {
                   <Icon icon="fluent:quiz-28-regular" /> 5 Quizzes
                 </span>
               </div>
-            </div>
-            <div className="p-4">
+            </Link>
+            <Link href={`/course-training?course=${data && data[0]._id}`} className="p-4">
               <Image
                 alt="edu-certification-training-banner-1"
                 src={banner2}
@@ -126,8 +126,8 @@ export default function LandingPage() {
                   <Icon icon="fluent:quiz-28-regular" /> 5 Quizzes
                 </span>
               </div>
-            </div>
-            <div className="p-4">
+            </Link>
+            <Link href={`/course-training?course=${data && data[0]._id}`} className="p-4">
               <Image
                 alt="edu-certification-training-banner-1"
                 src={banner3}
@@ -138,7 +138,7 @@ export default function LandingPage() {
                   <Icon icon="fluent:quiz-28-regular" /> 5 Quizzes
                 </span>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </section>
