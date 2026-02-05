@@ -3,7 +3,7 @@ import { FormEvent, useEffect, useState } from 'react'
 import { Icon } from '@iconify/react'
 import Link from 'next/link'
 import Image from 'next/image'
-import logo from '@/public/assets/icons/educators-cdrtification-program-logo.png'
+import logo from '@/public/assets/icons/educators-certification-program-logo.png'
 import kingsChatLogo from '@/public/assets/icons/kingschat-logo.png'
 import useSWRMutation from 'swr/mutation'
 import {

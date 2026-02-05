@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import Link from 'next/link'
-import logoDefault from '@/public/assets/icons/educators-cdrtification-program-logo.png'
+import logoDefault from '@/public/assets/icons/educators-certification-program-logo.png'
 import { MenuFriesIcon } from '@/components/svgs'
 import { useEffect, useState } from 'react'
 import { ClassesSidebar, QuizzesSlider } from './section'

@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import logo from '@/public/assets/icons/educators-cdrtification-program-logo.png'
+import logo from '@/public/assets/icons/educators-certification-program-logo.png'
 import { decryptClient } from '@/utils/crypt.client'
 import { IProfileRes, SwrMutateType } from '@/services/course-training/types'
 import { useStorageListener } from '@/hooks/use-storage'

@@ -1,7 +1,10 @@
 'use client'
 import { useStorageListener } from '@/hooks/use-storage'
 import Footer from '@/layouts/footer'
-import logo from '@/public/assets/icons/educators-cdrtification-program-logo.png'
+import logo from '@/public/assets/icons/educators-certification-program-logo.png'
+import banner1 from '@/public/assets/images/edu-certification-training-banner-1.jpeg'
+import banner2 from '@/public/assets/images/edu-certification-training-banner-2.jpeg'
+import banner3 from '@/public/assets/images/edu-certification-training-banner-3.jpeg'
 import { postLogoutService } from '@/services/course-training/auth.service'
 import { getCoursesSubModulesService } from '@/services/course-training/courses.service'
 import { IProfileRes } from '@/services/course-training/types'
@@ -72,11 +75,11 @@ export default function LandingPage() {
 
       {/* Course Section */}
       <section id="courses" className="bg-gray-50 px-3 py-24 md:px-8">
-        <div className="mx-auto max-w-7xl">
+        <div className="container mx-auto">
           <div className="mb-8 flex flex-wrap items-end justify-between gap-5 md:mb-12">
             <div>
               <h2 className="mb-2 text-xl font-bold md:text-3xl">Certification Courses</h2>
-              <p className="text-textcolor/75">Pick a path and start your journey today.</p>
+              <p className="text-textcolor/75">Start your training journey with us today.</p>
             </div>
             <button className="hidden items-center gap-1 font-semibold text-primary">
               View all <Icon icon="lucide:arrow-right" />
@@ -96,6 +99,24 @@ export default function LandingPage() {
                 level={`${course.classesCount} Classes`}
               />
             ))}
+          </div>
+
+          <div className="gap-4 container mt-4 grid grid-cols-1 md:grid-cols-3">
+            <Image
+              alt="edu-certification-training-banner-1"
+              src={banner1}
+              className="rounded-md border-2 border-light bg-primary ring-2 ring-primary ring-offset-0"
+            />
+            <Image
+              alt="edu-certification-training-banner-1"
+              src={banner2}
+              className="rounded-md border-2 border-light bg-primary ring-2 ring-primary ring-offset-0"
+          />
+            <Image
+              alt="edu-certification-training-banner-1"
+              src={banner3}
+              className="rounded-md border-2 border-light bg-primary ring-2 ring-primary ring-offset-0"
+            />
           </div>
         </div>
       </section>
@@ -126,15 +147,15 @@ export default function LandingPage() {
               {[
                 {
                   icon: 'lucide:zap',
-                  text: 'Mission-Ready Training: Access specialized tools designed for underserved learning centers.',
+                  text: 'Mission-Ready Training: Get practical tools and hands-on training to serve indigent with excellence.',
                 },
                 {
                   icon: 'lucide:users',
-                  text: 'Join a Community of Grace: Connect with 1k+ educators dedicated to transforming lives.',
+                  text: 'Global Educators Fellowship: Join a worldwide network of passionate educators united by  a shared mandate to transform lives through education.',
                 },
                 {
                   icon: 'lucide:file-badge',
-                  text: 'Certified for Service: Receive a recognized certificate as a testament to your commitment.',
+                  text: 'Certified for Impact: Recieve an ICM recognized certificate that affirms your commitment  to raise leaders from the inner cities.',
                 },
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-4">

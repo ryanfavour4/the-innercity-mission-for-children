@@ -2,7 +2,7 @@
 export const dynamic = 'force-dynamic'
 import Image from 'next/image'
 import Link from 'next/link'
-import logoDefault from '@/public/assets/icons/educators-cdrtification-program-logo.png'
+import logoDefault from '@/public/assets/icons/educators-certification-program-logo.png'
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react'
 import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react'
 import { Icon } from '@iconify/react'
