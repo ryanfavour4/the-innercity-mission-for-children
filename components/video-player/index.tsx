@@ -121,13 +121,13 @@ const VideoPlayer = ({ src, thumb = thumbnail, autoplay = false, className }: Vi
         <div
           onMouseEnter={() => setIsHovering(true)}
           onMouseLeave={() => setIsHovering(false)}
-          className={`absolute inset-0 z-10 bg-gradient-to-b from-dark/5 to-dark/95 text-light transition duration-500 ${isHovering ? 'opacity-100' : 'opacity-0'}`}
+          className={`absolute inset-0 z-10 bg-gradient-to-b from-dark/0 to-dark/0 text-light transition duration-500 ${isHovering ? 'opacity-100' : 'opacity-0'}`}
         >
           <div
             onClick={togglePlay}
-            className="absolute inset-0 bottom-16 flex items-center justify-center"
+            className="absolute inset-0 bottom-16 flex items-center justify-center opacity-0"
           >
-            <button className="btn-primary w-fit px-5 py-1">
+            <button className="btn-primary w-fit px-5 py-1 opacity-0">
               {playing ? (
                 <PauseIcon className="size-9 text-4xl" />
               ) : (

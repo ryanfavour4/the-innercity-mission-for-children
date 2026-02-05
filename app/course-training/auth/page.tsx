@@ -18,7 +18,7 @@ import { useRouter } from 'next/navigation'
 import { toast } from 'react-toastify'
 
 export default function AuthPage() {
-  const [isLogin, setIsLogin] = useState(true)
+  const [isLogin, setIsLogin] = useState(false)
   const [email, setEmail] = useState('')
   const [name, setName] = useState('')
   const navigate = useRouter()

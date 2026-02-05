@@ -5,6 +5,7 @@ import logo from '@/public/assets/icons/educators-certification-program-logo.png
 import banner1 from '@/public/assets/images/edu-certification-training-banner-1.jpeg'
 import banner2 from '@/public/assets/images/edu-certification-training-banner-2.jpeg'
 import banner3 from '@/public/assets/images/edu-certification-training-banner-3.jpeg'
+import certificateDemo from '@/public/assets/images/certificate-template-watermark.png'
 import { postLogoutService } from '@/services/course-training/auth.service'
 import { getCoursesSubModulesService } from '@/services/course-training/courses.service'
 import { IProfileRes } from '@/services/course-training/types'
@@ -101,22 +102,43 @@ export default function LandingPage() {
             ))}
           </div>
 
-          <div className="gap-4 container mt-4 grid grid-cols-1 md:grid-cols-3">
-            <Image
-              alt="edu-certification-training-banner-1"
-              src={banner1}
-              className="rounded-md border-2 border-light bg-primary ring-2 ring-primary ring-offset-0"
-            />
-            <Image
-              alt="edu-certification-training-banner-1"
-              src={banner2}
-              className="rounded-md border-2 border-light bg-primary ring-2 ring-primary ring-offset-0"
-          />
-            <Image
-              alt="edu-certification-training-banner-1"
-              src={banner3}
-              className="rounded-md border-2 border-light bg-primary ring-2 ring-primary ring-offset-0"
-            />
+          <div className="container mt-4 grid grid-cols-1 gap-2 md:grid-cols-3">
+            <div className="p-4">
+              <Image
+                alt="edu-certification-training-banner-1"
+                src={banner1}
+                className="rounded-md border-2 border-light bg-primary ring-2 ring-primary ring-offset-0"
+              />
+              <div className="mt-4 flex items-center gap-4 text-sm font-semibold text-textcolor/75">
+                <span className="flex items-center gap-1">
+                  <Icon icon="fluent:quiz-28-regular" /> 5 Quizzes
+                </span>
+              </div>
+            </div>
+            <div className="p-4">
+              <Image
+                alt="edu-certification-training-banner-1"
+                src={banner2}
+                className="rounded-md border-2 border-light bg-primary ring-2 ring-primary ring-offset-0"
+              />
+              <div className="mt-4 flex items-center gap-4 text-sm font-semibold text-textcolor/75">
+                <span className="flex items-center gap-1">
+                  <Icon icon="fluent:quiz-28-regular" /> 5 Quizzes
+                </span>
+              </div>
+            </div>
+            <div className="p-4">
+              <Image
+                alt="edu-certification-training-banner-1"
+                src={banner3}
+                className="rounded-md border-2 border-light bg-primary ring-2 ring-primary ring-offset-0"
+              />
+              <div className="mt-4 flex items-center gap-4 text-sm font-semibold text-textcolor/75">
+                <span className="flex items-center gap-1">
+                  <Icon icon="fluent:quiz-28-regular" /> 5 Quizzes
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -125,13 +147,13 @@ export default function LandingPage() {
       <section className="container mx-auto bg-primary px-8 py-16 text-light md:rounded-xl">
         <div className="grid items-center gap-16 md:grid-cols-2">
           <div className="relative">
-            <div className="aspect-square bg-blue-100 flex items-center justify-center overflow-hidden rounded-3xl p-12">
+            <div className="aspect-square bg-blue-100 flex items-center justify-center overflow-hidden rounded-3xl p-5">
               {/* Just a visual placeholder for a certificate */}
-              <div className="rounded-lg border-t-8 border-accent bg-light p-8 text-center shadow-2xl">
-                <Icon icon="lucide:award" className="text-600 mx-auto mb-4 text-6xl text-accent" />
-                <div className="mx-auto mb-2 h-4 w-32 rounded-full bg-textcolor/50" />
-                <div className="mx-auto h-2 w-20 rounded-full bg-textcolor/50" />
-              </div>
+              <Image
+                alt="edu-certification-training-banner-1"
+                src={certificateDemo}
+                className="w-full rounded-lg border-t-8 border-accent bg-light p-8 text-center shadow-2xl"
+              />
             </div>
             <div className="absolute -bottom-6 -right-6 flex items-center gap-4 rounded-2xl bg-white p-6 shadow-xl">
               <Icon icon="lucide:check-circle" className="text-3xl text-green-500" />

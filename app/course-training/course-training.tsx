@@ -209,9 +209,19 @@ export default function CourseTraining() {
           </div>
           <h3 className="font-bold">{activeClass?.title}</h3>
           <p>Congratulations on completing this class, you&apos;re making progress</p>
-          <button onClick={goToNextClass} className="btn-primary mt-4 md:w-fit">
-            Next Class →
-          </button>
+          {nextClass ? (
+            <button onClick={goToNextClass} className="btn-primary mt-4 md:w-fit">
+              Next Class →
+            </button>
+          ) : (
+            <Link
+              href={`course-training/certificate?course=${courseId}`}
+              onClick={goToNextClass}
+              className="btn-primary mt-4 md:w-fit"
+            >
+              Get Certificate →
+            </Link>
+          )}
         </div>
       </Modal>
     </>
