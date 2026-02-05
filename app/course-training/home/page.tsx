@@ -164,8 +164,8 @@ export default function LandingPage() {
             author="Nellie- Volunteer (Eswatini)."
           />
           <Testimonial
-            quote="This program is a true blessing. It didn't just give me teaching tools; it gave me a burden for these children. Now, my classroom in the slum feels like a place of hope."
-            author="Sister Amaka- Volunteer Educator (Nigeria)"
+            quote="This program is a true blessing. It didn't just give me teaching tools; it gave me a burden for these children."
+            author="Sister Amaka- Volunteer (Nigeria)"
           />
         </div>
       </section>
