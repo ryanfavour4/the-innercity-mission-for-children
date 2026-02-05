@@ -93,6 +93,14 @@ export default function CourseTraining() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [courseId, hasMounted, navigate])
 
+  useEffect(() => {
+    if (Number(progressData?.progressPercent) >= Number(100)) {
+      toast.success(
+        'Congratulations! You have completed all classes in this course. You are now elligble to recieve a certificate',
+      )
+    }
+  }, [progressData?.progressPercent])
+
   return (
     <>
       <div className="flex h-screen bg-ghost-white">
