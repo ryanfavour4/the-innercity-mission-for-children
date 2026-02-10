@@ -151,10 +151,32 @@ export default function CertificatePage() {
             {/* ICM Education Certification program 101 */}
             {data?.title}
           </h1>
-          <p className="mt-2 text-base text-textcolor/75">
-            Please note these certificates will always be scanned for authenticity
+          <p className="text-base text-textcolor/75">
+            You can join our Eductors Certification Community.{' '}
+            <a
+              href="https://www.kingsch.at/jl/aEpodz"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-primary"
+            >
+              Click Here
+            </a>
           </p>
+
+          <a
+            href="https://www.kingsch.at/jl/aEpodz"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block text-base font-semibold text-primary"
+          >
+            https://www.kingsch.at/jl/aEpodz
+          </a>
+
           <CertificateImage name={name} downloadable={isEligible} />
+
+          <small className="mt-2 text-sm text-textcolor/75">
+            Please note these certificates will always be scanned for authenticity
+          </small>
         </div>
       </div>
     </div>
