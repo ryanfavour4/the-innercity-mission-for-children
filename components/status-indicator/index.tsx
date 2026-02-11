@@ -19,6 +19,7 @@ export default function StatusIndicator({
     approved: 'border-green-500/50 bg-green-500/10 text-green-500',
     active: 'border-green-500/50 bg-green-500/10 text-green-500',
     pending: 'border-yellow-500/50 bg-yellow-500/10 text-yellow-500',
+    'almost there': 'border-yellow-500/50 bg-yellow-500/10 text-yellow-500',
     declined: 'border-red-500/50 bg-red-500/10 text-red-500',
     inactive: 'border-red-500/50 bg-red-500/10 text-red-500',
 
@@ -26,6 +27,7 @@ export default function StatusIndicator({
     'in transit': 'border-blue-500/50 bg-blue-500/10 text-blue-500',
     arrived: 'border-indigo-500/50 bg-indigo-500/10 text-indigo-500',
     excellent: 'border-green-600/50 bg-green-600/10 text-green-600',
+    done: 'border-green-600/50 bg-green-600/10 text-green-600',
     delivered: 'border-green-600/50 bg-green-600/10 text-green-600',
     returned: 'border-purple-500/50 bg-purple-500/10 text-purple-500',
     canceled: 'border-red-700/50 bg-red-700/10 text-red-700',
@@ -34,6 +36,7 @@ export default function StatusIndicator({
     'awaiting pickup': 'border-orange-500/50 bg-orange-500/10 text-orange-500',
     average: 'border-orange-500/50 bg-orange-500/10 text-orange-500',
     'customs hold': 'border-red-600/50 bg-red-600/10 text-red-600',
+    'nowhere near': 'border-red-600/50 bg-red-600/10 text-red-600',
     'out for delivery': 'border-teal-500/50 bg-teal-500/10 text-teal-500',
   }
 

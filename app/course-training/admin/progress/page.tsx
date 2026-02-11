@@ -11,17 +11,27 @@ import { IProfileRes } from '@/services/course-training/types'
 import { postLogoutService } from '@/services/course-training/auth.service'
 import useSWRMutation from 'swr/mutation'
 import { formatDate } from '@/utils/format-date'
-import { getCertificatesService } from '@/services/course-training/certificate.service'
+import { getProgressService } from '@/services/course-training/progress.service'
+import StatusIndicator from '@/components/status-indicator'
 
-const headers = ['CERTIFICATE NAME', 'AVERAGE SCORE', 'ISSUED', 'COLLECTED ON']
+const headers = [
+  'USER NAME',
+  'PROGRESS SCORE',
+  'TOTAL CLASSES',
+  'CLASSES COMPLETED',
+  'PROGRESS RATING',
+  'COMPLETED STATUS',
+  'STARTED ON',
+  'LAST SEEN ON',
+]
 
 export default function AdminPage() {
-  const { data, isLoading } = useSWRImmutable('/certificates', getCertificatesService)
+  const { data, isLoading } = useSWRImmutable('/progress', getProgressService)
   const { trigger } = useSWRMutation('/auth/signout', postLogoutService)
   const profileSS: IProfileRes | null = decryptClient(
     useStorageListener('course-training-profile') || '',
   )
-  
+
   return (
     <div className="">
       <div className="min-h-screen bg-light">
@@ -59,9 +69,9 @@ export default function AdminPage() {
         </nav>
         <section className="container px-3 py-4">
           <figure className="flex w-full max-w-xs flex-col gap-4 rounded-xl border border-primary/25 bg-white p-4 shadow">
-            <figcaption>Total Users:</figcaption>
+            <figcaption>Total Progress:</figcaption>
             <figcaption className="text-2xl font-extrabold">
-              {data?.length}.00<small className="text-sm font-medium"> Users</small>
+              {data?.length}.00<small className="text-sm font-medium"> Progress Tracked</small>
             </figcaption>
           </figure>
         </section>
@@ -100,18 +110,47 @@ export default function AdminPage() {
                     className="cursor-pointer text-sm even:bg-textcolor/5 hover:bg-primary/10"
                   >
                     <td className="px-4 py-2.5 text-left">
-                      <p className="flex items-center gap-1">{user.certificateName}</p>
+                      <p className="flex items-center gap-1">{user.userId.name}</p>
                     </td>
                     <td className="px-4 py-2.5 text-left">
-                      <p className="flex items-center gap-1">{user.averageScore}%</p>
+                      <p className="flex items-center gap-1">{Math.ceil(user.progressPercent)}%</p>
                     </td>
                     <td className="px-4 py-2.5 text-left">
-                      <p className="flex items-center gap-1 capitalize">{user.issued}</p>
+                      <p className="flex items-center gap-1 capitalize">
+                        {user.totalClasses} Classes
+                      </p>
                     </td>
-
+                    <td className="px-4 py-2.5 text-left">
+                      <p className="flex items-center gap-1 capitalize">
+                        {user.completedClasses} Classes
+                      </p>
+                    </td>
+                    <td className="px-4 py-2.5 text-left">
+                      <p className="flex items-center gap-1 capitalize">
+                        <StatusIndicator
+                          statusIndicator={
+                            Math.ceil(user.progressPercent) > 90
+                              ? 'Done'
+                              : Math.ceil(user.progressPercent) > 50
+                                ? 'Almost There'
+                                : 'Nowhere Near'
+                          }
+                        />
+                      </p>
+                    </td>
+                    <td className="px-4 py-2.5 text-left">
+                      <p className="flex items-center gap-1 capitalize">
+                        <StatusIndicator statusIndicator={user.isCompleted} />
+                      </p>
+                    </td>
                     <td className="px-4 py-2.5 text-left">
                       <p className="flex items-center gap-1">
                         {formatDate(user.createdAt || '').commaDateFormat}
+                      </p>
+                    </td>
+                    <td className="px-4 py-2.5 text-left">
+                      <p className="flex items-center gap-1">
+                        {formatDate(user.updatedAt || '').commaDateFormat}
                       </p>
                     </td>
                   </tr>
