@@ -227,3 +227,16 @@ export interface IGetCertificateByCourseIdService {
   updatedAt: string
   __v: number
 }
+
+// !!! =========== USERS
+export type IGetUserServiceRes = IGetUserServiceResUser[]
+export type IGetUserServiceResUser = {
+  _id: string
+  email: string
+  name: string
+  provider: string
+  emailVerified: boolean
+  createdAt: string
+  updatedAt: string
+  __v: number
+}
