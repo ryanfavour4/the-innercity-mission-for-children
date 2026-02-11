@@ -3,24 +3,14 @@ import Footer from '@/layouts/footer'
 import { getUsersService } from '@/services/course-training/users.service'
 import Image from 'next/image'
 import logo from '@/public/assets/icons/educators-certification-program-logo.png'
-
 import Link from 'next/link'
 import useSWRImmutable from 'swr/immutable'
-import { decryptClient } from '@/utils/crypt.client'
-import { useStorageListener } from '@/hooks/use-storage'
-import { IProfileRes } from '@/services/course-training/types'
-import { postLogoutService } from '@/services/course-training/auth.service'
-import useSWRMutation from 'swr/mutation'
 import { formatDate } from '@/utils/format-date'
 
 const headers = ['FULL NAME', 'EMAIL', 'SIGN UP WITH', 'STATUS', 'DATE JOINED']
 
 export default function AdminPage() {
   const { data, isLoading } = useSWRImmutable('users', getUsersService)
-  const { trigger } = useSWRMutation('/auth/signout', postLogoutService)
-  const profileSS: IProfileRes | null = decryptClient(
-    useStorageListener('course-training-profile') || '',
-  )
 
   return (
     <div className="">
@@ -38,25 +28,21 @@ export default function AdminPage() {
                 height={50}
               />
             </span>
-            {profileSS ? (
-              <div className="flex items-center justify-center gap-2">
-                <small className="flex aspect-2 size-9 items-center justify-center rounded-full bg-primary text-sm font-semibold text-light">
-                  {profileSS.user.name[0]}
-                </small>
-                <button
-                  onClick={() => trigger().finally(() => window.location.reload())}
-                  className="btn w-fit bg-error/25 text-sm font-medium text-error transition"
-                >
-                  Log Out
-                </button>
-              </div>
-            ) : (
-              <Link href={'/course-training/auth'} className="btn-primary w-fit transition">
-                Get Started
-              </Link>
-            )}
+
+            <ul className="flex items-center gap-3 text-primary">
+              <li>
+                <Link href={'/course-training/admin/users'}>User</Link>
+              </li>
+              <li>
+                <Link href={'/course-training/admin/progress'}>Progress</Link>
+              </li>
+              <li>
+                <Link href={'/course-training/admin/certificates'}>Certificate</Link>
+              </li>
+            </ul>
           </div>
         </nav>
+
         <section className="container px-3 py-4">
           <figure className="flex w-full max-w-xs flex-col gap-4 rounded-xl border border-primary/25 bg-white p-4 shadow">
             <figcaption>Total Users:</figcaption>
