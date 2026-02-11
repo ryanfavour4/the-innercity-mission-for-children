@@ -1,6 +1,5 @@
 'use client'
 import Footer from '@/layouts/footer'
-import { getUsersService } from '@/services/course-training/users.service'
 import Image from 'next/image'
 import logo from '@/public/assets/icons/educators-certification-program-logo.png'
 
@@ -12,11 +11,13 @@ import { IProfileRes } from '@/services/course-training/types'
 import { postLogoutService } from '@/services/course-training/auth.service'
 import useSWRMutation from 'swr/mutation'
 import { formatDate } from '@/utils/format-date'
+import { getCertificatesService } from '@/services/course-training/certificate.service'
+import StatusIndicator from '@/components/status-indicator'
 
-const headers = ['FULL NAME', 'EMAIL', 'SIGN UP WITH', 'STATUS', 'DATE JOINED']
+const headers = ['CERTIFICATE NAME', 'AVERAGE SCORE', 'SCORE RATING', 'ISSUED', 'COLLECTED ON']
 
 export default function AdminPage() {
-  const { data, isLoading } = useSWRImmutable('users', getUsersService)
+  const { data, isLoading } = useSWRImmutable('/certificates', getCertificatesService)
   const { trigger } = useSWRMutation('/auth/signout', postLogoutService)
   const profileSS: IProfileRes | null = decryptClient(
     useStorageListener('course-training-profile') || '',
@@ -59,9 +60,9 @@ export default function AdminPage() {
         </nav>
         <section className="container px-3 py-4">
           <figure className="flex w-full max-w-xs flex-col gap-4 rounded-xl border border-primary/25 bg-white p-4 shadow">
-            <figcaption>Total Users:</figcaption>
+            <figcaption>Total Certs:</figcaption>
             <figcaption className="text-2xl font-extrabold">
-              {data?.length}.00<small className="text-sm font-medium"> Users</small>
+              {data?.length}.00<small className="text-sm font-medium"> Certificate issued</small>
             </figcaption>
           </figure>
         </section>
@@ -100,17 +101,28 @@ export default function AdminPage() {
                     className="cursor-pointer text-sm even:bg-textcolor/5 hover:bg-primary/10"
                   >
                     <td className="px-4 py-2.5 text-left">
-                      <p className="flex items-center gap-1">{user.name}</p>
+                      <p className="flex items-center gap-1">{user.certificateName}</p>
                     </td>
                     <td className="px-4 py-2.5 text-left">
-                      <p className="flex items-center gap-1">{user.email}</p>
+                      <p className="flex items-center gap-1">{Math.ceil(user.averageScore)}%</p>
                     </td>
                     <td className="px-4 py-2.5 text-left">
-                      <p className="flex items-center gap-1 capitalize">{user.provider}</p>
+                      <p className="flex items-center gap-1">
+                        <StatusIndicator
+                          statusIndicator={
+                            Math.ceil(user.averageScore) > 70
+                              ? 'Excellent'
+                              : Math.ceil(user.averageScore) > 50
+                                ? 'Average'
+                                : 'Failed'
+                          }
+                        />
+                      </p>
                     </td>
                     <td className="px-4 py-2.5 text-left">
-                      <p className="flex items-center gap-1">Active</p>
+                      <p className="flex items-center gap-1 capitalize">{user.issued}</p>
                     </td>
+
                     <td className="px-4 py-2.5 text-left">
                       <p className="flex items-center gap-1">
                         {formatDate(user.createdAt || '').commaDateFormat}
