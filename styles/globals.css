@@ -280,6 +280,21 @@ div.ReactFlagsSelect-module_filterBox__3m8EU {
 .ReactFlagsSelect-module_flagsSelect__2pfa2 {
   padding-bottom: 0 !important;
 }
+.image{
+  height:30%;
+  width:30%;
+  border-radius: 5px;
+}
+.imagee{
+  height:10%;
+  width:20%;
+  border-radius: 5px;
+}
+.cover{
+  display: flex;
+  justify-content: space-between;
+  gap: 4px;
+}
 
 @media only screen and (max-width: 650px) {
   body {
