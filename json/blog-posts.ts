@@ -145,4 +145,108 @@ export const blogsData = [
     category: 'Empowerment',
     image: '/assets/icons/logo-black-text.png',
   },
+  {
+    id: '16',
+    title:
+      'When One “Yes” Changes a Child’s Future: Educators Across the World Unite for Certification Training',
+    excerpt:
+      'Across continents, time zones, and cultures, passionate educators gathered with one conviction: every child deserves access to quality education and Christ-centered care.',
+    content: `
+      <p>On the 5th of February 2026, something powerful happened online.</p>
+      
+      <p>Across continents, time zones, and cultures, passionate educators, volunteers, and change-makers gathered in one virtual room with a shared conviction: <strong>every child deserves access to quality education and Christ-centered care.</strong></p>
+      
+      <div class="my-6">
+        <img src="/assets/blog/icm-training-image-1.jpeg" alt="Educators training session" class="w-full rounded-2xl shadow-md object-cover" />
+      </div>
+      
+      <p><strong>The InnerCity Mission’s Online Educators Certification Program</strong> brought together participants from around the world — individuals who have chosen to stand in the gap for indigent children by setting up and managing Learning Centers in their communities.</p>
+      
+      <p><strong>But this was more than a training.</strong></p>
+      <p>It was a movement in motion.</p>
+      
+      <h2 class="text-xl font-semibold mt-8 mb-3">Understanding the Vision Behind Every Learning Center</h2>
+      
+      <p>At the heart of the certification was a deep dive into the vision that drives our Children’s Learning Centers. Participants explored the “why” behind the work — the urgent call to reach vulnerable children with structured education, spiritual guidance, and holistic support.</p>
+      
+      <p>They learned that a Learning Center is not just a classroom.</p>
+      <p>It is a safe haven.<br/>A bridge to opportunity.<br/>A place where dignity is restored and destinies are shaped.</p>
+      
+      <div class="my-6">
+        <img src="/assets/blog/icm-training-image-2.jpeg" alt="Training participants" class="w-full rounded-2xl shadow-md object-cover" />
+      </div>
+      
+      <p>Through powerful teaching sessions, facilitators unpacked how each center contributes to the broader mission of expanding access to education, one community at a time.</p>
+      
+      <h2 class="text-xl font-semibold mt-8 mb-3">Deploying a Purpose-Driven Curriculum</h2>
+      
+      <p>Participants were equipped with practical tools for deploying the InnerCity Mission’s carefully designed curriculum — one that integrates academic excellence with character formation and faith-based values.</p>
+      
+      <p>From lesson planning to child engagement strategies, educators gained clarity on how to create structured, impactful learning environments even in underserved communities.</p>
+      
+      <p>The training emphasized <strong>consistency, quality delivery, and measurable impact</strong> — ensuring that every child who walks into a center receives meaningful, transformative instruction.</p>
+      
+      <div class="my-6">
+        <img src="/assets/blog/icm-training-image-3.jpeg" alt="Virtual certification session" class="w-full rounded-2xl shadow-md object-cover" />
+      </div>
+      
+      <h2 class="text-xl font-semibold mt-8 mb-3">The Power of Community Stakeholders</h2>
+      
+      <p>No center thrives in isolation.</p>
+      
+      <p>A key highlight of the training was understanding the importance of community stakeholder engagement. Participants learned how to collaborate with parents, local leaders, churches, and community influencers to build trust, sustainability, and shared ownership.</p>
+      
+      <p>Because when a community embraces a Learning Center, it becomes more than a project — it becomes a collective responsibility.</p>
+      
+      <h2 class="text-xl font-semibold mt-8 mb-3">A Moment of Celebration</h2>
+      
+      <div class="my-6">
+        <img src="/assets/blog/icm-training-image-4.jpeg" alt="Certification moment" class="w-full rounded-2xl shadow-md object-cover" />
+      </div>
+      
+      <p>As the sessions concluded, there was a beautiful moment of recognition. Each participant received their certification — a symbol not just of completion, but of commitment.</p>
+      
+      <p><strong>Behind every certificate is a promise:</strong></p>
+      
+      <ul class="list-disc ml-6 space-y-1">
+      <li>To show up.</li>
+      <li>To serve.</li>
+      <li>To nurture.</li>
+      <li>To educate.</li>
+      <li>To care.</li>
+      </ul>
+      
+      <p>And ultimately, to give more children access to hope through education.</p>
+      
+      <h2 class="text-xl font-semibold mt-8 mb-3">The Work Continues</h2>
+      
+      <p>The vision is clear — to see Learning Centers proliferate across communities and nations, ensuring that no child is denied the opportunity to learn and grow.</p>
+      
+      <p><strong>But we cannot do it alone.</strong></p>
+      
+      <p>If you have a heart for children…<br/>
+      If you believe education is a powerful tool for transformation…<br/>
+      If you are ready to be equipped and deployed…</p>
+      
+      <p class="mt-4">We invite you to take the next step.</p>
+      
+      <p class="mt-4">
+      <a href="https://ICM.ngo/training" target="_blank" class="text-blue-600 font-semibold underline">
+      Sign up for the next Educators Certification Program
+      </a>
+      </p>
+      
+      <p>Become a certified volunteer.<br/>
+      Partner with us to establish more Learning Centers in communities that need them most.</p>
+      
+      <p class="mt-6 font-medium">Together, we can give more children access to education and the Christ-centered care that shapes not just minds, but futures.</p>
+      
+      <p class="mt-4"><strong>Because every child deserves a chance.<br/>And your “yes” could be the beginning of that story.</strong></p>
+      `,
+    author: 'The InnerCity Mission',
+    date: 'February 6, 2026',
+    readTime: '4 min read',
+    category: 'Education & Impact',
+    image: '/assets/blog/icm-training-image-1.jpeg',
+  },
 ]
