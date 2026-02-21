@@ -38,20 +38,21 @@ export default function LiveStreamPage() {
           <h3 className="sub-header max-w-md text-2xl font-semibold before:top-4 md:text-3xl">
             Live Stream
           </h3>
-          <p>LIVE: COMING SOON</p>
+          <p>LIVE: Food distribution Outreach Organized by CE Abuja Zone 2</p>
         </div>
 
         <div className="wrapper mt-6 grid grid-cols-12 gap-6">
           <div className="col-span-12 flex flex-col gap-4 md:col-span-7 lg:col-span-8">
             <VideoPlayer
               src={
-                'https://vcpout-sf01-altnetro.internetmultimediaonline.org/ext/ext1.smil/playlist.m3u8'
+                'https://vcpout-sf01-altnetro.internetmultimediaonline.org/vcp/oe5ehvoqh0oviy/chunklist.m3u8'
+                // 'https://vcpout-sf01-altnetro.internetmultimediaonline.org/ext/ext1.smil/playlist.m3u8' // commented on 2025-02-21, new link above added on 2025-02-21
                 // 'https://playlist.dacast.com/live/602498bd0ab279ef90d21c11e370e84f-live-ba817332-b74a-3b86-e4ae-0a059bdc404d/master.m3u8'
               }
               className="w-full !max-w-6xl md:!h-full"
             />
             <h4 className="ellipsis-2 text-xl font-bold uppercase md:text-2xl">
-              LIVE: COMING SOON
+              LIVE: Food distribution Outreach Organized by CE Abuja Zone 2
             </h4>
           </div>
           <div className="rounlg col-span-12 border-2 px-2 py-3 md:col-span-5 lg:col-span-4">

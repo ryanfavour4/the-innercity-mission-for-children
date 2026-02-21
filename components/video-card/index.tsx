@@ -9,7 +9,8 @@ type VideoCardProps = {
 }
 
 export function VideoCard({
-  videoUrl = 'https://player.vimeo.com/video/1155683488?h=0ef607f31a',
+  videoUrl = 'https://vcpout-sf01-altnetro.internetmultimediaonline.org/vcp/oe5ehvoqh0oviy/chunklist.m3u8',
+  // videoUrl = 'https://player.vimeo.com/video/1155683488?h=0ef607f31a', // commented on 2025-02-21, new link above added on 2025-02-21
   thumbNail = 'https://i.vimeocdn.com/video/2108470778-621aadb3ca66449ddbc21ad3a4cfe4ab26293db58db38c0b8be6ba2edb1d8d03-d?mw=1300&mh=731&q=70',
   iframe = true,
   className,
