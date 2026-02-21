@@ -24,7 +24,11 @@ function IntroVideoSection() {
           </div>
 
           {/* VIDEO */}
-          <VideoCard classNameIframe="md:!h-[33rem]" iframe={true} />
+          <VideoCard
+            videoUrl="https://vcpout-sf01-altnetro.internetmultimediaonline.org/vcp/oe5ehvoqh0oviy/chunklist.m3u8"
+            classNameIframe="md:!h-[33rem]"
+            iframe={false}
+          />
         </div>
       </div>
     </motion.div>
