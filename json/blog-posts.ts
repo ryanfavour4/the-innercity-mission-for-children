@@ -249,4 +249,147 @@ export const blogsData = [
     category: 'Education & Impact',
     image: '/assets/blog/icm-training-image-1.jpeg',
   },
+  {
+    id: '17',
+    title: 'Beyond Books: Skills That Spark Confidence Across Our Network of Schools',
+    excerpt:
+      'Education is powerful — but when education meets hands-on skills, transformation becomes visible across our network of schools.',
+    content: `
+    <p class="mb-6">
+      Education is powerful — but when education meets hands-on skills, transformation becomes visible.
+    </p>
+
+    <p class="mb-8">
+      Across our network of schools at the InnerCity Mission, classrooms are alive with more than lessons and lectures. They are filled with creativity, innovation, and the exciting hum of children discovering what they can do with their own hands.
+    </p>
+
+    <!-- SECTION 1 - SINGLE IMAGE -->
+    <img 
+      src="/assets/blog/skills-image5.jpg" 
+      alt="Students engaged in skill training"
+      class="w-full h-[260px] md:h-[400px] object-cover  rounded-2xl shadow-md my-10"
+    />
+
+    <h2 class="text-2xl font-semibold mt-12 mb-4">
+      Where Talent Meets Opportunity
+    </h2>
+
+    <p class="mb-6">
+      On any given day, you might find students learning practical and entrepreneurial skills.
+    </p>
+
+    <!-- SECTION 2 - TWO COLUMN IMAGES -->
+    <div class="grid grid-cols-1 md:grid-cols-2 md:gap-6 my-12">
+
+  <img 
+    src="/assets/blog/skills-image1.jpg" 
+    alt="Hair styling and gele tying"
+    class="w-full h-96 object-cover  rounded-2xl shadow-md"
+  />
+  <img 
+    src="/assets/blog/skills-image6.jpg" 
+    alt="Tailoring and fashion training"
+    class="w-full object-cover h-96  rounded-2xl shadow-md"
+  />
+    </div>
+
+    <p class="mb-6">
+      From braiding and tailoring to crocheting and shoe making, students are discovering what they can create with their own hands.
+    </p>
+
+    <!-- SECTION 3 - TWO COLUMN IMAGES -->
+    <div class="grid grid-cols-1 md:grid-cols-2 md:gap-6 my-12">
+      <img 
+        src="/assets/blog/skills-image2.jpg" 
+        alt="Shoe making craftsmanship"
+        class="w-full h-96 object-cover rounded-2xl shadow-md"
+      />
+      <img 
+        src="/assets/blog/skills-image3.jpg" 
+        alt="Food production training"
+        class="w-full h-96 object-cover rounded-2xl shadow-md"
+      />
+    </div>
+
+    <p class="mb-6">
+      The atmosphere is electric. There’s laughter. There’s focus. There’s pride.
+    </p>
+
+    <p class="mb-6 font-medium">
+      And most importantly, there is possibility.
+    </p>
+
+    <p class="mb-8">
+      When a child finishes sewing their first outfit… when they braid hair independently… when they package chips neatly for sale — something shifts.
+    </p>
+
+    <p class="mb-8">
+      They begin to see themselves not just as students, but as creators. As entrepreneurs. As problem-solvers.
+      <span class="font-semibold"> “I can.” </span>
+      And that belief changes everything.
+    </p>
+
+    <!-- SECTION 4 - FINAL SINGLE IMAGE -->
+    <img 
+      src="/assets/blog/skills-image5.jpg" 
+      alt="Students proudly showcasing their creations"
+      class="w-full h-[260px] md:h-[400px] object-cover rounded-2xl shadow-md my-10"
+    
+    />
+
+    <p class="mb-6">
+      Skill acquisition is not an add-on to education. It is a strategic pathway to independence. It equips our students with tools they can use immediately and build on for years to come.
+    </p>
+
+    <p class="mb-8">
+      We are raising children who can think, create, produce, and lead.
+    </p>
+
+    <h2 class="text-2xl font-semibold mt-12 mb-4">
+      You Can Help Shape a Future
+    </h2>
+
+    <p class="mb-4">
+      Are you a hairstylist, tailor, shoemaker, caterer, creative artisan, or entrepreneur?
+    </p>
+
+    <p class="mb-6 font-medium">
+      Your skill could unlock a child’s potential.
+    </p>
+
+    <div class="space-y-4 mt-6">
+      <p>
+        Volunteer with us:<br/>
+        <a href="https://www.hvn.theinnercitymission.ngo" target="_blank" class="text-primary font-semibold underline">
+          www.hvn.theinnercitymission.ngo
+        </a>
+      </p>
+
+      <p>
+        Mentor a student:<br/>
+        <span class="font-semibold">07036076914</span>
+      </p>
+
+      <p>
+        Support the mission:<br/>
+        <a href="https://www.icm.ngo/donate" target="_blank" class="text-primary font-semibold underline">
+          www.icm.ngo/donate
+        </a>
+      </p>
+    </div>
+
+    <p class="mt-12 font-medium">
+      Because when you share what you know, you don’t just teach a skill — you shape a future.
+    </p>
+
+    <p class="mt-4 font-semibold">
+      Join us. Let’s build confident, capable, and empowered young leaders together.
+    </p>
+  `,
+    author: 'The InnerCity Mission',
+    date: 'February 6, 2026',
+    readTime: '5 min read',
+    category: 'Education & Skills Development',
+    image: '/assets/blog/skills-image4.jpg',
+  },
 ]
