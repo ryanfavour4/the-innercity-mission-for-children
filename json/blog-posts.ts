@@ -266,7 +266,7 @@ export const blogsData = [
     <!-- SECTION 1 - SINGLE IMAGE -->
     <img 
       src="/assets/blog/skills-image5.jpg" 
-      alt="Students engaged in skill training"
+      alt="skills5"
       class="w-full h-[260px] md:h-[400px] object-cover  rounded-2xl shadow-md my-10"
     />
 
@@ -283,12 +283,12 @@ export const blogsData = [
 
   <img 
     src="/assets/blog/skills-image1.jpg" 
-    alt="Hair styling and gele tying"
+    alt="skills1"
     class="w-full h-96 object-cover  rounded-2xl shadow-md"
   />
   <img 
     src="/assets/blog/skills-image6.jpg" 
-    alt="Tailoring and fashion training"
+    alt="Tskills6"
     class="w-full object-cover h-96  rounded-2xl shadow-md"
   />
     </div>
@@ -301,12 +301,12 @@ export const blogsData = [
     <div class="grid grid-cols-1 md:grid-cols-2 md:gap-6 my-12">
       <img 
         src="/assets/blog/skills-image2.jpg" 
-        alt="Shoe making craftsmanship"
+        alt="skills2"
         class="w-full h-96 object-cover rounded-2xl shadow-md"
       />
       <img 
         src="/assets/blog/skills-image3.jpg" 
-        alt="Food production training"
+        alt="skills3"
         class="w-full h-96 object-cover rounded-2xl shadow-md"
       />
     </div>
