@@ -130,21 +130,21 @@ export const blogsData = [
     category: 'Child Empowerment',
     image: '/assets/icons/logo-black-text.png',
   },
-  {
-    id: '15',
-    title:
-      'When One “Yes” Changes a Child’s Future: Educators Across the World Unite for Certification Training',
-    excerpt:
-      'The InnerCity Mission’s Online Educators Certification Program brought together participants from around the world individuals who have chosen to stand in the gap for indigent children by setting up and managing Learning Centers in their communities.',
-    content:
-      // '<p>Looking for a fun and meaningful way to spend time with your loved ones? Why not host a giving party with the <strong>Give A Meal App</strong>! Whether you prefer a virtual gathering or an onsite celebration, this creative event is all about coming together for a cause dear to your heart – raising meals for those in need.</p><p>With the Give A Meal App, you can easily organize your giving party and track the meals donated by you and your guests. Every meal donated makes a difference in the lives of vulnerable individuals and families, providing nourishment and hope for a better tomorrow.</p><p>But that’s not all – when you host a giving party, you won’t be doing it alone. <strong>The InnerCity Mission</strong> is here to support you every step of the way, ensuring that your event is not only memorable but also impactful. Together, we can make a difference and spread joy through the simple act of giving.</p><p>So gather your friends and family, fire up the Give A Meal App, and let’s host a giving party that makes a real difference in the world. Because when we come together, there’s no limit to what we can achieve!</p><p><strong>The Give A Meal App</strong> is available on the <em>Loveworld App Store</em> and <em>Google Play Store</em>.</p>',
-      '<p>On the 5th of February 2026, something powerful happened online. Across continents, time zones, and cultures, passionate educators, volunteers, and change-makers gathered in one virtual room with a shared conviction: every child deserves access to quality education and Christ-centered care. The InnerCity Mission’s Online Educators Certification Program brought together participants from around the world individuals who have chosen to stand in the gap for indigent children by setting up and managing Learning Centers in their communities. But this was more than a training. It was a movement in motion. Understanding the Vision Behind Every Learning Center At the heart of the certification was a deep dive into the vision that drives our Children’s Learning Centers. Participants explored the “why” behind the work the urgent call to reach vulnerable children with structured education, spiritual guidance, and holistic support. They learned that a Learning Center is not just a classroom. It is a safe haven. A bridge to opportunity. A place where dignity is restored and destinies are shaped. Through powerful teaching sessions, facilitators unpacked how each center contributes to the broader mission of expanding access to education, one community at a time. Deploying a Purpose-Driven Curriculum Participants were equipped with practical tools for deploying the InnerCity Mission’s carefully designed curriculum one that integrates academic excellence with character formation and faith-based values. From lesson planning to child engagement strategies, educators gained clarity on how to create structured, impactful learning environments even in underserved communities. The training emphasized consistency, quality delivery, and measurable impact ensuring that every child who walks into a center receives meaningful, transformative instruction. The Power of Community Stakeholders No center thrives in isolation. A key highlight of the training was understanding the importance of community stakeholder engagement. Participants learned how to collaborate with parents, local leaders, churches, and community influencers to build trust, sustainability, and shared ownership. Because when a community embraces a Learning Center, it becomes more than a project  it becomes a collective responsibility. A Moment of Celebration As the sessions concluded, there was a beautiful moment of recognition. Each participant received their certification — a symbol not just of completion, but of commitment. Behind every certificate is a promise: To show up. To serve. To nurture. To educate. To care. And ultimately, to give more children access to hope through education. The Work Continues The vision is clear  to see Learning Centers proliferate across communities and nations, ensuring that no child is denied the opportunity to learn and grow. But we cannot do it alone. If you have a heart for children… If you believe education is a powerful tool for transformation… If you are ready to be equipped and deployed… We invite you to take the next step. Sign up for the next Educators Certification Program   <a href="https://ICM.ngo/training">https://ICM.ngo/training</a> Become a certified volunteer. Partner with us to establish more Learning Centers in communities that need them most. Together, we can give more children access to education and the Christ-centered care that shapes not just minds, but futures.Because every child deserves a chance. And your “yes” could be the beginning of that story. <div class="cover"> <img class="image" src="/assets/images/blog2.jpeg" /> <img class="image" src="/assets/images/blog4.jpeg" /> <img class="image" src="/assets/images/blog5.jpeg" /> </div> </p>',
-    author: 'The InnerCity Mission',
-    date: 'February 19,2026',
-    readTime: '4 min read',
-    category: 'Empowerment',
-    image: '/assets/icons/logo-black-text.png',
-  },
+  // {
+  //   id: '15',
+  //   title:
+  //     'When One “Yes” Changes a Child’s Future: Educators Across the World Unite for Certification Training',
+  //   excerpt:
+  //     'The InnerCity Mission’s Online Educators Certification Program brought together participants from around the world individuals who have chosen to stand in the gap for indigent children by setting up and managing Learning Centers in their communities.',
+  //   content:
+  //     // '<p>Looking for a fun and meaningful way to spend time with your loved ones? Why not host a giving party with the <strong>Give A Meal App</strong>! Whether you prefer a virtual gathering or an onsite celebration, this creative event is all about coming together for a cause dear to your heart – raising meals for those in need.</p><p>With the Give A Meal App, you can easily organize your giving party and track the meals donated by you and your guests. Every meal donated makes a difference in the lives of vulnerable individuals and families, providing nourishment and hope for a better tomorrow.</p><p>But that’s not all – when you host a giving party, you won’t be doing it alone. <strong>The InnerCity Mission</strong> is here to support you every step of the way, ensuring that your event is not only memorable but also impactful. Together, we can make a difference and spread joy through the simple act of giving.</p><p>So gather your friends and family, fire up the Give A Meal App, and let’s host a giving party that makes a real difference in the world. Because when we come together, there’s no limit to what we can achieve!</p><p><strong>The Give A Meal App</strong> is available on the <em>Loveworld App Store</em> and <em>Google Play Store</em>.</p>',
+  //     '<p>On the 5th of February 2026, something powerful happened online. Across continents, time zones, and cultures, passionate educators, volunteers, and change-makers gathered in one virtual room with a shared conviction: every child deserves access to quality education and Christ-centered care. The InnerCity Mission’s Online Educators Certification Program brought together participants from around the world individuals who have chosen to stand in the gap for indigent children by setting up and managing Learning Centers in their communities. But this was more than a training. It was a movement in motion. Understanding the Vision Behind Every Learning Center At the heart of the certification was a deep dive into the vision that drives our Children’s Learning Centers. Participants explored the “why” behind the work the urgent call to reach vulnerable children with structured education, spiritual guidance, and holistic support. They learned that a Learning Center is not just a classroom. It is a safe haven. A bridge to opportunity. A place where dignity is restored and destinies are shaped. Through powerful teaching sessions, facilitators unpacked how each center contributes to the broader mission of expanding access to education, one community at a time. Deploying a Purpose-Driven Curriculum Participants were equipped with practical tools for deploying the InnerCity Mission’s carefully designed curriculum one that integrates academic excellence with character formation and faith-based values. From lesson planning to child engagement strategies, educators gained clarity on how to create structured, impactful learning environments even in underserved communities. The training emphasized consistency, quality delivery, and measurable impact ensuring that every child who walks into a center receives meaningful, transformative instruction. The Power of Community Stakeholders No center thrives in isolation. A key highlight of the training was understanding the importance of community stakeholder engagement. Participants learned how to collaborate with parents, local leaders, churches, and community influencers to build trust, sustainability, and shared ownership. Because when a community embraces a Learning Center, it becomes more than a project  it becomes a collective responsibility. A Moment of Celebration As the sessions concluded, there was a beautiful moment of recognition. Each participant received their certification — a symbol not just of completion, but of commitment. Behind every certificate is a promise: To show up. To serve. To nurture. To educate. To care. And ultimately, to give more children access to hope through education. The Work Continues The vision is clear  to see Learning Centers proliferate across communities and nations, ensuring that no child is denied the opportunity to learn and grow. But we cannot do it alone. If you have a heart for children… If you believe education is a powerful tool for transformation… If you are ready to be equipped and deployed… We invite you to take the next step. Sign up for the next Educators Certification Program   <a href="https://ICM.ngo/training">https://ICM.ngo/training</a> Become a certified volunteer. Partner with us to establish more Learning Centers in communities that need them most. Together, we can give more children access to education and the Christ-centered care that shapes not just minds, but futures.Because every child deserves a chance. And your “yes” could be the beginning of that story. <div class="cover"> <img class="image" src="/assets/images/blog2.jpeg" /> <img class="image" src="/assets/images/blog4.jpeg" /> <img class="image" src="/assets/images/blog5.jpeg" /> </div> </p>',
+  //   author: 'The InnerCity Mission',
+  //   date: 'February 19,2026',
+  //   readTime: '4 min read',
+  //   category: 'Empowerment',
+  //   image: '/assets/icons/logo-black-text.png',
+  // },
   {
     id: '16',
     title:
@@ -258,29 +258,23 @@ export const blogsData = [
     <p class="mb-6">
       Education is powerful — but when education meets hands-on skills, transformation becomes visible.
     </p>
-
     <p class="mb-8">
       Across our network of schools at the InnerCity Mission, classrooms are alive with more than lessons and lectures. They are filled with creativity, innovation, and the exciting hum of children discovering what they can do with their own hands.
     </p>
-
     <!-- SECTION 1 - SINGLE IMAGE -->
     <img 
       src="/assets/blog/skills-image5.jpg" 
       alt="skills5"
       class="w-full h-[260px] md:h-[400px] object-cover  rounded-2xl shadow-md my-10"
     />
-
     <h2 class="text-2xl font-semibold mt-12 mb-4">
       Where Talent Meets Opportunity
     </h2>
-
     <p class="mb-6">
       On any given day, you might find students learning practical and entrepreneurial skills.
     </p>
-
     <!-- SECTION 2 - TWO COLUMN IMAGES -->
     <div class="grid grid-cols-1 md:grid-cols-2 md:gap-6 my-12">
-
   <img 
     src="/assets/blog/skills-image1.jpg" 
     alt="skills1"
@@ -292,11 +286,9 @@ export const blogsData = [
     class="w-full object-cover h-96  rounded-2xl shadow-md"
   />
     </div>
-
     <p class="mb-6">
       From braiding and tailoring to crocheting and shoe making, students are discovering what they can create with their own hands.
     </p>
-
     <!-- SECTION 3 - TWO COLUMN IMAGES -->
     <div class="grid grid-cols-1 md:grid-cols-2 md:gap-6 my-12">
       <img 
@@ -310,25 +302,20 @@ export const blogsData = [
         class="w-full h-96 object-cover rounded-2xl shadow-md"
       />
     </div>
-
     <p class="mb-6">
       The atmosphere is electric. There’s laughter. There’s focus. There’s pride.
     </p>
-
     <p class="mb-6 font-medium">
       And most importantly, there is possibility.
     </p>
-
     <p class="mb-8">
       When a child finishes sewing their first outfit… when they braid hair independently… when they package chips neatly for sale — something shifts.
     </p>
-
     <p class="mb-8">
       They begin to see themselves not just as students, but as creators. As entrepreneurs. As problem-solvers.
       <span class="font-semibold"> “I can.” </span>
       And that belief changes everything.
     </p>
-
     <!-- SECTION 4 - FINAL SINGLE IMAGE -->
     <img 
       src="/assets/blog/skills-image5.jpg" 
@@ -336,27 +323,21 @@ export const blogsData = [
       class="w-full h-[260px] md:h-[400px] object-cover rounded-2xl shadow-md my-10"
     
     />
-
     <p class="mb-6">
       Skill acquisition is not an add-on to education. It is a strategic pathway to independence. It equips our students with tools they can use immediately and build on for years to come.
     </p>
-
     <p class="mb-8">
       We are raising children who can think, create, produce, and lead.
     </p>
-
     <h2 class="text-2xl font-semibold mt-12 mb-4">
       You Can Help Shape a Future
     </h2>
-
     <p class="mb-4">
       Are you a hairstylist, tailor, shoemaker, caterer, creative artisan, or entrepreneur?
     </p>
-
     <p class="mb-6 font-medium">
       Your skill could unlock a child’s potential.
     </p>
-
     <div class="space-y-4 mt-6">
       <p>
         Volunteer with us:<br/>
@@ -364,12 +345,10 @@ export const blogsData = [
           www.hvn.theinnercitymission.ngo
         </a>
       </p>
-
       <p>
         Mentor a student:<br/>
         <span class="font-semibold">07036076914</span>
       </p>
-
       <p>
         Support the mission:<br/>
         <a href="https://www.icm.ngo/donate" target="_blank" class="text-primary font-semibold underline">
@@ -377,15 +356,13 @@ export const blogsData = [
         </a>
       </p>
     </div>
-
     <p class="mt-12 font-medium">
       Because when you share what you know, you don’t just teach a skill — you shape a future.
     </p>
-
     <p class="mt-4 font-semibold">
       Join us. Let’s build confident, capable, and empowered young leaders together.
     </p>
-  `,
+    `,
     author: 'The InnerCity Mission',
     date: 'February 6, 2026',
     readTime: '5 min read',
