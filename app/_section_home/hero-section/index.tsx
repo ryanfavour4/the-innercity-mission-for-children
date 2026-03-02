@@ -21,7 +21,8 @@ const images = [
     id: 4,
   },
   { img: '/assets/images/wen-banner.jpg', link: '/special-highlights/build-a-school/', id: 1 },
-  { img: '/assets/images/7BMC11.jpg', link: '/special-highlights/7billionmeals/', id: 2 },
+  // { img: '/assets/images/7BMC11.jpg', link: '/special-highlights/7billionmeals/', id: 2 },
+  { img: '/assets/images/empower-indigent-women-banner.jpeg', link: '/special-highlights/summerinitiatives/', id: 3 },
   // { img: '/assets/images/back-to-school.jpg', link: '/special-highlights/backtoschool/', id: 3 },
   // {
   //   img: '/assets/images/Fiji-rebroadcast.png',
@@ -102,9 +103,8 @@ export function HeroSection2() {
           key={index}
           src={image.img}
           alt="hero-bg"
-          className={`absolute inset-0 -z-10 h-1/2 min-h-[630px] w-full object-cover transition-opacity duration-1000 ${
-            index === currentIndex ? 'opacity-100' : 'opacity-0'
-          }`}
+          className={`absolute inset-0 -z-10 h-1/2 min-h-[630px] w-full object-cover transition-opacity duration-1000 ${index === currentIndex ? 'opacity-100' : 'opacity-0'
+            }`}
           width={2000}
           height={800}
         />

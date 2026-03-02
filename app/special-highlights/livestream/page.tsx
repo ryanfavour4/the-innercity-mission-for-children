@@ -45,9 +45,9 @@ export default function LiveStreamPage() {
           <div className="col-span-12 flex flex-col gap-4 md:col-span-7 lg:col-span-8">
             <VideoPlayer
               src={
-                ''
+                // ''
                 // 'https://vcpout-sf01-altnetro.internetmultimediaonline.org/vcp/oe5ehvoqh0oviy/chunklist.m3u8' // commented on 2025-02-22
-                // 'https://vcpout-sf01-altnetro.internetmultimediaonline.org/ext/ext1.smil/playlist.m3u8' // commented on 2025-02-21, new link above added on 2025-02-21
+                'https://vcpout-sf01-altnetro.internetmultimediaonline.org/ext/ext1.smil/playlist.m3u8' // commented on 2025-02-21, new link above added on 2025-02-21
                 // 'https://playlist.dacast.com/live/602498bd0ab279ef90d21c11e370e84f-live-ba817332-b74a-3b86-e4ae-0a059bdc404d/master.m3u8'
               }
               className="w-full !max-w-6xl md:!h-full"
