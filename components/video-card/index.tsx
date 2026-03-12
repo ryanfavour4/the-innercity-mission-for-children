@@ -1,5 +1,6 @@
 import Script from 'next/script'
 import VideoPlayer from '../video-player'
+import thumbnail from '@/public/assets/images/video-thumbnail.jpg'
 
 type VideoCardProps = {
   videoUrl?: string
@@ -10,9 +11,11 @@ type VideoCardProps = {
 }
 
 export function VideoCard({
-  videoUrl = 'https://player.vimeo.com/video/1155683488?h=0ef607f31a',
-  thumbNail = 'https://i.vimeocdn.com/video/2108470778-621aadb3ca66449ddbc21ad3a4cfe4ab26293db58db38c0b8be6ba2edb1d8d03-d?mw=1300&mh=731&q=70',
-  iframe = true,
+  videoUrl = 'https://d1ent1.loveworldcloud.com/~lwconcepts//CMD%20ON%20TRSMI/HSLHS%20VIDEO%20PODCAST%20WITH%20PASTOR%20T%20T%20-%20FOR%20NETWORKS%20-%20PAL2.mp4',
+  thumbNail = thumbnail.src,
+  // videoUrl = 'https://player.vimeo.com/video/1155683488?h=0ef607f31a',
+  // thumbNail = 'https://i.vimeocdn.com/video/2108470778-621aadb3ca66449ddbc21ad3a4cfe4ab26293db58db38c0b8be6ba2edb1d8d03-d?mw=1300&mh=731&q=70',
+  iframe = true, // change to true when using vimeo
   className,
   classNameIframe,
 }: VideoCardProps) {
@@ -42,7 +45,7 @@ export function VideoCard({
         //   <source src={videoUrl} type="video/mp4" />
         // </video>
         <div className="mx-auto flex w-full max-w-5xl flex-col items-center justify-center">
-          <VideoPlayer src={videoUrl} className="w-full !max-w-6xl md:!h-full" />
+          <VideoPlayer src={videoUrl} className="w-full !max-w-6xl md:!h-full" autoplay={false} />
         </div>
       )}
     </div>
