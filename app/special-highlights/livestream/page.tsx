@@ -38,7 +38,7 @@ export default function LiveStreamPage() {
           <h3 className="sub-header max-w-md text-2xl font-semibold before:top-4 md:text-3xl">
             Live Stream
           </h3>
-          <p>LIVE: COMING SOON</p>
+          <p>LIVE: Healing Streams Live Healing Service</p>
         </div>
 
         <div className="wrapper mt-6 grid grid-cols-12 gap-6">
@@ -53,7 +53,7 @@ export default function LiveStreamPage() {
               className="w-full !max-w-6xl md:!h-full"
             />
             <h4 className="ellipsis-2 text-xl font-bold uppercase md:text-2xl">
-              LIVE: COMING SOON
+              LIVE: Healing Streams Live Healing Service
             </h4>
           </div>
           <div className="rounlg col-span-12 border-2 px-2 py-3 md:col-span-5 lg:col-span-4">

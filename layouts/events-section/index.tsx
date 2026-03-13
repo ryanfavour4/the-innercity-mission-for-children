@@ -11,12 +11,12 @@ export default function EventsSection() {
   const events = [
     {
       id: 1,
-      event: 'No Event',
+      event: 'Healing Streams Live Healing Service',
       decription: 'No upcoming event',
       day: new Date().getDate(),
       month: new Date().toLocaleString('default', { month: 'long' }),
       date: new Date().toLocaleDateString(),
-      link: '#',
+      link: '/livestream',
     },
     // {
     //   id: 1,

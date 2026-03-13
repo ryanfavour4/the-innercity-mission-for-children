@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ChevronRightIcon, HandHeartIcon, PlayIcon } from '@/components/svgs'
@@ -16,44 +16,26 @@ const images = [
   //   id: 3,
   // },
   {
+    img: '/assets/images/healing-streams-banner.jpg',
+    link: '/livestream/',
+    id: 8,
+  },
+  {
     img: '/assets/images/icm-at-20.jpeg',
     link: 'https://icmat20.org/',
     id: 4,
   },
   { img: '/assets/images/wen-banner.jpg', link: '/special-highlights/build-a-school/', id: 1 },
-  // { img: '/assets/images/7BMC11.jpg', link: '/special-highlights/7billionmeals/', id: 2 },
-  { img: '/assets/images/empower-indigent-women-banner.jpeg', link: '/special-highlights/summerinitiatives/', id: 3 },
-  // { img: '/assets/images/back-to-school.jpg', link: '/special-highlights/backtoschool/', id: 3 },
-  // {
-  //   img: '/assets/images/Fiji-rebroadcast.png',
-  //   link: '/livestream/',
-  //   id: 4,
-  // },
-  // {
-  //   img: '/assets/images/october.jpg',
-  //   link: '/special-highlights/7billionmeals/',
-  //   id: 5,
-  // },
-  // {
-  //   img: '/assets/images/bannerGO.jpg',
-  //   link: '/special-highlights/summerinitiatives/',
-  //   id: 6,
-  // },
-  // {
-  //   img: '/assets/images/community-center.jpg',
-  //   link: '/special-highlights/summerinitiatives/',
-  //   id: 7,
-  // },
   {
-    img: '/assets/images/preserve1.png',
-    link: '/special-highlights/summerinitiatives/',
-    id: 8,
+    img: '/assets/images/healing-streams-banner.jpg',
+    link: '/livestream/',
+    id: 5,
   },
-  // {
-  //   img: '/assets/images/summer-meals1.png',
-  //   link: '/special-highlights/summerinitiatives/',
-  //   id: 9,
-  // },
+  {
+    img: '/assets/images/empower-indigent-women-banner.jpeg',
+    link: '/special-highlights/summerinitiatives/',
+    id: 3,
+  },
   {
     img: '/assets/images/website-bag-of-hope1.png',
     link: 'https://vfd.theinnercitymission.ngo/',
@@ -66,17 +48,14 @@ export default function HeroSection() {
     <>
       <header className="bg-secondary pb-10">
         {/* Marquee new year roller */}
-        <div className="bg-primary py-2 text-sm font-semibold uppercase tracking-widest text-light">
-          <Link href={'/special-highlights/7billionmeals/'} className="wrapper">
+        <div className="bg-error py-2 text-sm font-semibold uppercase tracking-widest text-light">
+          <Link href={'/livestream'} className="wrapper">
             <Marquee speed={20}>
-              <p>
-                DON&apos;T IGNORE CHILDREN,EVERYCHILD IS YOUR CHILD, CLICK TO SUPPORT OUR ON GOING
-                CAMPAIGN
-              </p>
-              {/* <p>2025 Year of Completion!</p> */}
+              <p>Join the healing streams live healing service</p>
             </Marquee>
           </Link>
         </div>
+
         {/* HERO BG AREA */}
         {/* <HeroSection2 /> */}
         <HeroSection3 />
@@ -103,8 +82,9 @@ export function HeroSection2() {
           key={index}
           src={image.img}
           alt="hero-bg"
-          className={`absolute inset-0 -z-10 h-1/2 min-h-[630px] w-full object-cover transition-opacity duration-1000 ${index === currentIndex ? 'opacity-100' : 'opacity-0'
-            }`}
+          className={`absolute inset-0 -z-10 h-1/2 min-h-[630px] w-full object-cover transition-opacity duration-1000 ${
+            index === currentIndex ? 'opacity-100' : 'opacity-0'
+          }`}
           width={2000}
           height={800}
         />
