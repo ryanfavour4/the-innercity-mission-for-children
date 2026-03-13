@@ -104,7 +104,7 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
-        source: '/(:path*)',
+        source: '/(special-highlights/livestream|livestream)',
         headers: [
           {
             key: 'Cache-Control',
