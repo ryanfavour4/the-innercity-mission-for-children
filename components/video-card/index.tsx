@@ -11,7 +11,7 @@ type VideoCardProps = {
 }
 
 export function VideoCard({
-  videoUrl = 'https://d1ent1.loveworldcloud.com/~lwconcepts//CMD%20ON%20TRSMI/HSLHS%20VIDEO%20PODCAST%20WITH%20PASTOR%20T%20T%20-%20FOR%20NETWORKS%20-%20PAL2.mp4',
+  videoUrl = 'https://vcpout-sf01-altnetro.internetmultimediaonline.org/ext/ext1.smil/playlist.m3u8',
   thumbNail = thumbnail.src,
   // videoUrl = 'https://player.vimeo.com/video/1155683488?h=0ef607f31a',
   // thumbNail = 'https://i.vimeocdn.com/video/2108470778-621aadb3ca66449ddbc21ad3a4cfe4ab26293db58db38c0b8be6ba2edb1d8d03-d?mw=1300&mh=731&q=70',
