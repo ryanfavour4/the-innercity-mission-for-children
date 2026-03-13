@@ -25,7 +25,10 @@ function IntroVideoSection() {
           </div>
 
           {/* VIDEO */}
-          <VideoCard classNameIframe="md:!h-[33rem]" iframe={true} />
+          <VideoCard
+            videoUrl="https://playlist.dacast.com/live/602498bd0ab279ef90d21c11e370e84f-live-ba817332-b74a-3b86-e4ae-0a059bdc404d/master.m3u8"
+            classNameIframe="md:!h-[33rem]"
+          />
         </div>
       </div>
     </motion.div>
