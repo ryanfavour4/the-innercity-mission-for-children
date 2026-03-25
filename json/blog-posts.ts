@@ -510,8 +510,7 @@ export const blogsData = [
           Fewer sick days. Stronger bodies. More consistent education. A healthier, more hopeful future.
         </p>
 
-        <!-- IMAGE 7 -->
-        <img src="/assets/blog/simplehygiene7.jpg" class="w-full rounded-xl object-cover" />
+      
 
         <p>
           And that is why this campaign matters. Because sometimes, the most powerful solutions are also the simplest.
@@ -527,21 +526,13 @@ export const blogsData = [
 
         <div class="pt-4 space-y-2">
           <p>
-            👉 <a href="/volunteer" class="text-[#0D7FC1] font-semibold underline">Volunteer</a>
+            👉 <a href="https://hvn.theinnercitymission.ngo" class="text-[#0D7FC1] font-semibold underline">Volunteer</a>
           </p>
           <p>
             👉 <a href="/donate" class="text-[#0D7FC1] font-semibold underline">Give</a>
           </p>
         </div>
 
-        <div class="pt-6 border-t text-sm text-gray-500">
-          <p>
-            <a href="https://www.hvn.theinnercitymission.ngo" class="underline">www.hvn.theinnercitymission.ngo</a>
-          </p>
-          <p>
-            <a href="https://www.icm.ngo" class="underline">www.icm.ngo</a>
-          </p>
-        </div>
 
       </div>
     `,
