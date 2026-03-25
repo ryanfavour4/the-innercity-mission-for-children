@@ -27,7 +27,7 @@ function IntroVideoSection() {
           </div>
 
           {/* VIDEO */}
-          <VideoCard classNameIframe="md:!h-[33rem]" iframe={true} />
+          <VideoCard classNameIframe="md:!h-[33rem]" />
         </div>
       </div>
     </motion.div>
