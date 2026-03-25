@@ -392,4 +392,116 @@ export const blogsData = [
     category: 'Education & Skills Development',
     image: '/assets/blog/skills-image4.jpg',
   },
+
+  {
+    id: '18',
+    title: 'More Than Water: How Simple Hygiene is Changing Lives',
+    excerpt:
+      'It began with something simple—a child learning how to wash their hands. But this small act is transforming health, education, and hope across communities.',
+    content: `
+      <div class="space-y-6 text-[#0F172A] leading-relaxed text-base">
+
+        <p>
+          It began with something simple. A child, standing by a bowl of water, watching carefully as a volunteer demonstrated how to wash their hands properly.
+          Not just a quick rinse but a deliberate, thoughtful act. Soap. Clean water. Every finger. Every palm. Every moment mattered.
+        </p>
+
+        <!-- IMAGE 1 -->
+        <img src="/assets/blog/simplehygiene1.jpg" class="w-full h-96  rounded-2xl object-center" />
+
+        <p>
+          Because in that moment, something deeper was happening.
+        </p>
+
+        <p>
+          In many underserved communities, staying healthy is not always guaranteed. Access to clean water is limited. Hygiene education is often out of reach.
+          And for children, something as preventable as an infection can quietly become a barrier to school, to growth, to a stable childhood.
+        </p>
+
+        <!-- IMAGE 2 -->
+       <div class="h-[10px]">
+        <img src="/assets/blog/simplehygiene2.jpg" class="w-full h-96  rounded-2xl object-center" />
+        </div>
+
+        <p>
+          The InnerCity Mission understood this. And so, in commemoration of World Water Day, they launched a health campaign not just as an event,
+          but as an intervention designed to change everyday habits and protect lives.
+        </p>
+
+        <p class="font-semibold">
+          The message was clear: clean hands save lives.
+        </p>
+
+        <!-- IMAGE 3 -->
+        <img src="/assets/blog/simplehygiene3.jpg" class="w-full h-96  rounded-2xl object-center" />
+
+        <p>
+          Across communities like Abule Egba, Okukutu, Akute, and even within the walls of Remar Orphanage Home,
+          the campaign came alive—not in speeches alone but in action.
+        </p>
+
+        <!-- IMAGE 4 -->
+        <img src="/assets/blog/simplehygiene4.jpg" class="w-full h-96  rounded-2xl object-center" />
+
+        <p>
+          Volunteers gathered children in schools, orphanages, IDP camps, and open community spaces.
+          They didn’t just talk about hygiene; they showed it. Step by step. Hand by hand.
+        </p>
+
+        <!-- IMAGE 5 -->
+        <img src="/assets/blog/simplehygiene5.jpg" class="w-full h-96  rounded-2xl object-center" />
+
+        <p>
+          Laughter mixed with learning. Curiosity turned into confidence. And slowly, what once seemed small began to reveal its true power.
+        </p>
+
+        <!-- IMAGE 6 -->
+        <img src="/assets/blog/simplehygiene6.jpg" class="w-full h-96  rounded-2xl object-fill" />
+
+        <p>
+          Because for these children, proper handwashing is not just about cleanliness—it is about protection.
+          Fewer sick days. Stronger bodies. More consistent education. A healthier, more hopeful future.
+        </p>
+
+        <!-- IMAGE 7 -->
+        <img src="/assets/blog/simplehygiene7.jpg" class="w-full rounded-xl object-cover" />
+
+        <p>
+          And that is why this campaign matters. Because sometimes, the most powerful solutions are also the simplest.
+        </p>
+
+        <p class="font-semibold">
+          A bar of soap. Clean water. A child who now knows better.
+        </p>
+
+        <p class="font-bold text-lg">
+          Healthy hands don’t just save lives. They protect futures.
+        </p>
+
+        <div class="pt-4 space-y-2">
+          <p>
+            👉 <a href="/volunteer" class="text-[#0D7FC1] font-semibold underline">Volunteer</a>
+          </p>
+          <p>
+            👉 <a href="/donate" class="text-[#0D7FC1] font-semibold underline">Give</a>
+          </p>
+        </div>
+
+        <div class="pt-6 border-t text-sm text-gray-500">
+          <p>
+            <a href="https://www.hvn.theinnercitymission.ngo" class="underline">www.hvn.theinnercitymission.ngo</a>
+          </p>
+          <p>
+            <a href="https://www.icm.ngo" class="underline">www.icm.ngo</a>
+          </p>
+        </div>
+
+      </div>
+    `,
+    author: 'The InnerCity Mission',
+    date: 'March 24, 2026',
+    readTime: '3 min read',
+    category: 'Health & Impact',
+    image: '/assets/blog/simplehygiene1.jpg',
+  },
 ]
