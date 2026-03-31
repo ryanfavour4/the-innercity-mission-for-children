@@ -20,11 +20,11 @@ const images = [
     link: 'https://icmat20.org/',
     id: 4,
   },
-  {
-    img: '/assets/images/gdop-mar-26-2026.png',
-    link: '/livestream',
-    id: 4,
-  },
+  // {
+  //   img: '/assets/images/gdop-mar-26-2026.png',
+  //   link: '/livestream',
+  //   id: 4,
+  // },
   { img: '/assets/images/wen-banner.jpg', link: '/special-highlights/build-a-school/', id: 1 },
   {
     img: '/assets/images/empower-indigent-women-banner.jpeg',
