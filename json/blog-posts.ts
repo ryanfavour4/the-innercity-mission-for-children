@@ -447,7 +447,6 @@ export const blogsData = [
       'It began with something simple—a child learning how to wash their hands. But this small act is transforming health, education, and hope across communities.',
     content: `
       <div class="space-y-6 text-[#0F172A] leading-relaxed text-base">
-
         <p>
           It began with something simple. A child, standing by a bowl of water, watching carefully as a volunteer demonstrated how to wash their hands properly.
           Not just a quick rinse but a deliberate, thoughtful act. Soap. Clean water. Every finger. Every palm. Every moment mattered.
@@ -466,8 +465,8 @@ export const blogsData = [
         </p>
 
         <!-- IMAGE 2 -->
-       <div class="h-[10px]">
-        <img src="/assets/blog/simplehygiene2.jpg" class="w-full h-96  rounded-2xl object-center" />
+        <div class="h-[10px]">
+          <img src="/assets/blog/simplehygiene2.jpg" class="w-full h-96  rounded-2xl object-center" />
         </div>
 
         <p>
@@ -510,8 +509,6 @@ export const blogsData = [
           Fewer sick days. Stronger bodies. More consistent education. A healthier, more hopeful future.
         </p>
 
-      
-
         <p>
           And that is why this campaign matters. Because sometimes, the most powerful solutions are also the simplest.
         </p>
@@ -532,8 +529,6 @@ export const blogsData = [
             👉 <a href="/donate" class="text-[#0D7FC1] font-semibold underline">Give</a>
           </p>
         </div>
-
-
       </div>
     `,
     author: 'The InnerCity Mission',
@@ -541,5 +536,72 @@ export const blogsData = [
     readTime: '3 min read',
     category: 'Health & Impact',
     image: '/assets/blog/simplehygiene1.jpg',
+  },
+  {
+    id: '20',
+    title: 'Experience Impact in Real Time: Inside the Coloring Dreams App',
+    excerpt:
+      'What if you didn’t just hear about impact… but actually saw it as it happens? Discover how the Coloring Dreams App brings real-time transformation to life.',
+    content: `
+        <div class="space-y-6 leading-relaxed text-gray-700">
+          <p class="text-lg font-semibold">
+            What if you didn’t just hear about impact… but actually saw it as it happens?
+          </p>
+          <p>
+            This is the experience the <strong>Coloring Dreams TV App</strong> of 
+            <strong>The InnerCity Mission for Children</strong> brings to life. Designed as a dynamic, 
+            always-on platform, the app serves as a 24/7 live stream of hope, giving users direct access 
+            to real stories of transformation from across the world.
+          </p>
+          <p>
+            From classrooms filled with eager learners to communities receiving life-changing support, 
+            the app captures the heartbeat of the mission in motion. Every frame reflects impact—children 
+            gaining access to education, families receiving care, and communities experiencing tangible change.
+          </p>
+          <div class="my-8">
+            <img 
+              src="/assets/blog/coloring-dreams-app-image-1.jpeg" 
+              alt="Coloring Dreams App live impact" 
+              class="w-full rounded-xl shadow-md object-cover"
+            />
+          </div>
+          <p>
+            What makes the Coloring Dreams App unique is its immediacy. It moves beyond reports and summaries, 
+            offering a real-time window into ongoing humanitarian efforts. This means you are not just reading 
+            about change after it happens—you are witnessing it as it unfolds.
+          </p>
+          <p>
+            Across feeding programs, educational initiatives, and global outreaches, the platform brings 
+            together authentic moments that highlight the depth and scale of the work being done. 
+            The stories are real. The children are real. The impact is real.
+          </p>
+          <p>
+            Accessible anytime and from anywhere, the app ensures that connection to purpose is never out of reach. 
+            It bridges the gap between intention and awareness, allowing individuals, partners, and supporters 
+            to stay continuously engaged with meaningful change.
+          </p>
+          <p class="font-medium">
+            Through the Coloring Dreams App, the mission becomes more than something you support—it becomes something you experience.
+          </p>
+          <div class="bg-gray-50 p-6 rounded-xl">
+            <p class="font-semibold">📲 Download the app and stay connected:</p>
+            <a 
+              href="https://web.lwappstore.com/share/lW-APP-Y26-QT5343" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="inline-block mt-2 px-5 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition"
+            >
+              Download on LoveWorld App Store
+            </a>
+          </div>
+          <p class="text-gray-900 font-semibold">
+            Because every child truly matters.
+          </p>
+        </div>`,
+    author: 'The InnerCity Mission',
+    date: 'April 1, 2026',
+    readTime: '3 min read',
+    category: 'Technology & Impact',
+    image: '/assets/blog/coloring-dreams-app-image-1.jpeg',
   },
 ]
