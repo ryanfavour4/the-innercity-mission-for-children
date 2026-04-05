@@ -12,7 +12,7 @@ export default function LiveStreamPage() {
   const [email, setEmail] = useState({ value: '' })
   const [testimony, setTestimony] = useState({ value: '' })
   const [country, setCountry] = useState('NG')
-
+  const title = "GLOBAL COMMUNION SERVICE"
   const handleSubmitGemForm = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const formData = new FormData()
@@ -32,13 +32,13 @@ export default function LiveStreamPage() {
 
   return (
     <>
-      <MetaTags title="Livestream – InnerCity Mission HQ" />
+      <MetaTags title={`Livestream – ${title} | InnerCity Mission HQ`} />
       <div className="bg-white py-6">
         <div className="wrapper">
           <h3 className="sub-header max-w-md text-2xl font-semibold before:top-4 md:text-3xl">
             Live Stream
           </h3>
-          <p>LIVE: GLOBAL COMMUNION SERVICE</p>
+          <p>LIVE: {title}</p>
         </div>
 
         <div className="wrapper mt-6 grid grid-cols-12 gap-6">
@@ -53,7 +53,7 @@ export default function LiveStreamPage() {
               className="w-full !max-w-6xl md:!h-full"
             />
             <h4 className="ellipsis-2 text-xl font-bold uppercase md:text-2xl">
-              LIVE: 21ST ICM SCHOOL GROUNDBREAKING CEREMONY, NASSARAWA STATE, NIGERIA
+              LIVE: {title}
             </h4>
           </div>
           <div className="rounlg col-span-12 border-2 px-2 py-3 md:col-span-5 lg:col-span-4">
