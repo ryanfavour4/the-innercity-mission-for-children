@@ -38,7 +38,7 @@ export default function LiveStreamPage() {
           <h3 className="sub-header max-w-md text-2xl font-semibold before:top-4 md:text-3xl">
             Live Stream
           </h3>
-          <p>LIVE: 21ST ICM SCHOOL GROUNDBREAKING CEREMONY, NASSARAWA STATE, NIGERIA</p>
+          <p>LIVE: GLOBAL COMMUNION SERVICE</p>
         </div>
 
         <div className="wrapper mt-6 grid grid-cols-12 gap-6">
