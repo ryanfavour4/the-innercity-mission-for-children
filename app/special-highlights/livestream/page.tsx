@@ -12,7 +12,7 @@ export default function LiveStreamPage() {
   const [email, setEmail] = useState({ value: '' })
   const [testimony, setTestimony] = useState({ value: '' })
   const [country, setCountry] = useState('NG')
-  const title = '7 DAY GLOBAL PRAYER & FASTING WITH PASTOR CHRIS'
+  const title = '7 DAYS GLOBAL PRAYER & FASTING WITH PASTOR CHRIS'
 
   const handleSubmitGemForm = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
