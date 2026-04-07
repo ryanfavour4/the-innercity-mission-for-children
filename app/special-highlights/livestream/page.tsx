@@ -47,7 +47,6 @@ export default function LiveStreamPage() {
             <VideoPlayer
               src={
                 // ''
-                // 'https://www.youtube.com/watch?v=HHzhe-WkPgc'
                 'https://www.youtube-nocookie.com/embed/HHzhe-WkPgc?si=cCNsyq-3kc1tSHWP&amp;controls=0'
                 // 'https://vcpout-sf01-altnetro.internetmultimediaonline.org/ext/ext1.smil/playlist.m3u8'
                 // 'https://vcpout-sf01-altnetro.internetmultimediaonline.org/vcp/oe5ehvoqh0oviy/chunklist.m3u8'
