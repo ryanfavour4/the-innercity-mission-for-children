@@ -371,7 +371,7 @@ export default function AboutPage() {
               />
 
               <p className="mt-5 font-semibold leading-none">Omoh Alabi</p>
-              <small>Executive MINISTER</small>
+              <small>Executive Minister</small>
               <div className="hidden items-center justify-between gap-6 rounded-md bg-primary px-2 py-1.5">
                 <a target="_blank" href="http://kingschat.online/">
                   <Image src={kcIcon} alt="kcIcon" width={25} height={25} className="object-fill" />
