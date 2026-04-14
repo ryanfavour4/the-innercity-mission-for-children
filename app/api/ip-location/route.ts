@@ -12,7 +12,7 @@ export async function GET(req: NextRequest) {
   }
 
   const data = await res.json()
-
+  console.log('IP LOCATION RESPONSE', data)
   return NextResponse.json(
     encryptServer({
       ...data,

@@ -25,12 +25,12 @@ const images = [
   //   link: '/livestream',
   //   id: 4,
   // },
-  { img: '/assets/images/wen-banner.jpg', link: '/special-highlights/build-a-school/', id: 1 },
-  {
-    img: '/assets/images/empower-indigent-women-banner.jpeg',
-    link: '/special-highlights/summerinitiatives/',
-    id: 3,
-  },
+  { img: '/assets/images/wen-banner.jpg', link: '/donate', id: 1 },
+  // {
+  //   img: '/assets/images/empower-indigent-women-banner.jpeg',
+  //   link: '/special-highlights/summerinitiatives/',
+  //   id: 3,
+  // },
   {
     img: '/assets/images/website-bag-of-hope1.png',
     link: 'https://vfd.theinnercitymission.ngo/',
