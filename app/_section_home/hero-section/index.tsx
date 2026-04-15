@@ -20,6 +20,11 @@ const images = [
     link: 'https://icmat20.org/',
     id: 4,
   },
+  {
+    img: '/assets/images/landscape-shop-for-free',
+    link: '/donate',
+    id: 4,
+  },
   // {
   //   img: '/assets/images/gdop-mar-26-2026.png',
   //   link: '/livestream',
