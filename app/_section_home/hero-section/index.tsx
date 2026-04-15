@@ -21,7 +21,7 @@ const images = [
     id: 4,
   },
   {
-    img: '/assets/images/landscape-shop-for-free',
+    img: '/assets/images/landscape-shop-for-free.jpg',
     link: '/donate',
     id: 4,
   },

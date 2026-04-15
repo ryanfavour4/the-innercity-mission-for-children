@@ -9,14 +9,14 @@ export default function NotFound() {
       }
     >
       <Icon icon="mdi:alert-circle-outline" className="mb-6 text-8xl text-error md:text-9xl" />
-      <h1 className="mb-4 text-6xl font-bold text-textcolor md:text-8xl">404</h1>
-      <h2 className="mb-8 text-xl font-medium text-textcolor md:text-2xl">Page Not Found</h2>
-      <p className="mb-10 max-w-md text-lg text-textcolor/80 md:text-xl">
+      <h1 className="mb-4 text-4xl font-extrabold text-textcolor md:text-6xl">404</h1>
+      <h2 className="mb-8 text-lg font-medium text-textcolor md:text-xl">Page Not Found</h2>
+      <p className="mb-10 max-w-md text-textcolor/80 md:text-base">
         Oops! The page you are looking for does not exist or has been moved. Please check the URL or
         navigate back to the homepage.
       </p>
 
-      <Link className="btn-primary max-w-fit px-8 py-3 hover:bg-accent" href="/">
+      <Link className="btn-primary max-w-fit px-8 py-3" href="/">
         Go to Homepage
       </Link>
 
