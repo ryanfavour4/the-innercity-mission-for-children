@@ -22,8 +22,8 @@ const images = [
   },
   {
     img: '/assets/images/landscape-shop-for-free.jpg',
-    link: '/donate',
-    id: 4,
+    link: '/special-highlights/shop-for-free',
+    id: 3,
   },
   // {
   //   img: '/assets/images/gdop-mar-26-2026.png',
