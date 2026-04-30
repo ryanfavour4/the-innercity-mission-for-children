@@ -19,7 +19,7 @@ function IntroVideoSection() {
         <div className="wrapper flex flex-col items-center justify-center">
           <div className="mb-5 flex flex-col items-center justify-center gap-2 px-4 text-center">
             <h2 className="text-2xl font-extrabold uppercase md:text-3xl">
-              {/* — School and Learning Center Sponsorship — */}- Shop for free outreach -
+              {/* — School and Learning Center Sponsorship — */}- Groundbreaking Ceremony of 6 ICM Learning Centers in Benue -
             </h2>
             <p className="hidden max-w-xl text-center">
               Join us to build more schools, strengthen learning centers, and carry the light of the
@@ -29,7 +29,8 @@ function IntroVideoSection() {
 
           {/* VIDEO */}
           <VideoCard
-            videoUrl="https://player.vimeo.com/video/1183429695?h=6b7b217b64"
+            videoUrl="https://vcpout-sf01-altnetro.internetmultimediaonline.org/vcp/c8075b82/playlist.m3u8"
+            // videoUrl="https://player.vimeo.com/video/1183429695?h=6b7b217b64"
             classNameIframe="md:!h-[33rem]"
           />
         </div>
