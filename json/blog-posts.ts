@@ -604,4 +604,102 @@ export const blogsData = [
     category: 'Technology & Impact',
     image: '/assets/blog/coloring-dreams-app-image-1.jpeg',
   },
+  {
+    id: '21',
+    title: 'The Grow Garden Initiative',
+    excerpt:
+      'What if one small garden could change everything? Across communities and free schools, simple gardens are becoming powerful tools for food, sustainability, and hope.',
+    content: `
+    <div class="space-y-6 text-[#0F172A] leading-relaxed text-base">
+
+      <p class="text-lg font-medium">
+        What if one small garden could change everything?
+      </p>
+
+      <p>
+        Through the Grow Garden Initiative by The InnerCity Mission for Children, volunteers are transforming simple spaces into sources of food, income, and hope for indigent families and vulnerable communities.
+      </p>
+
+      <!-- IMAGE 1 -->
+      <img src="/assets/blog/growgarden1.jpg" class="w-full h-96 rounded-2xl object-cover" />
+
+      <p>
+        In Tonj Town, South Sudan, dedicated volunteers embraced this vision by establishing vegetable gardens for families and communities in need.
+      </p>
+
+      <p>
+        Land that once sat empty is now producing fresh food, creating sustainability, and restoring dignity for many families.
+      </p>
+
+      <!-- IMAGE 2 -->
+      <img src="/assets/blog/growgarden2.jpg" class="w-full h-96 rounded-2xl object-cover" />
+
+      <p>
+        What began as a simple effort is now spreading across communities, inspiring more people to grow their own food and build healthier futures.
+      </p>
+
+      <!-- IMAGE 3 -->
+      <img src="/assets/blog/growgarden3.jpg" class="w-full h-96 rounded-2xl object-center" />
+
+      <p>
+        Across our network of 100% free schools, gardens are also being cultivated to give children practical agricultural experience while ensuring access to fresh and nutritious meals.
+      </p>
+
+      <p class="font-semibold">
+        It is learning, feeding, and empowerment all in one initiative.
+      </p>
+
+      <!-- IMAGE 4 -->
+      <img src="/assets/blog/growgarden4.jpg" class="w-full h-96 rounded-2xl object-cover" />
+
+      <div class="space-y-3">
+        <h2 class="text-2xl font-bold text-green-700">
+          🌿 Why This Matters
+        </h2>
+
+        <p>
+          When families can grow what they eat, we do not just respond to hunger we tackle it at the root.
+        </p>
+
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Fresh vegetables all year round</li>
+          <li>Reduced dependence on expensive or processed food</li>
+          <li>Better nutrition for children</li>
+          <li>A valuable skill that lasts a lifetime</li>
+        </ul>
+      </div>
+
+      <!-- IMAGE 5 -->
+      <img src="/assets/blog/growgarden5.jpg" class="w-full h-96 rounded-2xl object-cover" />
+
+      <p>
+        You do not need a large farm to begin. Gardens can grow in buckets, sacks, old tires, school compounds, orphanages, open spaces within communities, and even IDP camps.
+      </p>
+
+      <p>
+        Every seed planted carries the potential to nourish lives and restore hope.
+      </p>
+
+      <p class="font-bold text-lg">
+        Sometimes, changing the world begins with something as small as a garden.
+      </p>
+
+      <div class="pt-4 space-y-2">
+        <p>
+          👉 <a href="https://hvn.theinnercitymission.ngo" class="text-[#0D7FC1] font-semibold underline">Support this initiative</a>
+        </p>
+
+        <p>
+          👉 <a href="/donate" class="text-[#0D7FC1] font-semibold underline">Help an indigent family grow a garden 🌱</a>
+        </p>
+      </div>
+
+    </div>
+  `,
+    author: 'The InnerCity Mission',
+    date: 'April 12, 2026',
+    readTime: '3 min read',
+    category: 'Food & Sustainability',
+    image: '/assets/blog/growgarden1.jpg',
+  },
 ]
