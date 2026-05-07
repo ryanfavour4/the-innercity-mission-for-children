@@ -12,6 +12,7 @@ export default function LiveStreamPage() {
   const [email, setEmail] = useState({ value: '' })
   const [testimony, setTestimony] = useState({ value: '' })
   const [country, setCountry] = useState('NG')
+  const title = ' Rhapathon With Pastor Chris'
 
   const handleSubmitGemForm = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -32,13 +33,13 @@ export default function LiveStreamPage() {
 
   return (
     <>
-      <MetaTags title="Livestream – InnerCity Mission HQ" />
+      <MetaTags title={`Livestream – ${title} | InnerCity Mission HQ`} />
       <div className="bg-white py-6">
         <div className="wrapper">
           <h3 className="sub-header max-w-md text-2xl font-semibold before:top-4 md:text-3xl">
             Live Stream
           </h3>
-          <p>LIVE: Healing Streams Live Healing Service</p>
+          <p>LIVE: {title}</p>
         </div>
 
         <div className="wrapper mt-6 grid grid-cols-12 gap-6">
@@ -46,15 +47,14 @@ export default function LiveStreamPage() {
             <VideoPlayer
               src={
                 // ''
+                // 'https://vcpout-sf01-altnetro.internetmultimediaonline.org/vcp/c8075b82/playlist.m3u8'
                 'https://vcpout-sf01-altnetro.internetmultimediaonline.org/ext/ext1.smil/playlist.m3u8'
                 // 'https://vcpout-sf01-altnetro.internetmultimediaonline.org/vcp/oe5ehvoqh0oviy/chunklist.m3u8'
                 // 'https://playlist.dacast.com/live/602498bd0ab279ef90d21c11e370e84f-live-ba817332-b74a-3b86-e4ae-0a059bdc404d/master.m3u8'
               }
               className="w-full !max-w-6xl md:!h-full"
             />
-            <h4 className="ellipsis-2 text-xl font-bold uppercase md:text-2xl">
-              LIVE: Healing Streams Live Healing Service
-            </h4>
+            <h4 className="ellipsis-2 text-xl font-bold uppercase md:text-2xl">LIVE: {title}</h4>
           </div>
           <div className="rounlg col-span-12 border-2 px-2 py-3 md:col-span-5 lg:col-span-4">
             <h3 className="text-balance text-lg font-semibold">Share your testimony with us</h3>

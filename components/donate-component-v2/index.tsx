@@ -39,7 +39,7 @@ export default function DonateSectionV2({
     name: 'Nigerian Naira',
   })
   const [amount, setAmount] = useState({ value: '' })
-  const [paymentType, setPaymentType] = useState({ value: 'Local' })
+  const [paymentType, setPaymentType] = useState({ value: 'Local (NG)' })
   const [fullname, setFullname] = useState({ value: '' })
   const [email, setEmail] = useState({ value: '' })
   const [country, setCountry] = useState('NG')
@@ -64,6 +64,12 @@ export default function DonateSectionV2({
       setPaymentType({ value: 'International' })
     }
   }, [ip])
+
+  useEffect(() => {
+    if (paymentType.value === 'Local (NG)') {
+      setCurrency(getCurrencyFromIP({ country_code: 'NG' }))
+    }
+  }, [paymentType.value])
 
   return (
     <>

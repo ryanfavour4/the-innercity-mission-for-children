@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ChevronRightIcon, HandHeartIcon, PlayIcon } from '@/components/svgs'
-// import Marquee from '@/components/marquee/marquee'
+import Marquee from '@/components/marquee/marquee'
 import { Autoplay, Navigation, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import type { Swiper as SwiperClass } from 'swiper'
@@ -20,12 +20,22 @@ const images = [
     link: 'https://icmat20.org/',
     id: 4,
   },
-  { img: '/assets/images/wen-banner.jpg', link: '/special-highlights/build-a-school/', id: 1 },
   {
-    img: '/assets/images/empower-indigent-women-banner.jpeg',
-    link: '/special-highlights/summerinitiatives/',
+    img: '/assets/images/landscape-shop-for-free.jpg',
+    link: '/special-highlights/shop-for-free',
     id: 3,
   },
+  // {
+  //   img: '/assets/images/gdop-mar-26-2026.png',
+  //   link: '/livestream',
+  //   id: 4,
+  // },
+  { img: '/assets/images/wen-banner.jpg', link: '/donate', id: 1 },
+  // {
+  //   img: '/assets/images/empower-indigent-women-banner.jpeg',
+  //   link: '/special-highlights/summerinitiatives/',
+  //   id: 3,
+  // },
   {
     img: '/assets/images/website-bag-of-hope1.png',
     link: 'https://vfd.theinnercitymission.ngo/',
@@ -38,13 +48,13 @@ export default function HeroSection() {
     <>
       <header className="bg-secondary pb-10">
         {/* Marquee new year roller */}
-        {/* <div className="bg-error py-2 text-sm font-semibold uppercase tracking-widest text-light">
+        <div className="hidden bg-error py-2 text-sm font-semibold uppercase tracking-widest text-light">
           <Link href={'/livestream'} className="wrapper">
             <Marquee speed={20}>
-              <p>Join the healing streams live healing service</p>
+              <p>Join the the live service!</p>
             </Marquee>
           </Link>
-        </div> */}
+        </div>
 
         {/* HERO BG AREA */}
         {/* <HeroSection2 /> */}

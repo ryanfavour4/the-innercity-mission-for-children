@@ -290,7 +290,7 @@ export default function AboutPage() {
           <div className="flex h-full flex-col justify-between gap-5 pb-8">
             <p className="sub-header uppercase">Meet the team</p>
             <h3 className="text-2xl font-semibold capitalize leading-8 md:-mt-4 md:text-3xl">
-              Board Of Directors
+              Board Of Ministers
             </h3>
           </div>
 
@@ -356,7 +356,7 @@ export default function AboutPage() {
         <div className="wrapper border-t px-3 py-10">
           <div className="flex h-full flex-col justify-between gap-5 pb-4">
             <h3 className="text-center text-2xl font-semibold capitalize leading-8 md:-mt-4 md:text-3xl">
-              THE EXECUTIVE DIRECTOR
+              THE EXECUTIVE MINISTER
             </h3>
           </div>
 
@@ -371,7 +371,7 @@ export default function AboutPage() {
               />
 
               <p className="mt-5 font-semibold leading-none">Omoh Alabi</p>
-              <small>Executive Director</small>
+              <small>Executive Minister</small>
               <div className="hidden items-center justify-between gap-6 rounded-md bg-primary px-2 py-1.5">
                 <a target="_blank" href="http://kingschat.online/">
                   <Image src={kcIcon} alt="kcIcon" width={25} height={25} className="object-fill" />
