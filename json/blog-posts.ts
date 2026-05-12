@@ -702,4 +702,114 @@ export const blogsData = [
     category: 'Food & Sustainability',
     image: '/assets/blog/growgarden1.jpg',
   },
+  {
+    id: '22',
+    title: 'Reaching 10,000 Orphanages: Restoring Hope to Vulnerable Children Around the World',
+    excerpt:
+      'Across thousands of orphanages around the world, vulnerable children are being reached with food, care, support, and the hope of a brighter future.',
+    content: `
+    <div class="space-y-6 text-[#0F172A] leading-relaxed text-base">
+
+      <p class="text-lg font-medium">
+        Somewhere tonight, a child will fall asleep without hearing “I love you.”
+      </p>
+
+      <p>
+        No bedtime story. No comforting embrace. No certainty about tomorrow.
+      </p>
+
+      <p>
+        For millions of orphaned and vulnerable children around the world, this is not imagination it is reality. But it does not have to remain their reality.
+      </p>
+
+      <!-- IMAGE 1 -->
+      <img src="/assets/blog/orphanage1.jpg" class="w-full h-96 rounded-2xl object-cover" />
+
+      <p>
+        Through the Global Orphanage Support Network, The InnerCity Mission for Children is reaching vulnerable children with love, care, and hope.
+      </p>
+
+      <p class="font-semibold">
+        This is more than a project it is a commitment to ensuring that no child feels forgotten.
+      </p>
+
+      <p>
+        The InnerCity Mission currently has a network of over 3,000 registered orphanages across 14 countries, supporting children who are orphaned, abandoned, displaced, or living with disabilities.
+      </p>
+
+      <!-- IMAGE 2 -->
+      <img src="/assets/blog/orphanage2.jpg" class="w-full h-96 rounded-2xl object-cover" />
+
+      <p>
+        Through the help of our global network of partners and volunteers, children in these orphanages are being reached through life-changing interventions that improve their overall wellbeing.
+      </p>
+
+      <p>
+        These interventions include monthly food distributions that help combat hunger and malnutrition, the provision of essential supplies that improve living conditions, and educational resources that inspire children to dream again.
+      </p>
+
+      <!-- IMAGE 3 -->
+      <img src="/assets/blog/orphanage3.jpg" class="w-full h-96 rounded-2xl object-cover" />
+
+      <p>
+        But beyond the food, clothing, and supplies, something even more meaningful is being restored: hope.
+      </p>
+
+      <div class="space-y-2 pl-2">
+        <p>💛 The hope that tells a child they are seen.</p>
+        <p>💛 The hope that reminds them they matter.</p>
+        <p>💛 The hope that gives them the courage to believe in a brighter tomorrow.</p>
+      </div>
+
+      <p>
+        Over the years, countless stories of transformation have emerged stories of children rediscovering joy, gaining access to education, growing in confidence, and thriving in environments where they are loved and cared for.
+      </p>
+
+      <!-- IMAGE 4 -->
+      <img src="/assets/blog/orphanage4.jpg" class="w-full h-96 rounded-2xl object-cover" />
+
+      <p>
+        Yet, thousands more children are still waiting to be reached.
+      </p>
+
+      <p class="font-semibold">
+        The vision remains bold: to expand this impact to 10,000 orphanages across the world, ensuring that even more vulnerable children experience care, support, and God's love.
+      </p>
+
+      <p>
+        And this vision becomes possible through people who choose to care and you can be part of them.
+      </p>
+
+      <div class="bg-[#F8FAFC] rounded-2xl p-6 space-y-4 border border-gray-200">
+        <p class="font-semibold text-lg">
+          ✨ You can adopt an orphanage in our directory
+        </p>
+
+        <p class="font-semibold text-lg">
+          ✨ You can support one near you
+        </p>
+      </div>
+
+      <p class="font-bold text-lg">
+        Together, we can continue restoring hope to indigent children and families around the world.
+      </p>
+
+      <div class="pt-4 space-y-2">
+        <p>
+          👉 <a href="https://hvn.theinnercitymission.ngo" class="text-[#0D7FC1] font-semibold underline">Volunteer</a>
+        </p>
+
+        <p>
+          👉 <a href="/donate" class="text-[#0D7FC1] font-semibold underline">Support an orphanage today</a>
+        </p>
+      </div>
+
+    </div>
+  `,
+    author: 'The InnerCity Mission',
+    date: 'April 20, 2026',
+    readTime: '4 min read',
+    category: 'Orphanage Support',
+    image: '/assets/blog/orphanage1.jpg',
+  },
 ]
