@@ -723,7 +723,7 @@ export const blogsData = [
       </p>
 
       <!-- IMAGE 1 -->
-      <img src="/assets/blog/orphanage1.jpg" class="w-full h-96 rounded-2xl object-cover" />
+      <img src="/assets/blog/orphanage2.jpg" class="w-full h-96 rounded-2xl object-cover" />
 
       <p>
         Through the Global Orphanage Support Network, The InnerCity Mission for Children is reaching vulnerable children with love, care, and hope.
@@ -738,7 +738,7 @@ export const blogsData = [
       </p>
 
       <!-- IMAGE 2 -->
-      <img src="/assets/blog/orphanage2.jpg" class="w-full h-96 rounded-2xl object-cover" />
+      <img src="/assets/blog/orphanage1.jpg" class="w-full h-96 rounded-2xl object-center" />
 
       <p>
         Through the help of our global network of partners and volunteers, children in these orphanages are being reached through life-changing interventions that improve their overall wellbeing.
