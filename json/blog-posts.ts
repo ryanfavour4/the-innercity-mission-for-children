@@ -749,7 +749,7 @@ export const blogsData = [
       </p>
 
       <!-- IMAGE 3 -->
-      <img src="/assets/blog/orphanage3.jpg" class="w-full h-96 rounded-2xl object-cover" />
+      <img src="/assets/blog/orphanage3.jpg" class="w-full h-96 rounded-2xl object-center" />
 
       <p>
         But beyond the food, clothing, and supplies, something even more meaningful is being restored: hope.
@@ -766,7 +766,7 @@ export const blogsData = [
       </p>
 
       <!-- IMAGE 4 -->
-      <img src="/assets/blog/orphanage4.jpg" class="w-full h-96 rounded-2xl object-cover" />
+      <img src="/assets/blog/orphanage4.jpg" class="w-full h-96 rounded-2xl object-center" />
 
       <p>
         Yet, thousands more children are still waiting to be reached.
