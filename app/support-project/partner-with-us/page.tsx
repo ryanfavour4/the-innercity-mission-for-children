@@ -187,10 +187,10 @@ export default function PartnerWithUsPage() {
             </div>
           </div>
 
-          <div className="ml-auto h-96 w-full md:max-h-full md:max-w-xl">
+          <div className="ml-auto h-96 w-full md:max-h-full md:max-w-lg">
             <Image
               alt="7 billion campaign"
-              className="h-full w-full rounded-md object-cover md:max-w-xl"
+              className="h-full w-full rounded-md object-cover md:max-w-lg"
               src={billionMealImage}
               width={400}
               height={450}
