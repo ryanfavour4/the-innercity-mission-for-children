@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
 import spaceImage from '@/public/assets/images/po.jpg'
-import billionMealImage from '@/public/assets/images/7billion.jpg'
+import billionMealImage from '@/public/assets/images/feeding-program-banner.jpg'
 import globalMissionImage from '@/public/assets/images/global-missions.jpg'
 import indigentChildrenImage from '@/public/assets/images/indigent_children_family.jpg'
 import signUpformImage from '@/public/assets/images/indigent-children-tuition-free-school-innercity.jpg'
@@ -165,12 +165,13 @@ export default function PartnerWithUsPage() {
         >
           <div className="flex h-full flex-col gap-5 gap-y-6 pb-2 md:gap-y-10 md:py-6">
             <h3 className="sub-header text-2xl font-semibold capitalize text-dark md:text-3xl">
-              #7BillionMeals Campaign
+              Feeding Program
             </h3>
             <p className="md:-mt-6">
-              The “7 Billion Meals Campaign” is a historic effort of the InnerCity Mission to tackle
-              the global issue of hunger by distributing 7 billion meals and more to children and
-              families in dire need around the world.
+              The InnerCity Mission Feeding Program focuses on child nutrition and food security for
+              families in vulnerable conditions. Our Feeding program has different approaches which
+              include; Food Banking system, School Feeding, Food Assistance for Families and
+              Orphanages, Soup kitchens, and Community feeding Outreaches.
             </p>
 
             <div className="flex items-center gap-5">
@@ -186,10 +187,10 @@ export default function PartnerWithUsPage() {
             </div>
           </div>
 
-          <div className="ml-auto h-96 w-full md:max-h-full md:max-w-96">
+          <div className="ml-auto h-96 w-full md:max-h-full md:max-w-xl">
             <Image
               alt="7 billion campaign"
-              className="h-full w-full rounded-md object-cover object-top md:h-auto md:max-w-lg"
+              className="h-full w-full rounded-md object-cover md:max-w-xl"
               src={billionMealImage}
               width={400}
               height={450}
