@@ -180,7 +180,7 @@ export default function PartnerWithUsPage() {
               </Link>
               <a
                 className="btn-white block w-fit py-2 ring-textcolor/25"
-                href={'/special-highlights/7billionmeals'}
+                href={'/what-we-do/feeding-program'}
               >
                 Learn More
               </a>
