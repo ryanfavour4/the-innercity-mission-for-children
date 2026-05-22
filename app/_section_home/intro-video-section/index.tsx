@@ -29,7 +29,7 @@ function IntroVideoSection() {
 
           {/* VIDEO */}
           <VideoCard
-            videoUrl="https://cdn1.kingscloud.co/kingscloud/files/58260ca6f916b94be484ceb0/98e66684-29fb-4f47-a7dd-565233b96511?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJZ7R2RYYHYMD7OLA%2F20260509%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260509T120128Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=6524080e53372ce6d51d22b57ff12e67d1c8598238ed9530b34e776f10354ced"
+            videoUrl="https://playlist.dacast.com/live/602498bd0ab279ef90d21c11e370e84f-live-ba817332-b74a-3b86-e4ae-0a059bdc404d/master.m3u8"
             // videoUrl="https://player.vimeo.com/video/1183429695?h=6b7b217b64" // SHOP FOR FREE
             classNameIframe="md:!h-[33rem]"
           />
