@@ -29,8 +29,7 @@ function IntroVideoSection() {
 
           {/* VIDEO */}
           <VideoCard
-            videoUrl="https://playlist.dacast.com/live/602498bd0ab279ef90d21c11e370e84f-live-ba817332-b74a-3b86-e4ae-0a059bdc404d/master.m3u8"
-            // videoUrl="https://player.vimeo.com/video/1183429695?h=6b7b217b64" // SHOP FOR FREE
+            videoUrl="https://player.vimeo.com/video/1155683488?h=0ef607f31a" // SHOP FOR FREE
             classNameIframe="md:!h-[33rem]"
           />
         </div>
