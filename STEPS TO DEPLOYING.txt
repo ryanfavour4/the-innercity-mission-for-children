@@ -9,7 +9,7 @@ STEPS TO DEPLOYING
       Identity added: /c/Users/ryanf/.ssh/id_rsa (ryanfave022@gmail.com)
 
 - NEXT RUN (git push prod main)
-  this is the final step for the main repository before moving to the script folder, this helps push the current code to the production env branch for server to update its code.
+  this is the final step for the main branch repository before moving to the script folder, this helps push the current code to the production env branch for server to update its code.
 sometimes you might see
 $ git push prod main
 Everything up-to-date
