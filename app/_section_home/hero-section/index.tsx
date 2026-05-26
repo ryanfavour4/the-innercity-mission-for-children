@@ -48,10 +48,10 @@ export default function HeroSection() {
     <>
       <header className="bg-secondary pb-10">
         {/* Marquee new year roller */}
-        <div className="hidden bg-error py-2 text-sm font-semibold uppercase tracking-widest text-light">
+        <div className="bg-error py-2 text-sm font-semibold uppercase tracking-widest text-light">
           <Link href={'/livestream'} className="wrapper">
             <Marquee speed={20}>
-              <p>Join the the live service!</p>
+              <p>Join the live service!</p>
             </Marquee>
           </Link>
         </div>
