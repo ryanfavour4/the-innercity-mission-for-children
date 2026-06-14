@@ -68,6 +68,12 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
+        hostname: 'gwhqrvpleobpxtqnwkuv.supabase.co',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
         hostname: 'playlist.dacast.com',
         port: '',
         pathname: '/**',

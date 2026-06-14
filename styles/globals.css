@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 :root {
   --dark: 0, 0, 0; /* rgb(0, 0, 0) */
@@ -123,6 +124,10 @@ h6,
 
 .font-cursive {
   font-family: 'Gaegu', cursive;
+}
+
+.font-playfair-display {
+  font-family: 'Playfair Display', serif;
 }
 
 .font-open-sans,
@@ -280,17 +285,17 @@ div.ReactFlagsSelect-module_filterBox__3m8EU {
 .ReactFlagsSelect-module_flagsSelect__2pfa2 {
   padding-bottom: 0 !important;
 }
-.image{
-  height:30%;
-  width:30%;
+.image {
+  height: 30%;
+  width: 30%;
   border-radius: 5px;
 }
-.imagee{
-  height:10%;
-  width:20%;
+.imagee {
+  height: 10%;
+  width: 20%;
   border-radius: 5px;
 }
-.cover{
+.cover {
   display: flex;
   justify-content: space-between;
   gap: 4px;
