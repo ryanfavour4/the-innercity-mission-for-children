@@ -1,5 +1,15 @@
 import Image from 'next/image'
 import { useState } from 'react'
+import directorPose from '@/public/assets/poa/director-image.png'
+import directorImage1 from '@/public/assets/poa/image-1.jpg'
+import directorImage2 from '@/public/assets/poa/image-2.jpg'
+import directorImage3 from '@/public/assets/poa/image-3.jpg'
+import directorImage4 from '@/public/assets/poa/image-4.jpg'
+import directorImage5 from '@/public/assets/poa/image-5.jpg'
+import directorImage6 from '@/public/assets/poa/image-6.jpg'
+import directorImage7 from '@/public/assets/poa/image-7.jpg'
+import directorImage8 from '@/public/assets/poa/image-8.jpg'
+import directorImage9 from '@/public/assets/poa/image-9.jpg'
 
 // 1. Define your categories exactly from the image
 const TABS = ['Through the Years', 'Family & Friends', 'Ministry Moments', 'Special Celebrations']
@@ -9,72 +19,62 @@ const GALLERY_ITEMS = [
   {
     id: 1,
     category: 'Through the Years',
-    title: 'Elderly Portrait',
-    imageUrl:
-      'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&auto=format&fit=crop&q=60',
+    title: 'Executive Minister',
+    imageUrl: directorImage1,
   },
   {
     id: 2,
     category: 'Through the Years',
-    title: 'Elderly Portrait',
-    imageUrl:
-      'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&auto=format&fit=crop&q=60',
+    title: 'Executive Minister',
+    imageUrl: directorImage2,
   },
   {
     id: 3,
     category: 'Through the Years',
-    title: 'Letter Writing',
-    imageUrl:
-      'https://images.unsplash.com/photo-1516962215378-7fa2e137ae93?w=600&auto=format&fit=crop&q=60',
+    title: 'Executive Minister',
+    imageUrl: directorImage3,
   },
   {
     id: 4,
     category: 'Family & Friends',
-    title: 'Dinner Party',
-    imageUrl:
-      'https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=600&auto=format&fit=crop&q=60',
+    title: 'Executive Minister',
+    imageUrl: directorImage4,
   },
   {
     id: 5,
     category: 'Family & Friends',
-    title: 'Dinner Party',
-    imageUrl:
-      'https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=600&auto=format&fit=crop&q=60',
+    title: 'Executive Minister',
+    imageUrl: directorImage5,
   },
   {
     id: 6,
     category: 'Ministry Moments',
-    title: 'Cathedral Glass',
-    imageUrl:
-      'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&auto=format&fit=crop&q=60',
+    title: 'Executive Minister',
+    imageUrl: directorImage6,
   },
   {
     id: 7,
-    category: 'Special Celebrations',
-    title: 'Table Banquet',
-    imageUrl:
-      'https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=600&auto=format&fit=crop&q=60',
+    category: 'Ministry Moments',
+    title: 'Executive Minister',
+    imageUrl: directorImage7,
   },
   {
     id: 8,
     category: 'Special Celebrations',
-    title: 'Table Banquet',
-    imageUrl:
-      'https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=600&auto=format&fit=crop&q=60',
+    title: 'Executive Minister',
+    imageUrl: directorImage8,
   },
   {
     id: 9,
     category: 'Special Celebrations',
-    title: 'Candlelight',
-    imageUrl:
-      'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=600&auto=format&fit=crop&q=60',
+    title: 'Executive Minister',
+    imageUrl: directorImage9,
   },
   {
     id: 10,
     category: 'Special Celebrations',
-    title: 'Candlelight',
-    imageUrl:
-      'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=600&auto=format&fit=crop&q=60',
+    title: 'Executive Minister',
+    imageUrl: directorPose,
   },
 ]
 
