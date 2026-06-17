@@ -81,7 +81,7 @@ export default function WishCarousel() {
                 >
                   <Image
                     alt="user"
-                    src={wish.image_url.toString()}
+                    src={wish.image_url}
                     width={50}
                     height={50}
                     className="aspect-1 w-14 rounded-full border border-[#C9A84C] object-cover"

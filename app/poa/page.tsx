@@ -274,7 +274,7 @@ export default function Poa() {
           whileInView="show"
           viewport={{ once: true }}
           variants={bannerReveal}
-          className="bg-poa-hero mb-10 overflow-hidden px-3 py-28 text-light"
+          className="bg-poa-hero mb-10 hidden overflow-hidden px-3 py-28 text-light"
         >
           <div className="font-playfair-display flex flex-col items-center justify-center gap-2 text-center">
             <motion.h3
@@ -291,7 +291,7 @@ export default function Poa() {
           </div>
         </motion.div>
 
-        <div className="container">
+        <div className="container pt-24">
           <motion.h3
             initial="hidden"
             whileInView="show"
@@ -384,8 +384,8 @@ export default function Poa() {
               }}
               className="text-2xl text-light md:text-4xl"
             >
-              &quot;I have fought the good fight, I have finished the race, I have kept the
-              faith.&quot;
+              &quot;The LORD is gracious, and full of compassion; slow to anger, and of great
+              mercy.&quot;
             </motion.cite>
 
             <motion.small
@@ -397,7 +397,7 @@ export default function Poa() {
               }}
               className="text-[#C9A84C]"
             >
-              — 2 Timothy 4:7
+              — Psalm 145:8 (KJV)
             </motion.small>
           </motion.span>
         </div>

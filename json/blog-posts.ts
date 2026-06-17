@@ -812,4 +812,105 @@ export const blogsData = [
     category: 'Orphanage Support',
     image: '/assets/blog/orphanage1.jpg',
   },
+  {
+    id: '23',
+    title: 'Child Safety and Advocacy: Shaping Safe, Confident, and Purpose-Driven Children',
+    excerpt:
+      'Child Safety and Advocacy (CSA) equips children with protection, guidance, and mentorship to help them grow into confident, responsible, and purpose-driven individuals.',
+    content: `
+  <div class="space-y-6 text-[#0F172A] leading-relaxed text-base">
+
+    <p class="text-lg font-medium">
+      What does it take to raise a child who is confident, responsible, and prepared for the future?
+    </p>
+
+    <p>
+      It starts with creating a safe environment where children feel protected, heard, valued, and guided.
+    </p>
+
+    <p>
+      Today, children face a growing range of challenges from bullying and peer pressure to abuse, neglect, harmful influences, and the risks of the digital world. For many vulnerable children, these challenges are compounded by poverty, limited access to education, and a lack of positive role models.
+    </p>
+
+    <!-- THUMBNAIL IMAGE -->
+    <img src="/assets/blog/csa2.jpg" class="w-full h-96 rounded-2xl object-cover" />
+
+    <p>
+      This is why Child Safety and Advocacy (CSA) remains a vital part of building stronger communities and brighter futures.
+    </p>
+
+    <p>
+      At The InnerCity Mission for Children, CSA goes beyond raising awareness. Through mentoring programs, school outreaches, advocacy campaigns, and community engagements, children are equipped with practical life skills, positive values, and the confidence to make better choices.
+    </p>
+
+    <!-- IMAGE 2 -->
+    <img src="/assets/blog/csa3.jpg" class="w-full h-96 rounded-2xl object-cover" />
+
+    <p>
+      One of the children reached through our education interventions is Rebecca Samson from Delta State, Nigeria.
+    </p>
+
+    <p>
+      Before the establishment of an InnerCity Missions for Children Learning Centre in her community, Rebecca and her siblings had never attended school. While other children left for class each morning, they remained at home with little access to education or guidance.
+    </p>
+
+    <p class="font-semibold">
+      Today, children like Rebecca have the opportunity to learn, grow, and dream of a brighter future.
+    </p>
+
+    <!-- IMAGE 3 -->
+    <img src="/assets/blog/csa4.jpg" class="w-full h-96 rounded-2xl object-center" />
+
+    <p>
+      Across schools and communities, similar transformations are taking place.
+    </p>
+
+    <p>
+      Through consistent mentoring sessions and advocacy engagements in schools and colleges across Africa, students are empowered with lessons on character, leadership, personal responsibility, child safety, and purpose.
+    </p>
+
+    <!-- IMAGE 4 -->
+    <img src="/assets/blog/csa5.jpg" class="w-full h-96 rounded-2xl object-center" />
+
+    <p>
+      These engagements are producing results that extend far beyond academics.
+    </p>
+
+    <p>
+      Children are becoming more confident, more aware, and more intentional about their choices and future.
+    </p>
+
+    <!-- IMAGE 5 -->
+    <img src="/assets/blog/csa6.jpg" class="w-full h-96 rounded-2xl object-center" />
+
+    <p>
+      Our Child Safety and Advocacy initiatives also extend to orphanages, communities, villages, refugee camps, and media platforms where awareness and mentorship can reach even more children and families.
+    </p>
+
+    <div class="bg-[#F8FAFC] rounded-2xl p-6 space-y-4 border border-gray-200">
+      <p class="font-semibold text-lg">You can be part of this mission.</p>
+
+      <p>💛 Organize a mentoring session in any community</p>
+      <p>💛 Partner with us to reach more vulnerable children</p>
+      <p>💛 Sponsor CSA initiatives</p>
+    </div>
+
+    <p class="font-bold text-lg">
+      Together, we can continue shaping safe, confident, and purpose-driven children across communities.
+    </p>
+
+    <div class="pt-4 space-y-2">
+      <p>
+        👉 <a href="https://hvn.theinnercitymission.ngo" class="text-[#0D7FC1] font-semibold underline">Volunteer</a>
+      </p>
+    </div>
+
+  </div>
+  `,
+    author: 'The InnerCity Mission',
+    date: 'June 17, 2026',
+    readTime: '4 min read',
+    category: 'Child Safety & Advocacy',
+    image: '/assets/blog/csa1.jpg',
+  },
 ]
