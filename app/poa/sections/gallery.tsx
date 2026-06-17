@@ -105,8 +105,8 @@ export function TabbedGallery() {
               onClick={() => setActiveTab(tab)}
               className={`border px-5 py-2 text-xs font-semibold uppercase tracking-wider transition-all duration-300 ${
                 isSelected
-                  ? 'border-[#310411] bg-[#310411] text-[#C9A84C] shadow-sm'
-                  : 'border-[#310411]/30 bg-transparent text-[#310411] hover:bg-[#310411]/5'
+                  ? 'border-[#6C581F] bg-[#C9A84C] text-[#f1f1f1] shadow-sm'
+                  : 'border-[#6C581F]/30 bg-transparent text-[#6C581F] hover:bg-[#C9A84C]/5'
               } `}
             >
               {tab}

@@ -9,7 +9,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { formatDate } from '@/utils/format-date'
 
-type Testimonial = {
+export type Testimonial = {
   id: number
   name: string
   country: string

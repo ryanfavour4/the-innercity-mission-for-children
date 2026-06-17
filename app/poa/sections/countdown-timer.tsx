@@ -20,7 +20,7 @@ export function CountdownTimer() {
       {tiles.map((t) => (
         <div
           key={t.value}
-          className="flex aspect-1 w-full max-w-36 flex-col items-center justify-center gap-3 rounded-[2.5rem] border border-[#310411] bg-transparent px-2 py-4 text-[#310411] md:aspect-[1.1] md:max-w-[10rem]"
+          className="flex aspect-1 w-full max-w-36 flex-col items-center justify-center gap-3 rounded-[2.5rem] border border-[#6C581F] bg-transparent px-2 py-4 text-[#C9A84C] md:aspect-[1.1] md:max-w-[10rem]"
         >
           <h5 className="font-playfair-display text-5xl font-bold italic leading-none md:text-6xl">
             {t.value}

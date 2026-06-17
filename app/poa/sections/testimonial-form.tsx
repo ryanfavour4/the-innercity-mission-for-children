@@ -57,14 +57,14 @@ export default function TestimonialForm() {
 
   return (
     <>
-      <section className="px-3 pb-16">
+      <section id="send-wishes" className="px-3 pb-16">
         <form
           onSubmit={handleSubmit}
           className="mx-auto max-w-3xl border border-[#C9A84C] px-5 py-4 text-[#312025] ring-2 ring-[#877274]/50 ring-offset-4 md:px-10 md:py-8"
         >
           <div className="flex flex-col items-center justify-center gap-3 overflow-hidden px-3 py-10 text-center">
             <h3 className="font-playfair-display text-3xl font-medium text-[#312025] md:text-5xl">
-              Write to Her Legacy
+              Write Your Birthday Message
             </h3>
             <p className="font-body text-base text-[#544244] md:text-lg">
               Your words will pasted on the birthday wish wall.
@@ -141,9 +141,9 @@ export default function TestimonialForm() {
             <button
               type="submit"
               disabled={loading}
-              className="col-span-2 w-full bg-[#4E061A] px-7 py-3 text-sm tracking-wide text-light transition-colors duration-300 hover:bg-[#4E061A]/80 md:text-base"
+              className="col-span-2 w-full bg-[#B38945] px-7 py-3 text-sm tracking-wide text-light transition-colors duration-300 hover:bg-[#B38945]/80 md:text-base"
             >
-              {loading ? 'Sending...' : 'Send your Birthday Greeting'}
+              {loading ? 'Sending...' : 'Send'}
             </button>
           </div>
         </form>

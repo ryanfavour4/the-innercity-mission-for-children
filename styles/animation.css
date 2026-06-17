@@ -228,13 +228,13 @@
   bottom: -4px;
   width: 0;
   height: 1.5px;
-  background: #d4af37;
+  background: #f1f1f1;
   transform: translateX(-50%);
   transition: width 0.35s ease;
 }
 
 .style-1-nav-link:hover {
-  color: #d4af37;
+  color: #f1f1f1;
 }
 
 .style-1-nav-link:hover::after {
