@@ -128,7 +128,7 @@ export function TabbedGallery() {
               height={150}
               src={item.imageUrl}
               alt={item.title}
-              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
               loading="lazy"
             />
 

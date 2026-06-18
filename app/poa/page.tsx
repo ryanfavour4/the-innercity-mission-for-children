@@ -224,10 +224,10 @@ export default function Poa() {
               className="flex flex-col gap-8"
             >
               <p className="font-body text-center text-base leading-normal md:text-left md:text-lg">
-                Welcome to the digital commemoration of a life beautifully lived. This space is
-                dedicated to celebrating the enduring legacy, profound faith, and unwavering service
-                of a leader who touched countless lives. We invite you to explore her story, witness
-                her heart, and share your own memories in tribute.
+                As we count up to this special day, we celebrate a leader whose life, vision, and
+                dedication continue to inspire and impact countless lives. We invite you to share
+                your birthday wishes and messages of appreciation as we honour this remarkable
+                occasion.
               </p>
 
               <motion.div
@@ -237,7 +237,7 @@ export default function Poa() {
                 transition={{ delay: 0.3, duration: 0.7 }}
                 className="bg-[#1C1C17] px-8 py-10 text-center text-2xl text-light md:px-20 md:text-4xl lg:px-36"
               >
-                <cite>&quot;Her greatest sermon was her life&quot;</cite>
+                <cite>&quot;Celebrating a life of impact, excellence, and inspiration&quot;</cite>
               </motion.div>
             </motion.div>
 
@@ -268,7 +268,7 @@ export default function Poa() {
         </div>
       </section>
 
-      <section>
+      <section className="mb-36">
         <motion.div
           initial="hidden"
           whileInView="show"
@@ -291,7 +291,7 @@ export default function Poa() {
           </div>
         </motion.div>
 
-        <div className="container pt-24">
+        <div className="container hidden pt-24">
           <motion.h3
             initial="hidden"
             whileInView="show"
@@ -349,8 +349,8 @@ export default function Poa() {
               }}
               className="text-2xl md:text-4xl"
             >
-              &quot;She saw faces, not numbers; souls, not statistics. Every interaction was a
-              sacred encounter.&quot;
+              &quot;A life reflecting God&quot;s grace, compassion, and mercy to many
+              generations.&quot;
             </motion.cite>
           </motion.span>
 
