@@ -1,7 +1,5 @@
 'use client'
 import Image from 'next/image' // or standard img
-// import directorPose from '@/public/assets/poa/director-image.png'
-// Import Swiper React components and modules
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination } from 'swiper/modules'
 import { Icon } from '@iconify/react'
