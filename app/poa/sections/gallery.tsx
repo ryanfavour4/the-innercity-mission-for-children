@@ -10,6 +10,7 @@ import directorImage6 from '@/public/assets/poa/image-6.jpg'
 import directorImage7 from '@/public/assets/poa/image-7.jpg'
 import directorImage8 from '@/public/assets/poa/image-8.jpg'
 import directorImage9 from '@/public/assets/poa/image-9.jpg'
+import directorImage10 from '@/public/assets/poa/image-10.jpg'
 
 // 1. Define your categories exactly from the image
 const TABS = ['Through the Years', 'Family & Friends', 'Ministry Moments', 'Special Celebrations']
@@ -75,6 +76,12 @@ const GALLERY_ITEMS = [
     category: 'Special Celebrations',
     title: 'Executive Minister',
     imageUrl: directorPose,
+  },
+  {
+    id: 11,
+    category: 'Family & Friends',
+    title: 'Executive Minister',
+    imageUrl: directorImage10,
   },
 ]
 
