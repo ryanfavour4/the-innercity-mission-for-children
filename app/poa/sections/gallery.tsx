@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import { useState } from 'react'
-import directorPose from '@/public/assets/poa/director-image.png'
 import directorImage1 from '@/public/assets/poa/image-1.jpg'
 import directorImage2 from '@/public/assets/poa/image-2.jpg'
 import directorImage3 from '@/public/assets/poa/image-3.jpg'
@@ -37,13 +36,13 @@ const GALLERY_ITEMS = [
   },
   {
     id: 4,
-    category: 'Family & Friends',
+    category: 'Through the Years',
     title: 'Executive Minister',
     imageUrl: directorImage4,
   },
   {
     id: 5,
-    category: 'Family & Friends',
+    category: 'Ministry Moments',
     title: 'Executive Minister',
     imageUrl: directorImage5,
   },
@@ -61,27 +60,21 @@ const GALLERY_ITEMS = [
   },
   {
     id: 8,
-    category: 'Special Celebrations',
+    category: 'Family & Friends',
     title: 'Executive Minister',
-    imageUrl: directorImage8,
+    imageUrl: directorImage10,
   },
   {
     id: 9,
-    category: 'Special Celebrations',
+    category: 'Family & Friends',
     title: 'Executive Minister',
     imageUrl: directorImage9,
   },
   {
     id: 10,
-    category: 'Special Celebrations',
-    title: 'Executive Minister',
-    imageUrl: directorPose,
-  },
-  {
-    id: 11,
     category: 'Family & Friends',
     title: 'Executive Minister',
-    imageUrl: directorImage10,
+    imageUrl: directorImage8,
   },
 ]
 
