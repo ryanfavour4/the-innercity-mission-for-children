@@ -1,5 +1,4 @@
 'use client'
-import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import logoDefault from '@/public/assets/icons/logo-black-text.png'
@@ -52,7 +51,7 @@ export default function TopNavbar({ menus = defaultmenu, logo = logoDefault, pri
                     </Link>
                     {menu.subMenus && (
                       <ol
-                        className={`absolute left-0 h-0 min-w-60 overflow-hidden rounded-md bg-light text-sm shadow ${subMenuClicked == menu.subPath && '!h-fit'}`}
+                        className={`absolute left-0 h-0 min-w-60 overflow-hidden rounded-md bg-light text-sm shadow ${subMenuClicked === menu.subPath ? '!h-fit' : ''}`}
                       >
                         {menu.subMenus.map((subMenu, index) => (
                           <li key={index}>
@@ -128,7 +127,7 @@ export default function TopNavbar({ menus = defaultmenu, logo = logoDefault, pri
 
                   {menu.subMenus && (
                     <ul
-                      className={`mb-0 h-0 w-full overflow-hidden bg-white px-3 transition-all ${subMenuClicked == menu.subPath && 'mb-2 h-auto'}`}
+                      className={`mb-0 h-0 w-full overflow-hidden bg-white px-3 transition-all ${subMenuClicked === menu.subPath ? 'mb-2 h-auto' : ''}`}
                     >
                       {menu.subMenus.map((subMenu, index) => (
                         <li key={index}>

@@ -1,4 +1,5 @@
-import React from 'react'
+'use client'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import logo from '@/public/assets/icons/logo-white.png'
@@ -7,8 +8,23 @@ import kcIcon from '@/public/assets/icons/kingschat-icon-white.png'
 import igIcon from '@/public/assets/icons/instagram-icon-white.png'
 import twIcon from '@/public/assets/icons/twitter-icon-white.png'
 import lnIcon from '@/public/assets/icons/linkeln-icon-white.png'
+import CountrySelect from '@/components/country-select'
 
 export default function Footer() {
+  const [country, setCountry] = useState({ code: 'KN', name: 'Saint Kitts and Nevis' })
+
+  const changeLanguage = (lang: string) => {
+    const select = document.querySelector('.goog-te-combo') as HTMLSelectElement | null
+    if (select) {
+      select.value = lang
+      select.dispatchEvent(new Event('change'))
+    }
+  }
+
+  useEffect(() => {
+    changeLanguage(country.code)
+  }, [country])
+
   return (
     <footer className="bg-gray px-6 pb-5 pt-10 text-base text-white">
       <div className="grid grid-cols-2 gap-6 gap-y-10 md:grid-cols-6">
@@ -68,6 +84,11 @@ export default function Footer() {
             />
             <button className="btn-white w-fit">Subscribe</button>
           </form>
+          <CountrySelect
+            onChange={(e) => setCountry(e.target as unknown as { code: string; name: string })}
+            value={country.name}
+            className="bg-light"
+          />
         </div>
       </div>
 

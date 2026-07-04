@@ -1,5 +1,10 @@
 import type { Metadata } from 'next'
+import Script from 'next/script'
 import { SpeedInsights } from '@vercel/speed-insights/next'
+import { ThemeProvider } from '@/context/theme'
+import { ToastContainer } from 'react-toastify'
+import GoogleTranslate from './google-translate'
+
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
@@ -9,8 +14,6 @@ import '@/styles/globals.css'
 import '@/styles/bg.css'
 import '@/styles/tailwind.css'
 import '@/styles/animation.css'
-import { ThemeProvider } from '@/context/theme'
-import { ToastContainer } from 'react-toastify'
 
 export const metadata: Metadata = {
   title: 'Home Page - InnerCity Mission 4 Children HQ',
@@ -170,21 +173,40 @@ export const metadata: Metadata = {
   // },
 }
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <ThemeProvider>
-        <body className={`hidden antialiased`} suppressHydrationWarning>
+      <body className="antialiased" suppressHydrationWarning>
+        <ThemeProvider>
           {children}
-          <div id="portal"></div>
+          <div id="portal" />
           <ToastContainer />
-        </body>
-      </ThemeProvider>
-      <SpeedInsights />
+          <GoogleTranslate />
+        </ThemeProvider>
+
+        {/* Google Translate script */}
+        <Script
+          src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+          strategy="afterInteractive"
+        />
+
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-MB33MXCVG5"
+          strategy="afterInteractive"
+        />
+
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){window.dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-MB33MXCVG5');
+          `}
+        </Script>
+
+        <SpeedInsights />
+      </body>
     </html>
   )
 }
