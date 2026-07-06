@@ -181,7 +181,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
           <div id="portal" />
           <ToastContainer />
-          <GoogleTranslate />
         </ThemeProvider>
 
         {/* Google Translate script */}
