@@ -12,8 +12,8 @@ export default function NotFound() {
       <h1 className="mb-4 text-4xl font-extrabold text-textcolor md:text-6xl">404</h1>
       <h2 className="mb-8 text-lg font-medium text-textcolor md:text-xl">Page Not Found</h2>
       <p className="mb-10 max-w-md text-textcolor/80 md:text-base">
-        Oops! The page you are looking for does not exist or has been moved. Please check the URL or
-        navigate back to the homepage.
+        Oops!!! The page you are looking for does not exist or has been moved. Please check the URL
+        or navigate back to the homepage.
       </p>
 
       <Link className="btn-primary max-w-fit px-8 py-3" href="/">

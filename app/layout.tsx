@@ -3,7 +3,6 @@ import Script from 'next/script'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { ThemeProvider } from '@/context/theme'
 import { ToastContainer } from 'react-toastify'
-import GoogleTranslate from './google-translate'
 
 import 'swiper/css'
 import 'swiper/css/navigation'
