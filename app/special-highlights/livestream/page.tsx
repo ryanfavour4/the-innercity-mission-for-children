@@ -20,7 +20,7 @@ export default function LiveStreamPage() {
   const [email, setEmail] = useState({ value: '' })
   const [testimony, setTestimony] = useState({ value: '' })
   const [country, setCountry] = useState('NG')
-  const title = 'Day: Healing Streams Live Healing Services'
+  const title = 'Day 1: Healing Streams Live Healing Services'
 
   const handleSubmitGemForm = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()

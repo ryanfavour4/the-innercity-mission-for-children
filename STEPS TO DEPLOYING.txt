@@ -25,3 +25,4 @@ ryanf@HP MINGW64 ~/Downloads/code/the-innercity-mission-for-children (main)
 
 ryanf@HP MINGW64 ~/Downloads/code/the-innercity-mission-for-children (main)
 
+ cd .. && git push prod main && cd script && ./deploy-prod.sh -r
