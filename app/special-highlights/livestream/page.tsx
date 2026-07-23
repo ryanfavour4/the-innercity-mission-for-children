@@ -1,18 +1,26 @@
+// import VideoPlayer from '@/components/v
+// ideo-player/video-player'
+// const rawStreamUrl = 'https://colouringdreams.tv/public/videos/streams/zGMgZ6iOrB76.m3u8'
+
+// // Point to your Next.js route instead
+// const proxiedStreamUrl = `/api/stream?url=${encodeURIComponent(rawStreamUrl)}`
+// console.log('PROXY IT', proxiedStreamUrl)
+
 'use client'
 import React, { useState } from 'react'
 import Input from '@/components/input'
 import countries from '@/json/countries-list.json'
+import VideoPlayer from '@/components/video-player'
 import MetaTags from '@/meta'
 import CtaSection from '@/layouts/cta-section'
 import axios from 'axios'
-import VideoPlayer from '@/components/video-player/video-player'
 
-export default function LiveStreamPage({}: { videoPlayer?: React.ReactNode }) {
+export default function LiveStreamPage() {
   const [fullname, setFullname] = useState({ value: '' })
   const [email, setEmail] = useState({ value: '' })
   const [testimony, setTestimony] = useState({ value: '' })
   const [country, setCountry] = useState('NG')
-  const title = 'THE INNERCITY MISSIONS 12TH VALEDICTORY SERVICE'
+  const title = 'Day: Healing Streams Live Healing Services'
 
   const handleSubmitGemForm = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -31,12 +39,6 @@ export default function LiveStreamPage({}: { videoPlayer?: React.ReactNode }) {
       .catch((err) => console.error(err))
   }
 
-  const rawStreamUrl = 'https://colouringdreams.tv/public/videos/streams/zGMgZ6iOrB76.m3u8'
-
-  // Point to your Next.js route instead
-  const proxiedStreamUrl = `/api/stream?url=${encodeURIComponent(rawStreamUrl)}`
-  console.log('PROXY IT', proxiedStreamUrl)
-
   return (
     <>
       <MetaTags title={`Livestream – ${title} | InnerCity Mission HQ`} />
@@ -50,12 +52,19 @@ export default function LiveStreamPage({}: { videoPlayer?: React.ReactNode }) {
 
         <div className="wrapper mt-6 grid grid-cols-12 gap-6">
           <div className="col-span-12 flex flex-col gap-4 md:col-span-7 lg:col-span-8">
-            {/* Render the passed-in Server Component here */}
-            <VideoPlayer src={proxiedStreamUrl} className="w-full !max-w-6xl md:!h-full" />
-
+            <VideoPlayer
+              src={
+                // ''
+                // 'https://playlist.dacast.com/live/602498bd0ab279ef90d21c11e370e84f-live-ba817332-b74a-3b86-e4ae-0a059bdc404d/master.m3u8'
+                'https://vcpout-sf01-altnetro.internetmultimediaonline.org/ext/ext1.smil/playlist.m3u8'
+                // 'https://vcpout-sf01-altnetro.internetmultimediaonline.org/vcp/c8075b82/playlist.m3u8'
+                // 'https://vcpout-sf01-altnetro.internetmultimediaonline.org/vcp/oe5ehvoqh0oviy/chunklist.m3u8'
+                // 'https://playlist.dacast.com/live/602498bd0ab279ef90d21c11e370e84f-live-ba817332-b74a-3b86-e4ae-0a059bdc404d/master.m3u8'
+              }
+              className="w-full !max-w-6xl md:!h-full"
+            />
             <h4 className="ellipsis-2 text-xl font-bold uppercase md:text-2xl">LIVE: {title}</h4>
           </div>
-
           <div className="rounlg col-span-12 border-2 px-2 py-3 md:col-span-5 lg:col-span-4">
             <h3 className="text-balance text-lg font-semibold">Share your testimony with us</h3>
             <hr className="my-2.5" />
