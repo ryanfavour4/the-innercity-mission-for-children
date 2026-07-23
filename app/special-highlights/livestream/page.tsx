@@ -12,7 +12,7 @@ export default function LiveStreamPage() {
   const [email, setEmail] = useState({ value: '' })
   const [testimony, setTestimony] = useState({ value: '' })
   const [country, setCountry] = useState('NG')
-  const title = 'Global Prayer & Fasting'
+  const title = 'THE INNERCITY MISSIONS 12TH VALEDICTORY SERVICE'
 
   const handleSubmitGemForm = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -48,10 +48,10 @@ export default function LiveStreamPage() {
               src={
                 // ''
                 // 'https://playlist.dacast.com/live/602498bd0ab279ef90d21c11e370e84f-live-ba817332-b74a-3b86-e4ae-0a059bdc404d/master.m3u8'
-                'https://vcpout-sf01-altnetro.internetmultimediaonline.org/ext/ext1.smil/playlist.m3u8'
+                // 'https://vcpout-sf01-altnetro.internetmultimediaonline.org/ext/ext1.smil/playlist.m3u8'
                 // 'https://vcpout-sf01-altnetro.internetmultimediaonline.org/vcp/c8075b82/playlist.m3u8'
                 // 'https://vcpout-sf01-altnetro.internetmultimediaonline.org/vcp/oe5ehvoqh0oviy/chunklist.m3u8'
-                // 'https://playlist.dacast.com/live/602498bd0ab279ef90d21c11e370e84f-live-ba817332-b74a-3b86-e4ae-0a059bdc404d/master.m3u8'
+                'https://colouringdreams.tv/public/videos/streams/zGMgZ6iOrB76.m3u8'
               }
               className="w-full !max-w-6xl md:!h-full"
             />
